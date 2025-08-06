@@ -1,27 +1,24 @@
+"use client";
+
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import {
-  Milk,
-  Apple,
-  Coffee,
-  Carrot,
-  Settings,
+  Factory,
+  Droplets,
+  Package,
+  Filter,
+  Leaf,
   Zap,
-  Shield,
-  TrendingUp,
   ArrowRight,
   CheckCircle,
+  Users,
+  Target,
+  Award,
+  Clock,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -29,391 +26,440 @@ export default function IndustriesPage() {
   const industries = [
     {
       id: "dairy",
-      title: "Dairy Processing",
-      icon: Milk,
-      color: "primary",
+      name: "Dairy Processing",
+      icon: Droplets,
       description:
-        "End-to-end dairy processing solutions from milk reception to final packaging",
-      features: [
-        "Milk reception, clarification & storage",
-        "Pasteurization & homogenization",
-        "Curd, yogurt & cheese production",
-        "Butter & ghee processing",
-        "Ice cream & milk powder plants",
-        "Automated CIP systems",
-      ],
+        "Complete dairy processing solutions for milk, cheese, yogurt, butter, and ice cream production.",
+      image: "/images/industries/dairy.jpg",
       products: [
-        "Raw milk, bottled milk, Flavoured milk",
-        "Powder Plant (SMP, WMP, Whey Powder)",
-        "Paneer, Dahi, Yogurt, Lassi, Kefir",
-        "Butter, Ghee, Cream, Buttermilk",
-        "Sweetened Condensed Milk",
-        "Dairy based sweets & Ice Cream",
-        "Cheese (Cheddar, Mozzarella, Feta, etc.)",
+        "Milk & Milk Products",
+        "Cheese & Curd",
+        "Butter & Ghee",
+        "Ice Cream",
+        "Milk Powder",
+        "Whey Products",
       ],
-      strengths: [
-        "Energy-efficient processing solutions",
-        "Compliant with 3A, EHEDG standards",
-        "Real-time monitoring & SCADA integration",
-        "Preventive maintenance alerts",
-        "Turnkey project execution",
+      equipment: [
+        "Pasteurizers & Homogenizers",
+        "Cream Separators",
+        "Cheese Vats",
+        "Butter Churns",
+        "Ice Cream Freezers",
+        "Spray Dryers",
+      ],
+      benefits: [
+        "FSSAI compliant processing",
+        "Energy efficient systems",
+        "Automated control",
+        "Hygienic design",
       ],
     },
     {
       id: "food",
-      title: "Food Processing",
-      icon: Apple,
-      color: "secondary",
+      name: "Food Processing",
+      icon: Package,
       description:
-        "Innovative food processing equipment for traditional and modern food products",
-      features: [
-        "RTE, RTH & RTS food products",
-        "Tomato-based products processing",
-        "Jams and marmalade preparation",
-        "Mayonnaise and emulsified products",
-        "Traditional Indian snacks",
-        "Non-dairy whipped cream",
-      ],
+        "Specialized equipment for fruits, vegetables, grains, and ready-to-eat food processing.",
+      image: "/images/industries/food.jpg",
       products: [
-        "Ready-to-Eat, Ready-to-Heat, Ready-to-Serve",
-        "Ketchup, Sauces, and Gravies",
-        "Puran Poli Processing Line",
-        "Paratha Production Line",
-        "French Fries & Potato Chips",
-        "Kachori, Samosa, Gathiya",
-        "Custom food processing systems",
+        "Fruits & Vegetables",
+        "Grains & Cereals",
+        "Snack Foods",
+        "Ready-to-Eat",
+        "Bakery Products",
+        "Confectionery",
       ],
-      strengths: [
-        "Precision engineering & quality checks",
-        "Premium-grade materials",
-        "Fully customizable solutions",
-        "Latest technology integration",
-        "Superior food safety standards",
+      equipment: [
+        "Sorting & Grading Systems",
+        "Washing & Peeling Machines",
+        "Cooking & Processing Units",
+        "Packaging Lines",
+        "Quality Control Equipment",
+        "Material Handling Systems",
+      ],
+      benefits: [
+        "Preserve nutritional value",
+        "Extended shelf life",
+        "Consistent quality",
+        "High production capacity",
       ],
     },
     {
       id: "beverage",
-      title: "Beverage Manufacturing",
-      icon: Coffee,
-      color: "accent",
+      name: "Beverage Manufacturing",
+      icon: Filter,
       description:
-        "Advanced beverage processing solutions for all types of drinks",
-      features: [
-        "RTS and RTD beverage production",
-        "Carbonated soft drinks (CSD)",
-        "Sparkling fruit-based drinks",
-        "Energy drinks & tonic waters",
-        "Functional beverages",
-        "Recipe management systems",
-      ],
+        "Complete beverage production lines for juices, carbonated drinks, and energy drinks.",
+      image: "/images/industries/beverage.jpg",
       products: [
-        "Ready-to-Serve (RTS) beverages",
-        "Ready-to-Drink (RTD) beverages",
-        "Carbonated Soft Beverages (CSD)",
-        "Sparkling Fruit-Based Drinks (CFD)",
-        "Energy Drinks & Tonic Waters",
-        "Functional Beverages",
+        "Fruit Juices",
+        "Carbonated Beverages",
+        "Energy Drinks",
+        "Sports Drinks",
+        "Flavored Water",
+        "Syrups & Concentrates",
       ],
-      strengths: [
-        "Modular to fully integrated lines",
-        "Automated & hygienic processing",
-        "Energy-efficient systems",
-        "Global standards compliance",
-        "Seamless packaging integration",
+      equipment: [
+        "Juice Extractors",
+        "Carbonation Systems",
+        "Mixing & Blending Units",
+        "Bottling Lines",
+        "Canning Systems",
+        "Labeling Machines",
+      ],
+      benefits: [
+        "High extraction efficiency",
+        "Precise carbonation control",
+        "Automated filling",
+        "Quality assurance",
       ],
     },
     {
-      id: "fruits-vegetables",
-      title: "Fruits & Vegetables Processing",
-      icon: Carrot,
-      color: "tertiary",
+      id: "pharma",
+      name: "Pharmaceutical",
+      icon: Leaf,
       description:
-        "Comprehensive solutions for preserving natural flavor, color, and nutrition",
-      features: [
-        "Tomato processing (puree, paste, ketchup)",
-        "Mango pulp, puree & nectar",
-        "Coconut water & milk processing",
-        "Tropical fruits processing",
-        "Potato flakes, granules & starch",
-        "Multi-fruit plant integration",
-      ],
+        "Hygienic processing equipment for pharmaceutical and nutraceutical products.",
+      image: "/images/industries/pharma.jpg",
       products: [
-        "Tomato puree, paste, ketchup, sauces",
-        "Mango pulp, puree, nectar, juice",
-        "Coconut water, milk, cream, VCO",
-        "Banana, guava, pineapple, papaya",
-        "Potato flakes, granules, starch",
-        "French fries & chips production",
+        "Tablets & Capsules",
+        "Liquid Formulations",
+        "Creams & Ointments",
+        "Syrups & Suspensions",
+        "Powder Products",
+        "Herbal Extracts",
       ],
-      strengths: [
-        "Natural flavor & color preservation",
-        "High productivity & hygiene",
-        "Aseptic filling for export",
-        "Spray drying capabilities",
-        "Flexible multi-fruit design",
+      equipment: [
+        "Granulation Systems",
+        "Coating Machines",
+        "Filling & Sealing Units",
+        "Sterilization Equipment",
+        "Quality Testing Systems",
+        "Clean Room Equipment",
+      ],
+      benefits: [
+        "GMP compliant",
+        "Sterile processing",
+        "Precise dosing",
+        "Documentation support",
+      ],
+    },
+    {
+      id: "chemical",
+      name: "Chemical Processing",
+      icon: Zap,
+      description:
+        "Industrial chemical processing equipment for various chemical manufacturing applications.",
+      image: "/images/industries/chemical.jpg",
+      products: [
+        "Industrial Chemicals",
+        "Agro Chemicals",
+        "Paints & Coatings",
+        "Adhesives",
+        "Lubricants",
+        "Cleaning Products",
+      ],
+      equipment: [
+        "Reaction Vessels",
+        "Heat Exchangers",
+        "Filtration Systems",
+        "Drying Equipment",
+        "Mixing & Blending",
+        "Storage Tanks",
+      ],
+      benefits: [
+        "Corrosion resistant",
+        "High temperature operation",
+        "Safety compliance",
+        "Process optimization",
       ],
     },
   ];
 
-  const getColorClasses = (color: string) => {
-    switch (color) {
-      case "primary":
-        return "text-primary border-primary bg-primary/5";
-      case "secondary":
-        return "text-secondary border-secondary bg-secondary/5";
-      case "accent":
-        return "text-accent border-accent bg-accent/5";
-      case "tertiary":
-        return "text-tertiary border-tertiary bg-tertiary/5";
-      default:
-        return "text-primary border-primary bg-primary/5";
-    }
-  };
+  const stats = [
+    { icon: Users, label: "Industries Served", value: "15+" },
+    { icon: Target, label: "Projects Completed", value: "500+" },
+    { icon: Award, label: "Years Experience", value: "20+" },
+    { icon: Clock, label: "Support Response", value: "24/7" },
+  ];
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-background via-background-secondary to-background-tertiary">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-white via-secondary/5 to-white">
         <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
               Industries We Serve
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+              Solutions for Every
+              <span className="text-secondary"> Industry</span>
             </h1>
-            <p className="text-xl md:text-2xl text-foreground-secondary mb-8 max-w-3xl mx-auto">
-              Comprehensive processing solutions for dairy, food, beverage, and
-              fruits & vegetables industries
+            <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
+              From dairy and food processing to pharmaceuticals and chemicals,
+              we provide comprehensive solutions tailored to your industry's
+              specific needs.
             </p>
-          </ScrollReveal>
+          </MotionDiv>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-secondary" />
+                </div>
+                <h3 className="text-3xl font-bold text-black mb-2">
+                  {stat.value}
+                </h3>
+                <p className="text-black/70">{stat.label}</p>
+              </MotionDiv>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Industries Grid */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Industries We Serve
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Comprehensive solutions for diverse processing industries
+            </p>
+          </MotionDiv>
+
+          <div className="grid lg:grid-cols-2 gap-8">
             {industries.map((industry, index) => (
-              <ScrollReveal key={industry.id} delay={index * 0.2}>
-                <MotionDiv
-                  className="h-full"
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader className="text-center pb-6">
-                      <div
-                        className={`w-16 h-16 ${getColorClasses(
-                          industry.color
-                        )} rounded-full flex items-center justify-center mx-auto mb-4`}
-                      >
-                        <industry.icon className="w-8 h-8" />
-                      </div>
-                      <CardTitle className="text-2xl font-bold text-foreground">
-                        {industry.title}
-                      </CardTitle>
-                      <CardDescription className="text-lg text-foreground-secondary">
-                        {industry.description}
-                      </CardDescription>
-                    </CardHeader>
-
-                    <CardContent className="space-y-6">
-                      {/* Key Features */}
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-3 flex items-center">
-                          <Settings className="w-5 h-5 mr-2 text-primary" />
-                          Key Features
-                        </h4>
-                        <div className="grid grid-cols-1 gap-2">
-                          {industry.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-start">
-                              <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                              <span className="text-sm text-foreground-secondary">
-                                {feature}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Products */}
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-3 flex items-center">
-                          <Zap className="w-5 h-5 mr-2 text-accent" />
-                          Products We Handle
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {industry.products.slice(0, 4).map((product, idx) => (
-                            <Badge
-                              key={idx}
-                              variant="outline"
-                              className="text-xs"
-                            >
+              <MotionDiv
+                key={industry.id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center">
+                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center">
+                      <industry.icon className="w-10 h-10 text-secondary" />
+                    </div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-bold text-black">
+                      {industry.name}
+                    </CardTitle>
+                    <p className="text-black/70">{industry.description}</p>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div>
+                      <h4 className="font-semibold text-black mb-3">
+                        Products
+                      </h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {industry.products.map((product, idx) => (
+                          <div key={idx} className="flex items-center">
+                            <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                            <span className="text-sm text-black/70">
                               {product}
-                            </Badge>
-                          ))}
-                          {industry.products.length > 4 && (
-                            <Badge variant="outline" className="text-xs">
-                              +{industry.products.length - 4} more
-                            </Badge>
-                          )}
-                        </div>
+                            </span>
+                          </div>
+                        ))}
                       </div>
+                    </div>
 
-                      {/* Strengths */}
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-3 flex items-center">
-                          <TrendingUp className="w-5 h-5 mr-2 text-tertiary" />
-                          Our Strengths
-                        </h4>
-                        <div className="grid grid-cols-1 gap-2">
-                          {industry.strengths.map((strength, idx) => (
-                            <div key={idx} className="flex items-start">
-                              <Shield className="w-4 h-4 text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
-                              <span className="text-sm text-foreground-secondary">
-                                {strength}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+                    <div>
+                      <h4 className="font-semibold text-black mb-3">
+                        Equipment
+                      </h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {industry.equipment.map((equipment, idx) => (
+                          <div key={idx} className="flex items-center">
+                            <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                            <span className="text-sm text-black/70">
+                              {equipment}
+                            </span>
+                          </div>
+                        ))}
                       </div>
+                    </div>
 
-                      {/* CTA Button */}
-                      <div className="pt-4">
-                        <Button
-                          className={`w-full bg-gradient-${
-                            industry.color
-                          } hover:bg-gradient-${
-                            industry.color === "primary"
-                              ? "secondary"
-                              : industry.color === "secondary"
-                              ? "accent"
-                              : industry.color === "accent"
-                              ? "tertiary"
-                              : "primary"
-                          }`}
-                        >
-                          <Link href="/contact" className="flex items-center">
-                            Get {industry.title} Solutions
-                            <ArrowRight className="ml-2 w-4 h-4" />
-                          </Link>
-                        </Button>
+                    <div>
+                      <h4 className="font-semibold text-black mb-3">
+                        Key Benefits
+                      </h4>
+                      <div className="space-y-2">
+                        {industry.benefits.map((benefit, idx) => (
+                          <div key={idx} className="flex items-center">
+                            <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                            <span className="text-sm text-black/70">
+                              {benefit}
+                            </span>
+                          </div>
+                        ))}
                       </div>
-                    </CardContent>
-                  </Card>
-                </MotionDiv>
-              </ScrollReveal>
+                    </div>
+
+                    <div className="pt-4">
+                      <Button
+                        className="w-full bg-secondary hover:bg-secondary/90 text-black border-0"
+                        asChild
+                      >
+                        <Link href="/machinery">
+                          <span className="flex items-center justify-center gap-2">
+                            View Equipment
+                            <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+      {/* Why Choose Us */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Why Choose Flavi Dairy for Your Industry?
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                With 20+ years of experience and 100+ projects commissioned, we
-                deliver excellence across all industries
-              </p>
-            </div>
-          </ScrollReveal>
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Why Choose Us for Your Industry?
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Industry-specific expertise and customized solutions for optimal
+              results
+            </p>
+          </MotionDiv>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <ScrollReveal delay={0.1}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Factory,
+                title: "Industry Expertise",
+                description:
+                  "Deep understanding of industry-specific requirements and regulations",
+              },
+              {
+                icon: Target,
+                title: "Customized Solutions",
+                description:
+                  "Tailored equipment and processes for your specific needs",
+              },
+              {
+                icon: Award,
+                title: "Quality Assurance",
+                description:
+                  "Compliance with industry standards and quality certifications",
+              },
+              {
+                icon: Clock,
+                title: "Timely Delivery",
+                description:
+                  "On-time project completion with minimal disruption",
+              },
+              {
+                icon: Users,
+                title: "Expert Support",
+                description:
+                  "Dedicated technical support and maintenance services",
+              },
+              {
+                icon: Zap,
+                title: "Innovation",
+                description: "Latest technology and continuous improvement",
+              },
+            ].map((item, index) => (
               <MotionDiv
-                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Settings className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  Turnkey Solutions
-                </h3>
-                <p className="text-foreground-secondary">
-                  Complete project execution from concept to commissioning with
-                  minimal client involvement
-                </p>
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <item.icon className="w-6 h-6 text-secondary" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-black mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-black/70 text-sm">{item.description}</p>
+                  </CardContent>
+                </Card>
               </MotionDiv>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <MotionDiv
-                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  Automation & Efficiency
-                </h3>
-                <p className="text-foreground-secondary">
-                  Advanced automation systems with SCADA integration for optimal
-                  performance and traceability
-                </p>
-              </MotionDiv>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <MotionDiv
-                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  Quality & Compliance
-                </h3>
-                <p className="text-foreground-secondary">
-                  Food-safe systems compliant with international standards like
-                  FSSAI, ISO, HACCP
-                </p>
-              </MotionDiv>
-            </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-multi">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Ready to Transform Your Processing Operations?
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+              Ready to Transform Your Industry?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Let our experts help you design and implement the perfect
-              processing solution for your industry
+            <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
+              Get industry-specific solutions and expert guidance for your
+              processing needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-primary hover:bg-gray-100"
+                className="bg-secondary hover:bg-secondary/90 text-black border-0"
+                asChild
               >
-                <Link href="/contact" className="flex items-center">
-                  Get a Quote
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                <Link href="/contact">
+                  <span className="flex items-center gap-2">
+                    Get Industry Solutions
+                    <ArrowRight className="w-5 h-5" />
+                  </span>
                 </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary"
+                className="border-black/20 text-black hover:bg-black hover:text-white"
+                asChild
               >
-                <Link href="/contact">Talk to an Expert</Link>
+                <Link href="/machinery">View Equipment</Link>
               </Button>
             </div>
-          </ScrollReveal>
+          </MotionDiv>
         </div>
       </section>
 

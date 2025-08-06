@@ -3,475 +3,372 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import {
-  Target,
-  Eye,
-  Heart,
-  Shield,
+  Factory,
   Users,
-  TrendingUp,
-  ArrowRight,
-  CheckCircle,
+  Target,
   Award,
   Clock,
   MapPin,
   Phone,
   Mail,
-  Building,
+  ArrowRight,
+  CheckCircle,
+  TrendingUp,
+  Shield,
+  Zap,
+  Heart,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
-  const coreValues = [
+  const stats = [
+    { icon: Clock, label: "Years of Experience", value: "20+" },
+    { icon: Users, label: "Happy Clients", value: "500+" },
+    { icon: Target, label: "Projects Completed", value: "1000+" },
+    { icon: Award, label: "Industry Awards", value: "15+" },
+  ];
+
+  const values = [
     {
       icon: Shield,
-      title: "Integrity First",
+      title: "Quality Excellence",
       description:
-        "We do what we say—honestly, ethically, and transparently—no shortcuts, no compromises.",
-      color: "primary",
+        "We maintain the highest standards of quality in all our products and services, ensuring customer satisfaction and safety.",
     },
     {
-      icon: Award,
-      title: "Commitment to Quality",
+      icon: Zap,
+      title: "Innovation",
       description:
-        "From design to delivery, we maintain the highest standards to ensure reliable, food-safe systems every time.",
-      color: "secondary",
-    },
-    {
-      icon: Users,
-      title: "Client-Centric Thinking",
-      description:
-        "We treat every project like a partnership, listening closely and acting in our clients' best interest—always.",
-      color: "accent",
-    },
-    {
-      icon: TrendingUp,
-      title: "Accountability at Every Step",
-      description:
-        "We take ownership of outcomes, ensuring clarity, timely delivery, and performance you can count on.",
-      color: "tertiary",
+        "Continuously innovating and adopting latest technologies to provide cutting-edge solutions for our clients.",
     },
     {
       icon: Heart,
-      title: "Long-Term Reliability",
+      title: "Customer Focus",
       description:
-        "We don't just build systems—we build relationships, offering continued support well beyond commissioning.",
-      color: "primary",
+        "Our customers are at the heart of everything we do, providing personalized solutions and exceptional support.",
     },
     {
-      icon: Target,
-      title: "Continuous Improvement",
+      icon: TrendingUp,
+      title: "Sustainability",
       description:
-        "We constantly evolve—adapting technologies, processes, and ideas to stay ahead of your expectations.",
-      color: "secondary",
+        "Committed to sustainable practices and environmentally friendly solutions in all our operations.",
     },
   ];
 
-  const services = [
+  const team = [
     {
-      domain: "Consultation & Turnkey Execution",
-      coreFocus: "Strategy, design, project management, commissioning",
-      keyValue: "End-to-end delivery with minimal client involvement",
+      name: "Rajesh Patel",
+      role: "Founder & CEO",
+      experience: "25+ years",
+      expertise: "Dairy Processing, Business Strategy",
+      image: "/images/team/ceo.jpg",
     },
     {
-      domain: "Machinery Supply & Automation",
-      coreFocus: "Equipment supply, operational automation, SCADA/PLC",
-      keyValue: "High performance, compliance, efficiency, traceability",
+      name: "Priya Sharma",
+      role: "Technical Director",
+      experience: "18+ years",
+      expertise: "Process Engineering, Automation",
+      image: "/images/team/technical-director.jpg",
+    },
+    {
+      name: "Amit Kumar",
+      role: "Operations Manager",
+      experience: "15+ years",
+      expertise: "Project Management, Quality Control",
+      image: "/images/team/operations-manager.jpg",
+    },
+    {
+      name: "Sneha Reddy",
+      role: "Head of Sales",
+      experience: "12+ years",
+      expertise: "Client Relations, Market Development",
+      image: "/images/team/sales-head.jpg",
     },
   ];
-
-  const getColorClasses = (color: string) => {
-    switch (color) {
-      case "primary":
-        return "text-primary border-primary bg-primary/5";
-      case "secondary":
-        return "text-secondary border-secondary bg-secondary/5";
-      case "accent":
-        return "text-accent border-accent bg-accent/5";
-      case "tertiary":
-        return "text-tertiary border-tertiary bg-tertiary/5";
-      default:
-        return "text-primary border-primary bg-primary/5";
-    }
-  };
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-background via-background-secondary to-background-tertiary">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-white via-secondary/5 to-white">
         <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-              About Flavi Dairy Food Solutions
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
+              About Us
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+              Leading Dairy & Food
+              <span className="text-secondary"> Processing Solutions</span>
             </h1>
-            <p className="text-xl md:text-2xl text-foreground-secondary mb-8 max-w-3xl mx-auto">
-              With over 20 years of proven experience, we are a trusted partner
-              in engineering and automation for the dairy and food production
-              sector
+            <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
+              With over 20 years of experience, we are the trusted partner for
+              dairy and food processing equipment, automation solutions, and
+              consultancy services across India.
             </p>
-          </ScrollReveal>
+          </MotionDiv>
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section className="py-16 bg-white">
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <ScrollReveal>
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                  Our Story
-                </h2>
-                <p className="text-lg text-foreground-secondary mb-6 leading-relaxed">
-                  With over 20 years of proven experience, we have helped build
-                  a strong reputation as a trusted partner in the field of
-                  engineering and automation for the dairy and food production
-                  sector. Our commitment to quality, integrity, and innovation
-                  has positioned us as a reliable solutions provider for
-                  businesses seeking sustainable growth and operational
-                  excellence.
-                </p>
-                <p className="text-lg text-foreground-secondary mb-6 leading-relaxed">
-                  We work closely with clients not just to design strong systems
-                  but also to take them through strategic consultation and new
-                  product development, ensuring their offerings meet evolving
-                  market demands and regulatory standards.
-                </p>
-                <div className="grid grid-cols-2 gap-6 mt-8">
-                  <div className="text-center p-4 rounded-lg bg-gradient-to-br from-primary/5 to-primary/10">
-                    <div className="text-3xl font-bold text-primary mb-2">
-                      20+
-                    </div>
-                    <div className="text-sm text-foreground-secondary">
-                      Years of Experience
-                    </div>
-                  </div>
-                  <div className="text-center p-4 rounded-lg bg-gradient-to-br from-secondary/5 to-secondary/10">
-                    <div className="text-3xl font-bold text-secondary mb-2">
-                      100+
-                    </div>
-                    <div className="text-sm text-foreground-secondary">
-                      Projects Commissioned
-                    </div>
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-secondary" />
                 </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="grid gap-6">
-                {services.map((service, index) => (
-                  <MotionDiv
-                    key={index}
-                    className="p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg hover-lift"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      {service.domain}
-                    </h3>
-                    <div className="space-y-2">
-                      <div>
-                        <span className="font-medium text-foreground">
-                          Core Focus:
-                        </span>
-                        <span className="text-foreground-secondary ml-2">
-                          {service.coreFocus}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="font-medium text-foreground">
-                          Key Value:
-                        </span>
-                        <span className="text-foreground-secondary ml-2">
-                          {service.keyValue}
-                        </span>
-                      </div>
-                    </div>
-                  </MotionDiv>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <ScrollReveal>
-              <Card className="shadow-lg hover-lift">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Target className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-foreground">
-                    Our Mission
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-foreground-secondary leading-relaxed">
-                    To deliver innovative and reliable engineering solutions for
-                    the dairy and food processing industry. We empower clients
-                    through expert consultation, automation, and turnkey
-                    execution. Our goal is to drive efficiency, compliance, and
-                    long-term success. Empowering rural development through
-                    Value addition of Agro-Food Resources in Sustainable ways.
-                  </p>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <Card className="shadow-lg hover-lift">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Eye className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-foreground">
-                    Our Vision
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-foreground-secondary leading-relaxed">
-                    We aim to set new benchmarks in quality, efficiency, and
-                    sustainability. Our vision is to be the first choice
-                    globally for future-ready dairy and food product
-                    entrepreneurs through innovation and engineering excellence.
-                  </p>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Our Core Values
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                The principles that guide our work and define our culture
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreValues.map((value, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <MotionDiv
-                  className="h-full"
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader className="text-center pb-4">
-                      <div
-                        className={`w-12 h-12 ${getColorClasses(
-                          value.color
-                        )} rounded-lg flex items-center justify-center mx-auto mb-4`}
-                      >
-                        <value.icon className="w-6 h-6" />
-                      </div>
-                      <CardTitle className="text-lg font-bold text-foreground">
-                        {value.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-foreground-secondary text-center leading-relaxed">
-                        {value.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </MotionDiv>
-              </ScrollReveal>
+                <h3 className="text-3xl font-bold text-black mb-2">
+                  {stat.value}
+                </h3>
+                <p className="text-black/70">{stat.label}</p>
+              </MotionDiv>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Why Choose Flavi Dairy?
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                Our commitment to excellence and innovation sets us apart
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <ScrollReveal delay={0.1}>
-              <MotionDiv
-                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Proven Track Record
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  20+ years of experience with 100+ successful projects across
-                  various industries
-                </p>
-              </MotionDiv>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <MotionDiv
-                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Quality Assurance
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  Commitment to highest standards ensuring reliable, food-safe
-                  systems every time
-                </p>
-              </MotionDiv>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <MotionDiv
-                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Client Partnership
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  We treat every project as a partnership, acting in our
-                  clients' best interest always
-                </p>
-              </MotionDiv>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Information */}
+      {/* Story Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Get in Touch
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <MotionDiv
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+                Our Story
               </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                Ready to discuss your project? Contact our team of experts
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <ScrollReveal delay={0.1}>
-              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Call Us
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  +91 7202033384
+              <div className="space-y-4 text-black/70">
+                <p>
+                  Founded in 2004, Flavi Dairy Food Solutions began with a
+                  simple mission: to provide reliable and efficient processing
+                  equipment for the dairy and food industry in India.
+                </p>
+                <p>
+                  What started as a small team of engineers has grown into a
+                  comprehensive solutions provider, serving clients across the
+                  country with cutting-edge technology and exceptional service.
+                </p>
+                <p>
+                  Today, we are proud to be one of the leading suppliers of
+                  dairy and food processing equipment, with a strong focus on
+                  quality, innovation, and customer satisfaction.
                 </p>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg">
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Email Us
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  contact@flavidairysolution.com
-                </p>
+              <div className="mt-8">
+                <Button
+                  className="bg-secondary hover:bg-secondary/90 text-black border-0"
+                  asChild
+                >
+                  <Link href="/contact">
+                    <span className="flex items-center gap-2">
+                      Get in Touch
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </Button>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-6 h-6 text-accent" />
+            </MotionDiv>
+            <MotionDiv
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
+                <div className="w-32 h-32 bg-secondary/10 rounded-full flex items-center justify-center">
+                  <Factory className="w-16 h-16 text-secondary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Visit Us
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  403, 4th Floor, Samruddhi Complex, Ahmedabad-380014
-                </p>
               </div>
-            </ScrollReveal>
+            </MotionDiv>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-multi">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Ready to Start Your Project?
+      {/* Values Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Our Values
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Let our experienced team help you transform your dairy and food
-              processing operations
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              The principles that guide our business and relationships with
+              clients
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-primary hover:bg-gray-100"
+          </MotionDiv>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {values.map((value, index) => (
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Link href="/contact" className="flex items-center">
-                  Get a Quote
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary"
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <value.icon className="w-6 h-6 text-secondary" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-black mb-2">
+                          {value.title}
+                        </h3>
+                        <p className="text-black/70">{value.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Our Leadership Team
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Experienced professionals dedicated to delivering excellence in
+              every project
+            </p>
+          </MotionDiv>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Link href="/contact">Talk to an Expert</Link>
-              </Button>
-            </div>
-          </ScrollReveal>
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <div className="aspect-square bg-gray-100 rounded-t-lg flex items-center justify-center">
+                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center">
+                      <Users className="w-10 h-10 text-secondary" />
+                    </div>
+                  </div>
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-lg font-semibold text-black">
+                      {member.name}
+                    </CardTitle>
+                    <Badge className="bg-secondary/10 text-black border-secondary/20">
+                      {member.role}
+                    </Badge>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-2">
+                    <p className="text-sm text-black/70">
+                      <span className="font-medium">Experience:</span>{" "}
+                      {member.experience}
+                    </p>
+                    <p className="text-sm text-black/70">
+                      <span className="font-medium">Expertise:</span>{" "}
+                      {member.expertise}
+                    </p>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <MotionDiv
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+                Get in Touch
+              </h2>
+              <p className="text-lg text-black/70 mb-8">
+                Ready to discuss your processing needs? Contact our team for
+                expert guidance and customized solutions.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-secondary" />
+                  <span className="text-black">+91 7202033384</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-secondary" />
+                  <span className="text-black">
+                    contact@flavidairysolution.com
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-secondary mt-1" />
+                  <span className="text-black">
+                    403, 4th Floor, Samruddhi Complex, Ahmedabad-380014,
+                    Gujarat, India
+                  </span>
+                </div>
+              </div>
+            </MotionDiv>
+            <MotionDiv
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <Card className="h-full border border-gray-200">
+                <CardHeader>
+                  <CardTitle className="text-black">Why Choose Us?</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {[
+                    "20+ years of industry experience",
+                    "Complete turnkey solutions",
+                    "Quality certified equipment",
+                    "24/7 technical support",
+                    "Customized solutions",
+                    "Competitive pricing",
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-black/70">{item}</span>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </MotionDiv>
+          </div>
         </div>
       </section>
 
