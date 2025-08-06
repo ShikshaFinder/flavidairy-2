@@ -1,5 +1,7 @@
 "use client";
 
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/sections/Footer";
 import { MotionDiv } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -84,6 +86,7 @@ export default function InternshipPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-white via-secondary/5 to-white">
         <div className="container mx-auto px-4">
@@ -328,6 +331,7 @@ export default function InternshipPage() {
           </MotionDiv>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

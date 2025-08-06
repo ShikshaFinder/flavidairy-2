@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import Height from "@/components/height";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -35,240 +36,67 @@ import {
   Camera,
 } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface EquipmentItem {
+  name: string;
+  images: string[];
+  description: string;
+  category: string;
+}
 
 export default function MachineryPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [equipmentData, setEquipmentData] = useState<EquipmentItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const equipmentData = [
-    {
-      id: 1,
-      name: "Milk Pasteurizer HTST",
-      category: "dairy",
-      image: "/images/equipment/pasteurizer.jpg",
-      description:
-        "High-Temperature Short-Time pasteurizer for milk processing with automatic temperature control and CIP cleaning system.",
-      specifications: {
-        capacity: "1000-5000 LPH",
-        temperature: "72°C for 15 seconds",
-        material: "Stainless Steel 316L",
-        power: "15-25 kW",
-      },
-      features: [
-        "Automatic temperature control",
-        "CIP cleaning system",
-        "Energy efficient",
-        "FSSAI compliant",
-        "Easy maintenance",
-      ],
-      price: "₹8,50,000 - ₹25,00,000",
-    },
-    {
-      id: 2,
-      name: "Cream Separator",
-      category: "dairy",
-      image: "/images/equipment/separator.jpg",
-      description:
-        "High-speed cream separator for separating cream from milk with adjustable fat content control.",
-      specifications: {
-        capacity: "500-2000 LPH",
-        speed: "6000-8000 RPM",
-        material: "Stainless Steel 316L",
-        power: "5-10 kW",
-      },
-      features: [
-        "Adjustable fat content",
-        "Self-cleaning system",
-        "Low noise operation",
-        "High efficiency",
-        "Compact design",
-      ],
-      price: "₹3,50,000 - ₹12,00,000",
-    },
-    {
-      id: 3,
-      name: "Cheese Vat",
-      category: "dairy",
-      image: "/images/equipment/cheese-vat.jpg",
-      description:
-        "Double-jacketed cheese vat with temperature control and agitation system for cheese production.",
-      specifications: {
-        capacity: "500-2000 L",
-        temperature: "30-90°C",
-        material: "Stainless Steel 316L",
-        power: "8-15 kW",
-      },
-      features: [
-        "Double-jacketed design",
-        "Temperature control",
-        "Agitation system",
-        "CIP cleaning",
-        "Digital controls",
-      ],
-      price: "₹4,50,000 - ₹18,00,000",
-    },
-    {
-      id: 4,
-      name: "Yogurt Production Line",
-      category: "dairy",
-      image: "/images/equipment/yogurt-line.jpg",
-      description:
-        "Complete yogurt production line including fermentation tanks, filling machines, and packaging equipment.",
-      specifications: {
-        capacity: "1000-5000 L/day",
-        fermentation: "6-8 hours",
-        material: "Stainless Steel 316L",
-        power: "20-40 kW",
-      },
-      features: [
-        "Automated filling",
-        "Temperature monitoring",
-        "Hygienic design",
-        "Easy cleaning",
-        "High production rate",
-      ],
-      price: "₹25,00,000 - ₹75,00,000",
-    },
-    {
-      id: 5,
-      name: "Tomato Processing Line",
-      category: "food",
-      image: "/images/equipment/tomato-line.jpg",
-      description:
-        "Complete tomato processing line for ketchup, puree, and sauce production with sorting and washing.",
-      specifications: {
-        capacity: "2-10 TPH",
-        sorting: "Automated",
-        material: "Stainless Steel 316L",
-        power: "30-60 kW",
-      },
-      features: [
-        "Automated sorting",
-        "Washing system",
-        "Crushing and pulping",
-        "Evaporation system",
-        "Packaging line",
-      ],
-      price: "₹50,00,000 - ₹2,00,00,000",
-    },
-    {
-      id: 6,
-      name: "Jam Production Unit",
-      category: "food",
-      image: "/images/equipment/jam-unit.jpg",
-      description:
-        "Complete jam production unit with cooking kettles, filling machines, and labeling system.",
-      specifications: {
-        capacity: "500-2000 kg/day",
-        cooking: "Vacuum cooking",
-        material: "Stainless Steel 316L",
-        power: "15-30 kW",
-      },
-      features: [
-        "Vacuum cooking",
-        "Automatic filling",
-        "Labeling system",
-        "Temperature control",
-        "Hygienic design",
-      ],
-      price: "₹15,00,000 - ₹45,00,000",
-    },
-    {
-      id: 7,
-      name: "Juice Extraction System",
-      category: "beverage",
-      image: "/images/equipment/juice-extractor.jpg",
-      description:
-        "High-efficiency juice extraction system for fruits and vegetables with pulp separation.",
-      specifications: {
-        capacity: "1-5 TPH",
-        extraction: "95-98%",
-        material: "Stainless Steel 316L",
-        power: "25-50 kW",
-      },
-      features: [
-        "High extraction rate",
-        "Pulp separation",
-        "Easy cleaning",
-        "Low maintenance",
-        "Energy efficient",
-      ],
-      price: "₹20,00,000 - ₹60,00,000",
-    },
-    {
-      id: 8,
-      name: "Carbonated Beverage Line",
-      category: "beverage",
-      image: "/images/equipment/carbonated-line.jpg",
-      description:
-        "Complete carbonated beverage production line with mixing, carbonation, and bottling.",
-      specifications: {
-        capacity: "2000-10000 bottles/hour",
-        carbonation: "2.5-4.0 volumes",
-        material: "Stainless Steel 316L",
-        power: "40-80 kW",
-      },
-      features: [
-        "Automated mixing",
-        "Carbonation control",
-        "Bottling system",
-        "Quality monitoring",
-        "High speed production",
-      ],
-      price: "₹75,00,000 - ₹3,00,00,000",
-    },
-    {
-      id: 9,
-      name: "SCADA Control System",
-      category: "automation",
-      image: "/images/equipment/scada-system.jpg",
-      description:
-        "Advanced SCADA system for process monitoring and control with real-time data visualization.",
-      specifications: {
-        points: "1000-10000 I/O",
-        redundancy: "Hot standby",
-        material: "Industrial grade",
-        power: "2-5 kW",
-      },
-      features: [
-        "Real-time monitoring",
-        "Data logging",
-        "Alarm management",
-        "Remote access",
-        "Customizable HMI",
-      ],
-      price: "₹10,00,000 - ₹50,00,000",
-    },
-    {
-      id: 10,
-      name: "PLC Control Panel",
-      category: "automation",
-      image: "/images/equipment/plc-panel.jpg",
-      description:
-        "Programmable Logic Controller panel for automated process control and monitoring.",
-      specifications: {
-        iopoints: "32-512 I/O",
-        processor: "32-bit",
-        material: "IP65 enclosure",
-        power: "1-3 kW",
-      },
-      features: [
-        "Modular design",
-        "Ethernet communication",
-        "Fault diagnostics",
-        "Easy programming",
-        "Reliable operation",
-      ],
-      price: "₹2,50,000 - ₹15,00,000",
-    },
-  ];
+  useEffect(() => {
+    const fetchEquipmentData = async () => {
+      try {
+        const response = await fetch("/output.json");
+        const data = await response.json();
+        setEquipmentData(data);
+      } catch (error) {
+        console.error("Error fetching equipment data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEquipmentData();
+  }, []);
 
   const categories = [
-    { id: "all", name: "All Equipment", icon: Factory },
-    { id: "dairy", name: "Dairy Processing", icon: Droplets },
-    { id: "food", name: "Food Processing", icon: Package },
-    { id: "beverage", name: "Beverage Manufacturing", icon: Filter },
-    { id: "automation", name: "Automation & Control", icon: Cpu },
+    {
+      id: "all",
+      name: "All Equipment",
+      icon: Factory,
+      description: "Complete range of processing equipment",
+    },
+    {
+      id: "MILK PROCESSING EQUIPMENTS",
+      name: "Milk Processing",
+      icon: Droplets,
+      description: "Milk, cheese, yogurt, butter processing",
+    },
+    {
+      id: "FOOD PROCESSING EQUIPMENTS",
+      name: "Food Processing",
+      icon: Package,
+      description: "Fruits, vegetables, grains, snacks",
+    },
+    {
+      id: "BEVERAGE PROCESSING EQUIPMENTS",
+      name: "Beverage Manufacturing",
+      icon: Filter,
+      description: "Juices, carbonated drinks, energy drinks",
+    },
+    {
+      id: "AUTOMATION EQUIPMENTS",
+      name: "Automation & Control",
+      icon: Cpu,
+      description: "SCADA, PLC, monitoring systems",
+    },
   ];
 
   const filteredEquipment =
@@ -276,12 +104,27 @@ export default function MachineryPage() {
       ? equipmentData
       : equipmentData.filter((item) => item.category === selectedCategory);
 
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-white">
+        <Navbar />
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-secondary mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading equipment data...</p>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-gradient-to-br from-white via-secondary/5 to-white">
+        <Height />
         <div className="container mx-auto px-4 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -328,22 +171,27 @@ export default function MachineryPage() {
       {/* Category Filter */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
             {categories.map((category) => (
               <Button
                 key={category.id}
                 variant={
                   selectedCategory === category.id ? "default" : "outline"
                 }
-                className={`${
+                className={`h-auto p-4 flex flex-col items-center gap-2 ${
                   selectedCategory === category.id
                     ? "bg-secondary text-black border-0"
                     : "border-gray-300 text-black hover:bg-gray-100"
                 }`}
                 onClick={() => setSelectedCategory(category.id)}
               >
-                <category.icon className="w-4 h-4 mr-2" />
-                {category.name}
+                <category.icon className="w-6 h-6" />
+                <div className="text-center">
+                  <div className="font-semibold">{category.name}</div>
+                  <div className="text-xs opacity-70">
+                    {category.description}
+                  </div>
+                </div>
               </Button>
             ))}
           </div>
@@ -371,15 +219,30 @@ export default function MachineryPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredEquipment.map((equipment, index) => (
               <MotionDiv
-                key={equipment.id}
+                key={index}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
-                  <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center">
-                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                      <Factory className="w-8 h-8 text-secondary" />
+                  <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center overflow-hidden">
+                    {equipment.images && equipment.images.length > 0 ? (
+                      <img
+                        src={equipment.images[0]}
+                        alt={equipment.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to icon if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = "none";
+                          target.nextElementSibling?.classList.remove("hidden");
+                        }}
+                      />
+                    ) : null}
+                    <div className="w-full h-full bg-gradient-to-br from-secondary/10 to-secondary/5 flex items-center justify-center">
+                      <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center">
+                        <Factory className="w-10 h-10 text-secondary" />
+                      </div>
                     </div>
                   </div>
                   <CardHeader>
@@ -389,11 +252,7 @@ export default function MachineryPage() {
                           {equipment.name}
                         </CardTitle>
                         <Badge className="mt-2 bg-secondary/10 text-black border-secondary/20">
-                          {
-                            categories.find(
-                              (cat) => cat.id === equipment.category
-                            )?.name
-                          }
+                          {equipment.category}
                         </Badge>
                       </div>
                     </div>
@@ -403,47 +262,8 @@ export default function MachineryPage() {
                       {equipment.description}
                     </p>
 
-                    <div>
-                      <h4 className="font-semibold text-black mb-2">
-                        Specifications
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
-                        {Object.entries(equipment.specifications).map(
-                          ([key, value]) => (
-                            <div key={key} className="flex justify-between">
-                              <span className="text-black/60 capitalize">
-                                {key}:
-                              </span>
-                              <span className="text-black font-medium">
-                                {value}
-                              </span>
-                            </div>
-                          )
-                        )}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-black mb-2">
-                        Key Features
-                      </h4>
-                      <div className="space-y-1">
-                        {equipment.features.slice(0, 3).map((feature, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
-                            <span className="text-xs text-black/70">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
                     <div className="pt-4 border-t border-gray-200">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-black">
-                          {equipment.price}
-                        </span>
                         <Button
                           size="sm"
                           className="bg-secondary hover:bg-secondary/90 text-black border-0"
