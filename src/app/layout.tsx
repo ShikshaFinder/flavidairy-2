@@ -1,50 +1,44 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Swasau Technologies - Custom Embedded Solutions & IoT Development",
+  title: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
   description:
-    "Leading provider of custom embedded solutions, IoT development, VLSI design, and product engineering. Specializing in microcontroller firmware, PCB design, and industrial automation.",
+    "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
   keywords: [
-    "embedded systems",
-    "IoT development",
-    "VLSI design",
-    "product engineering",
-    "microcontroller firmware",
-    "PCB design",
-    "industrial automation",
-    "custom solutions",
-    "technology innovation",
-    "make in india",
+    "dairy processing",
+    "food processing",
+    "processing equipment",
+    "automation",
+    "consultancy",
+    "turnkey projects",
+    "SCADA integration",
   ],
-  authors: [{ name: "Swasau Technologies Team" }],
-  creator: "Swasau Technologies",
-  publisher: "Swasau Technologies",
+  authors: [{ name: "Flavi Dairy Food Solutions Team" }],
+  creator: "Flavi Dairy Food Solutions",
+  publisher: "Flavi Dairy Food Solutions",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://swasau.com"),
+  metadataBase: new URL("https://flavidairysolution.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Swasau Technologies - Custom Embedded Solutions & IoT Development",
+    title: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
     description:
-      "Leading provider of custom embedded solutions, IoT development, VLSI design, and product engineering. Specializing in microcontroller firmware, PCB design, and industrial automation.",
-    url: "https://swasau.com",
-    siteName: "Swasau Technologies",
+      "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
+    url: "https://flavidairysolution.com",
+    siteName: "Flavi Dairy Food Solutions",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Swasau Technologies - Custom Embedded Solutions & IoT Development",
+        alt: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
       },
     ],
     locale: "en_US",
@@ -52,12 +46,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Swasau Technologies - Custom Embedded Solutions & IoT Development",
+    title: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
     description:
-      "Leading provider of custom embedded solutions, IoT development, VLSI design, and product engineering. Specializing in microcontroller firmware, PCB design, and industrial automation.",
+      "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
     images: ["/og-image.jpg"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -66,10 +73,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

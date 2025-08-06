@@ -9,14 +9,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-foreground text-foreground-secondary overflow-hidden">
+    <footer className="relative bg-white border-t border-gray-200 overflow-hidden">
       <div className="absolute inset-0">
         <MotionDiv
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
-              radial-gradient(circle at 10% 20%, rgba(11, 79, 130, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 90% 80%, rgba(120, 119, 198, 0.05) 0%, transparent 50%)
+              radial-gradient(circle at 10% 20%, rgba(251, 191, 36, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%)
             `,
           }}
         />
@@ -33,14 +33,14 @@ export function Footer() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
                   <Factory className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-xl font-bold text-white">
+                <span className="text-xl font-bold text-black">
                   Flavi Dairy Food Solutions
                 </span>
               </div>
-              <p className="text-foreground-secondary mb-6 max-w-md">
+              <p className="text-gray-600 mb-6 max-w-md">
                 Leading provider of dairy and food processing solutions with 20+
                 years of experience. We deliver innovative, reliable, and
                 efficient processing equipment and consultancy services.
@@ -48,7 +48,7 @@ export function Footer() {
               <div className="flex gap-4">
                 <Button
                   size="sm"
-                  className="bg-primary hover:bg-primary/90 text-white"
+                  className="bg-secondary hover:bg-secondary/90 text-black border-0"
                   asChild
                 >
                   <Link href="/contact">
@@ -61,7 +61,7 @@ export function Footer() {
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-white/20 text-white hover:bg-white hover:text-foreground"
+                  className="border-gray-300 text-black hover:bg-gray-50 hover:border-gray-400"
                   asChild
                 >
                   <Link href="/contact">Contact Us</Link>
@@ -75,14 +75,14 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <h3 className="text-lg font-semibold text-white mb-6">
+              <h3 className="text-lg font-semibold text-black mb-6">
                 Quick Links
               </h3>
               <ul className="space-y-3">
                 <li>
                   <Link
                     href="/about"
-                    className="text-foreground-secondary hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-black transition-colors"
                   >
                     About Us
                   </Link>
@@ -90,7 +90,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/services"
-                    className="text-foreground-secondary hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-black transition-colors"
                   >
                     Services
                   </Link>
@@ -98,7 +98,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/industries"
-                    className="text-foreground-secondary hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-black transition-colors"
                   >
                     Industries
                   </Link>
@@ -106,7 +106,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/machinery"
-                    className="text-foreground-secondary hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-black transition-colors"
                   >
                     Machinery
                   </Link>
@@ -114,7 +114,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/blog"
-                    className="text-foreground-secondary hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-black transition-colors"
                   >
                     Blog & Insights
                   </Link>
@@ -122,7 +122,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/career"
-                    className="text-foreground-secondary hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-black transition-colors"
                   >
                     Careers
                   </Link>
@@ -136,25 +136,25 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-lg font-semibold text-white mb-6">
+              <h3 className="text-lg font-semibold text-black mb-6">
                 Contact Info
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <span className="text-foreground-secondary">
+                  <Phone className="w-5 h-5 text-secondary" />
+                  <span className="text-gray-600">
                     +91 7202033384
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <span className="text-foreground-secondary">
+                  <Mail className="w-5 h-5 text-secondary" />
+                  <span className="text-gray-600">
                     contact@flavidairysolution.com
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary mt-1" />
-                  <span className="text-foreground-secondary">
+                  <MapPin className="w-5 h-5 text-secondary mt-1" />
+                  <span className="text-gray-600">
                     403, 4th Floor, Samruddhi Complex, Ahmedabad-380014,
                     Gujarat, India
                   </span>
@@ -166,25 +166,25 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <MotionDiv
-          className="border-t border-white/10 py-6"
+          className="border-t border-gray-200 py-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-foreground-secondary text-sm">
+            <p className="text-gray-600 text-sm">
               © {currentYear} Flavi Dairy Food Solutions. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-foreground-secondary hover:text-white transition-colors"
+                className="text-gray-600 hover:text-black transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-foreground-secondary hover:text-white transition-colors"
+                className="text-gray-600 hover:text-black transition-colors"
               >
                 Terms of Service
               </Link>

@@ -1,206 +1,333 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/sections/Footer";
+"use client";
+
+import { MotionDiv } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Code,
+  Cpu,
+  Zap,
+  Users,
+  BookOpen,
+  Briefcase,
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Clock,
+  DollarSign,
+} from "lucide-react";
 
 export default function InternshipPage() {
+  const internshipAreas = [
+    {
+      icon: Code,
+      title: "Software Development",
+      description:
+        "Work on embedded systems, IoT applications, and automation software",
+      skills: ["C/C++", "Python", "Embedded Linux", "IoT Protocols"],
+    },
+    {
+      icon: Cpu,
+      title: "Hardware Design",
+      description:
+        "Design and develop PCB layouts, circuit schematics, and hardware prototypes",
+      skills: ["PCB Design", "Circuit Design", "Prototyping", "Testing"],
+    },
+    {
+      icon: Zap,
+      title: "Automation & IoT",
+      description:
+        "Develop smart automation solutions and IoT integration systems",
+      skills: ["SCADA", "PLC Programming", "IoT Integration", "Data Analytics"],
+    },
+    {
+      icon: Users,
+      title: "Project Management",
+      description:
+        "Learn project coordination, client communication, and team collaboration",
+      skills: [
+        "Agile",
+        "Client Management",
+        "Documentation",
+        "Team Leadership",
+      ],
+    },
+  ];
+
+  const benefits = [
+    {
+      icon: BookOpen,
+      title: "Learning & Development",
+      description:
+        "Access to latest technologies and mentorship from industry experts",
+    },
+    {
+      icon: Briefcase,
+      title: "Real Project Experience",
+      description: "Work on actual client projects and build your portfolio",
+    },
+    {
+      icon: Users,
+      title: "Networking",
+      description:
+        "Connect with professionals and build industry relationships",
+    },
+    {
+      icon: DollarSign,
+      title: "Competitive Stipend",
+      description:
+        "Receive a competitive stipend based on your skills and performance",
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
-
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-background via-white to-accent/10">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Join Our Team
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Work on cutting-edge embedded systems, IoT projects, and innovative
-            technology solutions
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-            <span>• Hands-on experience with real projects</span>
-            <span>• Mentorship from industry experts</span>
-            <span>• Flexible work arrangements</span>
-            <span>• Potential for full-time opportunities</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Application Information */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-br from-white via-secondary/5 to-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="shadow-lg">
-              <CardHeader className="text-center">
-                <CardTitle className="text-3xl font-bold text-foreground">
-                  Internship Application
-                </CardTitle>
-                <CardDescription className="text-lg text-muted-foreground">
-                  Join our team and work on cutting-edge embedded systems and IoT projects
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-foreground">What We're Looking For</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Students pursuing Electronics, Computer Science, or related fields</li>
-                      <li>• Basic knowledge of C/C++, Python, or similar programming languages</li>
-                      <li>• Interest in embedded systems, IoT, or hardware development</li>
-                      <li>• Strong problem-solving and analytical skills</li>
-                      <li>• Good communication and teamwork abilities</li>
-                      <li>• Portfolio or GitHub profile showcasing projects (preferred)</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-foreground">What You'll Work On</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Microcontroller programming and firmware development</li>
-                      <li>• PCB design and hardware prototyping</li>
-                      <li>• IoT device development and cloud integration</li>
-                      <li>• Sensor integration and data processing</li>
-                      <li>• Real-time systems and embedded Linux</li>
-                      <li>• Documentation and technical writing</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-muted/50 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-4">How to Apply</h3>
-                  <p className="text-muted-foreground mb-4">
-                    To apply for our internship program, please send us your resume, portfolio, and a cover letter explaining your interest in embedded systems and IoT development.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button asChild className="flex-1">
-                      <a href="mailto:careers@swasau.com?subject=Internship Application">
-                        <Mail className="w-4 h-4 mr-2" />
-                        Email Application
-                      </a>
-                    </Button>
-                    <Button variant="outline" asChild className="flex-1">
-                      <a href="tel:+919876543210">
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call Us
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center p-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-sm text-muted-foreground">careers@swasau.com</p>
-                  </div>
-                  <div className="text-center p-4">
-                    <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Phone className="w-6 h-6 text-secondary" />
-                    </div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
-                    <p className="text-sm text-muted-foreground">+91 98765 43210</p>
-                  </div>
-                  <div className="text-center p-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <MapPin className="w-6 h-6 text-accent" />
-                    </div>
-                    <h4 className="font-semibold mb-1">Location</h4>
-                    <p className="text-sm text-muted-foreground">Bangalore, India</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              What You'll Gain
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive learning experience in embedded systems and IoT
-              development
+          <MotionDiv
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
+              Internship Program
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+              Join Our Team as an
+              <span className="text-secondary"> Intern</span>
+            </h1>
+            <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
+              Gain hands-on experience in dairy and food processing technology.
+              Work on real projects, learn from experts, and kickstart your
+              career.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔧</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">
-                Practical Experience
-              </h3>
-              <p className="text-muted-foreground">
-                Work on real-world projects with actual hardware and software
-                development
-              </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="btn-minimal text-black" asChild>
+                <a href="mailto:careers@flavidairysolution.com?subject=Internship Application">
+                  Apply Now
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-black/20 text-black hover:bg-black hover:text-white"
+                asChild
+              >
+                <a href="#details">Learn More</a>
+              </Button>
             </div>
+          </MotionDiv>
+        </div>
+      </section>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🎓</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Expert Mentorship</h3>
-              <p className="text-muted-foreground">
-                Learn from experienced engineers and industry professionals
-              </p>
-            </div>
+      {/* Internship Areas */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Areas of Internship
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Choose from various domains and work on cutting-edge technology
+              projects
+            </p>
+          </MotionDiv>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Career Growth</h3>
-              <p className="text-muted-foreground">
-                Build your portfolio and gain skills that are in high demand
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">💡</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Innovation</h3>
-              <p className="text-muted-foreground">
-                Contribute to cutting-edge technology solutions and products
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤝</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Networking</h3>
-              <p className="text-muted-foreground">
-                Connect with professionals in the embedded systems industry
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📈</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Opportunities</h3>
-              <p className="text-muted-foreground">
-                Potential for full-time positions and long-term career
-                development
-              </p>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {internshipAreas.map((area, index) => (
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <CardHeader className="text-center pb-4">
+                    <div className="mx-auto mb-4 w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
+                      <area.icon className="w-8 h-8 text-secondary" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold text-black">
+                      {area.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-black/70 mb-4">{area.description}</p>
+                    <div className="flex flex-wrap gap-1 justify-center">
+                      {area.skills.map((skill, skillIndex) => (
+                        <Badge
+                          key={skillIndex}
+                          variant="outline"
+                          className="text-xs border-gray-300 text-black"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
-    </main>
+      {/* Benefits */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Why Intern With Us?
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Discover the benefits of joining our internship program
+            </p>
+          </MotionDiv>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {benefits.map((benefit, index) => (
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-6 h-6 text-secondary" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-black mb-2">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-black/70">{benefit.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="details" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Ready to Apply?
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Get in touch with us to start your internship journey
+            </p>
+          </MotionDiv>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <MotionDiv
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Card className="h-full border border-gray-200">
+                <CardHeader>
+                  <CardTitle className="text-black">
+                    Contact Information
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-secondary" />
+                    <p className="text-sm text-black/70">
+                      careers@flavidairysolution.com
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-secondary" />
+                    <p className="text-sm text-black/70">+91 7202033384</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="w-5 h-5 text-secondary" />
+                    <p className="text-sm text-black/70">
+                      403, 4th Floor, Samruddhi Complex, Ahmedabad-380014,
+                      Gujarat, India
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+
+            <MotionDiv
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Card className="h-full border border-gray-200">
+                <CardHeader>
+                  <CardTitle className="text-black">
+                    Internship Details
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Calendar className="w-5 h-5 text-secondary" />
+                    <p className="text-sm text-black/70">
+                      Duration: 3-6 months
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-secondary" />
+                    <p className="text-sm text-black/70">
+                      Full-time (40 hours/week)
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <DollarSign className="w-5 h-5 text-secondary" />
+                    <p className="text-sm text-black/70">Competitive stipend</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Users className="w-5 h-5 text-secondary" />
+                    <p className="text-sm text-black/70">Mentorship provided</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+          </div>
+
+          <MotionDiv
+            className="text-center mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Button size="lg" className="btn-minimal text-black" asChild>
+              <a href="mailto:careers@flavidairysolution.com?subject=Internship Application">
+                Apply for Internship
+              </a>
+            </Button>
+          </MotionDiv>
+        </div>
+      </section>
+    </div>
   );
 }

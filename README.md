@@ -1,125 +1,122 @@
-# Swasau Technologies - Custom Embedded Solutions
+# Flavi Dairy Food Solutions - Dairy & Food Processing Equipment
 
-A modern Next.js frontend application showcasing custom embedded systems development, IoT solutions, and product engineering services.
+A modern, responsive website for Flavi Dairy Food Solutions, showcasing our dairy and food processing equipment, consultancy services, and turnkey project solutions.
 
-## 🚀 Features
+## Features
 
-- 🔧 **Custom Embedded Design**: Microcontroller firmware and PCB design
-- 🌐 **IoT Development**: End-to-end IoT product development
-- 🧠 **AI & ML Integration**: Intelligent solutions for automation
-- 📱 **Web Development**: Modern web applications and digital solutions
-- 🏭 **Industrial Automation**: Custom solutions for factory and process automation
-- 🎨 **Modern UI/UX**: Beautiful, responsive design with smooth animations
+- **Modern Design**: Clean, minimalist design with white, yellow, and black color scheme
+- **Responsive**: Fully responsive design that works on all devices
+- **Fast Performance**: Optimized for speed and performance
+- **SEO Optimized**: Built with SEO best practices
+- **Accessible**: WCAG compliant accessibility features
+- **Animations**: Smooth animations using Framer Motion
 
-## 🏗️ Architecture
+## Tech Stack
 
-- **Frontend**: Next.js 15 with React 19
-- **Styling**: Tailwind CSS with Framer Motion animations
-- **UI Components**: Radix UI primitives with custom styling
-- **TypeScript**: Full type safety and better development experience
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **UI Components**: Custom components with Radix UI primitives
+- **TypeScript**: Full TypeScript support
+- **Deployment**: Vercel ready
 
-## 📋 Prerequisites
+## Getting Started
 
-- Node.js 18+ and npm/yarn
+### Prerequisites
 
-## 🚀 Quick Start
+- Node.js 18+ 
+- npm or yarn
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd swasau-technologies
-   ```
+### Installation
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                    # Next.js 15 app directory
-│   ├── about/             # About page
-│   ├── blog/              # Blog pages
-│   ├── contact/           # Contact page
-│   ├── internship/        # Internship information
-│   ├── projects/          # Projects showcase
-│   └── services/          # Services page
-├── components/            # React components
-│   ├── ui/               # Reusable UI components
-│   ├── sections/         # Page sections
-│   └── animations/       # Animation components
-└── lib/                  # Utility functions
-```
-
-## 🎨 Design Features
-
-### Modern UI/UX
-- Responsive design that works on all devices
-- Smooth animations and transitions
-- Accessible components following WCAG guidelines
-- Dark/light mode support (via CSS variables)
-
-### Performance
-- Optimized images and assets
-- Code splitting and lazy loading
-- SEO-friendly with proper meta tags
-- Fast loading times
-
-### Animations
-- Framer Motion for smooth animations
-- Scroll-triggered animations
-- Hover effects and micro-interactions
-- Loading states and transitions
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Deploy automatically on push to main branch
-
-### Netlify
-1. Connect your repository to Netlify
-2. Set build command: `npm run build`
-3. Set publish directory: `out`
-
-### Static Export
+1. Clone the repository:
 ```bash
-npm run build
-npm run export
+git clone https://github.com/your-username/flavi-dairy-food-solutions.git
+cd flavi-dairy-food-solutions
 ```
 
-## 🤝 Contributing
+2. Install dependencies:
+```bash
+npm install
+```
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Run the development server:
+```bash
+npm run dev
+```
 
-## 📄 License
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Project Structure
 
-## 📞 Contact
+```
+flavi-dairy-food-solutions/
+├── src/
+│   ├── app/                 # Next.js App Router pages
+│   │   ├── about/          # About page
+│   │   ├── blog/           # Blog page
+│   │   ├── career/         # Career page
+│   │   ├── consultancy/    # Consultancy page
+│   │   ├── contact/        # Contact page
+│   │   ├── industries/     # Industries page
+│   │   ├── internship/     # Internship page
+│   │   ├── machinery/      # Machinery page
+│   │   ├── projects/       # Projects page
+│   │   └── services/       # Services page
+│   ├── components/         # Reusable components
+│   │   ├── animations/     # Animation components
+│   │   ├── sections/       # Page sections
+│   │   └── ui/            # UI components
+│   └── lib/               # Utility functions
+├── public/                # Static assets
+└── package.json          # Dependencies and scripts
+```
 
-- **Email**: info@swasau.com
-- **Phone**: +91-9876543210
-- **Website**: https://swasau.com
+## Available Scripts
 
-## 🙏 Acknowledgments
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-- Next.js team for the amazing framework
-- Vercel for hosting and deployment
-- Tailwind CSS for the utility-first styling
-- Framer Motion for smooth animations
-- Radix UI for accessible component primitives
+## Pages
+
+- **Home** - Main landing page with hero, features, testimonials
+- **About** - Company information and team
+- **Services** - Our service offerings
+- **Industries** - Industries we serve
+- **Machinery** - Equipment and machinery
+- **Projects** - Case studies and projects
+- **Blog** - Industry insights and articles
+- **Career** - Job opportunities
+- **Internship** - Internship program
+- **Contact** - Contact information and form
+
+## Styling
+
+The project uses Tailwind CSS with a custom color scheme:
+
+- **Primary**: White (#ffffff)
+- **Secondary**: Yellow (#fbbf24)
+- **Accent**: Orange (#f59e0b)
+- **Background**: White with subtle grays
+- **Text**: Black with opacity variations
+
+## Deployment
+
+The project is configured for deployment on Vercel:
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically on every push
+
+## Contact
+
+- **Email**: contact@flavidairysolution.com
+- **Phone**: +91 7202033384
+- **Website**: https://flavidairysolution.com
+
+## License
+
+This project is private and proprietary to Flavi Dairy Food Solutions.

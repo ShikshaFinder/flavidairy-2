@@ -7,15 +7,15 @@ import Link from "next/link";
 
 export function CTA() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-white">
       <div className="absolute inset-0">
         <MotionDiv
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
-              radial-gradient(circle at 20% 50%, rgba(11, 79, 130, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%)
+              radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%)
             `,
           }}
         />
@@ -28,11 +28,11 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
             Ready to Transform Your
-            <span className="gradient-text"> Processing Operations?</span>
+            <span className="text-secondary"> Processing Operations?</span>
           </h2>
-          <p className="text-xl text-foreground-secondary mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Let our experienced team help you design and implement the perfect
             processing solution for your industry. Get started today and take
             your operations to the next level.
@@ -46,7 +46,7 @@ export function CTA() {
           >
             <MotionButton
               size="lg"
-              className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden"
+              className="bg-secondary hover:bg-secondary/90 text-black px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
               asChild
             >
               <Link href="/contact">
@@ -66,7 +66,7 @@ export function CTA() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold"
+              className="border-2 border-gray-300 text-black hover:bg-gray-50 hover:border-gray-400 px-8 py-4 text-lg font-semibold"
               asChild
             >
               <Link href="/contact">Download Brochure</Link>
@@ -74,7 +74,7 @@ export function CTA() {
           </MotionDiv>
 
           <MotionDiv
-            className="mt-8 text-sm text-foreground-secondary"
+            className="mt-8 text-sm text-gray-600"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}

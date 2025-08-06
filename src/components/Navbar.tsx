@@ -38,7 +38,7 @@ export function Navbar() {
     <MotionNav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-border shadow-lg"
+          ? "bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-lg"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -53,10 +53,10 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
               <Factory className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-foreground">
+            <span className="text-xl font-bold text-black">
               Flavi Dairy Food Solutions
             </span>
           </MotionDiv>
@@ -67,7 +67,7 @@ export function Navbar() {
               <MotionA
                 key={index}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium text-sm"
+                className="text-gray-600 hover:text-black transition-colors duration-300 font-medium text-sm"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
               >
@@ -81,13 +81,13 @@ export function Navbar() {
             <Link href="/contact">
               <Button
                 variant="ghost"
-                className="text-muted-foreground hover:text-primary"
+                className="text-gray-600 hover:text-black"
               >
                 Contact Us
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="group relative overflow-hidden bg-gradient-primary hover:bg-gradient-secondary">
+              <Button className="group relative overflow-hidden bg-secondary hover:bg-secondary/90 text-black border-0">
                 <span className="relative z-10 flex items-center gap-2">
                   Get a Quote
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -104,14 +104,14 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <MotionButton
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-200"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.95 }}
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-black" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6 text-black" />
             )}
           </MotionButton>
         </div>
@@ -124,14 +124,14 @@ export function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md border-t border-border shadow-lg"
+              className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg"
             >
               <div className="py-4 space-y-4 px-4">
                 {navItems.map((item, index) => (
                   <MotionA
                     key={index}
                     href={item.href}
-                    className="block text-muted-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+                    className="block text-gray-600 hover:text-black transition-colors duration-300 font-medium py-2"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -140,17 +140,17 @@ export function Navbar() {
                     {item.name}
                   </MotionA>
                 ))}
-                <div className="pt-4 space-y-3 border-t border-border">
+                <div className="pt-4 space-y-3 border-t border-gray-200">
                   <Link href="/contact">
                     <Button
                       variant="ghost"
-                      className="w-full justify-start text-muted-foreground hover:text-primary"
+                      className="w-full justify-start text-gray-600 hover:text-black"
                     >
                       Contact Us
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button className="w-full group relative overflow-hidden bg-gradient-primary hover:bg-gradient-secondary">
+                    <Button className="w-full group relative overflow-hidden bg-secondary hover:bg-secondary/90 text-black border-0">
                       <span className="relative z-10 flex items-center gap-2">
                         Get a Quote
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
