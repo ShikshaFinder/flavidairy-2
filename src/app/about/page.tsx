@@ -1,411 +1,481 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { MotionDiv } from "@/components/ui/motion";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import {
   Target,
-  Users,
-  Award,
-  Lightbulb,
-  ArrowRight,
-  Cpu,
-  Zap,
+  Eye,
+  Heart,
   Shield,
+  Users,
+  TrendingUp,
+  ArrowRight,
+  CheckCircle,
+  Award,
+  Clock,
+  MapPin,
+  Phone,
+  Mail,
+  Building,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
-  const values = [
+  const coreValues = [
     {
-      icon: Target,
-      title: "Innovation Hub",
+      icon: Shield,
+      title: "Integrity First",
       description:
-        "Swasau Technologies is not just a service provider; we're an innovation hub. Our team of skilled professionals thrives on pushing the boundaries of what's possible, delivering solutions that stand out in today's fast-evolving digital landscape.",
-      color: "text-primary",
-      bgColor: "bg-primary/10",
-    },
-    {
-      icon: Users,
-      title: "Collaborative Approach",
-      description:
-        "We don't just work for our clients; we work with them. Our collaborative approach ensures that we understand your unique needs, allowing us to tailor solutions that align perfectly with your goals.",
-      color: "text-secondary",
-      bgColor: "bg-secondary/10",
+        "We do what we say—honestly, ethically, and transparently—no shortcuts, no compromises.",
+      color: "primary",
     },
     {
       icon: Award,
-      title: "Technology Expertise",
+      title: "Commitment to Quality",
       description:
-        "From web and mobile development to IoT, AI, and beyond, we boast a diverse range of technological expertise. Our team stays ahead of the curve, adopting the latest tools and frameworks to deliver solutions that are not just current but future-ready.",
-      color: "text-primary",
-      bgColor: "bg-primary/10",
+        "From design to delivery, we maintain the highest standards to ensure reliable, food-safe systems every time.",
+      color: "secondary",
     },
     {
-      icon: Lightbulb,
-      title: "Passion for Innovation",
+      icon: Users,
+      title: "Client-Centric Thinking",
       description:
-        "Our values are anchored in a passion for innovation, integrity in all our endeavors, a commitment to excellence, and a customer-centric approach. We believe in fostering a collaborative and inclusive work environment that encourages creativity, continuous learning, and sustainable practices.",
-      color: "text-secondary",
-      bgColor: "bg-secondary/10",
+        "We treat every project like a partnership, listening closely and acting in our clients' best interest—always.",
+      color: "accent",
+    },
+    {
+      icon: TrendingUp,
+      title: "Accountability at Every Step",
+      description:
+        "We take ownership of outcomes, ensuring clarity, timely delivery, and performance you can count on.",
+      color: "tertiary",
+    },
+    {
+      icon: Heart,
+      title: "Long-Term Reliability",
+      description:
+        "We don't just build systems—we build relationships, offering continued support well beyond commissioning.",
+      color: "primary",
+    },
+    {
+      icon: Target,
+      title: "Continuous Improvement",
+      description:
+        "We constantly evolve—adapting technologies, processes, and ideas to stay ahead of your expectations.",
+      color: "secondary",
     },
   ];
 
-  const team = [
+  const services = [
     {
-      name: "Kiran Shah",
-      role: "CEO & Co-Founder",
-      description:
-        "Completed Diploma Commercial Practice from Government Girls Polytechnic, Ahmedabad in 1990 and B.Com from Gujarat University in 1992. Brings a unique blend of creativity, strategic thinking, and deep understanding of market dynamics.",
-      expertise: [
-        "Strategic Planning",
-        "Business Development",
-        "Market Analysis",
-      ],
-      avatar: "KS",
+      domain: "Consultation & Turnkey Execution",
+      coreFocus: "Strategy, design, project management, commissioning",
+      keyValue: "End-to-end delivery with minimal client involvement",
     },
     {
-      name: "Dr. Mihir Shah",
-      role: "CTO & Founder",
-      description:
-        "An accomplished academician with BE (Electronics), ME (Electronics and Communication with VLSI specialization), and Ph.D. (Electrical Engineering). Over 26 years of teaching experience and 3.5 years in R&D.",
-      expertise: ["VLSI Design", "Electronics", "R&D", "Academic Leadership"],
-      avatar: "MS",
-    },
-    {
-      name: "Neel Raval",
-      role: "Intern",
-      description:
-        "Dedicated intern contributing to our innovative projects and learning from our experienced team.",
-      expertise: ["Embedded Systems", "Learning"],
-      avatar: "NR",
-    },
-
-    {
-      name: "Manav Shah",
-      role: "Intern",
-      description:
-        "Passionate intern working on embedded systems and IoT projects.",
-      expertise: ["IoT", "Embedded Systems"],
-      avatar: "MS",
-    },
-    {
-      name: "Niraj Patel",
-      role: "Electronic Hardware Engineer",
-      description:
-        "Specialized in electronic hardware design and PCB development for our innovative solutions.",
-      expertise: ["Hardware Design", "PCB Design", "Electronics"],
-      avatar: "NP",
-    },
-    {
-      name: "Ayan Vaidya",
-      role: "Senior Embedded Firmware Engineer",
-      description:
-        "Experienced in embedded systems development and firmware engineering for our cutting-edge projects.",
-      expertise: ["Embedded Systems", "Firmware Engineering", "C/C++"],
-      avatar: "AV",
-    },
-    {
-      name: "Harsh Balsaraf",
-      role: "Design Engineer",
-      description:
-        "Focused on product design and engineering solutions for our innovative projects.",
-      expertise: ["Product Design", "Engineering", "CAD"],
-      avatar: "HB",
-    },
-    {
-      name: "Darsh Patel",
-      role: "Embedded Engineer",
-      description:
-        "Specialized in embedded systems development and microcontroller programming.",
-      expertise: ["Embedded Systems", "Microcontrollers", "Programming"],
-      avatar: "DP",
-    },
-    {
-      name: "Chirag Patel",
-      role: "Intern",
-      description:
-        "Passionate intern learning and contributing to our engineering projects.",
-      expertise: ["Learning", "Engineering"],
-      avatar: "CP",
+      domain: "Machinery Supply & Automation",
+      coreFocus: "Equipment supply, operational automation, SCADA/PLC",
+      keyValue: "High performance, compliance, efficiency, traceability",
     },
   ];
 
-  const stats = [
-    { number: "50+", label: "Projects Completed" },
-    { number: "6", label: "Industries Served" },
-    { number: "100%", label: "Client Satisfaction" },
-    { number: "24/7", label: "Support Available" },
-  ];
+  const getColorClasses = (color: string) => {
+    switch (color) {
+      case "primary":
+        return "text-primary border-primary bg-primary/5";
+      case "secondary":
+        return "text-secondary border-secondary bg-secondary/5";
+      case "accent":
+        return "text-accent border-accent bg-accent/5";
+      case "tertiary":
+        return "text-tertiary border-tertiary bg-tertiary/5";
+      default:
+        return "text-primary border-primary bg-primary/5";
+    }
+  };
 
   return (
-    <main className="min-h-screen bg-white pt-20">
+    <main className="min-h-screen bg-background">
+      <Navbar />
+
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-background via-background-secondary to-background-tertiary">
+        <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="mb-4"
-              >
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
-                  About Us
-                </span>
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl md:text-6xl font-bold mb-6 text-foreground"
-              >
-                Creating Dream Solutions
-                <span className="gradient-text"> Since Day One</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto"
-              >
-                We are passionate about turning innovative ideas into reality
-                through custom embedded solutions, IoT development, and
-                cutting-edge technology.
-              </motion.p>
-            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+              About Flavi Dairy Food Solutions
+            </h1>
+            <p className="text-xl md:text-2xl text-foreground-secondary mb-8 max-w-3xl mx-auto">
+              With over 20 years of proven experience, we are a trusted partner
+              in engineering and automation for the dairy and food production
+              sector
+            </p>
           </ScrollReveal>
+        </div>
+      </section>
 
-          {/* Mission & Vision */}
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
+      {/* Company Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <Card className="border border-border">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Target className="w-6 h-6 text-primary" />
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                  Our Story
+                </h2>
+                <p className="text-lg text-foreground-secondary mb-6 leading-relaxed">
+                  With over 20 years of proven experience, we have helped build
+                  a strong reputation as a trusted partner in the field of
+                  engineering and automation for the dairy and food production
+                  sector. Our commitment to quality, integrity, and innovation
+                  has positioned us as a reliable solutions provider for
+                  businesses seeking sustainable growth and operational
+                  excellence.
+                </p>
+                <p className="text-lg text-foreground-secondary mb-6 leading-relaxed">
+                  We work closely with clients not just to design strong systems
+                  but also to take them through strategic consultation and new
+                  product development, ensuring their offerings meet evolving
+                  market demands and regulatory standards.
+                </p>
+                <div className="grid grid-cols-2 gap-6 mt-8">
+                  <div className="text-center p-4 rounded-lg bg-gradient-to-br from-primary/5 to-primary/10">
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      20+
+                    </div>
+                    <div className="text-sm text-foreground-secondary">
+                      Years of Experience
+                    </div>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-gradient-to-br from-secondary/5 to-secondary/10">
+                    <div className="text-3xl font-bold text-secondary mb-2">
+                      100+
+                    </div>
+                    <div className="text-sm text-foreground-secondary">
+                      Projects Commissioned
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="grid gap-6">
+                {services.map((service, index) => (
+                  <MotionDiv
+                    key={index}
+                    className="p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg hover-lift"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <h3 className="text-xl font-semibold mb-3 text-foreground">
+                      {service.domain}
+                    </h3>
+                    <div className="space-y-2">
+                      <div>
+                        <span className="font-medium text-foreground">
+                          Core Focus:
+                        </span>
+                        <span className="text-foreground-secondary ml-2">
+                          {service.coreFocus}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="font-medium text-foreground">
+                          Key Value:
+                        </span>
+                        <span className="text-foreground-secondary ml-2">
+                          {service.keyValue}
+                        </span>
+                      </div>
+                    </div>
+                  </MotionDiv>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <ScrollReveal>
+              <Card className="shadow-lg hover-lift">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-2xl font-bold text-foreground">
                     Our Mission
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
-                    At Swasau Technology, our mission is to become a global
-                    leader in electronic Research and Development (R&D),
-                    dedicated to providing dream and innovative technological
-                    solutions. We are committed to pushing the boundaries of
-                    electronic design to create transformative solutions for
-                    diverse industries.
+                  <p className="text-foreground-secondary leading-relaxed">
+                    To deliver innovative and reliable engineering solutions for
+                    the dairy and food processing industry. We empower clients
+                    through expert consultation, automation, and turnkey
+                    execution. Our goal is to drive efficiency, compliance, and
+                    long-term success. Empowering rural development through
+                    Value addition of Agro-Food Resources in Sustainable ways.
                   </p>
                 </CardContent>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <Card className="border border-border">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Lightbulb className="w-6 h-6 text-secondary" />
+              <Card className="shadow-lg hover-lift">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Eye className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-2xl font-bold text-foreground">
                     Our Vision
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Our vision at Swasau Technology is to accelerate the Make in
-                    India initiative by offering cutting-edge electronic design
-                    solutions to both domestic and global industries. We aspire
-                    to be at the forefront of technological advancements,
-                    contributing to the growth and competitiveness of the
-                    electronics sector.
+                  <p className="text-foreground-secondary leading-relaxed">
+                    We aim to set new benchmarks in quality, efficiency, and
+                    sustainability. Our vision is to be the first choice
+                    globally for future-ready dairy and food product
+                    entrepreneurs through innovation and engineering excellence.
                   </p>
                 </CardContent>
               </Card>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
 
-          {/* Stats */}
-          <ScrollReveal delay={0.4}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center p-6 rounded-2xl bg-white border border-border shadow-sm hover:shadow-md transition-shadow duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          {/* Values */}
-          <ScrollReveal delay={0.6}>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-                Our Values
+      {/* Core Values */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Our Core Values
               </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {values.map((value, index) => (
-                  <motion.div
-                    key={index}
-                    className="p-6 rounded-2xl bg-white border border-border shadow-sm hover:shadow-lg transition-all duration-300"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div
-                      className={`w-12 h-12 ${value.bgColor} rounded-xl flex items-center justify-center mb-4 mx-auto`}
-                    >
-                      <value.icon className={`w-6 h-6 ${value.color}`} />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      {value.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {value.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Team */}
-          <ScrollReveal delay={0.8}>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-                Meet The Founders
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-                {team.slice(0, 2).map((member, index) => (
-                  <Card key={index} className="border border-border">
-                    <CardHeader className="text-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                        {member.avatar}
-                      </div>
-                      <CardTitle className="text-xl font-semibold text-foreground">
-                        {member.name}
-                      </CardTitle>
-                      <p className="text-primary font-medium">{member.role}</p>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <p className="text-muted-foreground mb-4">
-                        {member.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 justify-center">
-                        {member.expertise.map((skill, skillIndex) => (
-                          <span
-                            key={skillIndex}
-                            className="px-3 py-1 bg-muted rounded-full text-xs font-medium text-foreground"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-                Our Team
-              </h2>
-              <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
-                At Swasau Technologies, we are proud to be fueled by a team of
-                dedicated and skilled professionals. Together, we form a
-                collaborative force committed to turning innovative ideas into
-                reality.
+              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+                The principles that guide our work and define our culture
               </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                {team.slice(2).map((member, index) => (
-                  <Card key={index} className="border border-border">
-                    <CardHeader className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                        {member.avatar}
-                      </div>
-                      <CardTitle className="text-lg font-semibold text-foreground">
-                        {member.name}
-                      </CardTitle>
-                      <p className="text-primary font-medium text-sm">
-                        {member.role}
-                      </p>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <p className="text-muted-foreground text-sm mb-4">
-                        {member.description}
-                      </p>
-                      <div className="flex flex-wrap gap-1 justify-center">
-                        {member.expertise.map((skill, skillIndex) => (
-                          <span
-                            key={skillIndex}
-                            className="px-2 py-1 bg-muted rounded-full text-xs font-medium text-foreground"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
             </div>
           </ScrollReveal>
 
-          {/* CTA Section */}
-          <ScrollReveal delay={1.0}>
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-block p-8 rounded-3xl bg-gradient-to-r from-primary/5 to-secondary/5 backdrop-blur-sm border border-border shadow-lg">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">
-                  Ready to Work with Us?
-                </h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl">
-                  Let's discuss your project and see how our expertise can help
-                  bring your ideas to life.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    className="group relative overflow-hidden"
-                    asChild
-                  >
-                    <Link href="/contact">
-                      <span className="relative z-10 flex items-center gap-2">
-                        Get Started
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                      </span>
-                      <motion.div
-                        className="absolute inset-0 bg-white/20"
-                        initial={{ x: "-100%" }}
-                        whileHover={{ x: "100%" }}
-                        transition={{ duration: 0.6 }}
-                      />
-                    </Link>
-                  </Button>
-                  <Button variant="outline" size="lg" asChild>
-                    <Link href="/projects">View Our Work</Link>
-                  </Button>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coreValues.map((value, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <MotionDiv
+                  className="h-full"
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Card className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <CardHeader className="text-center pb-4">
+                      <div
+                        className={`w-12 h-12 ${getColorClasses(
+                          value.color
+                        )} rounded-lg flex items-center justify-center mx-auto mb-4`}
+                      >
+                        <value.icon className="w-6 h-6" />
+                      </div>
+                      <CardTitle className="text-lg font-bold text-foreground">
+                        {value.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-foreground-secondary text-center leading-relaxed">
+                        {value.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </MotionDiv>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Why Choose Flavi Dairy?
+              </h2>
+              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+                Our commitment to excellence and innovation sets us apart
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <ScrollReveal delay={0.1}>
+              <MotionDiv
+                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-6 h-6 text-primary" />
                 </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  Proven Track Record
+                </h3>
+                <p className="text-sm text-foreground-secondary">
+                  20+ years of experience with 100+ successful projects across
+                  various industries
+                </p>
+              </MotionDiv>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <MotionDiv
+                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-6 h-6 text-secondary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  Quality Assurance
+                </h3>
+                <p className="text-sm text-foreground-secondary">
+                  Commitment to highest standards ensuring reliable, food-safe
+                  systems every time
+                </p>
+              </MotionDiv>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <MotionDiv
+                className="text-center p-6 rounded-xl bg-white shadow-lg hover-lift"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  Client Partnership
+                </h3>
+                <p className="text-sm text-foreground-secondary">
+                  We treat every project as a partnership, acting in our
+                  clients' best interest always
+                </p>
+              </MotionDiv>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Get in Touch
+              </h2>
+              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+                Ready to discuss your project? Contact our team of experts
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <ScrollReveal delay={0.1}>
+              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  Call Us
+                </h3>
+                <p className="text-sm text-foreground-secondary">
+                  +91 7202033384
+                </p>
               </div>
-            </motion.div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg">
+                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-6 h-6 text-secondary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  Email Us
+                </h3>
+                <p className="text-sm text-foreground-secondary">
+                  contact@flavidairysolution.com
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg">
+                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  Visit Us
+                </h3>
+                <p className="text-sm text-foreground-secondary">
+                  403, 4th Floor, Samruddhi Complex, Ahmedabad-380014
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-multi">
+        <div className="container mx-auto px-4 text-center">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Let our experienced team help you transform your dairy and food
+              processing operations
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-white text-primary hover:bg-gray-100"
+              >
+                <Link href="/contact" className="flex items-center">
+                  Get a Quote
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-primary"
+              >
+                <Link href="/contact">Talk to an Expert</Link>
+              </Button>
+            </div>
           </ScrollReveal>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

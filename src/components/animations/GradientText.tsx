@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { MotionSpan } from "@/components/ui/motion";
 
 interface GradientTextProps {
   children: React.ReactNode;
@@ -14,22 +14,22 @@ export function GradientText({
   animate = true,
 }: GradientTextProps) {
   return (
-    <motion.span
+    <MotionSpan
       className={`gradient-text ${className}`}
       animate={
         animate
           ? {
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              backgroundPosition: [
+                "0% 50%",
+                "100% 50%",
+                "0% 50%",
+              ],
             }
           : {}
       }
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
+      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
     >
       {children}
-    </motion.span>
+    </MotionSpan>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
+import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 interface ScrollRevealProps {
@@ -18,8 +19,11 @@ export function ScrollReveal({
   direction = "up",
   duration = 0.5,
 }: ScrollRevealProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref as React.RefObject<Element>, {
+    once: true,
+    margin: "-100px",
+  });
 
   const variants = {
     hidden: {
@@ -35,7 +39,7 @@ export function ScrollReveal({
   };
 
   return (
-    <motion.div
+    <MotionDiv
       ref={ref}
       variants={variants}
       initial="hidden"
@@ -48,6 +52,6 @@ export function ScrollReveal({
       className={className}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 }

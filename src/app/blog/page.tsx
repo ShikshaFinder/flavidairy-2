@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { MotionDiv, MotionH1, MotionP } from "@/components/ui/motion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -102,7 +102,7 @@ export default function BlogPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -111,9 +111,9 @@ export default function BlogPage() {
                 <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                   Blog & Insights
                 </span>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.h1
+              <MotionH1
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -121,9 +121,9 @@ export default function BlogPage() {
               >
                 Latest Insights & Updates
                 <span className="gradient-text"> From Our Team</span>
-              </motion.h1>
+              </MotionH1>
 
-              <motion.p
+              <MotionP
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -132,7 +132,7 @@ export default function BlogPage() {
                 Stay updated with the latest trends in embedded systems, IoT
                 technology, and behind-the-scenes looks at our development
                 process.
-              </motion.p>
+              </MotionP>
             </div>
           </ScrollReveal>
 
@@ -293,7 +293,7 @@ export default function BlogPage() {
 
           {/* Newsletter Signup */}
           <ScrollReveal delay={0.8}>
-            <motion.div
+            <MotionDiv
               className="text-center mt-20"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -318,7 +318,7 @@ export default function BlogPage() {
                       Subscribe
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
-                    <motion.div
+                    <MotionDiv
                       className="absolute inset-0 bg-white/20"
                       initial={{ x: "-100%" }}
                       whileHover={{ x: "100%" }}
@@ -327,7 +327,7 @@ export default function BlogPage() {
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           </ScrollReveal>
         </div>
       </section>

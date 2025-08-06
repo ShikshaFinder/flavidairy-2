@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { MotionDiv } from "@/components/ui/motion";
 import {
   Card,
   CardContent,
@@ -10,50 +10,52 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Loader2, ExternalLink, Github, Linkedin, Globe } from "lucide-react";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { Github, Linkedin, Globe } from "lucide-react";
 
-interface Intern {
-  id: number;
-  name: string;
-  email: string;
-  qualification: string;
-  skills: string;
-  photoUrl?: string;
-  github?: string;
-  linkedin?: string;
-  portfolio?: string;
-  selectedAt?: string;
-  adminNotes?: string;
-}
+// Static data for selected interns
+const selectedInterns = [
+  {
+    id: 1,
+    name: "Priya Sharma",
+    qualification: "B.Tech Electronics & Communication",
+    skills: "C/C++, Arduino, PCB Design, IoT",
+    photoUrl: "",
+    github: "https://github.com/priyasharma",
+    linkedin: "https://linkedin.com/in/priyasharma",
+    portfolio: "https://priyasharma.dev",
+    selectedAt: "2024-01-15",
+    adminNotes:
+      "Excellent problem-solving skills and strong foundation in embedded systems. Led the smart home automation project.",
+  },
+  {
+    id: 2,
+    name: "Rahul Kumar",
+    qualification: "M.Tech VLSI Design",
+    skills: "Verilog, FPGA, Digital Design, Python",
+    photoUrl: "",
+    github: "https://github.com/rahulkumar",
+    linkedin: "https://linkedin.com/in/rahulkumar",
+    portfolio: "",
+    selectedAt: "2024-02-01",
+    adminNotes:
+      "Specialized in FPGA-based system design. Contributed significantly to our high-speed data processing module.",
+  },
+  {
+    id: 3,
+    name: "Anjali Patel",
+    qualification: "B.Tech Computer Science",
+    skills: "Python, Machine Learning, Embedded Linux, Docker",
+    photoUrl: "",
+    github: "https://github.com/anjali-patel",
+    linkedin: "https://linkedin.com/in/anjali-patel",
+    portfolio: "https://anjalipatel.tech",
+    selectedAt: "2024-01-20",
+    adminNotes:
+      "Strong background in AI/ML with focus on edge computing. Developed our intelligent sensor fusion algorithm.",
+  },
+];
 
 export function SelectedInterns() {
-  const [selectedInterns, setSelectedInterns] = useState<Intern[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchSelectedInterns();
-  }, []);
-
-  const fetchSelectedInterns = async () => {
-    try {
-      const response = await fetch("/api/interns");
-      const data = await response.json();
-
-      if (response.ok) {
-        // Filter only selected interns
-        const selected = data.interns.filter(
-          (intern: Intern) => intern.isSelected
-        );
-        setSelectedInterns(selected);
-      }
-    } catch (error) {
-      console.error("Failed to fetch selected interns:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
@@ -62,43 +64,35 @@ export function SelectedInterns() {
     });
   };
 
-  if (loading) {
-    return (
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Loader2 className="w-8 h-8 animate-spin" />
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (selectedInterns.length === 0) {
-    return null; // Don't show section if no selected interns
-  }
-
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <ScrollReveal>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Meet Our Selected Interns
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Talented individuals who have joined our team to work on exciting
-              embedded systems and IoT projects
-            </p>
-          </div>
-        </ScrollReveal>
+        <MotionDiv
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+            Meet Our Selected Interns
+          </h2>
+          <p className="text-xl text-black/70 max-w-3xl mx-auto">
+            Talented individuals who have joined our team to work on exciting
+            embedded systems and IoT projects
+          </p>
+        </MotionDiv>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {selectedInterns.map((intern) => (
-            <ScrollReveal key={intern.id}>
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+          {selectedInterns.map((intern, index) => (
+            <MotionDiv
+              key={intern.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-4 w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <div className="mx-auto mb-4 w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-secondary/20 to-accent/20 flex items-center justify-center">
                     {intern.photoUrl ? (
                       <img
                         src={intern.photoUrl}
@@ -106,7 +100,7 @@ export function SelectedInterns() {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <span className="text-2xl font-bold text-primary">
+                      <span className="text-2xl font-bold text-secondary">
                         {intern.name
                           .split(" ")
                           .map((n) => n[0])
@@ -115,14 +109,14 @@ export function SelectedInterns() {
                       </span>
                     )}
                   </div>
-                  <CardTitle className="text-xl font-semibold text-foreground">
+                  <CardTitle className="text-xl font-semibold text-black">
                     {intern.name}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-black/70">
                     {intern.qualification}
                   </CardDescription>
                   {intern.selectedAt && (
-                    <Badge className="bg-green-100 text-green-800 mt-2">
+                    <Badge className="bg-green-100 text-green-800 mt-2 border-green-200">
                       Joined {formatDate(intern.selectedAt)}
                     </Badge>
                   )}
@@ -130,15 +124,13 @@ export function SelectedInterns() {
 
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">
-                      Skills
-                    </h4>
+                    <h4 className="font-semibold text-black mb-2">Skills</h4>
                     <div className="flex flex-wrap gap-1">
                       {intern.skills.split(",").map((skill, index) => (
                         <Badge
                           key={index}
                           variant="outline"
-                          className="text-xs"
+                          className="text-xs border-gray-300 text-black"
                         >
                           {skill.trim()}
                         </Badge>
@@ -148,10 +140,8 @@ export function SelectedInterns() {
 
                   {intern.adminNotes && (
                     <div>
-                      <h4 className="font-semibold text-foreground mb-2">
-                        About
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
+                      <h4 className="font-semibold text-black mb-2">About</h4>
+                      <p className="text-sm text-black/70">
                         {intern.adminNotes}
                       </p>
                     </div>
@@ -159,7 +149,12 @@ export function SelectedInterns() {
 
                   <div className="flex justify-center gap-2 pt-4">
                     {intern.github && (
-                      <Button variant="outline" size="sm" asChild>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="border-gray-300 text-black hover:bg-gray-50"
+                      >
                         <a
                           href={intern.github}
                           target="_blank"
@@ -170,7 +165,12 @@ export function SelectedInterns() {
                       </Button>
                     )}
                     {intern.linkedin && (
-                      <Button variant="outline" size="sm" asChild>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="border-gray-300 text-black hover:bg-gray-50"
+                      >
                         <a
                           href={intern.linkedin}
                           target="_blank"
@@ -181,7 +181,12 @@ export function SelectedInterns() {
                       </Button>
                     )}
                     {intern.portfolio && (
-                      <Button variant="outline" size="sm" asChild>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="border-gray-300 text-black hover:bg-gray-50"
+                      >
                         <a
                           href={intern.portfolio}
                           target="_blank"
@@ -194,18 +199,21 @@ export function SelectedInterns() {
                   </div>
                 </CardContent>
               </Card>
-            </ScrollReveal>
+            </MotionDiv>
           ))}
         </div>
 
-        <ScrollReveal>
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">Want to join our team?</p>
-            <Button asChild size="lg">
-              <a href="/internship">Apply for Internship</a>
-            </Button>
-          </div>
-        </ScrollReveal>
+        <MotionDiv
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <p className="text-black/70 mb-4">Want to join our team?</p>
+          <Button asChild size="lg" className="btn-minimal text-black">
+            <a href="/internship">Apply for Internship</a>
+          </Button>
+        </MotionDiv>
       </div>
     </section>
   );

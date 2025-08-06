@@ -1,9 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import {
+  MotionNav,
+  MotionDiv,
+  MotionA,
+  MotionButton,
+} from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X, ArrowRight } from "lucide-react";
+import { Factory, Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function Navbar() {
@@ -19,19 +25,20 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Services", href: "/services" },
-    { name: "Projects", href: "/projects" },
-    { name: "About", href: "/about" },
-    { name: "Internship", href: "/internship" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
+    { name: "About Us", href: "/about" },
+    { name: "Industries", href: "/industries" },
+    { name: "Consultancy Services", href: "/consultancy" },
+    { name: "Machinery & Equipment", href: "/machinery" },
+    { name: "Blog/Insights", href: "/blog" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Career", href: "/career" },
   ];
 
   return (
-    <motion.nav
+    <MotionNav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-border shadow-lg"
+          ? "bg-white/90 backdrop-blur-md border-b border-border shadow-lg"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -41,31 +48,31 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
+          <MotionDiv
             className="flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <Shield className="w-5 h-5 text-white" />
+              <Factory className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-foreground">
-              SWASAU Technology
+              Flavi Dairy Food Solutions
             </span>
-          </motion.div>
+          </MotionDiv>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item, index) => (
-              <motion.a
+              <MotionA
                 key={index}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium text-sm"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
               >
                 {item.name}
-              </motion.a>
+              </MotionA>
             ))}
           </div>
 
@@ -80,12 +87,12 @@ export function Navbar() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="group relative overflow-hidden">
+              <Button className="group relative overflow-hidden bg-gradient-primary hover:bg-gradient-secondary">
                 <span className="relative z-10 flex items-center gap-2">
                   Get a Quote
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-                <motion.div
+                <MotionDiv
                   className="absolute inset-0 bg-white/20"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "100%" }}
@@ -96,7 +103,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
+          <MotionButton
             className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-200"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.95 }}
@@ -106,13 +113,13 @@ export function Navbar() {
             ) : (
               <Menu className="w-6 h-6 text-foreground" />
             )}
-          </motion.button>
+          </MotionButton>
         </div>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -121,7 +128,7 @@ export function Navbar() {
             >
               <div className="py-4 space-y-4 px-4">
                 {navItems.map((item, index) => (
-                  <motion.a
+                  <MotionA
                     key={index}
                     href={item.href}
                     className="block text-muted-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
@@ -131,7 +138,7 @@ export function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
-                  </motion.a>
+                  </MotionA>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-border">
                   <Link href="/contact">
@@ -143,12 +150,12 @@ export function Navbar() {
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button className="w-full group relative overflow-hidden">
+                    <Button className="w-full group relative overflow-hidden bg-gradient-primary hover:bg-gradient-secondary">
                       <span className="relative z-10 flex items-center gap-2">
                         Get a Quote
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
-                      <motion.div
+                      <MotionDiv
                         className="absolute inset-0 bg-white/20"
                         initial={{ x: "-100%" }}
                         whileHover={{ x: "100%" }}
@@ -158,10 +165,10 @@ export function Navbar() {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </MotionNav>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 import { ReactNode } from "react";
 
 interface FloatingCardProps {
@@ -17,24 +17,20 @@ export function FloatingCard({
   duration = 2,
 }: FloatingCardProps) {
   return (
-    <motion.div
+    <MotionDiv
       className={className}
       animate={{
         y: [0, -10, 0],
       }}
       transition={{
-        duration,
-        delay,
+        duration: 2,
+        delay: 0.5,
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      whileHover={{
-        scale: 1.05,
-        rotateY: 5,
-        transition: { duration: 0.3 },
-      }}
+      whileHover={{ scale: 1.05 }}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 }

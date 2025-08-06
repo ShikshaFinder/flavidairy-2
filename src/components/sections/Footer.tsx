@@ -1,231 +1,196 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { Shield, Github, Twitter, Linkedin, Mail, Globe } from "lucide-react";
+import { MotionDiv } from "@/components/ui/motion";
+import { Button } from "@/components/ui/button";
+import { Factory, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
-  const footerLinks = {
-    product: [
-      { name: "Embedded Hardware Design", href: "#" },
-      { name: "Firmware Development", href: "#" },
-      { name: "IoT Product Development", href: "#" },
-      { name: "Prototyping", href: "#" },
-      { name: "Industrial Automation", href: "#" },
-    ],
-    solutions: [
-      { name: "Wireless/Bluetooth/NB-IoT Integration", href: "#" },
-      { name: "End-to-End Product Engineering", href: "#" },
-      { name: "Custom Solutions", href: "#" },
-      { name: "Consulting", href: "#" },
-      { name: "Support", href: "#" },
-    ],
-    resources: [
-      { name: "Blog / Insights", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Newsletter", href: "#" },
-      { name: "Downloads", href: "#" },
-      { name: "FAQ", href: "#" },
-    ],
-    company: [
-      { name: "About Us", href: "#" },
-      { name: "Our Projects", href: "#" },
-      { name: "Contact", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Internships", href: "#" },
-    ],
-  };
-
-  const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "#", label: "Email" },
-  ];
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-muted/30 border-t border-border">
-      {/* Fluid Glass Container Background */}
+    <footer className="relative bg-foreground text-foreground-secondary overflow-hidden">
       <div className="absolute inset-0">
-        <motion.div
+        <MotionDiv
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
               radial-gradient(circle at 10% 20%, rgba(11, 79, 130, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 90% 80%, rgba(255, 180, 0, 0.05) 0%, transparent 50%)
+              radial-gradient(circle at 90% 80%, rgba(120, 119, 198, 0.05) 0%, transparent 50%)
             `,
           }}
         />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Main Footer Content */}
         <div className="py-16">
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-              {/* Company Info */}
-              <div className="lg:col-span-2">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold text-sm">ST</span>
-                  </div>
-                  <span className="text-xl font-bold text-foreground">
-                    Swasau Technologies
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <MotionDiv
+              className="lg:col-span-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                  <Factory className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-xl font-bold text-white">
+                  Flavi Dairy Food Solutions
+                </span>
+              </div>
+              <p className="text-foreground-secondary mb-6 max-w-md">
+                Leading provider of dairy and food processing solutions with 20+
+                years of experience. We deliver innovative, reliable, and
+                efficient processing equipment and consultancy services.
+              </p>
+              <div className="flex gap-4">
+                <Button
+                  size="sm"
+                  className="bg-primary hover:bg-primary/90 text-white"
+                  asChild
+                >
+                  <Link href="/contact">
+                    <span className="flex items-center gap-2">
+                      Get Quote
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white hover:text-foreground"
+                  asChild
+                >
+                  <Link href="/contact">Contact Us</Link>
+                </Button>
+              </div>
+            </MotionDiv>
+
+            {/* Quick Links */}
+            <MotionDiv
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6">
+                Quick Links
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-foreground-secondary hover:text-white transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="text-foreground-secondary hover:text-white transition-colors"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/industries"
+                    className="text-foreground-secondary hover:text-white transition-colors"
+                  >
+                    Industries
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/machinery"
+                    className="text-foreground-secondary hover:text-white transition-colors"
+                  >
+                    Machinery
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-foreground-secondary hover:text-white transition-colors"
+                  >
+                    Blog & Insights
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/career"
+                    className="text-foreground-secondary hover:text-white transition-colors"
+                  >
+                    Careers
+                  </Link>
+                </li>
+              </ul>
+            </MotionDiv>
+
+            {/* Contact Info */}
+            <MotionDiv
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6">
+                Contact Info
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-primary" />
+                  <span className="text-foreground-secondary">
+                    +91 7202033384
                   </span>
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Custom embedded solutions for IoT, automation, and product
-                  development. Contact us: info@swasau.com | +91-9876543210
-                </p>
-                <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-primary" />
+                  <span className="text-foreground-secondary">
+                    contact@flavidairysolution.com
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-primary mt-1" />
+                  <span className="text-foreground-secondary">
+                    403, 4th Floor, Samruddhi Complex, Ahmedabad-380014,
+                    Gujarat, India
+                  </span>
                 </div>
               </div>
-
-              {/* Product Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-              >
-                <h3 className="font-semibold text-foreground mb-4">Product</h3>
-                <ul className="space-y-3">
-                  {footerLinks.product.map((link, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 + index * 0.1 }}
-                    >
-                      <a
-                        href={link.href}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        {link.name}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* Solutions Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <h3 className="font-semibold text-foreground mb-4">
-                  Solutions
-                </h3>
-                <ul className="space-y-3">
-                  {footerLinks.solutions.map((link, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 + index * 0.1 }}
-                    >
-                      <a
-                        href={link.href}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        {link.name}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* Resources Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                <h3 className="font-semibold text-foreground mb-4">
-                  Resources
-                </h3>
-                <ul className="space-y-3">
-                  {footerLinks.resources.map((link, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
-                    >
-                      <a
-                        href={link.href}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        {link.name}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* Company Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <h3 className="font-semibold text-foreground mb-4">Company</h3>
-                <ul className="space-y-3">
-                  {footerLinks.company.map((link, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + index * 0.1 }}
-                    >
-                      <a
-                        href={link.href}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        {link.name}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
-          </ScrollReveal>
+            </MotionDiv>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <ScrollReveal delay={0.6}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="border-t border-border pt-8 mt-12"
-          >
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <span>© 2024 Swasau Technologies. All rights reserved.</span>
-              <div className="flex items-center mt-4 md:mt-0">
-                <span>Made with ❤️ for the technology community</span>
-              </div>
+        <MotionDiv
+          className="border-t border-white/10 py-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-foreground-secondary text-sm">
+              © {currentYear} Flavi Dairy Food Solutions. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <Link
+                href="/privacy"
+                className="text-foreground-secondary hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="text-foreground-secondary hover:text-white transition-colors"
+              >
+                Terms of Service
+              </Link>
             </div>
-          </motion.div>
-        </ScrollReveal>
+          </div>
+        </MotionDiv>
       </div>
     </footer>
   );

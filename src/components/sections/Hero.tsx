@@ -1,79 +1,53 @@
 "use client";
 
-import { motion } from "framer-motion";
+import {
+  MotionDiv,
+  MotionH1,
+  MotionP,
+  MotionButton,
+} from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
-import { GradientText } from "@/components/animations/GradientText";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { Shield, Zap, Cpu, Lock } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-white to-accent/10 pt-8 md:pt-12">
-      {/* Decorative SVG or Abstract Shape */}
-      <div className="absolute right-0 top-0 w-96 h-96 opacity-20 pointer-events-none select-none z-0">
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 400 400"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="200" cy="200" r="180" fill="url(#paint0_radial)" />
-          <defs>
-            <radialGradient
-              id="paint0_radial"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientTransform="translate(200 200) scale(180)"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#FFD600" stop-opacity="0.15" />
-              <stop offset="1" stop-color="#0057B8" stop-opacity="0" />
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* Subtle Aurora Background */}
-      <div className="absolute inset-0 aurora opacity-30"></div>
-
-      {/* Floating Elements - Subtle */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+      {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-10 w-20 h-20 bg-primary/5 rounded-full blur-xl"
+        <MotionDiv
+          className="absolute top-20 left-10 w-16 h-16 bg-secondary/5 rounded-full blur-xl"
           animate={{
-            x: [0, 30, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-40 right-20 w-32 h-32 bg-secondary/5 rounded-full blur-xl"
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 40, 0],
+            x: [0, 20, 0],
+            y: [0, -20, 0],
           }}
           transition={{
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2,
           }}
         />
-        <motion.div
-          className="absolute bottom-40 left-1/4 w-24 h-24 bg-primary/3 rounded-full blur-xl"
+        <MotionDiv
+          className="absolute top-40 right-20 w-20 h-20 bg-accent/5 rounded-full blur-xl"
           animate={{
-            x: [0, 50, 0],
-            y: [0, -50, 0],
+            x: [0, -30, 0],
+            y: [0, 30, 0],
           }}
           transition={{
             duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        />
+        <MotionDiv
+          className="absolute bottom-20 left-1/4 w-12 h-12 bg-secondary/5 rounded-full blur-xl"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -15, 0],
+          }}
+          transition={{
+            duration: 15,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 4,
@@ -81,83 +55,96 @@ export function Hero() {
         />
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        {/* <ScrollReveal delay={0.2}>
-          {/* <motion.div
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center max-w-4xl mx-auto">
+          <MotionDiv
+            className="mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6"
           >
-            {/* <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary-foreground rounded-full text-sm font-medium mb-4 border border-secondary/20">
-              🛡️ AI-Powered Cybersecurity Automation
-            </span> */}
-        {/* </motion.div> */}
-        {/* </ScrollReveal>  */}
+            <span className="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm text-black rounded-full text-sm font-medium border border-white/30 shadow-sm">
+              Leading Dairy & Food Processing Solutions
+            </span>
+          </MotionDiv>
 
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Creating Dream <span className="gradient-text">Solutions</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Custom embedded solutions for IoT, automation, and product
-            development. From concept to production, we bring your ideas to life
-            with cutting-edge technology.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6">
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-              <Link href="/contact">Schedule a Call</Link>
-            </Button>
-          </div>
-        </div>
+          <MotionH1
+            className="text-4xl md:text-6xl font-bold mb-6 text-black leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Transform Your
+            <span className="text-black"> Processing Operations</span>
+            <br />
+            <span className="text-black font-light">With Expert Solutions</span>
+          </MotionH1>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-              50+
+          <MotionP
+            className="text-lg md:text-xl text-black/80 mb-10 max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            From concept to commissioning, we deliver innovative dairy and food
+            processing solutions with 20+ years of expertise.
+          </MotionP>
+
+          <MotionDiv
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <MotionButton
+              size="lg"
+              className="btn-minimal text-black px-8 py-4 text-lg font-medium group relative overflow-hidden"
+              asChild
+            >
+              <Link href="/contact">
+                <span className="relative z-10 flex items-center gap-2">
+                  Get Free Consultation
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Link>
+            </MotionButton>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-black/20 text-black hover:bg-black hover:text-white px-8 py-4 text-lg font-medium bg-white/60 backdrop-blur-sm transition-all duration-300"
+              asChild
+            >
+              <Link href="/about">
+                <span className="flex items-center gap-2">
+                  <Play className="w-5 h-5" />
+                  Learn More
+                </span>
+              </Link>
+            </Button>
+          </MotionDiv>
+
+          <MotionDiv
+            className="flex flex-wrap justify-center items-center gap-8 text-sm text-black/70"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 bg-secondary rounded-full"></div>
+              <span>20+ Years Experience</span>
             </div>
-            <div className="text-muted-foreground">Custom Design</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-              6
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 bg-secondary rounded-full"></div>
+              <span>100+ Projects Completed</span>
             </div>
-            <div className="text-muted-foreground">Industries</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-              100%
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 bg-secondary rounded-full"></div>
+              <span>24/7 Support</span>
             </div>
-            <div className="text-muted-foreground">Fast Prototyping</div>
-          </div>
-          {/* <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-              24/7
-            </div>
-            <div className="text-muted-foreground">Production Ready</div>
-          </div> */}
+          </MotionDiv>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <motion.div
-            className="w-1 h-3 bg-primary rounded-full mt-2"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

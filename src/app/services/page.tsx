@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { MotionDiv, MotionH1, MotionP } from "@/components/ui/motion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -116,7 +116,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -125,9 +125,9 @@ export default function ServicesPage() {
                 <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                   Our Services
                 </span>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.h1
+              <MotionH1
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -135,9 +135,9 @@ export default function ServicesPage() {
               >
                 Custom Embedded Solutions
                 <span className="gradient-text"> For Every Need</span>
-              </motion.h1>
+              </MotionH1>
 
-              <motion.p
+              <MotionP
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                 From concept to production, we provide comprehensive embedded
                 systems development services tailored to your industry and
                 requirements.
-              </motion.p>
+              </MotionP>
             </div>
           </ScrollReveal>
 
@@ -200,7 +200,7 @@ export default function ServicesPage() {
 
           {/* CTA Section */}
           <ScrollReveal delay={0.8}>
-            <motion.div
+            <MotionDiv
               className="text-center mt-20"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -225,7 +225,7 @@ export default function ServicesPage() {
                         Get a Quote
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
-                      <motion.div
+                      <MotionDiv
                         className="absolute inset-0 bg-white/20"
                         initial={{ x: "-100%" }}
                         whileHover={{ x: "100%" }}
@@ -238,7 +238,7 @@ export default function ServicesPage() {
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           </ScrollReveal>
         </div>
       </section>
