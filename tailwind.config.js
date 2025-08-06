@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary Colors - White and Yellow
+        // Primary Colors - White and Green
         primary: {
           DEFAULT: "#ffffff", // White
           50: "#ffffff",
@@ -23,34 +23,6 @@ module.exports = {
           950: "#737373",
         },
         secondary: {
-          DEFAULT: "#fbbf24", // Yellow
-          50: "#fffbeb",
-          100: "#fef3c7",
-          200: "#fde68a",
-          300: "#fcd34d",
-          400: "#fbbf24",
-          500: "#f59e0b",
-          600: "#d97706",
-          700: "#b45309",
-          800: "#92400e",
-          900: "#78350f",
-          950: "#451a03",
-        },
-        accent: {
-          DEFAULT: "#f59e0b", // Amber/Orange
-          50: "#fffbeb",
-          100: "#fef3c7",
-          200: "#fde68a",
-          300: "#fcd34d",
-          400: "#fbbf24",
-          500: "#f59e0b",
-          600: "#d97706",
-          700: "#b45309",
-          800: "#92400e",
-          900: "#78350f",
-          950: "#451a03",
-        },
-        tertiary: {
           DEFAULT: "#10b981", // Emerald Green
           50: "#ecfdf5",
           100: "#d1fae5",
@@ -63,6 +35,34 @@ module.exports = {
           800: "#065f46",
           900: "#064e3b",
           950: "#022c22",
+        },
+        accent: {
+          DEFAULT: "#059669", // Darker Green
+          50: "#ecfdf5",
+          100: "#d1fae5",
+          200: "#a7f3d0",
+          300: "#6ee7b7",
+          400: "#34d399",
+          500: "#10b981",
+          600: "#059669",
+          700: "#047857",
+          800: "#065f46",
+          900: "#064e3b",
+          950: "#022c22",
+        },
+        tertiary: {
+          DEFAULT: "#16a34a", // Green
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#22c55e",
+          600: "#16a34a",
+          700: "#15803d",
+          800: "#166534",
+          900: "#14532d",
+          950: "#052e16",
         },
         // Neutral Colors - Clean and Minimal
         background: {
@@ -136,14 +136,14 @@ module.exports = {
         },
       },
       backgroundImage: {
-        "gradient-primary": "linear-gradient(135deg, #ffffff 0%, #fbbf24 100%)",
+        "gradient-primary": "linear-gradient(135deg, #ffffff 0%, #10b981 100%)",
         "gradient-secondary":
-          "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)",
-        "gradient-accent": "linear-gradient(135deg, #f59e0b 0%, #10b981 100%)",
+          "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+        "gradient-accent": "linear-gradient(135deg, #059669 0%, #16a34a 100%)",
         "gradient-multi":
-          "linear-gradient(135deg, #ffffff 0%, #fbbf24 25%, #f59e0b 50%, #10b981 75%, #ffffff 100%)",
+          "linear-gradient(135deg, #ffffff 0%, #10b981 25%, #059669 50%, #16a34a 75%, #ffffff 100%)",
         "aurora-bg":
-          "linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(251, 191, 36, 0.1) 25%, rgba(245, 158, 11, 0.1) 50%, rgba(16, 185, 129, 0.1) 75%, rgba(255, 255, 255, 0.1) 100%)",
+          "linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(16, 185, 129, 0.1) 25%, rgba(5, 150, 105, 0.1) 50%, rgba(22, 163, 74, 0.1) 75%, rgba(255, 255, 255, 0.1) 100%)",
       },
     },
   },

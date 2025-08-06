@@ -172,7 +172,7 @@ export function Testimonials() {
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    className="w-5 h-5 fill-secondary text-secondary"
                   />
                 ))}
               </MotionDiv>
