@@ -195,7 +195,7 @@ html {
 
 /* Hero gradient background - Minimalist */
 .hero-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #fbbf24 25%, #ffffff 50%, #fbbf24 75%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #10b981 25%, #ffffff 50%, #10b981 75%, #ffffff 100%);
   background-size: 400% 400%;
   animation: heroGradient 8s ease-in-out infinite;
 }

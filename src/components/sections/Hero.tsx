@@ -16,7 +16,7 @@ export function Hero() {
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <MotionDiv
-          className="absolute top-20 left-10 w-16 h-16 bg-secondary/5 rounded-full blur-xl"
+          className="absolute top-20 left-10 w-16 h-16 bg-secondary/10 rounded-full blur-xl"
           animate={{
             x: [0, 20, 0],
             y: [0, -20, 0],
@@ -28,7 +28,7 @@ export function Hero() {
           }}
         />
         <MotionDiv
-          className="absolute top-40 right-20 w-20 h-20 bg-accent/5 rounded-full blur-xl"
+          className="absolute top-40 right-20 w-20 h-20 bg-accent/10 rounded-full blur-xl"
           animate={{
             x: [0, -30, 0],
             y: [0, 30, 0],
@@ -41,7 +41,7 @@ export function Hero() {
           }}
         />
         <MotionDiv
-          className="absolute bottom-20 left-1/4 w-12 h-12 bg-secondary/5 rounded-full blur-xl"
+          className="absolute bottom-20 left-1/4 w-12 h-12 bg-secondary/10 rounded-full blur-xl"
           animate={{
             x: [0, 30, 0],
             y: [0, -15, 0],
@@ -63,8 +63,8 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm text-black rounded-full text-sm font-medium border border-white/30 shadow-sm">
-              Leading Dairy & Food Processing Solutions
+            <span className="inline-block px-6 py-3 bg-secondary/10 backdrop-blur-sm text-secondary border border-secondary/20 rounded-full text-sm font-medium shadow-sm">
+              Transforming Processing Operations with Expert Solutions
             </span>
           </MotionDiv>
 
@@ -75,9 +75,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Transform Your
-            <span className="text-black"> Processing Operations</span>
+            <span className="text-secondary"> Processing Operations</span>
             <br />
-            <span className="text-black font-light">With Expert Solutions</span>
+            <span className="text-secondary font-light">
+              With Expert Solutions
+            </span>
           </MotionH1>
 
           <MotionP
@@ -98,7 +100,7 @@ export function Hero() {
           >
             <MotionButton
               size="lg"
-              className="btn-minimal text-black px-8 py-4 text-lg font-medium group relative overflow-hidden"
+              className="bg-secondary hover:bg-secondary/90 text-black px-8 py-4 text-lg font-medium group relative overflow-hidden border-0 shadow-lg hover:shadow-xl"
               asChild
             >
               <Link href="/contact">
@@ -112,7 +114,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-black/20 text-black hover:bg-black hover:text-white px-8 py-4 text-lg font-medium bg-white/60 backdrop-blur-sm transition-all duration-300"
+              className="border-2 border-secondary/30 text-secondary hover:bg-secondary hover:text-black px-8 py-4 text-lg font-medium bg-white/60 backdrop-blur-sm transition-all duration-300"
               asChild
             >
               <Link href="/about">
