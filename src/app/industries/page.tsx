@@ -205,7 +205,8 @@ export default function IndustriesPage() {
             <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
               From dairy and food processing to pharmaceuticals and chemicals,
               we provide comprehensive solutions tailored to your industry's
-              specific needs.
+              specific needs. Our expertise spans across pharma, chemical,
+              dairy, food, and beverage processing industries.
             </p>
           </MotionDiv>
         </div>

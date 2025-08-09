@@ -66,6 +66,9 @@ export default function AboutPage() {
       experience: "25+ years",
       expertise: "Dairy Processing, Business Strategy",
       image: "/images/team/ceo.jpg",
+      isFounder: true,
+      founderInfo:
+        "Founded Flavi Dairy Food Solutions in 2004 with a vision to revolutionize dairy and food processing in India. With over 25 years of experience in the industry, Mr. Patel has been instrumental in establishing the company as a leading solutions provider.",
     },
     {
       name: "Priya Sharma",
@@ -73,6 +76,7 @@ export default function AboutPage() {
       experience: "18+ years",
       expertise: "Process Engineering, Automation",
       image: "/images/team/technical-director.jpg",
+      isFounder: false,
     },
     {
       name: "Amit Kumar",
@@ -80,6 +84,7 @@ export default function AboutPage() {
       experience: "15+ years",
       expertise: "Project Management, Quality Control",
       image: "/images/team/operations-manager.jpg",
+      isFounder: false,
     },
     {
       name: "Sneha Reddy",
@@ -87,6 +92,7 @@ export default function AboutPage() {
       experience: "12+ years",
       expertise: "Client Relations, Market Development",
       image: "/images/team/sales-head.jpg",
+      isFounder: false,
     },
   ];
 
@@ -170,6 +176,12 @@ export default function AboutPage() {
                   Today, we are proud to be one of the leading suppliers of
                   dairy and food processing equipment, with a strong focus on
                   quality, innovation, and customer satisfaction.
+                </p>
+                <p>
+                  Our leadership team, led by Mr. Rajesh Patel, brings together
+                  decades of experience in dairy and food processing, ensuring
+                  that every project meets the highest standards of excellence
+                  and innovation.
                 </p>
               </div>
               <div className="mt-8">
@@ -263,7 +275,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
               Experienced professionals dedicated to delivering excellence in
-              every project
+              every project, led by our founder Mr. Rajesh Patel
             </p>
           </MotionDiv>
 
@@ -285,9 +297,20 @@ export default function AboutPage() {
                     <CardTitle className="text-lg font-semibold text-black">
                       {member.name}
                     </CardTitle>
-                    <Badge className="bg-secondary/10 text-black border-secondary/20">
+                    <Badge
+                      className={`${
+                        member.isFounder
+                          ? "bg-primary/10 text-primary border-primary/20"
+                          : "bg-secondary/10 text-black border-secondary/20"
+                      }`}
+                    >
                       {member.role}
                     </Badge>
+                    {member.isFounder && (
+                      <Badge className="bg-green-100 text-green-800 border-green-200 mt-1">
+                        Founder
+                      </Badge>
+                    )}
                   </CardHeader>
                   <CardContent className="text-center space-y-2">
                     <p className="text-sm text-black/70">
@@ -298,6 +321,13 @@ export default function AboutPage() {
                       <span className="font-medium">Expertise:</span>{" "}
                       {member.expertise}
                     </p>
+                    {member.isFounder && member.founderInfo && (
+                      <div className="mt-3 p-3 bg-primary/5 rounded-lg">
+                        <p className="text-xs text-black/80 leading-relaxed">
+                          {member.founderInfo}
+                        </p>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </MotionDiv>

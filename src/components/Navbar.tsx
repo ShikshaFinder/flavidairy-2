@@ -30,7 +30,6 @@ export function Navbar() {
     { name: "Consultancy Services", href: "/consultancy" },
     { name: "Machinery & Equipment", href: "/machinery" },
     { name: "Blog/Insights", href: "/blog" },
-    { name: "Contact Us", href: "/contact" },
     { name: "Career", href: "/career" },
   ];
 
@@ -79,17 +78,9 @@ export function Navbar() {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link href="/contact">
-              <Button
-                variant="ghost"
-                className="text-gray-600 hover:text-black"
-              >
-                Contact Us
-              </Button>
-            </Link>
-            <Link href="/contact">
               <Button className="group relative overflow-hidden bg-secondary hover:bg-secondary/90 text-black border-0">
                 <span className="relative z-10 flex items-center gap-2">
-                  Get a Quote
+                  Contact Us
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <MotionDiv
@@ -142,17 +133,9 @@ export function Navbar() {
                 ))}
                 <div className="pt-4 space-y-3 border-t border-gray-200">
                   <Link href="/contact">
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start text-gray-600 hover:text-black"
-                    >
-                      Contact Us
-                    </Button>
-                  </Link>
-                  <Link href="/contact">
                     <Button className="w-full group relative overflow-hidden bg-secondary hover:bg-secondary/90 text-black border-0">
                       <span className="relative z-10 flex items-center gap-2">
-                        Get a Quote
+                        Contact Us
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                       <MotionDiv

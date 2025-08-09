@@ -4,12 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import Height from "@/components/height";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion";
 import {
@@ -76,25 +71,37 @@ export default function MachineryPage() {
       id: "MILK PROCESSING EQUIPMENTS",
       name: "Milk Processing",
       icon: Droplets,
-      description: "Milk, cheese, yogurt, butter processing",
+      description: "Milk, cheese, yogurt, butter processing equipment",
     },
     {
       id: "FOOD PROCESSING EQUIPMENTS",
       name: "Food Processing",
       icon: Package,
-      description: "Fruits, vegetables, grains, snacks",
+      description: "Fruits, vegetables, grains, snacks processing",
     },
     {
       id: "BEVERAGE PROCESSING EQUIPMENTS",
       name: "Beverage Manufacturing",
       icon: Filter,
-      description: "Juices, carbonated drinks, energy drinks",
+      description: "Juices, carbonated drinks, energy drinks production",
+    },
+    {
+      id: "PHARMA PROCESSING EQUIPMENTS",
+      name: "Pharmaceutical",
+      icon: Thermometer,
+      description: "Pharma and nutraceutical processing equipment",
+    },
+    {
+      id: "CHEMICAL PROCESSING EQUIPMENTS",
+      name: "Chemical Processing",
+      icon: Cog,
+      description: "Industrial chemical processing equipment",
     },
     {
       id: "AUTOMATION EQUIPMENTS",
       name: "Automation & Control",
       icon: Cpu,
-      description: "SCADA, PLC, monitoring systems",
+      description: "SCADA, PLC, monitoring and control systems",
     },
   ];
 
