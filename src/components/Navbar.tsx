@@ -30,7 +30,6 @@ export function Navbar() {
     { name: "Consultancy Services", href: "/consultancy" },
     { name: "Machinery & Equipment", href: "/machinery" },
     { name: "Blog/Insights", href: "/blog" },
-    { name: "Career", href: "/career" },
   ];
 
   return (
@@ -38,7 +37,7 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-lg"
-          : "bg-transparent"
+          : "md:bg-transparent bg-white border-b border-gray-200 shadow-sm"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -52,7 +51,7 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-sky-600 rounded-lg flex items-center justify-center">
               <Factory className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-black">
@@ -78,7 +77,7 @@ export function Navbar() {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link href="/contact">
-              <Button className="group relative overflow-hidden bg-secondary hover:bg-secondary/90 text-black border-0">
+              <Button className="group relative overflow-hidden bg-sky-600 hover:bg-sky-700 text-white border-0">
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Us
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -133,7 +132,7 @@ export function Navbar() {
                 ))}
                 <div className="pt-4 space-y-3 border-t border-gray-200">
                   <Link href="/contact">
-                    <Button className="w-full group relative overflow-hidden bg-secondary hover:bg-secondary/90 text-black border-0">
+                    <Button className="w-full group relative overflow-hidden bg-sky-600 hover:bg-sky-700 text-white border-0">
                       <span className="relative z-10 flex items-center gap-2">
                         Contact Us
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

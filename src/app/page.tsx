@@ -6,7 +6,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Pricing } from "@/components/sections/Pricing";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
-import { SelectedInterns } from "@/components/sections/SelectedInterns";
 import Link from "next/link";
 // import FileUpload from "@/components/FileUpload";
 
@@ -16,7 +15,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Features />
-      <SelectedInterns />
       <Testimonials />
       {/* <Pricing /> section removed as requested */}
       <CTA />

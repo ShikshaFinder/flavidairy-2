@@ -30,7 +30,7 @@ export function CTA() {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
             Ready to Transform Your
-            <span className="text-secondary"> Processing Operations?</span>
+            <span className="text-sky-600"> Processing Operations?</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Let our experienced team help you design and implement the perfect
@@ -46,7 +46,7 @@ export function CTA() {
           >
             <MotionButton
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-black px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
+              className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
               asChild
             >
               <Link href="/contact">
@@ -66,7 +66,7 @@ export function CTA() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-gray-300 text-black hover:bg-gray-50 hover:border-gray-400 px-8 py-4 text-lg font-semibold"
+              className="border-2 border-sky-300 text-sky-700 hover:bg-sky-50 hover:border-sky-400 px-8 py-4 text-lg font-semibold"
               asChild
             >
               <Link href="/contact">Download Brochure</Link>
