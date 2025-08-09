@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary Colors - White and Yellow */
+  /* Primary Colors - White and Sky Blue */
   --background: #ffffff;
   --foreground: #000000;
   --primary: #ffffff;
   /* White */
   --primary-foreground: #000000;
-  --secondary: #fbbf24;
-  /* Yellow */
-  --secondary-foreground: #000000;
+  --secondary: #0ea5e9;
+  /* Sky Blue */
+  --secondary-foreground: #ffffff;
 
   /* Accent Colors */
-  --accent: #f59e0b;
-  /* Amber/Orange */
+  --accent: #0284c7;
+  /* Darker Sky Blue */
   --accent-foreground: #ffffff;
   --tertiary: #10b981;
   /* Emerald Green */
@@ -29,8 +29,8 @@
   --success: #059669;
   /* Green */
   --success-foreground: #ffffff;
-  --warning: #d97706;
-  /* Orange */
+  --warning: #0369a1;
+  /* Sky Blue */
   --warning-foreground: #ffffff;
   --destructive: #dc2626;
   /* Red */
@@ -42,34 +42,6 @@
   /* Ring and Radius */
   --ring: #ffffff;
   --radius: 0.5rem;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-tertiary: var(--tertiary);
-  --color-tertiary-foreground: var(--tertiary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
-  --color-warning: var(--warning);
-  --color-warning-foreground: var(--warning-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-info: var(--info);
-  --color-info-foreground: var(--info-foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -147,13 +119,13 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Enhanced aurora background with new colors */
+/* Enhanced aurora background with sky blue colors */
 .aurora {
   background: linear-gradient(45deg,
       rgba(255, 255, 255, 0.1) 0%,
-      rgba(251, 191, 36, 0.1) 25%,
-      rgba(245, 158, 11, 0.1) 50%,
-      rgba(16, 185, 129, 0.1) 75%,
+      rgba(14, 165, 233, 0.1) 25%,
+      rgba(2, 132, 199, 0.1) 50%,
+      rgba(3, 105, 161, 0.1) 75%,
       rgba(255, 255, 255, 0.1) 100%);
   background-size: 400% 400%;
   animation: aurora 8s ease-in-out infinite;
@@ -193,9 +165,9 @@ html {
       var(--primary) 100%);
 }
 
-/* Hero gradient background - Minimalist */
+/* Hero gradient background - Sky Blue */
 .hero-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #10b981 25%, #ffffff 50%, #10b981 75%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #0ea5e9 25%, #ffffff 50%, #0284c7 75%, #ffffff 100%);
   background-size: 400% 400%;
   animation: heroGradient 8s ease-in-out infinite;
 }

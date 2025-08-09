@@ -26,6 +26,24 @@ import {
   Target,
   TrendingUp,
   Shield,
+  Factory,
+  Cog,
+  Layout,
+  ClipboardList,
+  MapPin,
+  Tool,
+  GraduationCap,
+  BarChart3,
+  Search,
+  RefreshCw,
+  FlaskConical,
+  Microscope,
+  FileCheck,
+  Package,
+  Globe,
+  Monitor,
+  Database,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -34,7 +52,7 @@ export default function ConsultancyPage() {
     {
       id: "turnkey",
       title: "Turnkey Project Solutions",
-      icon: Building2,
+      icon: Factory,
       color: "primary",
       description: "Complete project execution from greenfield to brownfield",
       services: [
@@ -47,7 +65,7 @@ export default function ConsultancyPage() {
     {
       id: "engineering",
       title: "Engineering & Technical Consultancy",
-      icon: Settings,
+      icon: Cog,
       color: "secondary",
       description: "Comprehensive technical design and planning services",
       services: [
@@ -58,13 +76,13 @@ export default function ConsultancyPage() {
         "Equipment Layout Planning",
         "Retrofitting of existing plants",
         "Line expansions/ Products portfolio expansion",
-        "Automation & Mechanization Strategy",
+        "Automation & Mechanization Strategy (Dairy & Food Industry)",
       ],
     },
     {
       id: "facility",
       title: "Facility and Operational Setup",
-      icon: Wrench,
+      icon: Layout,
       color: "accent",
       description: "Complete facility design and operational guidance",
       services: [
@@ -79,7 +97,7 @@ export default function ConsultancyPage() {
     {
       id: "business",
       title: "Business and Technical Advisory",
-      icon: Lightbulb,
+      icon: BarChart3,
       color: "tertiary",
       description: "Strategic business and technical consulting",
       services: [
@@ -93,7 +111,7 @@ export default function ConsultancyPage() {
     {
       id: "rd",
       title: "Research & Development (R&D)",
-      icon: TestTube,
+      icon: FlaskConical,
       color: "primary",
       description: "Innovation and product development services",
       services: [
@@ -114,15 +132,15 @@ export default function ConsultancyPage() {
   const getColorClasses = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-primary border-primary bg-primary/5";
+        return "text-sky-600 border-sky-200 bg-sky-50";
       case "secondary":
-        return "text-secondary border-secondary bg-secondary/5";
+        return "text-sky-700 border-sky-300 bg-sky-100";
       case "accent":
-        return "text-accent border-accent bg-accent/5";
+        return "text-sky-800 border-sky-400 bg-sky-150";
       case "tertiary":
-        return "text-tertiary border-tertiary bg-tertiary/5";
+        return "text-sky-600 border-sky-200 bg-sky-50";
       default:
-        return "text-primary border-primary bg-primary/5";
+        return "text-sky-600 border-sky-200 bg-sky-50";
     }
   };
 
@@ -150,24 +168,24 @@ export default function ConsultancyPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-background via-background-secondary to-background-tertiary">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-white via-secondary/5 to-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               Consultancy Services
             </h1>
-            <p className="text-xl md:text-2xl text-foreground-secondary mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-black/70">
               Expert consultation, turnkey execution, and strategic guidance for
               dairy and food processing industries
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-primary hover:bg-gradient-secondary"
+                className="bg-sky-600 hover:bg-sky-700 text-white"
               >
                 <Link href="/contact" className="flex items-center">
                   Get Consultation
@@ -177,7 +195,7 @@ export default function ConsultancyPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white"
+                className="border-sky-300 text-sky-700 hover:bg-sky-600 hover:text-white"
               >
                 <Link href="/contact">Download Brochure</Link>
               </Button>
@@ -191,10 +209,10 @@ export default function ConsultancyPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
                 Our Consultancy Services
               </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-black/70">
                 From concept to commissioning, we provide comprehensive
                 consultancy services tailored to your specific needs
               </p>
@@ -220,10 +238,10 @@ export default function ConsultancyPage() {
                           <service.icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <CardTitle className="text-xl font-bold text-foreground">
+                          <CardTitle className="text-xl font-bold text-black">
                             {service.title}
                           </CardTitle>
-                          <CardDescription className="text-foreground-secondary">
+                          <CardDescription className="text-black/70">
                             {service.description}
                           </CardDescription>
                         </div>
@@ -235,7 +253,7 @@ export default function ConsultancyPage() {
                         {service.services.map((item, idx) => (
                           <div key={idx} className="flex items-start">
                             <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                            <span className="text-sm text-foreground-secondary">
+                            <span className="text-sm text-black/60">
                               {item}
                             </span>
                           </div>
@@ -251,14 +269,14 @@ export default function ConsultancyPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
                 Why Choose Our Consultancy?
               </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-black/70">
                 With 20+ years of experience, we deliver value through
                 expertise, innovation, and commitment to excellence
               </p>
@@ -273,13 +291,13 @@ export default function ConsultancyPage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <benefit.icon className="w-6 h-6 text-sky-600" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  <h3 className="text-lg font-semibold mb-2 text-black">
                     {benefit.title}
                   </h3>
-                  <p className="text-sm text-foreground-secondary">
+                  <p className="text-sm text-black/70">
                     {benefit.description}
                   </p>
                 </MotionDiv>
@@ -294,10 +312,10 @@ export default function ConsultancyPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
                 Our Consultancy Process
               </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-black/70">
                 A systematic approach to delivering successful projects and
                 sustainable solutions
               </p>
@@ -307,13 +325,13 @@ export default function ConsultancyPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <ScrollReveal delay={0.1}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
                   1
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                <h3 className="text-lg font-semibold mb-2 text-black">
                   Discovery & Analysis
                 </h3>
-                <p className="text-sm text-foreground-secondary">
+                <p className="text-sm text-black/70">
                   Understanding your requirements, challenges, and objectives
                   through detailed analysis
                 </p>
@@ -322,13 +340,13 @@ export default function ConsultancyPage() {
 
             <ScrollReveal delay={0.2}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                <div className="w-16 h-16 bg-sky-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
                   2
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                <h3 className="text-lg font-semibold mb-2 text-black">
                   Strategy & Planning
                 </h3>
-                <p className="text-sm text-foreground-secondary">
+                <p className="text-sm text-black/70">
                   Developing comprehensive strategies and detailed project plans
                   tailored to your needs
                 </p>
@@ -337,13 +355,13 @@ export default function ConsultancyPage() {
 
             <ScrollReveal delay={0.3}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                <div className="w-16 h-16 bg-sky-800 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
                   3
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                <h3 className="text-lg font-semibold mb-2 text-black">
                   Implementation
                 </h3>
-                <p className="text-sm text-foreground-secondary">
+                <p className="text-sm text-black/70">
                   Executing the plan with precision, ensuring quality and timely
                   delivery
                 </p>
@@ -352,13 +370,13 @@ export default function ConsultancyPage() {
 
             <ScrollReveal delay={0.4}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-tertiary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                <div className="w-16 h-16 bg-sky-900 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
                   4
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                <h3 className="text-lg font-semibold mb-2 text-black">
                   Support & Optimization
                 </h3>
-                <p className="text-sm text-foreground-secondary">
+                <p className="text-sm text-black/70">
                   Ongoing support, monitoring, and continuous improvement for
                   long-term success
                 </p>
@@ -369,14 +387,14 @@ export default function ConsultancyPage() {
       </section>
 
       {/* Expertise Areas */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
                 Areas of Expertise
               </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-black/70">
                 Specialized knowledge across all aspects of dairy and food
                 processing
               </p>
@@ -387,7 +405,7 @@ export default function ConsultancyPage() {
             <ScrollReveal delay={0.1}>
               <Card className="shadow-lg hover-lift">
                 <CardHeader>
-                  <CardTitle className="text-primary">
+                  <CardTitle className="text-sky-600">
                     Process Engineering
                   </CardTitle>
                 </CardHeader>
@@ -416,7 +434,7 @@ export default function ConsultancyPage() {
             <ScrollReveal delay={0.2}>
               <Card className="shadow-lg hover-lift">
                 <CardHeader>
-                  <CardTitle className="text-secondary">
+                  <CardTitle className="text-sky-700">
                     Automation & Control
                   </CardTitle>
                 </CardHeader>
@@ -445,7 +463,7 @@ export default function ConsultancyPage() {
             <ScrollReveal delay={0.3}>
               <Card className="shadow-lg hover-lift">
                 <CardHeader>
-                  <CardTitle className="text-accent">
+                  <CardTitle className="text-sky-800">
                     Quality & Compliance
                   </CardTitle>
                 </CardHeader>
@@ -475,7 +493,7 @@ export default function ConsultancyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-multi">
+      <section className="py-16" style={{ background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%)' }}>
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
@@ -488,7 +506,7 @@ export default function ConsultancyPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-primary hover:bg-gray-100"
+                className="bg-white text-sky-600 hover:bg-gray-100"
               >
                 <Link href="/contact" className="flex items-center">
                   Get Free Consultation
@@ -498,7 +516,7 @@ export default function ConsultancyPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary"
+                className="border-white text-white hover:bg-white hover:text-sky-600"
               >
                 <Link href="/contact">Download Case Studies</Link>
               </Button>

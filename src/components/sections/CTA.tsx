@@ -13,9 +13,9 @@ export function CTA() {
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
-              radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%)
+              radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(3, 105, 161, 0.05) 0%, transparent 50%)
             `,
           }}
         />

@@ -15,8 +15,8 @@ export function Footer() {
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
-              radial-gradient(circle at 10% 20%, rgba(251, 191, 36, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%)
+              radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.03) 0%, transparent 50%)
             `,
           }}
         />
