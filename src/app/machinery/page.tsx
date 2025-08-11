@@ -86,18 +86,6 @@ export default function MachineryPage() {
       description: "Juices, carbonated drinks, energy drinks production",
     },
     {
-      id: "PHARMA PROCESSING EQUIPMENTS",
-      name: "Pharmaceutical",
-      icon: Thermometer,
-      description: "Pharma and nutraceutical processing equipment",
-    },
-    {
-      id: "CHEMICAL PROCESSING EQUIPMENTS",
-      name: "Chemical Processing",
-      icon: Cog,
-      description: "Industrial chemical processing equipment",
-    },
-    {
       id: "AUTOMATION EQUIPMENTS",
       name: "Automation & Control",
       icon: Cpu,

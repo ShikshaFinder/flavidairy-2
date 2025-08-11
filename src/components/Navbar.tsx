@@ -25,10 +25,12 @@ export function Navbar() {
   }, []);
 
   const navItems = [
+    { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Industries", href: "/industries" },
     { name: "Consultancy Services", href: "/consultancy" },
     { name: "Machinery & Equipment", href: "/machinery" },
+    { name: "Magazines", href: "/magazines" },
     { name: "Blog/Insights", href: "/blog" },
   ];
 

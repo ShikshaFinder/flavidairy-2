@@ -21,6 +21,10 @@ import {
   Shield,
   Zap,
   Heart,
+  Droplets,
+  Package,
+  Filter,
+  Leaf,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -61,38 +65,48 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Rajesh Patel",
-      role: "Founder & CEO",
-      experience: "25+ years",
-      expertise: "Dairy Processing, Business Strategy",
-      image: "/images/team/ceo.jpg",
+      name: "Mr. Kirit Patel",
+      role: "CEO, Flavi Dairy Solutions",
+      education:
+        "Bachelor of Technology in Dairy Technology from Anand Agricultural University, Anand. 2000-04.",
+      experience: "20+ years",
+      expertise: "Dairy Processing, Consultancy Services",
+      image: "/images/team/kirit-patel.jpg",
       isFounder: true,
-      founderInfo:
-        "Founded Flavi Dairy Food Solutions in 2004 with a vision to revolutionize dairy and food processing in India. With over 25 years of experience in the industry, Mr. Patel has been instrumental in establishing the company as a leading solutions provider.",
+      workExperience: [
+        "Amul: 2004-2008 in the Cheese & Paneer",
+        "Jain Dairy: 2008-2009 as Plant Head for Milk, Paneer, Cheese, Fermented Milks, Sweets",
+        "Siddharth Milk Foods: 2009-2010 in Cheese",
+        "Flavi Dairy Solutions: Since 2010 as Founder & CEO for Consultancy Services",
+      ],
+      achievements: [
+        "Torch Bearer & Role Model for Young Consultants against Retired Staff as Consultants",
+        "Huge Network across the globe",
+        "Known for Challenging Status Quo in the Dairy Operations",
+        "3 Patents on Paneer related fields",
+      ],
     },
     {
-      name: "Priya Sharma",
-      role: "Technical Director",
-      experience: "18+ years",
-      expertise: "Process Engineering, Automation",
-      image: "/images/team/technical-director.jpg",
+      name: "Dr. Hasmukh Patel",
+      role: "Director, Flavi Dairy Solutions & President, US Dairy and Foods Consulting LLC",
+      education:
+        "Ph.D (Dairy Technology) from Massey University, New Zealand; B.Tech. (Dairy Technology) from Anand Agricultural University, Anand (Gujarat)",
+      experience: "20+ years",
+      expertise: "R&D, Global Dairy Operations, Academia",
+      image: "/images/team/hasmukh-patel.jpg",
       isFounder: false,
-    },
-    {
-      name: "Amit Kumar",
-      role: "Operations Manager",
-      experience: "15+ years",
-      expertise: "Project Management, Quality Control",
-      image: "/images/team/operations-manager.jpg",
-      isFounder: false,
-    },
-    {
-      name: "Sneha Reddy",
-      role: "Head of Sales",
-      experience: "12+ years",
-      expertise: "Client Relations, Market Development",
-      image: "/images/team/sales-head.jpg",
-      isFounder: false,
+      workExperience: [
+        "Sr. Director, Global R&D, Mengniu Dairy Group, Hong Kong",
+        "Vice-President, R&D, Whitehall Specialties Inc., WI",
+        "Technical Director, R&D, Dairy Foods, Land O'Lakes, USA",
+        "Ass. Professor, South Dakota State University, USA",
+        "Scientist & Project Leader, Ingredient Innovations, Fonterra, New Zealand",
+        "Ex-GCMMF-AMUL, Anand",
+      ],
+      achievements: [
+        "20+ Years of International Experience working in Dairy and Food Industry, FMCG Industry, as well as in Academia across the World",
+        "10 Patents, 100+ Research-review & other Publications",
+      ],
     },
   ];
 
@@ -163,8 +177,8 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-black/70">
                 <p>
-                  Founded in 2004, Flavi Dairy Food Solutions began with a
-                  simple mission: to provide reliable and efficient processing
+                  Founded in 2010, Flavi Dairy Solutions began with a simple
+                  mission: to provide reliable and efficient processing
                   equipment for the dairy and food industry in India.
                 </p>
                 <p>
@@ -178,7 +192,7 @@ export default function AboutPage() {
                   quality, innovation, and customer satisfaction.
                 </p>
                 <p>
-                  Our leadership team, led by Mr. Rajesh Patel, brings together
+                  Our leadership team, led by Mr. Kirit Patel, brings together
                   decades of experience in dairy and food processing, ensuring
                   that every project meets the highest standards of excellence
                   and innovation.
@@ -214,7 +228,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Mission & Vision Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <MotionDiv
@@ -224,8 +238,74 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Our Values
+              Mission & Vision
             </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Our purpose and aspirations that drive everything we do
+            </p>
+          </MotionDiv>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <MotionDiv
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 bg-white">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="w-8 h-8 text-sky-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-black">
+                      Our Mission
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 text-center leading-relaxed">
+                    To provide comprehensive, reliable, and innovative dairy and
+                    food processing solutions that enable our clients to achieve
+                    operational excellence, enhance product quality, and drive
+                    sustainable growth in their businesses.
+                  </p>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+
+            <MotionDiv
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 bg-white">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <TrendingUp className="w-8 h-8 text-sky-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-black">
+                      Our Vision
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 text-center leading-relaxed">
+                    To be the leading consultancy and solutions provider in the
+                    dairy and food processing industry, recognized for our
+                    expertise, innovation, and commitment to transforming
+                    operations from farm to factory across global markets.
+                  </p>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+          </div>
+
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Our Values
+            </h3>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
               The principles that guide our business and relationships with
               clients
@@ -261,6 +341,178 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Domains Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Our Domain Expertise
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Comprehensive solutions across multiple dairy and food processing
+              domains
+            </p>
+          </MotionDiv>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+                    <Droplets className="w-6 h-6 text-sky-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    Dairy Processing
+                  </h3>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Milk Processing & Treatment</li>
+                    <li>• Cheese & Paneer Manufacturing</li>
+                    <li>• Yogurt & Fermented Products</li>
+                    <li>• Ice Cream Production</li>
+                    <li>• Milk Powder & Spray Drying</li>
+                    <li>• Butter & Ghee Processing</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+                    <Package className="w-6 h-6 text-sky-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    Food Processing
+                  </h3>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Fruit & Vegetable Processing</li>
+                    <li>• Grain & Cereal Processing</li>
+                    <li>• Snack Food Manufacturing</li>
+                    <li>• Ready-to-Eat Products</li>
+                    <li>• Bakery & Confectionery</li>
+                    <li>• Spice & Seasoning Processing</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+                    <Filter className="w-6 h-6 text-sky-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    Beverage Manufacturing
+                  </h3>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Fruit Juice Extraction</li>
+                    <li>• Carbonated Beverages</li>
+                    <li>• Energy & Sports Drinks</li>
+                    <li>• Flavored Water Production</li>
+                    <li>• Concentrate & Syrup Manufacturing</li>
+                    <li>• Packaging & Bottling Systems</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+                    <Leaf className="w-6 h-6 text-sky-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    Agro Processing
+                  </h3>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Oil Extraction & Refining</li>
+                    <li>• Pulse & Grain Processing</li>
+                    <li>• Spice Grinding & Packaging</li>
+                    <li>• Agricultural Waste Management</li>
+                    <li>• Value-Added Products</li>
+                    <li>• Post-Harvest Processing</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+                    <Factory className="w-6 h-6 text-sky-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    Process Engineering
+                  </h3>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Plant Design & Layout</li>
+                    <li>• Process Optimization</li>
+                    <li>• Automation & Control Systems</li>
+                    <li>• Quality Management Systems</li>
+                    <li>• Energy Efficiency Solutions</li>
+                    <li>• Maintenance & Support</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+                    <Target className="w-6 h-6 text-sky-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    Consultancy Services
+                  </h3>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Turnkey Project Solutions</li>
+                    <li>• Technical Documentation</li>
+                    <li>• Feasibility Studies</li>
+                    <li>• Regulatory Compliance</li>
+                    <li>• Training & Development</li>
+                    <li>• Business Strategy</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </MotionDiv>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -275,59 +527,82 @@ export default function AboutPage() {
             </h2>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
               Experienced professionals dedicated to delivering excellence in
-              every project, led by our founder Mr. Rajesh Patel
+              every project, led by our CEO Mr. Kirit Patel
             </p>
           </MotionDiv>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
               <MotionDiv
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
-                  <div className="aspect-square bg-gray-100 rounded-t-lg flex items-center justify-center">
-                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center">
-                      <Users className="w-10 h-10 text-secondary" />
+                  <CardHeader className="text-center pb-4">
+                    <div className="w-24 h-24 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-12 h-12 text-sky-600" />
                     </div>
-                  </div>
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-lg font-semibold text-black">
+                    <CardTitle className="text-xl font-bold text-black">
                       {member.name}
                     </CardTitle>
-                    <Badge
-                      className={`${
-                        member.isFounder
-                          ? "bg-primary/10 text-primary border-primary/20"
-                          : "bg-secondary/10 text-black border-secondary/20"
-                      }`}
-                    >
+                    <Badge className="bg-sky-100 text-sky-800 border-sky-200 text-sm">
                       {member.role}
                     </Badge>
-                    {member.isFounder && (
-                      <Badge className="bg-green-100 text-green-800 border-green-200 mt-1">
-                        Founder
-                      </Badge>
-                    )}
                   </CardHeader>
-                  <CardContent className="text-center space-y-2">
-                    <p className="text-sm text-black/70">
-                      <span className="font-medium">Experience:</span>{" "}
-                      {member.experience}
-                    </p>
-                    <p className="text-sm text-black/70">
-                      <span className="font-medium">Expertise:</span>{" "}
-                      {member.expertise}
-                    </p>
-                    {member.isFounder && member.founderInfo && (
-                      <div className="mt-3 p-3 bg-primary/5 rounded-lg">
-                        <p className="text-xs text-black/80 leading-relaxed">
-                          {member.founderInfo}
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-black mb-2">
+                        Education:
+                      </h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {member.education}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-black/70">
+                          <span className="font-medium">Experience:</span>{" "}
+                          {member.experience}
                         </p>
                       </div>
-                    )}
+                      <div>
+                        <p className="text-sm text-black/70">
+                          <span className="font-medium">Expertise:</span>{" "}
+                          {member.expertise}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-black mb-2">
+                        Work Experience:
+                      </h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        {member.workExperience.map((exp, expIndex) => (
+                          <li key={expIndex} className="flex items-start gap-2">
+                            <CheckCircle className="w-3 h-3 text-sky-600 mt-1 flex-shrink-0" />
+                            {exp}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-black mb-2">
+                        Achievements:
+                      </h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        {member.achievements.map((achievement, achIndex) => (
+                          <li key={achIndex} className="flex items-start gap-2">
+                            <Award className="w-3 h-3 text-sky-600 mt-1 flex-shrink-0" />
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </CardContent>
                 </Card>
               </MotionDiv>

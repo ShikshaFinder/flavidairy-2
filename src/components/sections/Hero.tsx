@@ -65,7 +65,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-6 py-3 bg-sky-100 backdrop-blur-sm text-sky-700 border border-sky-200 rounded-full text-sm font-medium shadow-sm">
-              Transforming Processing Operations with Expert Solutions
+              Engineering Progress from Farm to Factory
             </span>
           </MotionDiv>
 

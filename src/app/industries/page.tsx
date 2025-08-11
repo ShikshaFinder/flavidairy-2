@@ -114,70 +114,10 @@ export default function IndustriesPage() {
         "Quality assurance",
       ],
     },
-    {
-      id: "pharma",
-      name: "Pharmaceutical",
-      icon: Leaf,
-      description:
-        "Hygienic processing equipment for pharmaceutical and nutraceutical products.",
-      image: "/images/industries/pharma.jpg",
-      products: [
-        "Tablets & Capsules",
-        "Liquid Formulations",
-        "Creams & Ointments",
-        "Syrups & Suspensions",
-        "Powder Products",
-        "Herbal Extracts",
-      ],
-      equipment: [
-        "Granulation Systems",
-        "Coating Machines",
-        "Filling & Sealing Units",
-        "Sterilization Equipment",
-        "Quality Testing Systems",
-        "Clean Room Equipment",
-      ],
-      benefits: [
-        "GMP compliant",
-        "Sterile processing",
-        "Precise dosing",
-        "Documentation support",
-      ],
-    },
-    {
-      id: "chemical",
-      name: "Chemical Processing",
-      icon: Zap,
-      description:
-        "Industrial chemical processing equipment for various chemical manufacturing applications.",
-      image: "/images/industries/chemical.jpg",
-      products: [
-        "Industrial Chemicals",
-        "Agro Chemicals",
-        "Paints & Coatings",
-        "Adhesives",
-        "Lubricants",
-        "Cleaning Products",
-      ],
-      equipment: [
-        "Reaction Vessels",
-        "Heat Exchangers",
-        "Filtration Systems",
-        "Drying Equipment",
-        "Mixing & Blending",
-        "Storage Tanks",
-      ],
-      benefits: [
-        "Corrosion resistant",
-        "High temperature operation",
-        "Safety compliance",
-        "Process optimization",
-      ],
-    },
   ];
 
   const stats = [
-    { icon: Users, label: "Industries Served", value: "15+" },
+    { icon: Users, label: "Industries Served", value: "10+" },
     { icon: Target, label: "Projects Completed", value: "500+" },
     { icon: Award, label: "Years Experience", value: "20+" },
     { icon: Clock, label: "Support Response", value: "24/7" },
@@ -203,10 +143,10 @@ export default function IndustriesPage() {
               <span className="text-secondary"> Industry</span>
             </h1>
             <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
-              From dairy and food processing to pharmaceuticals and chemicals,
+              From dairy and food processing to beverages and agro processing,
               we provide comprehensive solutions tailored to your industry's
-              specific needs. Our expertise spans across pharma, chemical,
-              dairy, food, and beverage processing industries.
+              specific needs. Our expertise spans across dairy, food, and
+              beverage processing industries.
             </p>
           </MotionDiv>
         </div>
