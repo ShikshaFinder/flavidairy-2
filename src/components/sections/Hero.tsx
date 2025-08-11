@@ -106,7 +106,7 @@ export function Hero() {
             >
               <Link href="/contact">
                 <span className="relative z-10 flex items-center gap-2">
-                  Get Free Consultation
+                  Get a Quote
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Link>
@@ -118,10 +118,10 @@ export function Hero() {
               className="border-2 border-sky-300 text-sky-700 hover:bg-sky-600 hover:text-white px-8 py-4 text-lg font-medium bg-white/60 backdrop-blur-sm transition-all duration-300"
               asChild
             >
-              <Link href="/about">
+              <Link href="/contact">
                 <span className="flex items-center gap-2">
                   <Play className="w-5 h-5" />
-                  Learn More
+                  Talk to an Expert
                 </span>
               </Link>
             </Button>
@@ -135,15 +135,19 @@ export function Hero() {
           >
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-              <span>20+ Years Experience</span>
+              <span>20+ Years of Experience</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-              <span>100+ Projects Completed</span>
+              <span>100+ Projects Commissioned</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-              <span>24/7 Support</span>
+              <span>Turnkey & Customized Solutions</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
+              <span>Scale-up to Industrialization Expertise</span>
             </div>
           </MotionDiv>
         </div>

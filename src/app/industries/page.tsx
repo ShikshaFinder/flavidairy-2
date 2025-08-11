@@ -29,29 +29,57 @@ export default function IndustriesPage() {
       name: "Dairy Processing",
       icon: Droplets,
       description:
-        "Complete dairy processing solutions for milk, cheese, yogurt, butter, and ice cream production.",
+        "End-to-end processing lines and machinery for comprehensive dairy solutions.",
       image: "/images/industries/dairy.jpg",
+      sections: [
+        {
+          title: "Core Dairy Solutions",
+          items: [
+            "Reception, clarification, storage, pasteurization, homogenization, and standardization of liquid milk",
+            "Production of pasteurized UHT milk and milk-based beverages like curd, lassi, flavoured milk, and ice cream mix",
+            "Full product lines for curd, lassi, stirred/set yoghurt (including Greek yogurt), paneer, butter, ghee, cheese (Mozzarella, Cheddar), and other milk derivatives",
+          ],
+        },
+        {
+          title: "Specialized Processing Equipment & Lines",
+          items: [
+            "Milk Fat & Cream Processing: Equipment for standardization, ripening, churning, melting, storage and filling to produce butter or ghee with high yield and consistency",
+            "Paneer & Cheese Lines: Stainless-steel vats, coagulation units, cheddaring systems, moulding, brining, cooling, and pressing solutions",
+          ],
+        },
+        {
+          title: "Automation & Control",
+          items: [
+            "Fully integrated dairy automation systems from milk intake to final packaging",
+            "Real-time monitoring, performance tracking, MIS reporting, remote support, preventive maintenance alerts, and seamless SCADA integration",
+          ],
+        },
+        {
+          title: "Cleaning & Efficiency",
+          items: [
+            "Automated CIP (Cleaning In Place) systems designed to manage detergent concentration, temperature, flow and contact time",
+            "Minimizing downtime and utility consumption while ensuring hygiene compliance",
+          ],
+        },
+      ],
       products: [
-        "Milk & Milk Products",
-        "Cheese & Curd",
-        "Butter & Ghee",
+        "Raw milk, bottled milk, Flavoured milk",
+        "Powder Plant (Skimmed Milk Powder, Whey Powder, Whole Milk Powder)",
+        "Paneer",
+        "Dahi, Yogurt, Lassi, Kefir",
+        "Butter, Ghee, Cream",
+        "Buttermilk",
+        "Sweetened Condensed Milk",
+        "Dairy based sweets- Basundi, Ras Malia, Khoa",
         "Ice Cream",
-        "Milk Powder",
-        "Whey Products",
+        "Cheese (Cheddar, Mozzarella, Feta, Ricotta, Cream cheese, etc.)",
       ],
-      equipment: [
-        "Pasteurizers & Homogenizers",
-        "Cream Separators",
-        "Cheese Vats",
-        "Butter Churns",
-        "Ice Cream Freezers",
-        "Spray Dryers",
-      ],
+      keyClients: ["Amul", "Hatsun", "Varun Beverages", "Dabur", "Heritage"],
       benefits: [
-        "FSSAI compliant processing",
-        "Energy efficient systems",
-        "Automated control",
-        "Hygienic design",
+        "Energy-efficient, high quality, hygienic processing solutions",
+        "Compliant with international standards (3A, EHEDG)",
+        "Centralized process engineering and automation control",
+        "Cost effective solutions and streamlined operations",
       ],
     },
     {
@@ -59,29 +87,40 @@ export default function IndustriesPage() {
       name: "Food Processing",
       icon: Package,
       description:
-        "Specialized equipment for fruits, vegetables, grains, and ready-to-eat food processing.",
+        "Innovative food processing equipment designed to meet evolving demands of the food industry.",
       image: "/images/industries/food.jpg",
-      products: [
-        "Fruits & Vegetables",
-        "Grains & Cereals",
-        "Snack Foods",
-        "Ready-to-Eat",
-        "Bakery Products",
-        "Confectionery",
-      ],
-      equipment: [
-        "Sorting & Grading Systems",
-        "Washing & Peeling Machines",
-        "Cooking & Processing Units",
-        "Packaging Lines",
-        "Quality Control Equipment",
-        "Material Handling Systems",
+      sections: [
+        {
+          title: "Ready-to-Eat & Traditional Products",
+          items: [
+            "RTE (Ready-to-Eat), RTH (Ready-to-Heat), and RTS (Ready-to-Serve) Food Products",
+            "Traditional Indian Snacks: Kachori, Samosa, Gathiya",
+            "Paratha Production Line (Stuffed/Plain)",
+            "Puran Poli Processing Line",
+          ],
+        },
+        {
+          title: "Sauce & Condiment Processing",
+          items: [
+            "Tomato-Based Products: Ketchup, Sauces, and Gravies",
+            "Jams and Marmalade Preparation",
+            "Mayonnaise and Emulsified Product Preparation",
+          ],
+        },
+        {
+          title: "Potato-Based Products",
+          items: ["French Fries", "Potato Chips"],
+        },
+        {
+          title: "Specialized Products",
+          items: ["Non-Dairy Whipped Cream Processing Plant"],
+        },
       ],
       benefits: [
-        "Preserve nutritional value",
-        "Extended shelf life",
-        "Consistent quality",
-        "High production capacity",
+        "Built with precision and undergo rigorous quality checks",
+        "Crafted from premium-grade materials",
+        "Fully customizable to suit specific production requirements",
+        "Latest technology for maximum efficiency and superior food safety standards",
       ],
     },
     {
@@ -89,29 +128,79 @@ export default function IndustriesPage() {
       name: "Beverage Manufacturing",
       icon: Filter,
       description:
-        "Complete beverage production lines for juices, carbonated drinks, and energy drinks.",
+        "Advanced, tailor-made solutions for beverage processing with complete plant setups.",
       image: "/images/industries/beverage.jpg",
-      products: [
-        "Fruit Juices",
-        "Carbonated Beverages",
-        "Energy Drinks",
-        "Sports Drinks",
-        "Flavored Water",
-        "Syrups & Concentrates",
-      ],
-      equipment: [
-        "Juice Extractors",
-        "Carbonation Systems",
-        "Mixing & Blending Units",
-        "Bottling Lines",
-        "Canning Systems",
-        "Labeling Machines",
+      offerings: [
+        "Production lines for Ready-to-Serve (RTS) and Ready-to-Drink (RTD) beverages",
+        "Systems for manufacturing Carbonated Soft Beverages (CSD)",
+        "Processing setups for Sparkling Fruit-Based Drinks (CFD)",
+        "Automated lines for Energy Drinks, Tonic Waters, and Functional Beverages",
       ],
       benefits: [
-        "High extraction efficiency",
-        "Precise carbonation control",
-        "Automated filling",
-        "Quality assurance",
+        "Enhance efficiency and maintain product quality",
+        "Reduce operational costs",
+        "Automated, hygienic, and energy-efficient processing systems",
+        "Meet global standards",
+        "Recipe management to packaging integration",
+      ],
+    },
+    {
+      id: "fruits-vegetables",
+      name: "Fruits & Vegetables Processing",
+      icon: Leaf,
+      description:
+        "Comprehensive solutions for processing wide range of fruits and vegetables.",
+      image: "/images/industries/agriculture.jpg",
+      sections: [
+        {
+          title: "Tomato Processing",
+          items: [
+            "Tomato puree, paste, ketchup, sauces, and gravies",
+            "Hot break / cold break systems",
+            "Vacuum evaporation & homogenization",
+            "Pasteurization and aseptic packaging",
+          ],
+        },
+        {
+          title: "Mango Processing",
+          items: [
+            "Mango pulp, puree, nectar, and juice",
+            "High-yield extraction & refining systems",
+            "Aseptic filling for export",
+          ],
+        },
+        {
+          title: "Coconut Processing",
+          items: [
+            "Coconut water processing & bottling",
+            "Coconut Milk, cream, and VCO (virgin coconut oil) extraction",
+            "Spray drying for coconut milk powder",
+            "Grating, peeling, and deshelling units",
+          ],
+        },
+        {
+          title: "Tropical Fruits",
+          items: [
+            "Juices, concentrates, and smoothies",
+            "Banana, guava, pineapple, papaya, etc.",
+            "Pulping, blending, and pasteurization lines",
+            "Multi-fruit plant integration & flexible design",
+          ],
+        },
+        {
+          title: "Potato Processing",
+          items: [
+            "Potato flakes, granules, starch, French fries, and chips",
+            "Vacuum drying and drum drying systems (for flakes & powders)",
+            "Precision cutting systems for French fries and chips",
+            "Packaging solutions for frozen, dehydrated, and snack products",
+          ],
+        },
+      ],
+      benefits: [
+        "Preserve natural flavour, colour, and nutrition",
+        "High productivity and hygiene across the entire process",
+        "From raw material handling to final packaging",
       ],
     },
   ];
@@ -194,7 +283,7 @@ export default function IndustriesPage() {
             </p>
           </MotionDiv>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="space-y-16">
             {industries.map((industry, index) => (
               <MotionDiv
                 key={industry.id}
@@ -202,60 +291,118 @@ export default function IndustriesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
-                  <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center">
-                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center">
-                      <industry.icon className="w-10 h-10 text-secondary" />
+                <Card className="hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <CardHeader className="border-b border-gray-100">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center">
+                        <industry.icon className="w-8 h-8 text-sky-600" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-3xl font-bold text-black">
+                          {industry.name}
+                        </CardTitle>
+                        <p className="text-lg text-black/70 mt-2">
+                          {industry.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-black">
-                      {industry.name}
-                    </CardTitle>
-                    <p className="text-black/70">{industry.description}</p>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div>
-                      <h4 className="font-semibold text-black mb-3">
-                        Products
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {industry.products.map((product, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
-                            <span className="text-sm text-black/70">
-                              {product}
-                            </span>
+
+                  <CardContent className="p-8">
+                    {/* Sections for detailed industries */}
+                    {industry.sections && (
+                      <div className="grid md:grid-cols-2 gap-8 mb-8">
+                        {industry.sections.map((section, sectionIdx) => (
+                          <div key={sectionIdx}>
+                            <h4 className="text-xl font-semibold text-black mb-4 border-b border-sky-200 pb-2">
+                              {section.title}
+                            </h4>
+                            <div className="space-y-3">
+                              {section.items.map((item, itemIdx) => (
+                                <div
+                                  key={itemIdx}
+                                  className="flex items-start gap-3"
+                                >
+                                  <CheckCircle className="w-4 h-4 text-sky-600 mt-1 flex-shrink-0" />
+                                  <span className="text-sm text-gray-700 leading-relaxed">
+                                    {item}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         ))}
                       </div>
-                    </div>
+                    )}
 
-                    <div>
-                      <h4 className="font-semibold text-black mb-3">
-                        Equipment
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {industry.equipment.map((equipment, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
-                            <span className="text-sm text-black/70">
-                              {equipment}
-                            </span>
-                          </div>
-                        ))}
+                    {/* Offerings for beverages */}
+                    {industry.offerings && (
+                      <div className="mb-8">
+                        <h4 className="text-xl font-semibold text-black mb-4 border-b border-sky-200 pb-2">
+                          Our Specialized Offerings
+                        </h4>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          {industry.offerings.map((offering, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <CheckCircle className="w-4 h-4 text-sky-600 mt-1 flex-shrink-0" />
+                              <span className="text-sm text-gray-700 leading-relaxed">
+                                {offering}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
+                    {/* Products section */}
+                    {industry.products && (
+                      <div className="mb-8">
+                        <h4 className="text-xl font-semibold text-black mb-4 border-b border-sky-200 pb-2">
+                          Products We Handle
+                        </h4>
+                        <div className="grid md:grid-cols-3 gap-3">
+                          {industry.products.map((product, idx) => (
+                            <div key={idx} className="flex items-center gap-2">
+                              <CheckCircle className="w-3 h-3 text-sky-600 flex-shrink-0" />
+                              <span className="text-sm text-gray-700">
+                                {product}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Key Clients for dairy */}
+                    {industry.keyClients && (
+                      <div className="mb-8">
+                        <h4 className="text-xl font-semibold text-black mb-4 border-b border-sky-200 pb-2">
+                          Key Clients
+                        </h4>
+                        <div className="flex flex-wrap gap-3">
+                          {industry.keyClients.map((client, idx) => (
+                            <Badge
+                              key={idx}
+                              variant="outline"
+                              className="bg-sky-50 text-sky-700 border-sky-200"
+                            >
+                              {client}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Benefits */}
                     <div>
-                      <h4 className="font-semibold text-black mb-3">
+                      <h4 className="text-xl font-semibold text-black mb-4 border-b border-sky-200 pb-2">
                         Key Benefits
                       </h4>
-                      <div className="space-y-2">
+                      <div className="grid md:grid-cols-2 gap-4">
                         {industry.benefits.map((benefit, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
-                            <span className="text-sm text-black/70">
+                          <div key={idx} className="flex items-start gap-3">
+                            <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                            <span className="text-sm text-gray-700 leading-relaxed">
                               {benefit}
                             </span>
                           </div>
@@ -263,18 +410,32 @@ export default function IndustriesPage() {
                       </div>
                     </div>
 
-                    <div className="pt-4">
-                      <Button
-                        className="w-full bg-secondary hover:bg-secondary/90 text-black border-0"
-                        asChild
-                      >
-                        <Link href="/machinery">
-                          <span className="flex items-center justify-center gap-2">
-                            View Equipment
-                            <ArrowRight className="w-4 h-4" />
-                          </span>
-                        </Link>
-                      </Button>
+                    <div className="mt-8 pt-6 border-t border-gray-100">
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button
+                          className="bg-sky-600 hover:bg-sky-700 text-white flex-1"
+                          asChild
+                        >
+                          <Link href="/machinery">
+                            <span className="flex items-center justify-center gap-2">
+                              View Equipment
+                              <ArrowRight className="w-4 h-4" />
+                            </span>
+                          </Link>
+                        </Button>
+                        <Button
+                          variant="outline"
+                          className="border-sky-200 text-sky-700 hover:bg-sky-50 flex-1"
+                          asChild
+                        >
+                          <Link href="/contact">
+                            <span className="flex items-center justify-center gap-2">
+                              Get Quote
+                              <ArrowRight className="w-4 h-4" />
+                            </span>
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

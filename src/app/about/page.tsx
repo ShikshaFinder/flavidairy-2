@@ -39,27 +39,39 @@ export default function AboutPage() {
   const values = [
     {
       icon: Shield,
-      title: "Quality Excellence",
+      title: "Integrity First",
       description:
-        "We maintain the highest standards of quality in all our products and services, ensuring customer satisfaction and safety.",
+        "We do what we say—honestly, ethically, and transparently—no shortcuts, no compromises.",
     },
     {
-      icon: Zap,
-      title: "Innovation",
+      icon: Award,
+      title: "Commitment to Quality",
       description:
-        "Continuously innovating and adopting latest technologies to provide cutting-edge solutions for our clients.",
+        "From design to delivery, we maintain the highest standards to ensure reliable, food-safe systems every time.",
     },
     {
       icon: Heart,
-      title: "Customer Focus",
+      title: "Client-Centric Thinking",
       description:
-        "Our customers are at the heart of everything we do, providing personalized solutions and exceptional support.",
+        "We treat every project like a partnership, listening closely and acting in our clients' best interest—always.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Accountability at Every Step",
+      description:
+        "We take ownership of outcomes, ensuring clarity, timely delivery, and performance you can count on.",
+    },
+    {
+      icon: Clock,
+      title: "Long-Term Reliability",
+      description:
+        "We don't just build systems—we build relationships, offering continued support well beyond commissioning.",
     },
     {
       icon: TrendingUp,
-      title: "Sustainability",
+      title: "Continuous Improvement",
       description:
-        "Committed to sustainable practices and environmentally friendly solutions in all our operations.",
+        "We constantly evolve—adapting technologies, processes, and ideas to stay ahead of your expectations.",
     },
   ];
 
@@ -173,30 +185,64 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                Our Story
+                About Flavi Dairy Solutions
               </h2>
               <div className="space-y-4 text-black/70">
                 <p>
-                  Founded in 2010, Flavi Dairy Solutions began with a simple
-                  mission: to provide reliable and efficient processing
-                  equipment for the dairy and food industry in India.
+                  With over 20 years of proven experience have helped us build a
+                  strong reputation as a trusted partner in the field of
+                  engineering and automation for the dairy and food production
+                  sector. Our commitment to quality, integrity, and innovation
+                  has positioned us as a reliable solutions provider for
+                  businesses seeking sustainable growth and operational
+                  excellence.
                 </p>
                 <p>
-                  What started as a small team of engineers has grown into a
-                  comprehensive solutions provider, serving clients across the
-                  country with cutting-edge technology and exceptional service.
+                  We work closely with clients not just design strong system but
+                  also take them through strategic consultation and new product
+                  development, ensuring their offerings meet evolving market
+                  demands and regulatory standards.
                 </p>
-                <p>
-                  Today, we are proud to be one of the leading suppliers of
-                  dairy and food processing equipment, with a strong focus on
-                  quality, innovation, and customer satisfaction.
-                </p>
-                <p>
-                  Our leadership team, led by Mr. Kirit Patel, brings together
-                  decades of experience in dairy and food processing, ensuring
-                  that every project meets the highest standards of excellence
-                  and innovation.
-                </p>
+              </div>
+
+              {/* Domain Table */}
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold text-black mb-4">
+                  Our Domain Expertise
+                </h3>
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div className="font-semibold text-black border-b border-gray-300 pb-2 mb-2">
+                      Domain
+                    </div>
+                    <div className="font-semibold text-black border-b border-gray-300 pb-2 mb-2">
+                      Core Focus
+                    </div>
+                    <div className="font-semibold text-black border-b border-gray-300 pb-2 mb-2">
+                      Key Value to Client
+                    </div>
+
+                    <div className="text-gray-700 py-2">
+                      Consultation & Turnkey Execution
+                    </div>
+                    <div className="text-gray-700 py-2">
+                      Strategy, design, project management, commissioning
+                    </div>
+                    <div className="text-gray-700 py-2">
+                      End-to-end delivery with minimal client involvement
+                    </div>
+
+                    <div className="text-gray-700 py-2">
+                      Machinery Supply & Automation
+                    </div>
+                    <div className="text-gray-700 py-2">
+                      Equipment supply, operational automation, SCADA/PLC
+                    </div>
+                    <div className="text-gray-700 py-2">
+                      High performance, compliance, efficiency, traceability
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="mt-8">
                 <Button
@@ -262,10 +308,12 @@ export default function AboutPage() {
                     </h3>
                   </div>
                   <p className="text-gray-700 text-center leading-relaxed">
-                    To provide comprehensive, reliable, and innovative dairy and
-                    food processing solutions that enable our clients to achieve
-                    operational excellence, enhance product quality, and drive
-                    sustainable growth in their businesses.
+                    To deliver innovative and reliable engineering solutions for
+                    the dairy and food processing industry. We empower clients
+                    through expert consultation, automation, and turnkey
+                    execution. Our goal is to drive efficiency, compliance, and
+                    long-term success. Empowering rural development through
+                    Value addition of Agro-Food Resources in Sustainable ways.
                   </p>
                 </CardContent>
               </Card>
@@ -287,10 +335,10 @@ export default function AboutPage() {
                     </h3>
                   </div>
                   <p className="text-gray-700 text-center leading-relaxed">
-                    To be the leading consultancy and solutions provider in the
-                    dairy and food processing industry, recognized for our
-                    expertise, innovation, and commitment to transforming
-                    operations from farm to factory across global markets.
+                    We aim to set new benchmarks in quality, efficiency, and
+                    sustainability. Our vision is to be the first choice
+                    globally for future-ready dairy and food product
+                    entrepreneurs through innovation and engineering excellence.
                   </p>
                 </CardContent>
               </Card>
@@ -312,7 +360,7 @@ export default function AboutPage() {
             </p>
           </MotionDiv>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <MotionDiv
                 key={index}

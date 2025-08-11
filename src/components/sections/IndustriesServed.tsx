@@ -8,34 +8,34 @@ export function IndustriesServed() {
   const industries = [
     {
       id: "dairy",
-      name: "Dairy Processing",
+      name: "Milk & Allied Products Processing (Dairy)",
       icon: Droplets,
       description:
         "Complete dairy processing solutions for milk, cheese, yogurt, butter, and ice cream production.",
       image: "/images/industries/dairy.jpg",
     },
     {
-      id: "food",
-      name: "Food Processing",
+      id: "agro-food",
+      name: "Agro-Food Processing",
       icon: Package,
       description:
-        "Advanced food processing equipment for snacks, confectionery, beverages, and packaged foods.",
+        "Advanced food processing equipment for traditional and modern food products.",
       image: "/images/industries/food.jpg",
     },
     {
-      id: "beverages",
-      name: "Beverage Industry",
+      id: "beverage",
+      name: "Beverage Manufacturing",
       icon: Filter,
       description:
-        "Comprehensive beverage processing solutions for juices, soft drinks, and bottled water.",
+        "Comprehensive beverage processing solutions for juices, soft drinks, and energy drinks.",
       image: "/images/industries/beverages.jpg",
     },
     {
-      id: "agriculture",
-      name: "Agro Processing",
+      id: "fruits-vegetables",
+      name: "Fruits & Vegetables Processing",
       icon: Leaf,
       description:
-        "Innovative agro processing equipment for grain, spices, oils, and agricultural products.",
+        "Specialized processing equipment for fruits, vegetables, and agricultural products.",
       image: "/images/industries/agriculture.jpg",
     },
   ];

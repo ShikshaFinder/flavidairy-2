@@ -32,6 +32,7 @@ export function Navbar() {
     { name: "Machinery & Equipment", href: "/machinery" },
     { name: "Magazines", href: "/magazines" },
     { name: "Blog/Insights", href: "/blog" },
+    { name: "Career", href: "/career" },
   ];
 
   return (
