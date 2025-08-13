@@ -31,7 +31,6 @@ export function Navbar() {
     { name: "Consultancy Services", href: "/consultancy" },
     { name: "Machinery & Equipment", href: "/machinery" },
     { name: "Magazines", href: "/magazines" },
-    { name: "Blog/Insights", href: "/blog" },
     { name: "Career", href: "/career" },
   ];
 
@@ -58,7 +57,7 @@ export function Navbar() {
               <Factory className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-black">
-              Flavi Dairy Food Solutions
+              Flavi Dairy Solutions
             </span>
           </MotionDiv>
 

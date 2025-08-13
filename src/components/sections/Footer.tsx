@@ -111,14 +111,6 @@ export function Footer() {
                     Machinery
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    Blog & Insights
-                  </Link>
-                </li>
               </ul>
             </MotionDiv>
 

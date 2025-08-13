@@ -55,13 +55,13 @@ flavi-dairy-food-solutions/
 ├── src/
 │   ├── app/                 # Next.js App Router pages
 │   │   ├── about/          # About page
-│   │   ├── blog/           # Blog page
 │   │   ├── career/         # Career page
 │   │   ├── consultancy/    # Consultancy page
 │   │   ├── contact/        # Contact page
 │   │   ├── industries/     # Industries page
 │   │   ├── internship/     # Internship page
 │   │   ├── machinery/      # Machinery page
+│   │   ├── magazines/      # Magazines page
 │   │   ├── projects/       # Projects page
 │   │   └── services/       # Services page
 │   ├── components/         # Reusable components
@@ -87,8 +87,8 @@ flavi-dairy-food-solutions/
 - **Services** - Our service offerings
 - **Industries** - Industries we serve
 - **Machinery** - Equipment and machinery
+- **Magazines** - PDF magazines and publications
 - **Projects** - Case studies and projects
-- **Blog** - Industry insights and articles
 - **Career** - Job opportunities
 - **Internship** - Internship program
 - **Contact** - Contact information and form

@@ -65,7 +65,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-6 py-3 bg-sky-100 backdrop-blur-sm text-sky-700 border border-sky-200 rounded-full text-sm font-medium shadow-sm">
-              Engineering Progress from Farm to Factory
+              Transform Your Processing Operations With Expert Solutions
             </span>
           </MotionDiv>
 
@@ -75,12 +75,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Transform Your
-            <span className="text-sky-600"> Processing Operations</span>
+            Engineering Progress
+            <span className="text-sky-600"> from Farm</span>
             <br />
-            <span className="text-sky-600 font-light">
-              With Expert Solutions
-            </span>
+            <span className="text-sky-600 font-light">to Factory</span>
           </MotionH1>
 
           <MotionP
