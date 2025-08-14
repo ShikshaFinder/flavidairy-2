@@ -71,25 +71,61 @@ export default function MachineryPage() {
       id: "MILK PROCESSING EQUIPMENTS",
       name: "Milk Processing",
       icon: Droplets,
-      description: "Milk, cheese, yogurt, butter processing equipment",
+      description: "Milk processing and dairy equipment",
     },
     {
-      id: "FOOD PROCESSING EQUIPMENTS",
-      name: "Food Processing",
+      id: "ICECREAM & KULFI EQUIPMENT",
+      name: "Ice Cream & Kulfi Equipment",
       icon: Package,
-      description: "Fruits, vegetables, grains, snacks processing",
+      description: "Ice cream and kulfi manufacturing equipment",
     },
     {
-      id: "BEVERAGE PROCESSING EQUIPMENTS",
-      name: "Beverage Manufacturing",
+      id: "GRINDERS, MILLS AND MIXERS",
+      name: "Grinders, Mills & Mixes",
+      icon: Cog,
+      description: "Grinding, milling and mixing equipment",
+    },
+    {
+      id: "PANEER AND CHEESE MAKING EQUIPMENT",
+      name: "Paneer & Cheese Making Equipment",
+      icon: Database,
+      description: "Paneer and cheese processing equipment",
+    },
+    {
+      id: "STERILIZER",
+      name: "Sterilizers & Heating Units",
+      icon: Thermometer,
+      description: "Sterilization and heating equipment",
+    },
+    {
+      id: "SWEET AND DESSERT PROCESSING EQUIPMENT",
+      name: "Sweet & Dessert Processing Equipment",
       icon: Filter,
-      description: "Juices, carbonated drinks, energy drinks production",
+      description: "Sweet and dessert manufacturing equipment",
     },
     {
-      id: "AUTOMATION EQUIPMENTS",
-      name: "Automation & Control",
-      icon: Cpu,
-      description: "SCADA, PLC, monitoring and control systems",
+      id: "PACKAGING AND FILLING MACHINE",
+      name: "Packaging & Filling",
+      icon: Package,
+      description: "Packaging and filling machinery",
+    },
+    {
+      id: "OTHER ESSENTIAL MACHINERY",
+      name: "Cooking & Frying Units",
+      icon: Zap,
+      description: "Cooking and frying equipment",
+    },
+    {
+      id: "CURD EQUIPMENTS",
+      name: "Lab Support",
+      icon: Monitor,
+      description: "Laboratory and curd processing equipment",
+    },
+    {
+      id: "EQUIPMENTS FOR FAT RICH PRODUCTS",
+      name: "Pumps, Sensors & Instruments",
+      icon: Gauge,
+      description: "Pumps, sensors and instrumentation",
     },
   ];
 
@@ -148,14 +184,6 @@ export default function MachineryPage() {
                     <ArrowRight className="w-5 h-5" />
                   </span>
                 </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-black/20 text-black hover:bg-black hover:text-white"
-                asChild
-              >
-                <Link href="/contact">Download Catalog</Link>
               </Button>
             </div>
           </MotionDiv>
@@ -265,7 +293,7 @@ export default function MachineryPage() {
                         >
                           <Link href="/contact">
                             <span className="flex items-center gap-1">
-                              Get Quote
+                              Get Free Consultation
                               <ArrowRight className="w-3 h-3" />
                             </span>
                           </Link>
@@ -347,7 +375,7 @@ export default function MachineryPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Moved to end */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <MotionDiv

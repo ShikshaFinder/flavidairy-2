@@ -31,9 +31,8 @@ import Link from "next/link";
 export default function AboutPage() {
   const stats = [
     { icon: Clock, label: "Years of Experience", value: "20+" },
-    { icon: Users, label: "Happy Clients", value: "500+" },
+    { icon: Users, label: "Happy Clients", value: "2500+" },
     { icon: Target, label: "Projects Completed", value: "1000+" },
-    { icon: Award, label: "Industry Awards", value: "15+" },
   ];
 
   const values = [
@@ -144,7 +143,7 @@ export default function AboutPage() {
             <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
               With over 20 years of experience, we are the trusted partner for
               dairy and food processing equipment, automation solutions, and
-              consultancy services across India.
+              consultancy services across Globe.
             </p>
           </MotionDiv>
         </div>
@@ -249,7 +248,7 @@ export default function AboutPage() {
                   className="bg-secondary hover:bg-secondary/90 text-black border-0"
                   asChild
                 >
-                  <Link href="/contact">
+                  <Link href="/contact-empty">
                     <span className="flex items-center gap-2">
                       Get in Touch
                       <ArrowRight className="w-4 h-4" />
