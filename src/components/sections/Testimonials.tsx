@@ -93,7 +93,7 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 bg-sky-100 text-sky-700 border-sky-200">
+          <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
             Testimonials
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -148,7 +148,7 @@ export function Testimonials() {
                 </div>
                 <Badge
                   variant="outline"
-                  className="ml-auto text-xs border-sky-200 text-sky-700"
+                  className="ml-auto text-xs border-green-200 text-green-700"
                 >
                   {currentTestimonial.category}
                 </Badge>
@@ -170,7 +170,10 @@ export function Testimonials() {
                 transition={{ duration: 0.6, delay: 1 }}
               >
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-sky-500 text-sky-500" />
+                  <Star
+                    key={i}
+                    className="w-5 h-5 fill-green-500 text-green-500"
+                  />
                 ))}
               </MotionDiv>
 
@@ -184,7 +187,7 @@ export function Testimonials() {
                   variant="outline"
                   size="sm"
                   onClick={prevTestimonial}
-                  className="rounded-full w-12 h-12 p-0 border-sky-200 text-sky-700 hover:bg-sky-600 hover:text-white"
+                  className="rounded-full w-12 h-12 p-0 border-green-200 text-green-700 hover:bg-green-600 hover:text-white"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -196,7 +199,7 @@ export function Testimonials() {
                     <MotionDiv
                       key={index}
                       className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                        index === currentIndex ? "bg-sky-600" : "bg-sky-200"
+                        index === currentIndex ? "bg-green-600" : "bg-green-200"
                       }`}
                       whileHover={{ scale: 1.2 }}
                       onClick={() => setCurrentIndex(index)}
@@ -208,7 +211,7 @@ export function Testimonials() {
                   variant="outline"
                   size="sm"
                   onClick={nextTestimonial}
-                  className="rounded-full w-12 h-12 p-0 border-sky-200 text-sky-700 hover:bg-sky-600 hover:text-white"
+                  className="rounded-full w-12 h-12 p-0 border-green-200 text-green-700 hover:bg-green-600 hover:text-white"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >

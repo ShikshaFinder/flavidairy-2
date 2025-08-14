@@ -33,7 +33,7 @@ export function Footer() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-sky-600 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
                   <Factory className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-xl font-bold text-black">
@@ -48,7 +48,7 @@ export function Footer() {
               <div className="flex gap-4">
                 <Button
                   size="sm"
-                  className="bg-sky-600 hover:bg-sky-700 text-white border-0"
+                  className="bg-green-600 hover:bg-green-700 text-white border-0"
                   asChild
                 >
                   <Link href="/contact">
@@ -125,17 +125,17 @@ export function Footer() {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-sky-600" />
+                  <Phone className="w-5 h-5 text-green-600" />
                   <span className="text-gray-600">+91 7202033384</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-sky-600" />
+                  <Mail className="w-5 h-5 text-green-600" />
                   <span className="text-gray-600">
                     contact@flavidairysolution.com
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-sky-600 mt-1" />
+                  <MapPin className="w-5 h-5 text-green-600 mt-1" />
                   <span className="text-gray-600">
                     403, 4th Floor, Samruddhi Complex, Ahmedabad-380014,
                     Gujarat, India

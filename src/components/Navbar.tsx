@@ -53,7 +53,7 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-sky-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
               <Factory className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-black">
@@ -79,7 +79,7 @@ export function Navbar() {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link href="/contact">
-              <Button className="group relative overflow-hidden bg-sky-600 hover:bg-sky-700 text-white border-0">
+              <Button className="group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white border-0">
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Us
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -134,7 +134,7 @@ export function Navbar() {
                 ))}
                 <div className="pt-4 space-y-3 border-t border-gray-200">
                   <Link href="/contact">
-                    <Button className="w-full group relative overflow-hidden bg-sky-600 hover:bg-sky-700 text-white border-0">
+                    <Button className="w-full group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white border-0">
                       <span className="relative z-10 flex items-center gap-2">
                         Contact Us
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

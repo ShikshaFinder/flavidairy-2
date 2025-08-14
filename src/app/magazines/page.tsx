@@ -76,20 +76,20 @@ export default function MagazinesPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-white via-sky-50/30 to-white">
+      <section className="pt-20 pb-12 bg-gradient-to-br from-white via-green-50/30 to-white">
         <div className="container mx-auto px-4 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Badge className="mb-4 bg-sky-100 text-sky-800 border-sky-200">
+            <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
               <BookOpen className="w-4 h-4 mr-2" />
               Digital Library
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               Flavi Dairy
-              <span className="text-sky-600"> Magazines</span>
+              <span className="text-green-600"> Magazines</span>
             </h1>
             <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
               Explore our collection of industry magazines featuring the latest
@@ -101,7 +101,7 @@ export default function MagazinesPage() {
                 onClick={() => setViewMode("viewer")}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
                   viewMode === "viewer"
-                    ? "bg-sky-600 text-white"
+                    ? "bg-green-600 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
@@ -112,7 +112,7 @@ export default function MagazinesPage() {
                 onClick={() => setViewMode("grid")}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
                   viewMode === "grid"
-                    ? "bg-sky-600 text-white"
+                    ? "bg-green-600 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
@@ -145,15 +145,15 @@ export default function MagazinesPage() {
                         key={magazine.id}
                         className={`cursor-pointer transition-all duration-300 hover:shadow-md ${
                           selectedPdf === magazine.filename
-                            ? "border-sky-500 bg-sky-50/50"
-                            : "border-gray-200 hover:border-sky-300"
+                            ? "border-green-500 bg-green-50/50"
+                            : "border-gray-200 hover:border-green-300"
                         }`}
                         onClick={() => setSelectedPdf(magazine.filename)}
                       >
                         <CardContent className="p-4">
                           <div className="flex items-start gap-3">
-                            <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                              <FileText className="w-5 h-5 text-sky-600" />
+                            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <FileText className="w-5 h-5 text-green-600" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h3 className="font-semibold text-black text-sm leading-tight mb-1">
@@ -170,7 +170,7 @@ export default function MagazinesPage() {
                                   href={`/${magazine.filename}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-sky-600 hover:text-sky-700"
+                                  className="text-green-600 hover:text-green-700"
                                   onClick={(e) => e.stopPropagation()}
                                 >
                                   <Download className="w-3 h-3" />
@@ -196,7 +196,7 @@ export default function MagazinesPage() {
                     <CardHeader className="border-b border-gray-100">
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-xl font-bold text-black flex items-center gap-2">
-                          <FileText className="w-5 h-5 text-sky-600" />
+                          <FileText className="w-5 h-5 text-green-600" />
                           {magazines.find((m) => m.filename === selectedPdf)
                             ?.title || "Magazine Viewer"}
                         </CardTitle>
@@ -205,7 +205,7 @@ export default function MagazinesPage() {
                             href={`/${selectedPdf}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-3 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors text-sm"
+                            className="flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
                           >
                             <ExternalLink className="w-4 h-4" />
                             Open in New Tab
@@ -257,7 +257,7 @@ export default function MagazinesPage() {
                                 href={`/${selectedPdf}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors"
+                                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                               >
                                 <ExternalLink className="w-4 h-4" />
                                 Open in New Tab
@@ -291,8 +291,8 @@ export default function MagazinesPage() {
                 >
                   <Card className="h-full border-gray-200 hover:shadow-lg transition-all duration-300 group">
                     <CardContent className="p-6">
-                      <div className="w-16 h-16 bg-sky-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-200 transition-colors">
-                        <FileText className="w-8 h-8 text-sky-600" />
+                      <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
+                        <FileText className="w-8 h-8 text-green-600" />
                       </div>
                       <h3 className="font-bold text-black text-lg mb-2 text-center">
                         Issue {magazine.id.split("-")[1]}
@@ -310,7 +310,7 @@ export default function MagazinesPage() {
                           href={`/${magazine.filename}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors text-sm"
+                          className="flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
                         >
                           <ExternalLink className="w-4 h-4" />
                           Open PDF
@@ -359,10 +359,10 @@ export default function MagazinesPage() {
                   <a
                     href={`/${magazine.filename}`}
                     download
-                    className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-sky-300 hover:shadow-md transition-all duration-300 group"
+                    className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-sky-200 transition-colors">
-                      <FileText className="w-6 h-6 text-sky-600" />
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-green-200 transition-colors">
+                      <FileText className="w-6 h-6 text-green-600" />
                     </div>
                     <h3 className="font-semibold text-black text-sm mb-1">
                       Issue {magazine.id.split("-")[1]}
@@ -370,7 +370,7 @@ export default function MagazinesPage() {
                     <p className="text-xs text-gray-600 mb-3">
                       {magazine.publishDate}
                     </p>
-                    <div className="flex items-center justify-center gap-1 text-sky-600 text-sm">
+                    <div className="flex items-center justify-center gap-1 text-green-600 text-sm">
                       <Download className="w-3 h-3" />
                       Download
                     </div>
