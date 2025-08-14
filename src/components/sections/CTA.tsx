@@ -34,8 +34,8 @@ export function CTA() {
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Let our experienced team help you design and implement the perfect
-            processing solution for your industry. Get started today and take
-            your operations to the next level.
+            processing solution for your industry. Start with a free initial
+            consultation.
           </p>
 
           <MotionDiv

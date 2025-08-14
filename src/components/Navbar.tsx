@@ -53,9 +53,11 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-              <Factory className="w-5 h-5 text-white" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Flavi Dairy Solutions"
+              className="h-10 w-auto object-contain"
+            />
             <span className="text-xl font-bold text-black">
               Flavi Dairy Solutions
             </span>

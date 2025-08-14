@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <IndustriesServed />
       <Features />
-      <Testimonials />
+      {/* <Testimonials /> section removed as requested */}
       {/* <Pricing /> section removed as requested */}
       <CTA />
       <Footer />

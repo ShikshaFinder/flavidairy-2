@@ -33,9 +33,11 @@ export function Footer() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                  <Factory className="w-6 h-6 text-white" />
-                </div>
+                <img
+                  src="/logo.png"
+                  alt="Flavi Dairy Solutions"
+                  className="h-12 w-auto object-contain"
+                />
                 <span className="text-xl font-bold text-black">
                   Flavi Dairy Food Solutions
                 </span>
@@ -53,7 +55,7 @@ export function Footer() {
                 >
                   <Link href="/contact">
                     <span className="flex items-center gap-2">
-                      Get Quote
+                      Free Initial Consultation
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>

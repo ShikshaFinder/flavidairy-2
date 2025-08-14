@@ -76,9 +76,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Engineering Progress
-            <span className="text-green-600"> from Farm</span>
-            <br />
-            <span className="text-green-600 font-light">to Factory</span>
+            <span className="text-green-600"> From Farm to Factory</span>
           </MotionH1>
 
           <MotionP
@@ -104,7 +102,7 @@ export function Hero() {
             >
               <Link href="/contact">
                 <span className="relative z-10 flex items-center gap-2">
-                  Get a Quote
+                  Get a Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Link>
@@ -137,7 +135,7 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-              <span>100+ Projects Commissioned</span>
+              <span>1600+ Projects Commissioned</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
