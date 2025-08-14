@@ -299,8 +299,8 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 bg-white">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="w-8 h-8 text-sky-600" />
+                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="w-8 h-8 text-secondary" />
                     </div>
                     <h3 className="text-2xl font-bold text-black">
                       Our Mission
@@ -326,8 +326,8 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 bg-white">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <TrendingUp className="w-8 h-8 text-sky-600" />
+                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <TrendingUp className="w-8 h-8 text-secondary" />
                     </div>
                     <h3 className="text-2xl font-bold text-black">
                       Our Vision
@@ -414,8 +414,8 @@ export default function AboutPage() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
-                    <Droplets className="w-6 h-6 text-sky-600" />
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Droplets className="w-6 h-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Dairy Processing
@@ -439,8 +439,8 @@ export default function AboutPage() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
-                    <Package className="w-6 h-6 text-sky-600" />
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Package className="w-6 h-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Food Processing
@@ -464,8 +464,8 @@ export default function AboutPage() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
-                    <Filter className="w-6 h-6 text-sky-600" />
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Filter className="w-6 h-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Beverage Manufacturing
@@ -489,8 +489,8 @@ export default function AboutPage() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
-                    <Leaf className="w-6 h-6 text-sky-600" />
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Leaf className="w-6 h-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Agro Processing
@@ -514,8 +514,8 @@ export default function AboutPage() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
-                    <Factory className="w-6 h-6 text-sky-600" />
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Factory className="w-6 h-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Process Engineering
@@ -539,8 +539,8 @@ export default function AboutPage() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
-                    <Target className="w-6 h-6 text-sky-600" />
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Target className="w-6 h-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Consultancy Services
@@ -588,13 +588,13 @@ export default function AboutPage() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-24 h-24 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-12 h-12 text-sky-600" />
+                    <div className="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-12 h-12 text-secondary" />
                     </div>
                     <CardTitle className="text-xl font-bold text-black">
                       {member.name}
                     </CardTitle>
-                    <Badge className="bg-sky-100 text-sky-800 border-sky-200 text-sm">
+                    <Badge className="bg-secondary/10 text-secondary border-secondary/20 text-sm">
                       {member.role}
                     </Badge>
                   </CardHeader>
@@ -630,7 +630,7 @@ export default function AboutPage() {
                       <ul className="text-sm text-gray-700 space-y-1">
                         {member.workExperience.map((exp, expIndex) => (
                           <li key={expIndex} className="flex items-start gap-2">
-                            <CheckCircle className="w-3 h-3 text-sky-600 mt-1 flex-shrink-0" />
+                            <CheckCircle className="w-3 h-3 text-secondary mt-1 flex-shrink-0" />
                             {exp}
                           </li>
                         ))}
@@ -644,7 +644,7 @@ export default function AboutPage() {
                       <ul className="text-sm text-gray-700 space-y-1">
                         {member.achievements.map((achievement, achIndex) => (
                           <li key={achIndex} className="flex items-start gap-2">
-                            <Award className="w-3 h-3 text-sky-600 mt-1 flex-shrink-0" />
+                            <Award className="w-3 h-3 text-secondary mt-1 flex-shrink-0" />
                             {achievement}
                           </li>
                         ))}
