@@ -88,13 +88,12 @@ export default function MagazinesPage() {
               Digital Library
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
-              Flavi Dairy
-              <span className="text-green-600"> Magazines</span>
+              Flavi
+              <span className="text-green-600"> Updates</span>
             </h1>
             <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
-              Explore our collection of industry magazines featuring the latest
-              insights, innovations, and best practices in dairy and food
-              processing.
+              Stay updated with the latest insights, innovations, and industry
+              trends in dairy and food processing technology
             </p>
             <div className="flex items-center justify-center gap-2">
               <button

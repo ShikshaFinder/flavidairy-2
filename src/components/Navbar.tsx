@@ -30,7 +30,7 @@ export function Navbar() {
     { name: "Industries", href: "/industries" },
     { name: "Consultancy Services", href: "/consultancy" },
     { name: "Machinery & Equipment", href: "/machinery" },
-    { name: "Magazines", href: "/magazines" },
+    { name: "Flavi Updates", href: "/magazines" },
     { name: "Career", href: "/career" },
   ];
 

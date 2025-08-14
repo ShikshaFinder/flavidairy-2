@@ -371,6 +371,130 @@ export default function CareerPage() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Internship & Training Programs
+              </h2>
+              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+                Building the next generation of food processing professionals
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ScrollReveal delay={0.1}>
+              <Card className="shadow-lg hover-lift h-full">
+                <CardHeader>
+                  <CardTitle className="text-primary">Summer Internship</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-foreground-secondary">
+                    <li>• 3-6 months program</li>
+                    <li>• Hands-on experience in dairy processing</li>
+                    <li>• Mentorship from industry experts</li>
+                    <li>• Certificate of completion</li>
+                    <li>• Potential for full-time conversion</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <Card className="shadow-lg hover-lift h-full">
+                <CardHeader>
+                  <CardTitle className="text-primary">Graduate Trainee Program</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-foreground-secondary">
+                    <li>• 12-month comprehensive training</li>
+                    <li>• Rotation across departments</li>
+                    <li>• Project-based learning</li>
+                    <li>• Industry certifications</li>
+                    <li>• Fast-track career progression</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <Card className="shadow-lg hover-lift h-full">
+                <CardHeader>
+                  <CardTitle className="text-primary">Skill Development</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-foreground-secondary">
+                    <li>• Technical skill workshops</li>
+                    <li>• Industry best practices training</li>
+                    <li>• Certification programs</li>
+                    <li>• Professional development courses</li>
+                    <li>• Leadership development</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Application Process */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Application Process
+              </h2>
+              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+                Simple and transparent hiring process
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Submit Application",
+                description: "Send your resume and cover letter",
+              },
+              {
+                step: "02", 
+                title: "Initial Screening",
+                description: "HR review and phone screening",
+              },
+              {
+                step: "03",
+                title: "Technical Interview",
+                description: "Technical assessment with team",
+              },
+              {
+                step: "04",
+                title: "Final Interview",
+                description: "Final round with leadership team",
+              },
+            ].map((process, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold text-lg">{process.step}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">
+                    {process.title}
+                  </h3>
+                  <p className="text-sm text-foreground-secondary">
+                    {process.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Get in Touch
               </h2>
               <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">

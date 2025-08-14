@@ -246,7 +246,7 @@ export default function MachineryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col">
                   <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center overflow-hidden">
                     {equipment.images && equipment.images.length > 0 ? (
                       <img
@@ -267,38 +267,34 @@ export default function MachineryPage() {
                       </div>
                     </div>
                   </div>
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-xl font-semibold text-black">
-                          {equipment.name}
-                        </CardTitle>
-                        <Badge className="mt-2 bg-secondary/10 text-black border-secondary/20">
-                          {equipment.category}
-                        </Badge>
-                      </div>
-                    </div>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xl font-semibold text-black line-clamp-2">
+                      {equipment.name}
+                    </CardTitle>
+                    <Badge className="mt-2 bg-secondary/10 text-black border-secondary/20 w-fit">
+                      {equipment.category}
+                    </Badge>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-black/70 text-sm">
-                      {equipment.description}
-                    </p>
+                  <CardContent className="flex-1 flex flex-col justify-between pt-0">
+                    <div className="space-y-4 flex-1">
+                      <p className="text-black/70 text-sm leading-relaxed line-clamp-3">
+                        {equipment.description}
+                      </p>
+                    </div>
 
-                    <div className="pt-4 border-t border-gray-200">
-                      <div className="flex items-center justify-between">
-                        <Button
-                          size="sm"
-                          className="bg-secondary hover:bg-secondary/90 text-black border-0"
-                          asChild
-                        >
-                          <Link href="/contact">
-                            <span className="flex items-center gap-1">
-                              Get Free Consultation
-                              <ArrowRight className="w-3 h-3" />
-                            </span>
-                          </Link>
-                        </Button>
-                      </div>
+                    <div className="pt-4 border-t border-gray-200 mt-auto">
+                      <Button
+                        size="sm"
+                        className="bg-secondary hover:bg-secondary/90 text-black border-0 w-full"
+                        asChild
+                      >
+                        <Link href="/contact">
+                          <span className="flex items-center justify-center gap-1">
+                            Get Quote
+                            <ArrowRight className="w-3 h-3" />
+                          </span>
+                        </Link>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>

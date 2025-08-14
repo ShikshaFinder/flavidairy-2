@@ -307,7 +307,7 @@ export default function ContactPage() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Located in the heart of Ahmedabad, our office is easily
-                accessible
+                accessible and equipped with state-of-the-art facilities
               </p>
             </div>
           </ScrollReveal>
@@ -394,6 +394,141 @@ export default function ContactPage() {
                 </div>
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+                Our Service Areas
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We provide comprehensive dairy and food processing solutions across multiple regions
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                region: "Western India",
+                states: ["Gujarat", "Maharashtra", "Rajasthan", "Madhya Pradesh"],
+                description: "Primary service area with extensive project experience"
+              },
+              {
+                region: "Northern India", 
+                states: ["Punjab", "Haryana", "Uttar Pradesh", "Delhi NCR"],
+                description: "Growing presence in dairy processing hubs"
+              },
+              {
+                region: "Southern India",
+                states: ["Karnataka", "Tamil Nadu", "Andhra Pradesh", "Telangana"],
+                description: "Expanding operations in South Indian markets"
+              },
+              {
+                region: "Eastern India",
+                states: ["West Bengal", "Odisha", "Jharkhand", "Bihar"],
+                description: "Emerging market with significant potential"
+              },
+              {
+                region: "Central India",
+                states: ["Chhattisgarh", "Madhya Pradesh", "Odisha"],
+                description: "Strategic location for pan-India operations"
+              },
+              {
+                region: "International",
+                states: ["Export Markets", "Overseas Projects", "Global Partnerships"],
+                description: "Expanding globally with quality solutions"
+              }
+            ].map((area, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                  <CardHeader>
+                    <CardTitle className="text-secondary text-lg">{area.region}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <p className="text-sm text-gray-600">{area.description}</p>
+                      <div>
+                        <p className="font-semibold text-black text-sm mb-2">Coverage:</p>
+                        <div className="flex flex-wrap gap-1">
+                          {area.states.map((state, idx) => (
+                            <span 
+                              key={idx}
+                              className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full"
+                            >
+                              {state}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Common questions about our services and solutions
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                question: "What industries do you serve?",
+                answer: "We serve dairy processing, food processing, beverage manufacturing, and fruits & vegetables processing industries with comprehensive equipment solutions."
+              },
+              {
+                question: "Do you provide installation services?",
+                answer: "Yes, we provide complete turnkey solutions including equipment supply, installation, commissioning, and training services."
+              },
+              {
+                question: "What is the typical project timeline?",
+                answer: "Project timelines vary based on scope and complexity. Small equipment installations take 2-4 weeks, while complete plant setups may take 3-6 months."
+              },
+              {
+                question: "Do you offer after-sales support?",
+                answer: "Yes, we provide comprehensive after-sales support including maintenance services, spare parts supply, and technical assistance."
+              },
+              {
+                question: "Can you customize equipment for specific needs?",
+                answer: "Absolutely! We specialize in custom-designed equipment tailored to your specific processing requirements and capacity needs."
+              },
+              {
+                question: "What certifications do your equipment have?",
+                answer: "Our equipment complies with international standards including FDA, 3A, EHEDG, and ISO standards for food safety and quality."
+              }
+            ].map((faq, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold mb-3 text-black">
+                      {faq.question}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
