@@ -39,7 +39,7 @@ export function Footer() {
                   className="h-12 w-auto object-contain"
                 />
                 <span className="text-xl font-bold text-black">
-                  Flavi Dairy Food Solutions
+                  Flavi Dairy Food Sol
                 </span>
               </div>
               <p className="text-gray-600 mb-6 max-w-md">
@@ -69,51 +69,6 @@ export function Footer() {
                   <Link href="/contact">Contact Us</Link>
                 </Button>
               </div>
-            </MotionDiv>
-
-            {/* Quick Links */}
-            <MotionDiv
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <h3 className="text-lg font-semibold text-black mb-6">
-                Quick Links
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/industries"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    Industries
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/machinery"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    Machinery
-                  </Link>
-                </li>
-              </ul>
             </MotionDiv>
 
             {/* Contact Info */}
@@ -157,7 +112,7 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600 text-sm">
-              © {currentYear} Flavi Dairy Food Solutions. All rights reserved.
+              © 2025 Flavi Dairy Solution. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link
