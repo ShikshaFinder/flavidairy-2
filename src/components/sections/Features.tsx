@@ -65,7 +65,8 @@ export function Features() {
       case "secondary":
         return "text-green-700 border-green-300 bg-green-100";
       case "accent":
-        return "text-green-800 border-green-400 bg-green-150";
+        // bg-green-150 was invalid; use bg-green-200 for sufficient contrast
+        return "text-green-800 border-green-400 bg-green-200";
       case "tertiary":
         return "text-green-600 border-green-200 bg-green-50";
       default:
@@ -74,7 +75,7 @@ export function Features() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <MotionDiv
           className="text-center mb-12"
@@ -85,10 +86,10 @@ export function Features() {
           <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
             Why Choose Us
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Our Key Features
           </h2>
-          <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover what sets us apart in the dairy and food processing
             industry
           </p>
@@ -112,12 +113,12 @@ export function Features() {
                   >
                     <feature.icon className="w-8 h-8" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-foreground text-center">
+                  <CardTitle className="text-xl font-bold text-gray-900 text-center">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <p className="text-foreground-secondary leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -132,7 +133,7 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-foreground-secondary mb-6">
+          <p className="text-gray-600 mb-6">
             Experience the difference with our comprehensive solutions and
             expert support.
           </p>

@@ -8,7 +8,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 import Link from "next/link";
-// import FileUpload from "@/components/FileUpload";
+import TrustedCompanies from "@/components/sections/TrustedCompanies"; // added
 
 export default function Home() {
   return (
@@ -20,6 +20,10 @@ export default function Home() {
       {/* <Testimonials /> section removed as requested */}
       {/* <Pricing /> section removed as requested */}
       <CTA />
+
+      {/* Trusted logos placed at the bottom, before the footer */}
+      <TrustedCompanies />
+
       <Footer />
     </main>
   );

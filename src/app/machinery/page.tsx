@@ -30,7 +30,7 @@ import {
   Camera,
 } from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface EquipmentItem {
   name: string;
@@ -43,6 +43,38 @@ export default function MachineryPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [equipmentData, setEquipmentData] = useState<EquipmentItem[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Modal state for image preview
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState<string | null>(null);
+
+  // Track which equipment descriptions are expanded (by index)
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+
+  // Refs to description paragraphs to detect truncation
+  const descRefs = useRef<Array<HTMLParagraphElement | null>>([]);
+  const [needsTruncate, setNeedsTruncate] = useState<boolean[]>([]);
+
+  const isExpanded = (i: number) => expandedItems.includes(i);
+  const toggleExpand = (i: number) =>
+    setExpandedItems((prev) =>
+      prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]
+    );
+
+  // lock body scroll and handle Escape key
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+      const onKey = (e: KeyboardEvent) => {
+        if (e.key === "Escape") setModalOpen(false);
+      };
+      window.addEventListener("keydown", onKey);
+      return () => {
+        window.removeEventListener("keydown", onKey);
+        document.body.style.overflow = "";
+      };
+    }
+  }, [modalOpen]);
 
   useEffect(() => {
     const fetchEquipmentData = async () => {
@@ -59,6 +91,8 @@ export default function MachineryPage() {
 
     fetchEquipmentData();
   }, []);
+
+  // ...truncation measurement moved below where filteredEquipment is defined
 
   const categories = [
     {
@@ -133,6 +167,27 @@ export default function MachineryPage() {
     selectedCategory === "all"
       ? equipmentData
       : equipmentData.filter((item) => item.category === selectedCategory);
+
+  // Measure whether each description is truncated (overflowing its container)
+  useEffect(() => {
+    const checkTruncate = () => {
+      const results = filteredEquipment.map((_, i) => {
+        const el = descRefs.current[i];
+        if (!el) return false;
+        // If element's scrollHeight is greater than clientHeight, it is overflowing
+        return el.scrollHeight > el.clientHeight + 1;
+      });
+      setNeedsTruncate(results);
+    };
+
+    // Run after paint
+    const raf = requestAnimationFrame(checkTruncate);
+    window.addEventListener("resize", checkTruncate);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", checkTruncate);
+    };
+  }, [filteredEquipment, selectedCategory, equipmentData, expandedItems]);
 
   if (loading) {
     return (
@@ -249,23 +304,28 @@ export default function MachineryPage() {
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col">
                   <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center overflow-hidden">
                     {equipment.images && equipment.images.length > 0 ? (
-                      <img
-                        src={equipment.images[0]}
-                        alt={equipment.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          // Fallback to icon if image fails to load
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = "none";
-                          target.nextElementSibling?.classList.remove("hidden");
+                      <button
+                        onClick={() => {
+                          setModalImage(equipment.images[0]);
+                          setModalOpen(true);
                         }}
-                      />
-                    ) : null}
-                    <div className="w-full h-full bg-gradient-to-br from-secondary/10 to-secondary/5 flex items-center justify-center">
-                      <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center">
-                        <Factory className="w-10 h-10 text-secondary" />
-                      </div>
-                    </div>
+                        className="w-full h-full p-0 m-0 block cursor-pointer"
+                        aria-label={`Open image of ${equipment.name}`}
+                      >
+                        <img
+                          src={equipment.images[0]}
+                          alt={equipment.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = "none";
+                          }}
+                        />
+                      </button>
+                    ) : (
+                      // No placeholder — keep the area blank/neutral when there's no valid image
+                      <div className="w-full h-full bg-gray-100" />
+                    )}
                   </div>
                   <CardHeader className="pb-2">
                     <CardTitle className="text-xl font-semibold text-black line-clamp-2">
@@ -275,25 +335,66 @@ export default function MachineryPage() {
                       {equipment.category}
                     </Badge>
                   </CardHeader>
-                  <CardContent className="flex-1 flex flex-col justify-between pt-0">
-                    <div className="space-y-4 flex-1">
-                      <p className="text-black/70 text-sm leading-relaxed line-clamp-3">
-                        {equipment.description}
-                      </p>
+                  <CardContent className="flex-1 flex flex-col pt-0">
+                    <div className="space-y-4 flex-1 mb-6">
+                      {/* Description text */}
+                      {isExpanded(index) ? (
+                        <p
+                          id={`equipment-desc-${index}`}
+                          ref={(el) => {
+                            descRefs.current[index] = el;
+                            return;
+                          }}
+                          className="text-black/70 text-sm leading-relaxed"
+                        >
+                          {equipment.description}
+                        </p>
+                      ) : (
+                        <p
+                          id={`equipment-desc-${index}`}
+                          ref={(el) => {
+                            descRefs.current[index] = el;
+                            return;
+                          }}
+                          className="text-black/70 text-sm leading-relaxed line-clamp-3"
+                        >
+                          {equipment.description}
+                        </p>
+                      )}
+
+                      {/* Read more button with better spacing */}
+                      {(needsTruncate[index] || isExpanded(index)) && (
+                        <div className="pt-2">
+                          <button
+                            onClick={() => toggleExpand(index)}
+                            className="text-sm text-secondary hover:underline font-medium"
+                            aria-expanded={isExpanded(index)}
+                            aria-controls={`equipment-desc-${index}`}
+                          >
+                            {isExpanded(index) ? "Read less" : "Read more"}
+                          </button>
+                        </div>
+                      )}
                     </div>
 
+                    {/* Quote button section with clear separation */}
                     <div className="pt-4 border-t border-gray-200 mt-auto">
                       <Button
                         size="sm"
                         className="bg-secondary hover:bg-secondary/90 text-black border-0 w-full"
                         asChild
                       >
-                        <Link href="/contact">
-                          <span className="flex items-center justify-center gap-1">
-                            Get Quote
-                            <ArrowRight className="w-3 h-3" />
-                          </span>
-                        </Link>
+                        <a
+                          href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                            `Hi, I am interested in "${equipment.name}". Please provide a quote and more information.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1"
+                        >
+                          <span>Get Quote</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -411,6 +512,34 @@ export default function MachineryPage() {
           </MotionDiv>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {modalOpen && modalImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6"
+          onClick={() => setModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="max-w-5xl w-full max-h-[90vh] overflow-auto rounded-md"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 z-60 p-2 bg-white/90 rounded-full"
+              onClick={() => setModalOpen(false)}
+              aria-label="Close image"
+            >
+              ✕
+            </button>
+            <img
+              src={modalImage}
+              alt="Equipment preview"
+              className="w-full h-auto rounded-md object-contain bg-black"
+            />
+          </div>
+        </div>
+      )}
 
       <Footer />
     </main>

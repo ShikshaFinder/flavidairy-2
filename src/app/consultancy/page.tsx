@@ -106,7 +106,7 @@ export default function ConsultancyPage() {
           
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button style={{ 
-              backgroundColor: '#0ea5e9', 
+              backgroundColor: '#10b981', 
               color: 'white', 
               padding: '12px 24px', 
               borderRadius: '8px', 

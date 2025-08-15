@@ -374,7 +374,7 @@ export default function IndustriesPage() {
                             Key Clients
                           </span>
                         </h4>
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-wrap gap-3 text-black">
                           {industry.keyClients.map((client, idx) => (
                             <Badge
                               key={idx}

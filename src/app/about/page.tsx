@@ -688,8 +688,8 @@ export default function AboutPage() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-secondary mt-1" />
                   <span className="text-black">
-                    403, 4th Floor, Samruddhi Complex, Ahmedabad-380014,
-                    Gujarat, India
+                   403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H Navdeep Bldg., Navrangpura, Ahmedabad-380014
+
                   </span>
                 </div>
               </div>

@@ -59,7 +59,7 @@ export function Navbar() {
               className="h-10 w-auto object-contain"
             />
             <span className="text-xl font-bold text-black">
-              Flavi Dairy Food Sol
+              Flavi Dairy Food Solutions
             </span>
           </MotionDiv>
 

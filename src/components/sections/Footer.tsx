@@ -39,7 +39,7 @@ export function Footer() {
                   className="h-12 w-auto object-contain"
                 />
                 <span className="text-xl font-bold text-black">
-                  Flavi Dairy Food Sol
+                  Flavi Dairy Food Solutions
                 </span>
               </div>
               <p className="text-gray-600 mb-6 max-w-md">
@@ -94,8 +94,8 @@ export function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-green-600 mt-1" />
                   <span className="text-gray-600">
-                    403, 4th Floor, Samruddhi Complex, Ahmedabad-380014,
-                    Gujarat, India
+                       403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H Navdeep Bldg., Navrangpura, Ahmedabad-380014
+
                   </span>
                 </div>
               </div>
