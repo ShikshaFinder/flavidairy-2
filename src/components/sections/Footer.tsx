@@ -53,12 +53,17 @@ export function Footer() {
                   className="bg-green-600 hover:bg-green-700 text-white border-0"
                   asChild
                 >
-                  <Link href="/contact">
-                    <span className="flex items-center gap-2">
-                      Free Initial Consultation
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </Link>
+                  <a
+                    href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                      `Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    Free Consultation on WhatsApp
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
                 </Button>
                 <Button
                   size="sm"
@@ -66,7 +71,15 @@ export function Footer() {
                   className="border-gray-300 text-black hover:bg-gray-50 hover:border-gray-400"
                   asChild
                 >
-                  <Link href="/contact">Contact Us</Link>
+                  <a
+                    href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                      `Hi, I would like to contact you regarding your services. Please provide more information.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Contact Us on WhatsApp
+                  </a>
                 </Button>
               </div>
             </MotionDiv>
@@ -94,8 +107,8 @@ export function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-green-600 mt-1" />
                   <span className="text-gray-600">
-                       403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H Navdeep Bldg., Navrangpura, Ahmedabad-380014
-
+                    403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H
+                    Navdeep Bldg., Navrangpura, Ahmedabad-380014
                   </span>
                 </div>
               </div>

@@ -80,10 +80,16 @@ export function Navbar() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/contact">
+            <a
+              href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white border-0">
                 <span className="relative z-10 flex items-center gap-2">
-                  Contact Us
+                  Contact Us on WhatsApp
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <MotionDiv
@@ -93,7 +99,7 @@ export function Navbar() {
                   transition={{ duration: 0.6 }}
                 />
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -135,10 +141,16 @@ export function Navbar() {
                   </MotionA>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-gray-200">
-                  <Link href="/contact">
+                  <a
+                    href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                      `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button className="w-full group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white border-0">
                       <span className="relative z-10 flex items-center gap-2">
-                        Contact Us
+                        Contact Us on WhatsApp
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                       <MotionDiv
@@ -148,7 +160,7 @@ export function Navbar() {
                         transition={{ duration: 0.6 }}
                       />
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </MotionDiv>

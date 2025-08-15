@@ -233,12 +233,17 @@ export default function MachineryPage() {
                 className="bg-secondary hover:bg-secondary/90 text-black border-0"
                 asChild
               >
-                <Link href="/contact">
-                  <span className="flex items-center gap-2">
-                    Get Equipment Quote
-                    <ArrowRight className="w-5 h-5" />
-                  </span>
-                </Link>
+                <a
+                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    `Hi, I'm interested in your processing equipment solutions. Please provide me with a detailed quote and information about available machinery.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Get Equipment Quote on WhatsApp
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
             </div>
           </MotionDiv>
@@ -496,12 +501,17 @@ export default function MachineryPage() {
                 className="bg-secondary hover:bg-secondary/90 text-black border-0"
                 asChild
               >
-                <Link href="/contact">
-                  <span className="flex items-center gap-2">
-                    Get Equipment Quote
-                    <ArrowRight className="w-5 h-5" />
-                  </span>
-                </Link>
+                <a
+                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    `Hi, I'm ready to upgrade my processing equipment. Please help me choose the right machinery for my production needs and provide a detailed quote.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Get Equipment Quote on WhatsApp
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
               <Button
                 size="lg"
@@ -509,7 +519,15 @@ export default function MachineryPage() {
                 className="border-black/20 text-black hover:bg-black hover:text-white"
                 asChild
               >
-                <Link href="/contact">Schedule Consultation</Link>
+                <a
+                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    `Hi, I would like to schedule a consultation to discuss my processing equipment requirements. Please let me know your availability.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule Consultation on WhatsApp
+                </a>
               </Button>
             </div>
           </MotionDiv>

@@ -416,12 +416,17 @@ export default function IndustriesPage() {
                 className="bg-secondary hover:bg-secondary/90 text-black border-0"
                 asChild
               >
-                <Link href="/contact">
-                  <span className="flex items-center gap-2">
-                    Get Free Consultation
-                    <ArrowRight className="w-5 h-5" />
-                  </span>
-                </Link>
+                <a
+                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    `Hi, I'm interested in industry-specific solutions for my processing needs. Please provide me with expert guidance and a free consultation.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Get Free Consultation on WhatsApp
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
             </div>
           </MotionDiv>

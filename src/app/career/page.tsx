@@ -197,7 +197,15 @@ export default function CareerPage() {
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-white"
               >
-                <Link href="/contact">Send Resume</Link>
+                <a
+                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    `Hi, I'm interested in career opportunities at your company. I would like to send my resume and discuss available positions.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Send Resume via WhatsApp
+                </a>
               </Button>
             </div>
           </ScrollReveal>
@@ -351,10 +359,17 @@ export default function CareerPage() {
                         </div>
                       </div>
                       <Button className="w-full bg-gradient-primary hover:bg-gradient-secondary">
-                        <Link href="/contact" className="flex items-center">
-                          Apply Now
+                        <a
+                          href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                            `Hi, I'm interested in applying for the ${job.title} position. Please let me know about the application process and next steps.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center"
+                        >
+                          Apply Now via WhatsApp
                           <ArrowRight className="ml-2 w-4 h-4" />
-                        </Link>
+                        </a>
                       </Button>
                     </CardContent>
                   </Card>
@@ -574,17 +589,32 @@ export default function CareerPage() {
                 size="lg"
                 className="bg-white text-primary hover:bg-gray-100"
               >
-                <Link href="/contact" className="flex items-center">
-                  Send Your Resume
+                <a
+                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    `Hi, I'm ready to start my journey with your company. I would like to send my resume and discuss career opportunities.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  Send Your Resume via WhatsApp
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-primary"
               >
-                <Link href="/contact">Schedule a Call</Link>
+                <a
+                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    `Hi, I would like to schedule a call to discuss career opportunities and learn more about working at your company.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule a Call via WhatsApp
+                </a>
               </Button>
             </div>
           </ScrollReveal>

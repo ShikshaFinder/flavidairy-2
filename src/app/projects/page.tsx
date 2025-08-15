@@ -214,12 +214,17 @@ export default function ProjectsPage() {
                       className="w-full group/btn mt-auto"
                       asChild
                     >
-                      <Link href="/contact">
-                        <span className="flex items-center gap-2">
-                          Discuss Similar Project
-                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                        </span>
-                      </Link>
+                      <a
+                        href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                          `Hi, I'm interested in discussing a similar project to the ones showcased on your website. Please provide more details about your project capabilities.`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        Discuss Similar Project on WhatsApp
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -250,18 +255,23 @@ export default function ProjectsPage() {
                     className="group relative overflow-hidden"
                     asChild
                   >
-                    <Link href="/contact">
-                      <span className="relative z-10 flex items-center gap-2">
-                        Start Your Project
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                      </span>
+                    <a
+                      href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                        `Hi, I'm ready to start a new project and would like to discuss my requirements. Please help me get started with your project services.`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative z-10 flex items-center gap-2"
+                    >
+                      Start Your Project on WhatsApp
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       <MotionDiv
                         className="absolute inset-0 bg-white/20"
                         initial={{ x: "-100%" }}
                         whileHover={{ x: "100%" }}
                         transition={{ duration: 0.6 }}
                       />
-                    </Link>
+                    </a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
                     <Link href="/services">View Our Services</Link>
