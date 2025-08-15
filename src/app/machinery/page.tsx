@@ -362,16 +362,19 @@ export default function MachineryPage() {
                         </p>
                       )}
 
-                      {/* Read more button with better spacing */}
-                      {(needsTruncate[index] || isExpanded(index)) && (
-                        <div className="pt-2">
+                      {/* Always show Read more button for descriptions longer than 150 characters */}
+                      {(equipment.description.length > 150 ||
+                        isExpanded(index)) && (
+                        <div className="pt-3 flex justify-start">
                           <button
                             onClick={() => toggleExpand(index)}
-                            className="text-sm text-secondary hover:underline font-medium"
+                            className="text-sm text-blue-600 hover:text-blue-800 hover:underline font-semibold bg-blue-50 px-3 py-1 rounded-md border border-blue-200 transition-colors"
                             aria-expanded={isExpanded(index)}
                             aria-controls={`equipment-desc-${index}`}
                           >
-                            {isExpanded(index) ? "Read less" : "Read more"}
+                            {isExpanded(index)
+                              ? "🔼 Show Less"
+                              : "🔽 Read More"}
                           </button>
                         </div>
                       )}
