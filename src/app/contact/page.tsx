@@ -407,7 +407,8 @@ export default function ContactPage() {
                 Our Service Areas
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We provide comprehensive dairy and food processing solutions across multiple regions
+                We provide comprehensive dairy and food processing solutions
+                across multiple regions
               </p>
             </div>
           </ScrollReveal>
@@ -416,48 +417,69 @@ export default function ContactPage() {
             {[
               {
                 region: "Western India",
-                states: ["Gujarat", "Maharashtra", "Rajasthan", "Madhya Pradesh"],
-                description: "Primary service area with extensive project experience"
+                states: [
+                  "Gujarat",
+                  "Maharashtra",
+                  "Rajasthan",
+                  "Madhya Pradesh",
+                ],
+                description:
+                  "Primary service area with extensive project experience",
               },
               {
-                region: "Northern India", 
+                region: "Northern India",
                 states: ["Punjab", "Haryana", "Uttar Pradesh", "Delhi NCR"],
-                description: "Growing presence in dairy processing hubs"
+                description: "Growing presence in dairy processing hubs",
               },
               {
                 region: "Southern India",
-                states: ["Karnataka", "Tamil Nadu", "Andhra Pradesh", "Telangana"],
-                description: "Expanding operations in South Indian markets"
+                states: [
+                  "Karnataka",
+                  "Tamil Nadu",
+                  "Andhra Pradesh",
+                  "Telangana",
+                ],
+                description: "Expanding operations in South Indian markets",
               },
               {
                 region: "Eastern India",
                 states: ["West Bengal", "Odisha", "Jharkhand", "Bihar"],
-                description: "Emerging market with significant potential"
+                description: "Emerging market with significant potential",
               },
               {
                 region: "Central India",
                 states: ["Chhattisgarh", "Madhya Pradesh", "Odisha"],
-                description: "Strategic location for pan-India operations"
+                description: "Strategic location for pan-India operations",
               },
               {
                 region: "International",
-                states: ["Export Markets", "Overseas Projects", "Global Partnerships"],
-                description: "Expanding globally with quality solutions"
-              }
+                states: [
+                  "Export Markets",
+                  "Overseas Projects",
+                  "Global Partnerships",
+                ],
+                description: "Expanding globally with quality solutions",
+              },
             ].map((area, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                   <CardHeader>
-                    <CardTitle className="text-secondary text-lg">{area.region}</CardTitle>
+                    <CardTitle className="text-secondary text-lg">
+                      {area.region}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <p className="text-sm text-gray-600">{area.description}</p>
+                      <p className="text-sm text-gray-600">
+                        {area.description}
+                      </p>
                       <div>
-                        <p className="font-semibold text-black text-sm mb-2">Coverage:</p>
+                        <p className="font-semibold text-black text-sm mb-2">
+                          Coverage:
+                        </p>
                         <div className="flex flex-wrap gap-1">
                           {area.states.map((state, idx) => (
-                            <span 
+                            <span
                               key={idx}
                               className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full"
                             >
@@ -493,28 +515,34 @@ export default function ContactPage() {
             {[
               {
                 question: "What industries do you serve?",
-                answer: "We serve dairy processing, food processing, beverage manufacturing, and fruits & vegetables processing industries with comprehensive equipment solutions."
+                answer:
+                  "We serve dairy processing, food processing, beverage manufacturing, and fruits & vegetables processing industries with comprehensive equipment solutions.",
               },
               {
                 question: "Do you provide installation services?",
-                answer: "Yes, we provide complete turnkey solutions including equipment supply, installation, commissioning, and training services."
+                answer:
+                  "Yes, we provide complete turnkey solutions including equipment supply, installation, commissioning, and training services.",
               },
               {
                 question: "What is the typical project timeline?",
-                answer: "Project timelines vary based on scope and complexity. Small equipment installations take 2-4 weeks, while complete plant setups may take 3-6 months."
+                answer:
+                  "Project timelines vary based on scope and complexity. Small equipment installations take 2-4 weeks, while complete plant setups may take 3-6 months.",
               },
               {
                 question: "Do you offer after-sales support?",
-                answer: "Yes, we provide comprehensive after-sales support including maintenance services, spare parts supply, and technical assistance."
+                answer:
+                  "Yes, we provide comprehensive after-sales support including maintenance services, spare parts supply, and technical assistance.",
               },
               {
                 question: "Can you customize equipment for specific needs?",
-                answer: "Absolutely! We specialize in custom-designed equipment tailored to your specific processing requirements and capacity needs."
+                answer:
+                  "Absolutely! We specialize in custom-designed equipment tailored to your specific processing requirements and capacity needs.",
               },
               {
                 question: "What certifications do your equipment have?",
-                answer: "Our equipment complies with international standards including FDA, 3A, EHEDG, and ISO standards for food safety and quality."
-              }
+                answer:
+                  "Our equipment complies with international standards including FDA, 3A, EHEDG, and ISO standards for food safety and quality.",
+              },
             ].map((faq, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">

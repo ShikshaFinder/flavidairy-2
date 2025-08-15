@@ -383,7 +383,9 @@ export default function CareerPage() {
             <ScrollReveal delay={0.1}>
               <Card className="shadow-lg hover-lift h-full">
                 <CardHeader>
-                  <CardTitle className="text-primary">Summer Internship</CardTitle>
+                  <CardTitle className="text-primary">
+                    Summer Internship
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
@@ -400,7 +402,9 @@ export default function CareerPage() {
             <ScrollReveal delay={0.2}>
               <Card className="shadow-lg hover-lift h-full">
                 <CardHeader>
-                  <CardTitle className="text-primary">Graduate Trainee Program</CardTitle>
+                  <CardTitle className="text-primary">
+                    Graduate Trainee Program
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
@@ -417,7 +421,9 @@ export default function CareerPage() {
             <ScrollReveal delay={0.3}>
               <Card className="shadow-lg hover-lift h-full">
                 <CardHeader>
-                  <CardTitle className="text-primary">Skill Development</CardTitle>
+                  <CardTitle className="text-primary">
+                    Skill Development
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
@@ -456,7 +462,7 @@ export default function CareerPage() {
                 description: "Send your resume and cover letter",
               },
               {
-                step: "02", 
+                step: "02",
                 title: "Initial Screening",
                 description: "HR review and phone screening",
               },
@@ -474,7 +480,9 @@ export default function CareerPage() {
               <ScrollReveal key={index} delay={index * 0.1}>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-lg">{process.step}</span>
+                    <span className="text-white font-bold text-lg">
+                      {process.step}
+                    </span>
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">
                     {process.title}
