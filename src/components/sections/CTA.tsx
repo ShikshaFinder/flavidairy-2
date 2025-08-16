@@ -49,7 +49,7 @@ export function CTA() {
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
               asChild
             >
-              <Link href="/contact">
+              <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
                 <span className="relative z-10 flex items-center gap-2">
                   Get a Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -69,7 +69,7 @@ export function CTA() {
               className="border-2 border-green-300 text-green-700 hover:bg-green-50 hover:border-green-400 px-8 py-4 text-lg font-semibold"
               asChild
             >
-              <Link href="/contact">Download Brochure</Link>
+              <Link href="magazines">Download Brochure</Link>
             </Button>
           </MotionDiv>
 

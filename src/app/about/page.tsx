@@ -248,7 +248,7 @@ export default function AboutPage() {
                   className="bg-secondary hover:bg-secondary/90 text-black border-0"
                   asChild
                 >
-                  <Link href="/contact-empty">
+                  <Link href="https://wa.me/917202033384">
                     <span className="flex items-center gap-2">
                       Get in Touch
                       <ArrowRight className="w-4 h-4" />
