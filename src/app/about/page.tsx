@@ -82,7 +82,7 @@ export default function AboutPage() {
         "Bachelor of Technology in Dairy Technology from Anand Agricultural University, Anand. 2000-04.",
       experience: "20+ years",
       expertise: "Dairy Processing, Consultancy Services",
-      image: "/images/team/kirit-patel.jpg",
+      image: "/kirit.png",
       isFounder: true,
       workExperience: [
         "Amul: 2004-2008 in the Cheese & Paneer",
@@ -104,7 +104,7 @@ export default function AboutPage() {
         "Ph.D (Dairy Technology) from Massey University, New Zealand; B.Tech. (Dairy Technology) from Anand Agricultural University, Anand (Gujarat)",
       experience: "20+ years",
       expertise: "R&D, Global Dairy Operations, Academia",
-      image: "/images/team/hasmukh-patel.jpg",
+      image: "/hasmukh.png",
       isFounder: false,
       workExperience: [
         "Sr. Director, Global R&D, Mengniu Dairy Group, Hong Kong",
