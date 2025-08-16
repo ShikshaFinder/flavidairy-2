@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import Height from "@/components/height";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,7 +13,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import {
   Users,
   Briefcase,
@@ -26,8 +26,11 @@ import {
   Mail,
   Phone,
   Building,
+  Star,
+  Award,
+  TrendingUp,
+  Shield,
 } from "lucide-react";
-import Link from "next/link";
 
 export default function CareerPage() {
   const jobOpenings = [
@@ -38,13 +41,17 @@ export default function CareerPage() {
       location: "Ahmedabad, Gujarat",
       type: "Full-time",
       experience: "3-5 years",
-      description: "Design and optimize dairy and food processing systems",
+      salary: "₹8-12 LPA",
+      description:
+        "Design and optimize dairy and food processing systems with cutting-edge technology",
       requirements: [
         "B.Tech/M.Tech in Food Technology or Chemical Engineering",
         "Experience in dairy/food processing equipment design",
         "Knowledge of HACCP, FSSAI, and ISO standards",
         "Proficiency in AutoCAD and process simulation software",
+        "Strong analytical and problem-solving skills",
       ],
+      featured: true,
     },
     {
       id: 2,
@@ -53,14 +60,17 @@ export default function CareerPage() {
       location: "Ahmedabad, Gujarat",
       type: "Full-time",
       experience: "2-4 years",
+      salary: "₹6-10 LPA",
       description:
-        "Develop and implement automation solutions for processing plants",
+        "Develop and implement automation solutions for modern processing plants",
       requirements: [
         "B.Tech in Electronics/Instrumentation Engineering",
         "Experience with PLC, SCADA, and HMI systems",
         "Knowledge of industrial communication protocols",
         "Experience in dairy/food industry automation",
+        "Programming skills in ladder logic and structured text",
       ],
+      featured: false,
     },
     {
       id: 3,
@@ -69,13 +79,17 @@ export default function CareerPage() {
       location: "Ahmedabad, Gujarat",
       type: "Full-time",
       experience: "5-8 years",
-      description: "Lead turnkey projects from concept to commissioning",
+      salary: "₹12-18 LPA",
+      description:
+        "Lead turnkey projects from concept to commissioning with excellence",
       requirements: [
         "B.Tech/M.Tech in Mechanical/Chemical Engineering",
         "PMP certification preferred",
         "Experience in dairy/food processing projects",
         "Strong leadership and communication skills",
+        "Project management tools proficiency",
       ],
+      featured: true,
     },
     {
       id: 4,
@@ -84,44 +98,17 @@ export default function CareerPage() {
       location: "Multiple Locations",
       type: "Full-time",
       experience: "2-4 years",
-      description: "Drive sales of processing equipment and solutions",
+      salary: "₹5-8 LPA + Incentives",
+      description:
+        "Drive sales of processing equipment and build lasting client relationships",
       requirements: [
         "B.Tech in Mechanical/Food Technology",
         "Experience in B2B sales in food processing industry",
         "Strong technical knowledge and presentation skills",
         "Willingness to travel extensively",
+        "Excellent communication and negotiation skills",
       ],
-    },
-    {
-      id: 5,
-      title: "Quality Control Specialist",
-      department: "Quality Assurance",
-      location: "Ahmedabad, Gujarat",
-      type: "Full-time",
-      experience: "2-3 years",
-      description:
-        "Ensure quality standards in equipment manufacturing and processes",
-      requirements: [
-        "B.Tech in Food Technology or related field",
-        "Experience in quality control and food safety",
-        "Knowledge of FSSAI, ISO, and HACCP standards",
-        "Attention to detail and analytical skills",
-      ],
-    },
-    {
-      id: 6,
-      title: "R&D Engineer",
-      department: "Research & Development",
-      location: "Ahmedabad, Gujarat",
-      type: "Full-time",
-      experience: "3-5 years",
-      description: "Develop innovative processing solutions and new products",
-      requirements: [
-        "M.Tech/PhD in Food Technology or Chemical Engineering",
-        "Experience in food product development",
-        "Knowledge of food processing technologies",
-        "Innovative thinking and problem-solving skills",
-      ],
+      featured: false,
     },
   ];
 
@@ -129,77 +116,89 @@ export default function CareerPage() {
     {
       icon: Heart,
       title: "Health & Wellness",
-      description: "Comprehensive health insurance and wellness programs",
+      description:
+        "Comprehensive health insurance, medical check-ups, and wellness programs for you and your family",
+      color: "text-red-500",
     },
     {
       icon: GraduationCap,
       title: "Learning & Development",
-      description: "Continuous training and skill development opportunities",
+      description:
+        "Continuous training, skill development opportunities, and industry certifications",
+      color: "text-blue-500",
     },
     {
-      icon: Users,
-      title: "Team Environment",
-      description: "Collaborative and supportive work culture",
-    },
-    {
-      icon: Briefcase,
+      icon: TrendingUp,
       title: "Career Growth",
-      description: "Clear career progression and advancement opportunities",
+      description:
+        "Clear career progression paths, mentorship programs, and leadership development",
+      color: "text-green-500",
+    },
+    {
+      icon: Shield,
+      title: "Job Security",
+      description:
+        "Stable employment, performance bonuses, and long-term career stability",
+      color: "text-purple-500",
     },
   ];
 
-  const values = [
-    {
-      title: "Innovation",
-      description: "We encourage creative thinking and innovative solutions",
-    },
-    {
-      title: "Excellence",
-      description: "We strive for excellence in everything we do",
-    },
-    {
-      title: "Integrity",
-      description: "We maintain the highest ethical standards",
-    },
-    {
-      title: "Collaboration",
-      description: "We believe in teamwork and mutual support",
-    },
+  const perks = [
+    "Flexible working hours",
+    "Work from home options",
+    "Annual performance bonuses",
+    "Team building activities",
+    "Free meals and snacks",
+    "Transportation allowance",
+    "Festival celebrations",
+    "Employee recognition programs",
   ];
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-background via-background-secondary to-background-tertiary">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-white via-secondary/5 to-white">
+        <Height />
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
               Join Our Team
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+              Build Your Career with
+              <span className="text-secondary block mt-2">Flavi Dairy</span>
             </h1>
-            <p className="text-xl md:text-2xl text-foreground-secondary mb-8 max-w-3xl mx-auto">
-              Build your career with a leading dairy and food processing
-              solutions provider
+            <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
+              Join a leading dairy and food processing solutions provider and be
+              part of innovative projects that shape the future of the industry
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-primary hover:bg-gradient-secondary"
+                className="bg-secondary hover:bg-secondary/90 text-black border-0"
+                asChild
               >
-                <Link href="#openings" className="flex items-center">
-                  View Openings
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+                <a href="#openings" className="flex items-center gap-2">
+                  View Open Positions
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white"
+                className="border-black/20 text-black hover:bg-black hover:text-white"
+                asChild
               >
                 <a
                   href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I'm interested in career opportunities at your company. I would like to send my resume and discuss available positions.`
+                    `Hi, I'm interested in career opportunities at Flavi Dairy. I would like to send my resume and discuss available positions.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -208,416 +207,397 @@ export default function CareerPage() {
                 </a>
               </Button>
             </div>
-          </ScrollReveal>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Why Join Us */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Why Join Flavi Dairy?
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                Be part of a team that's transforming the dairy and food
-                processing industry
-              </p>
-            </div>
-          </ScrollReveal>
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Why Choose Flavi Dairy?
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              We offer more than just a job - we provide a platform for growth,
+              innovation, and making a real impact in the industry
+            </p>
+          </MotionDiv>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {benefits.map((benefit, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <MotionDiv
-                  className="text-center p-6 rounded-xl bg-gradient-to-br from-background-secondary to-background-tertiary shadow-lg hover-lift"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm text-foreground-secondary">
-                    {benefit.description}
-                  </p>
-                </MotionDiv>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company Values */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Our Values
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                The principles that guide our work and shape our culture
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <Card className="shadow-lg hover-lift">
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-primary">
-                      {value.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-foreground-secondary text-center">
-                      {value.description}
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <benefit.icon className={`w-6 h-6 ${benefit.color}`} />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-black">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-black/70 text-sm">
+                      {benefit.description}
                     </p>
                   </CardContent>
                 </Card>
-              </ScrollReveal>
+              </MotionDiv>
             ))}
           </div>
+
+          {/* Perks Grid */}
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h3 className="text-2xl font-bold text-center mb-8 text-black">
+              Additional Perks
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {perks.map((perk, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 p-3 bg-white rounded-lg border border-gray-200"
+                >
+                  <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
+                  <span className="text-black/80 text-sm">{perk}</span>
+                </div>
+              ))}
+            </div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Job Openings */}
       <section id="openings" className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Current Openings
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                Explore exciting career opportunities in dairy and food
-                processing
-              </p>
-            </div>
-          </ScrollReveal>
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Current Openings
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Explore exciting career opportunities and join our dynamic team
+            </p>
+          </MotionDiv>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {jobOpenings.map((job, index) => (
-              <ScrollReveal key={job.id} delay={index * 0.1}>
-                <MotionDiv
-                  className="h-full"
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader>
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
-                          <CardTitle className="text-xl font-bold text-foreground">
-                            {job.title}
-                          </CardTitle>
-                          <CardDescription className="text-foreground-secondary">
-                            {job.department} • {job.location}
-                          </CardDescription>
-                        </div>
-                        <Badge
-                          variant="outline"
-                          className="text-primary border-primary"
-                        >
-                          {job.type}
-                        </Badge>
-                      </div>
-                      <p className="text-foreground-secondary mb-4">
-                        {job.description}
-                      </p>
-                      <div className="flex flex-wrap gap-4 text-sm text-foreground-secondary">
-                        <div className="flex items-center">
-                          <MapPin className="w-4 h-4 mr-1" />
-                          {job.location}
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {job.experience}
-                        </div>
-                      </div>
-                    </CardHeader>
+              <MotionDiv
+                key={job.id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 relative">
+                  {job.featured && (
+                    <div className="absolute -top-2 -right-2">
+                      <Badge className="bg-secondary text-black border-0">
+                        <Star className="w-3 h-3 mr-1" />
+                        Featured
+                      </Badge>
+                    </div>
+                  )}
 
-                    <CardContent>
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-foreground mb-2">
-                          Requirements:
-                        </h4>
-                        <div className="space-y-2">
-                          {job.requirements.map((req, idx) => (
-                            <div key={idx} className="flex items-start">
-                              <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                              <span className="text-sm text-foreground-secondary">
-                                {req}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+                  <CardHeader className="pb-4">
+                    <div className="flex justify-between items-start mb-3">
+                      <div>
+                        <CardTitle className="text-xl font-bold text-black mb-1">
+                          {job.title}
+                        </CardTitle>
+                        <CardDescription className="text-black/60">
+                          {job.department} • {job.location}
+                        </CardDescription>
                       </div>
-                      <Button className="w-full bg-gradient-primary hover:bg-gradient-secondary">
-                        <a
-                          href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                            `Hi, I'm interested in applying for the ${job.title} position. Please let me know about the application process and next steps.`
-                          )}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center"
-                        >
-                          Apply Now via WhatsApp
-                          <ArrowRight className="ml-2 w-4 h-4" />
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </MotionDiv>
-              </ScrollReveal>
+                      <Badge
+                        variant="outline"
+                        className="text-secondary border-secondary/20"
+                      >
+                        {job.type}
+                      </Badge>
+                    </div>
+
+                    <p className="text-black/70 mb-4 text-sm leading-relaxed">
+                      {job.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-4 text-sm text-black/60">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        {job.location}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        {job.experience}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <DollarSign className="w-4 h-4" />
+                        {job.salary}
+                      </div>
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="pt-0">
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-black mb-3 flex items-center gap-2">
+                        <Award className="w-4 h-4 text-secondary" />
+                        Key Requirements:
+                      </h4>
+                      <div className="space-y-2">
+                        {job.requirements.slice(0, 3).map((req, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <CheckCircle className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-black/70 leading-relaxed">
+                              {req}
+                            </span>
+                          </div>
+                        ))}
+                        {job.requirements.length > 3 && (
+                          <div className="text-sm text-black/50 italic">
+                            +{job.requirements.length - 3} more requirements
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <Button
+                      className="w-full bg-secondary hover:bg-secondary/90 text-black border-0"
+                      asChild
+                    >
+                      <a
+                        href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                          `Hi, I'm interested in applying for the ${job.title} position (${job.department}) at Flavi Dairy. Please share more details about the application process and next steps. My experience: ${job.experience}.`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        Apply Now via WhatsApp
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Internship & Training Programs
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                Building the next generation of food processing professionals
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ScrollReveal delay={0.1}>
-              <Card className="shadow-lg hover-lift h-full">
-                <CardHeader>
-                  <CardTitle className="text-primary">
-                    Summer Internship
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• 3-6 months program</li>
-                    <li>• Hands-on experience in dairy processing</li>
-                    <li>• Mentorship from industry experts</li>
-                    <li>• Certificate of completion</li>
-                    <li>• Potential for full-time conversion</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <Card className="shadow-lg hover-lift h-full">
-                <CardHeader>
-                  <CardTitle className="text-primary">
-                    Graduate Trainee Program
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• 12-month comprehensive training</li>
-                    <li>• Rotation across departments</li>
-                    <li>• Project-based learning</li>
-                    <li>• Industry certifications</li>
-                    <li>• Fast-track career progression</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <Card className="shadow-lg hover-lift h-full">
-                <CardHeader>
-                  <CardTitle className="text-primary">
-                    Skill Development
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• Technical skill workshops</li>
-                    <li>• Industry best practices training</li>
-                    <li>• Certification programs</li>
-                    <li>• Professional development courses</li>
-                    <li>• Leadership development</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* Application Process */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Application Process
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                Simple and transparent hiring process
-              </p>
-            </div>
-          </ScrollReveal>
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Simple Application Process
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Our streamlined hiring process ensures you have a smooth
+              experience
+            </p>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
                 step: "01",
-                title: "Submit Application",
-                description: "Send your resume and cover letter",
+                title: "Apply",
+                description: "Send your resume via WhatsApp or email",
+                icon: Mail,
               },
               {
                 step: "02",
-                title: "Initial Screening",
-                description: "HR review and phone screening",
+                title: "Review",
+                description: "Initial screening and profile assessment",
+                icon: Users,
               },
               {
                 step: "03",
-                title: "Technical Interview",
-                description: "Technical assessment with team",
+                title: "Interview",
+                description: "Technical and HR interview rounds",
+                icon: Briefcase,
               },
               {
                 step: "04",
-                title: "Final Interview",
-                description: "Final round with leadership team",
+                title: "Welcome",
+                description: "Onboarding and joining formalities",
+                icon: CheckCircle,
               },
             ].map((process, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-lg">
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                      <process.icon className="w-8 h-8 text-black" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center text-sm font-bold">
                       {process.step}
-                    </span>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  <h3 className="text-lg font-semibold mb-2 text-black">
                     {process.title}
                   </h3>
-                  <p className="text-sm text-foreground-secondary">
-                    {process.description}
-                  </p>
+                  <p className="text-sm text-black/70">{process.description}</p>
                 </div>
-              </ScrollReveal>
+              </MotionDiv>
             ))}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-br from-background-secondary to-background-tertiary">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Get in Touch
-              </h2>
-              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-                Ready to join our team? Contact us for more information about
-                career opportunities
-              </p>
-            </div>
-          </ScrollReveal>
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Get in Touch
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Ready to join our team? Contact our HR department for more
+              information
+            </p>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <ScrollReveal delay={0.1}>
-              <div className="text-center p-6 rounded-xl bg-white shadow-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Email Us
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  careers@flavidairysolution.com
-                </p>
-              </div>
-            </ScrollReveal>
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-black">
+                    Email Us
+                  </h3>
+                  <p className="text-sm text-black/70">
+                    careers@flavidairy.com
+                  </p>
+                </CardContent>
+              </Card>
+            </MotionDiv>
 
-            <ScrollReveal delay={0.2}>
-              <div className="text-center p-6 rounded-xl bg-white shadow-lg">
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Call Us
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  +91 7202033384
-                </p>
-              </div>
-            </ScrollReveal>
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-black">
+                    Call Us
+                  </h3>
+                  <p className="text-sm text-black/70">+91 7202033384</p>
+                </CardContent>
+              </Card>
+            </MotionDiv>
 
-            <ScrollReveal delay={0.3}>
-              <div className="text-center p-6 rounded-xl bg-white shadow-lg">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Building className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  Visit Us
-                </h3>
-                <p className="text-sm text-foreground-secondary">
-                  Ahmedabad, Gujarat
-                </p>
-              </div>
-            </ScrollReveal>
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Building className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-black">
+                    Visit Us
+                  </h3>
+                  <p className="text-sm text-black/70">Ahmedabad, Gujarat</p>
+                </CardContent>
+              </Card>
+            </MotionDiv>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-multi">
+      <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
               Ready to Start Your Journey?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto">
               Join our team and be part of the future of dairy and food
-              processing
+              processing technology
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-primary hover:bg-gray-100"
+                className="bg-black hover:bg-black/90 text-white border-0"
+                asChild
               >
                 <a
                   href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I'm ready to start my journey with your company. I would like to send my resume and discuss career opportunities.`
+                    `Hi, I'm excited to start my journey with Flavi Dairy. I would like to send my resume and learn about current career opportunities in dairy and food processing.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center"
+                  className="flex items-center gap-2"
                 >
-                  Send Your Resume via WhatsApp
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  Send Your Resume
+                  <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary"
+                className="border-black text-black hover:bg-black hover:text-white"
+                asChild
               >
                 <a
                   href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I would like to schedule a call to discuss career opportunities and learn more about working at your company.`
+                    `Hi, I would like to schedule a call to discuss career opportunities at Flavi Dairy and learn more about your company culture.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Schedule a Call via WhatsApp
+                  Schedule a Call
                 </a>
               </Button>
             </div>
-          </ScrollReveal>
+          </MotionDiv>
         </div>
       </section>
 
