@@ -23,7 +23,7 @@ export default function ServicesPage() {
       icon: Cpu,
       title: "Embedded Hardware Design",
       description:
-        "Custom PCB design, schematic capture, and hardware architecture for your specific requirements.",
+        "Customized PCB design, schematic capture, and hardware architecture for your specific requirements.",
       features: [
         "Schematic design and PCB layout",
         "Component selection and sourcing",
@@ -38,7 +38,7 @@ export default function ServicesPage() {
       icon: Database,
       title: "Firmware Development",
       description:
-        "Custom firmware development for microcontrollers and embedded systems.",
+        "Customized firmware development for microcontrollers and embedded systems.",
       features: [
         "Real-time operating systems",
         "Device drivers and APIs",
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl md:text-6xl font-bold mb-6 text-foreground"
               >
-                Custom Embedded Solutions
+                Customized Embedded Solutions
                 <span className="gradient-text"> For Every Need</span>
               </MotionH1>
 
@@ -221,8 +221,8 @@ export default function ServicesPage() {
                   Ready to Start Your Project?
                 </h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl">
-                  Let's discuss your requirements and create a custom solution
-                  that fits your needs perfectly.
+                  Let's discuss your requirements and create a customized
+                  solution that fits your needs perfectly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button

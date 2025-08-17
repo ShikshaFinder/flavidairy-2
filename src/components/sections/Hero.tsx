@@ -65,7 +65,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-6 py-3 bg-green-100 backdrop-blur-sm text-green-700 border border-green-200 rounded-full text-sm font-medium shadow-sm">
-              Transform Your Processing Operations With Expert Solutions
+              Transform Your Processing Operations With Trusted Expert Solutions
             </span>
           </MotionDiv>
 
@@ -75,7 +75,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Engineering Progress
+            Engineering Consultation
             <span className="text-green-600"> From Farm to Factory</span>
           </MotionH1>
 
@@ -85,8 +85,8 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            From concept to commissioning, we deliver innovative dairy and food
-            processing solutions with 20+ years of expertise.
+            Comprehensive end-to-end solutions for dairy and food processing
+            with trusted reliability built on 20+ years of expertise.
           </MotionP>
 
           <MotionDiv

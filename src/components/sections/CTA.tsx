@@ -29,13 +29,13 @@ export function CTA() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
-            Ready to Transform Your
-            <span className="text-green-600"> Processing Operations?</span>
+            Ready for Comprehensive
+            <span className="text-green-600"> End-to-End Solutions?</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Let our experienced team help you design and implement the perfect
-            processing solution for your industry. Start with a free initial
-            consultation.
+            Trust our dedicated team of engineers and technocrats to deliver
+            customized processing solutions backed by 20+ years of reliability
+            and expertise. Start with a free consultation.
           </p>
 
           <MotionDiv

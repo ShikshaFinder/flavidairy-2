@@ -32,12 +32,12 @@ export function Features() {
       icon: Users,
       title: "Expert Support",
       description:
-        "Dedicated team of engineers and technicians providing comprehensive installation, training, and ongoing support services.",
+        "Dedicated team of engineers and technocrats providing comprehensive installation, training, and ongoing support services.",
       color: "accent",
     },
     {
       icon: Target,
-      title: "Custom Solutions",
+      title: "Customized Solutions",
       description:
         "Tailored processing solutions designed to meet your specific production requirements and operational constraints.",
       color: "tertiary",
@@ -87,11 +87,11 @@ export function Features() {
             Why Choose Us
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Our Key Features
+            Our Key Strengths
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover what sets us apart in the dairy and food processing
-            industry
+            industry with our trusted and reliable solutions
           </p>
         </MotionDiv>
 

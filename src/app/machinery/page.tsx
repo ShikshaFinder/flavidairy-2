@@ -102,7 +102,7 @@ export default function MachineryPage() {
       description: "Complete range of processing equipment",
     },
     {
-      id: "MILK PROCESSING EQUIPMENTS",
+      id: "MILK PROCESSING EQUIPMENT",
       name: "Milk Processing",
       icon: Droplets,
       description: "Milk processing and dairy equipment",
@@ -150,13 +150,13 @@ export default function MachineryPage() {
       description: "Cooking and frying equipment",
     },
     {
-      id: "CURD EQUIPMENTS",
+      id: "CURD EQUIPMENT",
       name: "Lab Support",
       icon: Monitor,
       description: "Laboratory and curd processing equipment",
     },
     {
-      id: "EQUIPMENTS FOR FAT RICH PRODUCTS",
+      id: "EQUIPMENT FOR FAT RICH PRODUCTS",
       name: "Pumps, Sensors & Instruments",
       icon: Gauge,
       description: "Pumps, sensors and instrumentation",
