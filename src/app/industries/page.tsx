@@ -418,13 +418,13 @@ export default function IndustriesPage() {
               >
                 <a
                   href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I'm interested in industry-specific solutions for my processing needs. Please provide me with expert guidance and a free consultation.`
+                    `Hi, I'm interested in industry-specific solutions for my processing needs. Please provide me with expert guidance.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  Get Free Consultation on WhatsApp
+                  Contact Us on WhatsApp
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>

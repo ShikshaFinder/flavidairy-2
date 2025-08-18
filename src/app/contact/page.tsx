@@ -64,7 +64,7 @@ export default function ContactPage() {
     {
       icon: Building,
       title: "Expert Consultation",
-      description: "Free consultation with our experts",
+      description: "Consultation with our experts",
     },
     {
       icon: CheckCircle,

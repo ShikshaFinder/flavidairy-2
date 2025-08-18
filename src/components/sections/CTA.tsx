@@ -35,7 +35,7 @@ export function CTA() {
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Trust our dedicated team of engineers and technocrats to deliver
             customized processing solutions backed by 20+ years of reliability
-            and expertise. Start with a free consultation.
+            and expertise.
           </p>
 
           <MotionDiv
@@ -49,9 +49,9 @@ export function CTA() {
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
               asChild
             >
-              <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
+              <Link href="https://wa.me/917202033384?text=Hi, I'm interested in your services. Please provide details about your services.">
                 <span className="relative z-10 flex items-center gap-2">
-                  Get a Free Consultation
+                  Contact Us
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <MotionDiv

@@ -39,7 +39,7 @@ export function Footer() {
                   className="h-12 w-auto object-contain"
                 />
                 <span className="text-xl font-bold text-black">
-                  Flavi Dairy Food Solutions
+                  Flavi Dairy Solution
                 </span>
               </div>
               <p className="text-gray-600 mb-6 max-w-md">
@@ -55,13 +55,13 @@ export function Footer() {
                 >
                   <a
                     href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                      `Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.`
+                      `Hi, I'm interested in your services. Please provide details about your services.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    Free Consultation on WhatsApp
+                    Contact Us on WhatsApp
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>

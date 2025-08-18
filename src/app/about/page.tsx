@@ -588,8 +588,12 @@ export default function AboutPage() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-12 h-12 text-secondary" />
+                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-gray-200">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <CardTitle className="text-xl font-bold text-black">
                       {member.name}
@@ -688,8 +692,8 @@ export default function AboutPage() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-secondary mt-1" />
                   <span className="text-black">
-                   403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H Navdeep Bldg., Navrangpura, Ahmedabad-380014
-
+                    403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H
+                    Navdeep Bldg., Navrangpura, Ahmedabad-380014
                   </span>
                 </div>
               </div>

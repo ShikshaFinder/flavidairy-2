@@ -11,6 +11,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion";
 import {
@@ -20,14 +23,9 @@ import {
   Heart,
   ArrowRight,
   CheckCircle,
-  MapPin,
-  Clock,
-  DollarSign,
   Mail,
   Phone,
   Building,
-  Star,
-  Award,
   TrendingUp,
   Shield,
 } from "lucide-react";
@@ -144,14 +142,9 @@ export default function CareerPage() {
   ];
 
   const perks = [
-    "Flexible working hours",
-    "Work from home options",
-    "Annual performance bonuses",
-    "Team building activities",
-    "Free meals and snacks",
-    "Transportation allowance",
-    "Festival celebrations",
-    "Employee recognition programs",
+    "Networking opportunity",
+    "Transport allowance", 
+    "Annual bonuses",
   ];
 
   return (
@@ -185,8 +178,8 @@ export default function CareerPage() {
                 className="bg-secondary hover:bg-secondary/90 text-black border-0"
                 asChild
               >
-                <a href="#openings" className="flex items-center gap-2">
-                  View Open Positions
+                <a href="#get-in-touch" className="flex items-center gap-2">
+                  Apply Now
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
@@ -253,152 +246,9 @@ export default function CareerPage() {
               </MotionDiv>
             ))}
           </div>
-
-          {/* Perks Grid */}
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <h3 className="text-2xl font-bold text-center mb-8 text-black">
-              Additional Perks
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {perks.map((perk, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg border border-gray-200"
-                >
-                  <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="text-black/80 text-sm">{perk}</span>
-                </div>
-              ))}
-            </div>
-          </MotionDiv>
-        </div>
       </section>
 
-      {/* Job Openings */}
-      <section id="openings" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <MotionDiv
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Current Openings
-            </h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              Explore exciting career opportunities and join our dynamic team
-            </p>
-          </MotionDiv>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {jobOpenings.map((job, index) => (
-              <MotionDiv
-                key={job.id}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 relative">
-                  {job.featured && (
-                    <div className="absolute -top-2 -right-2">
-                      <Badge className="bg-secondary text-black border-0">
-                        <Star className="w-3 h-3 mr-1" />
-                        Featured
-                      </Badge>
-                    </div>
-                  )}
-
-                  <CardHeader className="pb-4">
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <CardTitle className="text-xl font-bold text-black mb-1">
-                          {job.title}
-                        </CardTitle>
-                        <CardDescription className="text-black/60">
-                          {job.department} • {job.location}
-                        </CardDescription>
-                      </div>
-                      <Badge
-                        variant="outline"
-                        className="text-secondary border-secondary/20"
-                      >
-                        {job.type}
-                      </Badge>
-                    </div>
-
-                    <p className="text-black/70 mb-4 text-sm leading-relaxed">
-                      {job.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-4 text-sm text-black/60">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {job.location}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        {job.experience}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <DollarSign className="w-4 h-4" />
-                        {job.salary}
-                      </div>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="pt-0">
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-black mb-3 flex items-center gap-2">
-                        <Award className="w-4 h-4 text-secondary" />
-                        Key Requirements:
-                      </h4>
-                      <div className="space-y-2">
-                        {job.requirements.slice(0, 3).map((req, idx) => (
-                          <div key={idx} className="flex items-start gap-2">
-                            <CheckCircle className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-black/70 leading-relaxed">
-                              {req}
-                            </span>
-                          </div>
-                        ))}
-                        {job.requirements.length > 3 && (
-                          <div className="text-sm text-black/50 italic">
-                            +{job.requirements.length - 3} more requirements
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <Button
-                      className="w-full bg-secondary hover:bg-secondary/90 text-black border-0"
-                      asChild
-                    >
-                      <a
-                        href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                          `Hi, I'm interested in applying for the ${job.title} position (${job.department}) at Flavi Dairy. Please share more details about the application process and next steps. My experience: ${job.experience}.`
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
-                      >
-                        Apply Now via WhatsApp
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </MotionDiv>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Application Process */}
+      {/* Build Career PDF Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <MotionDiv
@@ -408,64 +258,27 @@ export default function CareerPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Simple Application Process
+              Build Your Career
             </h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              Our streamlined hiring process ensures you have a smooth
-              experience
+            <p className="text-xl text-black/70 max-w-3xl mx-auto mb-8">
+              Download our comprehensive career guide and opportunities brochure
             </p>
-          </MotionDiv>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Apply",
-                description: "Send your resume via WhatsApp or email",
-                icon: Mail,
-              },
-              {
-                step: "02",
-                title: "Review",
-                description: "Initial screening and profile assessment",
-                icon: Users,
-              },
-              {
-                step: "03",
-                title: "Interview",
-                description: "Technical and HR interview rounds",
-                icon: Briefcase,
-              },
-              {
-                step: "04",
-                title: "Welcome",
-                description: "Onboarding and joining formalities",
-                icon: CheckCircle,
-              },
-            ].map((process, index) => (
-              <MotionDiv
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+            <Button
+              size="lg"
+              className="bg-secondary hover:bg-secondary/90 text-black border-0"
+              asChild
+            >
+              <a
+                href="/career-guide.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
               >
-                <div className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <process.icon className="w-8 h-8 text-black" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center text-sm font-bold">
-                      {process.step}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-black">
-                    {process.title}
-                  </h3>
-                  <p className="text-sm text-black/70">{process.description}</p>
-                </div>
-              </MotionDiv>
-            ))}
-          </div>
+                Download Career Guide PDF
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </Button>
+          </MotionDiv>
         </div>
       </section>
 
@@ -547,57 +360,107 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
+      {/* Get in Touch Form Section */}
+      <section id="get-in-touch" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
           <MotionDiv
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-              Ready to Start Your Journey?
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Get in Touch
             </h2>
-            <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto">
-              Join our team and be part of the future of dairy and food
-              processing technology
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Ready to join our team? Submit your details and resume below
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-black hover:bg-black/90 text-white border-0"
-                asChild
-              >
-                <a
-                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I'm excited to start my journey with Flavi Dairy. I would like to send my resume and learn about current career opportunities in dairy and food processing.`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  Send Your Resume
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-black text-black hover:bg-black hover:text-white"
-                asChild
-              >
-                <a
-                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I would like to schedule a call to discuss career opportunities at Flavi Dairy and learn more about your company culture.`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Schedule a Call
-                </a>
-              </Button>
-            </div>
           </MotionDiv>
+
+          <div className="max-w-2xl mx-auto">
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <Label htmlFor="career-name" className="text-black font-medium">
+                    Career Name
+                  </Label>
+                  <Input
+                    id="career-name"
+                    placeholder="Enter your full name"
+                    className="mt-2"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="phone-no" className="text-black font-medium">
+                    Phone Number
+                  </Label>
+                  <Input
+                    id="phone-no"
+                    placeholder="Enter your phone number"
+                    className="mt-2"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <Label htmlFor="email" className="text-black font-medium">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="mt-2"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="shortlist" className="text-black font-medium">
+                  Position of Interest / Shortlist
+                </Label>
+                <Textarea
+                  id="shortlist"
+                  placeholder="Mention the position you're interested in or describe your preferences"
+                  className="mt-2"
+                  rows={3}
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="resume" className="text-black font-medium">
+                  Upload Resume
+                </Label>
+                <div className="mt-2 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                  <div className="space-y-2">
+                    <div className="mx-auto w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <Button variant="outline" className="mb-2">
+                        Choose File
+                      </Button>
+                      <p className="text-sm text-gray-500">
+                        Upload your resume (PDF, DOC, DOCX - Max 5MB)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-black border-0"
+                >
+                  Submit Application
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
 

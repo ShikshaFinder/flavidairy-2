@@ -76,7 +76,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Engineering Consultation
-            <span className="text-green-600"> From Farm to Factory</span>
+            <span className="text-black"> From Farm to Factory</span>
           </MotionH1>
 
           <MotionP
@@ -95,23 +95,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <MotionButton
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-medium group relative overflow-hidden border-0 shadow-lg hover:shadow-xl"
-              asChild
-            >
-              <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
-                <span className="relative z-10 flex items-center gap-2">
-                  Get a Free Consultation
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Link>
-            </MotionButton>
-
             <Button
               size="lg"
-              variant="outline"
-              className="border-2 border-green-300 text-green-700 hover:bg-green-600 hover:text-white px-8 py-4 text-lg font-medium bg-white/60 backdrop-blur-sm transition-all duration-300"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-medium group relative overflow-hidden border-0 shadow-lg hover:shadow-xl"
               asChild
             >
               <Link href="https://wa.me/917202033384?text=Hi, I'm interested in your services.">

@@ -149,18 +149,6 @@ export default function MachineryPage() {
       icon: Zap,
       description: "Cooking and frying equipment",
     },
-    {
-      id: "CURD EQUIPMENT",
-      name: "Lab Support",
-      icon: Monitor,
-      description: "Laboratory and curd processing equipment",
-    },
-    {
-      id: "EQUIPMENT FOR FAT RICH PRODUCTS",
-      name: "Pumps, Sensors & Instruments",
-      icon: Gauge,
-      description: "Pumps, sensors and instrumentation",
-    },
   ];
 
   const filteredEquipment =
