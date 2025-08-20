@@ -218,40 +218,40 @@ export default function IndustriesPage() {
 
       {/* Industries Grid - Starting directly from Industries We Serve */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-white via-secondary/5 to-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <MotionDiv
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
+            <Badge className="mb-6 bg-secondary/10 text-black border-secondary/20 px-4 py-2">
               Industries We Serve
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-black leading-tight">
               Industries We
               <span className="text-secondary"> Serve</span>
             </h1>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
               Comprehensive solutions for diverse processing industries with
               innovative technology and expertise
             </p>
 
             {/* Decorative Elements */}
-            <div className="mt-8 flex justify-center space-x-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center">
+            <div className="mt-12 flex justify-center items-center space-x-6 md:space-x-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <Factory className="w-8 h-8 text-secondary" />
               </div>
-              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <Package className="w-8 h-8 text-primary" />
               </div>
-              <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <Droplets className="w-8 h-8 text-accent" />
               </div>
             </div>
           </MotionDiv>
 
-          <div className="space-y-16">
+          <div className="space-y-20">
             {industries.map((industry, index) => (
               <MotionDiv
                 key={industry.id}
@@ -259,52 +259,52 @@ export default function IndustriesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="hover:shadow-lg transition-shadow duration-300 border border-gray-200">
-                  <CardHeader className="border-b border-gray-100">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center relative overflow-hidden">
-                        <industry.icon className="w-8 h-8 text-secondary relative z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform skew-x-12 -translate-x-full animate-pulse"></div>
+                <Card className="hover:shadow-xl transition-all duration-300 border border-gray-200 bg-white/50 backdrop-blur-sm">
+                  <CardHeader className="border-b border-gray-100 bg-gradient-to-r from-gray-50/50 to-white/50">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                      <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-lg">
+                        <industry.icon className="w-10 h-10 text-secondary relative z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform skew-x-12 -translate-x-full hover:translate-x-full transition-transform duration-1000"></div>
                       </div>
-                      <div className="flex-1">
-                        <CardTitle className="text-3xl font-bold text-black">
+                      <div className="flex-1 text-center md:text-left">
+                        <CardTitle className="text-2xl md:text-3xl font-bold text-black mb-3">
                           {industry.name}
                         </CardTitle>
-                        <p className="text-lg text-black/70 mt-2">
+                        <p className="text-base md:text-lg text-black/70 leading-relaxed">
                           {industry.description}
                         </p>
                       </div>
                       {/* Decorative pattern */}
-                      <div className="hidden md:flex space-x-2">
-                        <div className="w-2 h-8 bg-gradient-to-b from-secondary to-secondary/50 rounded-full"></div>
-                        <div className="w-2 h-6 bg-gradient-to-b from-secondary/70 to-secondary/30 rounded-full"></div>
-                        <div className="w-2 h-4 bg-gradient-to-b from-secondary/50 to-secondary/20 rounded-full"></div>
+                      <div className="hidden lg:flex flex-col space-y-2">
+                        <div className="w-1 h-8 bg-gradient-to-b from-secondary to-secondary/50 rounded-full"></div>
+                        <div className="w-1 h-6 bg-gradient-to-b from-secondary/70 to-secondary/30 rounded-full"></div>
+                        <div className="w-1 h-4 bg-gradient-to-b from-secondary/50 to-secondary/20 rounded-full"></div>
                       </div>
                     </div>
                   </CardHeader>
 
-                  <CardContent className="p-8">
+                  <CardContent className="p-8 md:p-10">
                     {/* Sections for detailed industries */}
                     {industry.sections && (
-                      <div className="grid md:grid-cols-2 gap-8 mb-8">
+                      <div className="grid lg:grid-cols-2 gap-8 md:gap-10 mb-10">
                         {industry.sections.map((section, sectionIdx) => (
-                          <div key={sectionIdx}>
-                            <h4 className="text-xl font-semibold text-black mb-4 flex items-center gap-3">
-                              <div className="w-8 h-8 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-lg flex items-center justify-center">
-                                <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                          <div key={sectionIdx} className="space-y-4">
+                            <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
+                              <div className="w-10 h-10 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-xl flex items-center justify-center shadow-sm">
+                                <div className="w-4 h-4 bg-secondary rounded-full"></div>
                               </div>
-                              <span className="border-b-2 border-gradient-to-r from-secondary to-transparent pb-1">
+                              <span className="border-b-2 border-secondary pb-1 leading-none">
                                 {section.title}
                               </span>
                             </h4>
-                            <div className="space-y-3">
+                            <div className="space-y-4 pl-2">
                               {section.items.map((item, itemIdx) => (
                                 <div
                                   key={itemIdx}
-                                  className="flex items-start gap-3"
+                                  className="flex items-start gap-3 group"
                                 >
-                                  <CheckCircle className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
-                                  <span className="text-sm text-gray-700 leading-relaxed">
+                                  <CheckCircle className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                                  <span className="text-sm md:text-base text-gray-700 leading-relaxed">
                                     {item}
                                   </span>
                                 </div>
@@ -317,20 +317,23 @@ export default function IndustriesPage() {
 
                     {/* Offerings for beverages */}
                     {industry.offerings && (
-                      <div className="mb-8">
-                        <h4 className="text-xl font-semibold text-black mb-4 flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-lg flex items-center justify-center">
-                            <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                      <div className="mb-10">
+                        <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-xl flex items-center justify-center shadow-sm">
+                            <div className="w-4 h-4 bg-secondary rounded-full"></div>
                           </div>
-                          <span className="border-b-2 border-secondary pb-1">
+                          <span className="border-b-2 border-secondary pb-1 leading-none">
                             Our Specialized Offerings
                           </span>
                         </h4>
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-2 gap-6 pl-2">
                           {industry.offerings.map((offering, idx) => (
-                            <div key={idx} className="flex items-start gap-3">
-                              <CheckCircle className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
-                              <span className="text-sm text-gray-700 leading-relaxed">
+                            <div
+                              key={idx}
+                              className="flex items-start gap-3 group"
+                            >
+                              <CheckCircle className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                              <span className="text-sm md:text-base text-gray-700 leading-relaxed">
                                 {offering}
                               </span>
                             </div>
@@ -341,20 +344,23 @@ export default function IndustriesPage() {
 
                     {/* Products section */}
                     {industry.products && (
-                      <div className="mb-8">
-                        <h4 className="text-xl font-semibold text-black mb-4 flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-lg flex items-center justify-center">
-                            <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                      <div className="mb-10">
+                        <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-xl flex items-center justify-center shadow-sm">
+                            <div className="w-4 h-4 bg-secondary rounded-full"></div>
                           </div>
-                          <span className="border-b-2 border-secondary pb-1">
+                          <span className="border-b-2 border-secondary pb-1 leading-none">
                             Products We Handle
                           </span>
                         </h4>
-                        <div className="grid md:grid-cols-3 gap-3">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pl-2">
                           {industry.products.map((product, idx) => (
-                            <div key={idx} className="flex items-center gap-2">
-                              <CheckCircle className="w-3 h-3 text-secondary flex-shrink-0" />
-                              <span className="text-sm text-gray-700">
+                            <div
+                              key={idx}
+                              className="flex items-start gap-3 group py-1"
+                            >
+                              <CheckCircle className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                              <span className="text-sm md:text-base text-gray-700 leading-relaxed">
                                 {product}
                               </span>
                             </div>
@@ -366,25 +372,8 @@ export default function IndustriesPage() {
                     {/* Key Clients for dairy */}
                     {industry.keyClients && (
                       <div className="mb-8">
-                        <h4 className="text-xl font-semibold text-black mb-4 flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-lg flex items-center justify-center">
-                            <div className="w-3 h-3 bg-secondary rounded-full"></div>
-                          </div>
-                          <span className="border-b-2 border-secondary pb-1">
-                            Key Clients
-                          </span>
-                        </h4>
-                        <div className="flex flex-wrap gap-3 text-black">
-                          {industry.keyClients.map((client, idx) => (
-                            <Badge
-                              key={idx}
-                              variant="outline"
-                              className="bg-gradient-to-r from-secondary/10 to-secondary/5 text-secondary border-secondary/20 hover:bg-secondary/20 transition-colors"
-                            >
-                              {client}
-                            </Badge>
-                          ))}
-                        </div>
+                       
+                        
                       </div>
                     )}
                   </CardContent>
@@ -396,24 +385,25 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="space-y-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
               Ready to Transform Your Industry?
             </h2>
-            <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-black/70 max-w-2xl mx-auto leading-relaxed">
               Get industry-specific solutions and expert guidance for your
               processing needs
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button
                 size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-black border-0"
+                className="bg-secondary hover:bg-secondary/90 text-black border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-8 py-4"
                 asChild
               >
                 <a
@@ -422,7 +412,7 @@ export default function IndustriesPage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-3 text-base font-semibold"
                 >
                   Contact Us on WhatsApp
                   <ArrowRight className="w-5 h-5" />

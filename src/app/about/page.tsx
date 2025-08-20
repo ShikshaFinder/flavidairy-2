@@ -29,6 +29,41 @@ import {
 import Link from "next/link";
 
 export default function AboutPage() {
+  // National clients images
+  const nationalImages = [
+    "20ca7def-93c9-4931-84de-e6be5d1ca898.png",
+    "3fa36a00-9f31-4086-8672-28900b2fb685.jpg",
+    "5e6b9394-c9d7-422f-af12-b3424aa5e50f.jpg",
+    "60c477f8-f5e2-4d1c-a924-7b9a01ae9361.png",
+    "6be4ed19-923c-4545-9764-0cbdbfe8ca90.png",
+    "9f840026-b803-4101-b8fa-fe25660ddd77.jpg",
+    "a83db9d1-84b8-41cd-b1b0-9f33d91de814.png",
+    "a9ef804f-df8e-47d1-b9c5-56c04d3bb46e.jpg",
+    "b0e86a5a-082f-46b3-93a2-d402f9dfacc0.png",
+    "f716143b-d114-4348-bafb-649a06b8961e.jpg",
+  ];
+
+  // International clients images
+  const internationalImages = [
+    "17590555-3b34-474c-9032-a14220f98950.png",
+    "2966d2b5-1d9d-44b9-94db-c40933bee6e0.jpg",
+    "34df4e8b-1515-415a-86c2-b48ee0520ff7.jpg",
+    "3cbec9bc-7260-4996-a5c4-2f57fd9fb8ea.png",
+    "520dc360-496a-4cb2-8ac7-43304cea6870.jpg",
+    "844d9719-a721-4ce1-bd3c-d69bda36ca02.jpg",
+    "8ac73012-adca-4486-9c51-05b22485f4f7.jpg",
+    "a2ad0734-5b66-4eaf-a0d7-d22d5dd0c17c.jpg",
+    "a3c9f92a-ece2-4dd0-944e-5e7d1703a100.jpg",
+    "b096011d-1f19-43d8-9052-7971e1681203.jpg",
+    "b1e51dbe-0109-4305-ac24-9afb8bf1d72c.png",
+    "b43caf8d-5d57-4dfe-82e6-35b51121e1f9.png",
+    "c30db426-1451-49d9-b873-e8b7c507baeb.jpg",
+    "cc37adc1-b3dd-4b2b-a48b-b41a51752e66.jpg",
+    "e1320008-1436-4363-af1c-a2eec0e5abb9.png",
+    "e55d908a-dc7e-491e-9966-84a27b82da76.jpg",
+    "e747fe54-605e-4624-aa12-9c636d2c8413.jpg",
+  ];
+
   const stats = [
     { icon: Clock, label: "Years of Experience", value: "20+" },
     { icon: Users, label: "Happy Clients", value: "2500+" },
@@ -661,6 +696,103 @@ export default function AboutPage() {
                 </Card>
               </MotionDiv>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Gallery Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Our Client Portfolio
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Showcasing our successful partnerships with national and
+              international clients
+            </p>
+          </MotionDiv>
+
+          {/* National Clients */}
+          <div className="mb-16">
+            <MotionDiv
+              className="text-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
+                National Clients
+              </h3>
+              <p className="text-lg text-black/70 max-w-2xl mx-auto">
+                Trusted by leading dairy and food processing companies across
+                India
+              </p>
+            </MotionDiv>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              {nationalImages.map((image, index) => (
+                <MotionDiv
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  className="relative group"
+                >
+                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <img
+                      src={`/nat-flav/${image}`}
+                      alt={`National Client ${index + 1}`}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </MotionDiv>
+              ))}
+            </div>
+          </div>
+
+          {/* International Clients */}
+          <div>
+            <MotionDiv
+              className="text-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
+                International Clients
+              </h3>
+              <p className="text-lg text-black/70 max-w-2xl mx-auto">
+                Expanding our expertise to serve clients around the globe
+              </p>
+            </MotionDiv>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              {internationalImages.map((image, index) => (
+                <MotionDiv
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  className="relative group"
+                >
+                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <img
+                      src={`/inter-flavidairy/${image}`}
+                      alt={`International Client ${index + 1}`}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </MotionDiv>
+              ))}
+            </div>
           </div>
         </div>
       </section>

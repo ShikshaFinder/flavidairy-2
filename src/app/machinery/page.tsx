@@ -514,22 +514,6 @@ export default function MachineryPage() {
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-black/20 text-black hover:bg-black hover:text-white"
-                asChild
-              >
-                <a
-                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I would like to schedule a consultation to discuss my processing equipment requirements. Please let me know your availability.`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Schedule Consultation on WhatsApp
-                </a>
-              </Button>
             </div>
           </MotionDiv>
         </div>
