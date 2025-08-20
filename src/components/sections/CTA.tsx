@@ -63,24 +63,10 @@ export function CTA() {
               </Link>
             </MotionButton>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-green-300 text-green-700 hover:bg-green-50 hover:border-green-400 px-8 py-4 text-lg font-semibold"
-              asChild
-            >
-              <Link href="magazines">Download Brochure</Link>
-            </Button>
+          
           </MotionDiv>
 
-          <MotionDiv
-            className="mt-8 text-sm text-gray-600"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <p>No commitment required • Free initial consultation</p>
-          </MotionDiv>
+         
         </MotionDiv>
       </div>
     </section>

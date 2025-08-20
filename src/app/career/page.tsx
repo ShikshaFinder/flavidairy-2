@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import Height from "@/components/height";
@@ -31,6 +32,52 @@ import {
 } from "lucide-react";
 
 export default function CareerPage() {
+  const [formData, setFormData] = React.useState({
+    name: "",
+    phone: "",
+    email: "",
+    position: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Format the message for WhatsApp
+    const message = `
+🌟 Career Application - Flavi Dairy 🌟
+
+👤 Name: ${formData.name}
+📞 Phone: ${formData.phone}
+📧 Email: ${formData.email}
+💼 Position of Interest: ${formData.position}
+
+Thank you for your interest in joining Flavi Dairy! We will review your application and get back to you soon.
+    `.trim();
+
+    const whatsappUrl = `https://wa.me/917202033384?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+
+    // Reset form after submission
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      position: "",
+    });
+  };
+
   const jobOpenings = [
     {
       id: 1,
@@ -143,7 +190,7 @@ export default function CareerPage() {
 
   const perks = [
     "Networking opportunity",
-    "Transport allowance", 
+    "Transport allowance",
     "Annual bonuses",
   ];
 
@@ -173,16 +220,6 @@ export default function CareerPage() {
               part of innovative projects that shape the future of the industry
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-black border-0"
-                asChild
-              >
-                <a href="#get-in-touch" className="flex items-center gap-2">
-                  Apply Now
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </Button>
               <Button
                 size="lg"
                 variant="outline"
@@ -371,38 +408,45 @@ export default function CareerPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Get in Touch
+              Apply Now
             </h2>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              Ready to join our team? Submit your details and resume below
+              Submit your application details below. Your information will be
+              shared via WhatsApp, and you can follow up with your resume.
             </p>
           </MotionDiv>
 
           <div className="max-w-2xl mx-auto">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="career-name" className="text-black font-medium">
-                    Career Name
+                  <Label htmlFor="name" className="text-black font-medium">
+                    Full Name
                   </Label>
                   <Input
-                    id="career-name"
+                    id="name"
                     placeholder="Enter your full name"
                     className="mt-2"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="phone-no" className="text-black font-medium">
+                  <Label htmlFor="phone" className="text-black font-medium">
                     Phone Number
                   </Label>
                   <Input
-                    id="phone-no"
+                    id="phone"
                     placeholder="Enter your phone number"
                     className="mt-2"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
                   />
                 </div>
               </div>
-              
+
               <div>
                 <Label htmlFor="email" className="text-black font-medium">
                   Email
@@ -412,42 +456,25 @@ export default function CareerPage() {
                   type="email"
                   placeholder="Enter your email address"
                   className="mt-2"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
 
               <div>
-                <Label htmlFor="shortlist" className="text-black font-medium">
-                  Position of Interest / Shortlist
+                <Label htmlFor="position" className="text-black font-medium">
+                  Position of Interest
                 </Label>
                 <Textarea
-                  id="shortlist"
+                  id="position"
                   placeholder="Mention the position you're interested in or describe your preferences"
                   className="mt-2"
                   rows={3}
+                  value={formData.position}
+                  onChange={handleInputChange}
+                  required
                 />
-              </div>
-
-              <div>
-                <Label htmlFor="resume" className="text-black font-medium">
-                  Upload Resume
-                </Label>
-                <div className="mt-2 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                  <div className="space-y-2">
-                    <div className="mx-auto w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <Button variant="outline" className="mb-2">
-                        Choose File
-                      </Button>
-                      <p className="text-sm text-gray-500">
-                        Upload your resume (PDF, DOC, DOCX - Max 5MB)
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div className="text-center">
@@ -456,7 +483,7 @@ export default function CareerPage() {
                   size="lg"
                   className="bg-secondary hover:bg-secondary/90 text-black border-0"
                 >
-                  Submit Application
+                  Submit Application via WhatsApp
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
