@@ -102,7 +102,7 @@ export default function MachineryPage() {
       description: "Complete range of processing equipment",
     },
     {
-      id: "MILK PROCESSING EQUIPMENT",
+      id: "MILK PROCESSING EQUIPMENTS",
       name: "Milk Processing",
       icon: Droplets,
       description: "Milk processing and dairy equipment",
@@ -286,7 +286,7 @@ export default function MachineryPage() {
             </p>
           </MotionDiv>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredEquipment.map((equipment, index) => (
               <MotionDiv
                 key={index}
@@ -302,34 +302,47 @@ export default function MachineryPage() {
                           setModalImage(equipment.images[0]);
                           setModalOpen(true);
                         }}
-                        className="w-full h-full p-0 m-0 block cursor-pointer"
+                        className="w-full h-full p-0 m-0 block cursor-pointer relative overflow-hidden"
                         aria-label={`Open image of ${equipment.name}`}
                       >
+                        {/* Blurred background image */}
                         <img
                           src={equipment.images[0]}
-                          alt={equipment.name}
-                          className="w-full h-full object-cover"
+                          alt=""
+                          className="absolute inset-0 w-full h-full object-cover filter blur-md scale-110"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
                           }}
                         />
+                        {/* Main image with proper fit */}
+                        <img
+                          src={equipment.images[0]}
+                          alt={equipment.name}
+                          className="relative z-10 w-full h-full object-contain p-2"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = "none";
+                          }}
+                        />
+                        {/* Overlay to darken the blur for better contrast */}
+                        <div className="absolute inset-0 bg-black/10 z-5"></div>
                       </button>
                     ) : (
                       // No placeholder — keep the area blank/neutral when there's no valid image
                       <div className="w-full h-full bg-gray-100" />
                     )}
                   </div>
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-xl font-semibold text-black line-clamp-2">
+                  <CardHeader className="pb-2 p-4">
+                    <CardTitle className="text-lg font-semibold text-black line-clamp-2">
                       {equipment.name}
                     </CardTitle>
-                    <Badge className="mt-2 bg-secondary/10 text-black border-secondary/20 w-fit">
+                    <Badge className="mt-1 bg-secondary/10 text-black border-secondary/20 w-fit text-xs">
                       {equipment.category}
                     </Badge>
                   </CardHeader>
-                  <CardContent className="flex-1 flex flex-col pt-0">
-                    <div className="space-y-4 flex-1 mb-6">
+                  <CardContent className="flex-1 flex flex-col pt-0 p-4">
+                    <div className="space-y-3 flex-1 mb-4">
                       {/* Description text */}
                       {isExpanded(index) ? (
                         <p
@@ -349,19 +362,19 @@ export default function MachineryPage() {
                             descRefs.current[index] = el;
                             return;
                           }}
-                          className="text-black/70 text-sm leading-relaxed line-clamp-3"
+                          className="text-black/70 text-sm leading-relaxed line-clamp-2"
                         >
                           {equipment.description}
                         </p>
                       )}
 
                       {/* Always show Read more button for descriptions longer than 150 characters */}
-                      {(equipment.description.length > 150 ||
+                      {(equipment.description.length > 100 ||
                         isExpanded(index)) && (
-                        <div className="pt-3 flex justify-start">
+                        <div className="pt-2 flex justify-start">
                           <button
                             onClick={() => toggleExpand(index)}
-                            className="text-sm text-blue-600 hover:text-blue-800 hover:underline font-semibold bg-blue-50 px-3 py-1 rounded-md border border-blue-200 transition-colors"
+                            className="text-xs text-blue-600 hover:text-blue-800 hover:underline font-semibold bg-blue-50 px-2 py-1 rounded-md border border-blue-200 transition-colors"
                             aria-expanded={isExpanded(index)}
                             aria-controls={`equipment-desc-${index}`}
                           >
@@ -374,7 +387,7 @@ export default function MachineryPage() {
                     </div>
 
                     {/* Quote button section with clear separation */}
-                    <div className="pt-4 border-t border-gray-200 mt-auto">
+                    <div className="pt-3 border-t border-gray-200 mt-auto">
                       <Button
                         size="sm"
                         className="bg-secondary hover:bg-secondary/90 text-black border-0 w-full"

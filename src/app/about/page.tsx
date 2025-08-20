@@ -33,7 +33,7 @@ export default function AboutPage() {
     { icon: Clock, label: "Years of Experience", value: "20+" },
     { icon: Users, label: "Happy Clients", value: "2500+" },
     { icon: Target, label: "Projects Completed", value: "1000+" },
-    { icon: Package, label: "Employees", value: "20+" }
+    { icon: Package, label: "Employees", value: "20+" },
   ];
 
   const values = [
@@ -264,10 +264,12 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                <div className="w-32 h-32 bg-secondary/10 rounded-full flex items-center justify-center">
-                  <Factory className="w-16 h-16 text-secondary" />
-                </div>
+              <div className="aspect-square rounded-lg overflow-hidden">
+                <img
+                  src="/milk.jpg"
+                  alt="Dairy Processing"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </MotionDiv>
           </div>
