@@ -29,7 +29,7 @@ export function Navbar() {
     { name: "About Us", href: "/about" },
     { name: "Industries", href: "/industries" },
     { name: "Consultancy Services", href: "/consultancy" },
-    { name: "Machinery & Equipment", href: "/machinery" },
+    { name: "Equipment", href: "/machinery" },
     { name: "Flavi Updates", href: "/magazines" },
     { name: "Career", href: "/career" },
   ];
@@ -59,7 +59,7 @@ export function Navbar() {
               className="h-10 w-auto object-contain"
             />
             <span className="text-xl font-bold text-black">
-              Flavi Dairy Solution
+              Flavi Dairy Solutions ®
             </span>
           </MotionDiv>
 

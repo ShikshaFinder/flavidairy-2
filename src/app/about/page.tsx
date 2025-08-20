@@ -33,6 +33,7 @@ export default function AboutPage() {
     { icon: Clock, label: "Years of Experience", value: "20+" },
     { icon: Users, label: "Happy Clients", value: "2500+" },
     { icon: Target, label: "Projects Completed", value: "1000+" },
+    { icon: Package, label: "Employees", value: "20+" }
   ];
 
   const values = [
