@@ -246,6 +246,7 @@ export default function CareerPage() {
               </MotionDiv>
             ))}
           </div>
+        </div>
       </section>
 
       {/* Build Career PDF Section */}

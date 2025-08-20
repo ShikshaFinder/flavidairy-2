@@ -65,22 +65,6 @@ export function Footer() {
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-gray-300 text-black hover:bg-gray-50 hover:border-gray-400"
-                  asChild
-                >
-                  <a
-                    href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                      `Hi, I would like to contact you regarding your services. Please provide more information.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Contact Us on WhatsApp
-                  </a>
-                </Button>
               </div>
             </MotionDiv>
 
