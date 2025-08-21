@@ -370,12 +370,7 @@ export default function IndustriesPage() {
                     )}
 
                     {/* Key Clients for dairy */}
-                    {industry.keyClients && (
-                      <div className="mb-8">
-                       
-                        
-                      </div>
-                    )}
+                  
                   </CardContent>
                 </Card>
               </MotionDiv>

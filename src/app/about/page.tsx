@@ -636,7 +636,7 @@ export default function AboutPage() {
                     <CardTitle className="text-xl font-bold text-black">
                       {member.name}
                     </CardTitle>
-                    <Badge className="bg-secondary/10 text-secondary border-secondary/20 text-sm">
+                    <Badge className="bg-secondary/10 text-secondary border-secondary/20 text-sm text-black flex justify-center items-center">
                       {member.role}
                     </Badge>
                   </CardHeader>
