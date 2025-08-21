@@ -39,7 +39,7 @@ export default function ContactPage() {
       title: "Email",
       value: "contact@flavidairysolution.com",
       description: "Send us an email anytime",
-      secondary: "founder@flavidairysolution.com",
+      secondary: "contact@flavidairysolution.com",
     },
     {
       icon: MapPin,
@@ -363,7 +363,7 @@ export default function ContactPage() {
                           contact@flavidairysolution.com
                         </p>
                         <p className="text-sm text-gray-800 font-semibold">
-                          founder@flavidairysolution.com
+                          contact@flavidairysolution.com
                         </p>
                       </div>
                     </div>

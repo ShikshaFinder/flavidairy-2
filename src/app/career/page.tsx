@@ -213,7 +213,9 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               Build Your Career with
-              <span className="text-secondary block mt-2">Flavi Dairy</span>
+              <span className="text-secondary block mt-2">
+                Flavi Dairy Solutions
+              </span>
             </h1>
             <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
               Join a leading dairy and food processing solutions provider and be
@@ -353,7 +355,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                     Email Us
                   </h3>
                   <p className="text-sm text-black/70">
-                    careers@flavidairy.com
+                    contact@flavidairysolution.com{" "}
                   </p>
                 </CardContent>
               </Card>

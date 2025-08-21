@@ -110,7 +110,7 @@ export default function InternshipPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="btn-minimal text-black" asChild>
-                <a href="mailto:careers@flavidairysolution.com?subject=Internship Application">
+                <a href="mailto:contact@flavidairysolution.com?subject=Internship Application">
                   Apply Now
                 </a>
               </Button>
@@ -262,7 +262,7 @@ export default function InternshipPage() {
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-secondary" />
                     <p className="text-sm text-black/70">
-                      careers@flavidairysolution.com
+                      contact@flavidairysolution.com
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
@@ -324,7 +324,7 @@ export default function InternshipPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Button size="lg" className="btn-minimal text-black" asChild>
-              <a href="mailto:careers@flavidairysolution.com?subject=Internship Application">
+              <a href="mailto:contact@flavidairysolution.com?subject=Internship Application">
                 Apply for Internship
               </a>
             </Button>
