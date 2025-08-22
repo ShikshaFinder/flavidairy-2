@@ -54,7 +54,7 @@ export function Navbar() {
             transition={{ duration: 0.2 }}
           >
             <img
-              src="/logo.png"
+              src="/flavidairy.jpeg"
               alt="Flavi Dairy Solutions"
               className="h-10 w-auto object-contain"
             />
