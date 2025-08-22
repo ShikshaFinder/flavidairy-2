@@ -64,6 +64,10 @@
   /* Green */
   --info-foreground: #ffffff;
 
+  /* Card colors for better contrast */
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+
   /* Ring and Radius */
   --ring: #22c55e;
   --radius: 0.5rem;
@@ -79,6 +83,8 @@
     --accent-foreground: #000000;
     --border: #15803d;
     --input: #15803d;
+    --card: #1a2e1a;
+    --card-foreground: #ffffff;
   }
 }
 
@@ -232,6 +238,43 @@ html {
 .hover-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Missing gradient class definition */
+.bg-gradient-multi {
+  background: linear-gradient(135deg,
+      var(--primary) 0%,
+      var(--secondary) 25%,
+      var(--accent) 50%,
+      var(--tertiary) 75%,
+      var(--primary) 100%);
+}
+
+/* Improved focus states for accessibility */
+.focus-enhanced {
+  transition: all 0.2s ease-in-out;
+}
+
+.focus-enhanced:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 2px var(--ring), 0 0 0 4px rgba(34, 197, 94, 0.2);
+}
+
+/* Enhanced text contrast utilities */
+.text-contrast-high {
+  color: #111827;
+  /* gray-900 */
+}
+
+.text-contrast-medium {
+  color: #374151;
+  /* gray-700 */
+}
+
+.text-contrast-low {
+  color: #6b7280;
+  /* gray-500 */
 }
 
 /* Color-specific hover effects */

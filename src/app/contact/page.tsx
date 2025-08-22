@@ -81,7 +81,7 @@ export default function ContactPage() {
       <section className="pt-20 pb-16 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
               Contact Us
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -97,7 +97,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                 Get in Touch
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -114,21 +114,21 @@ export default function ContactPage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <info.icon className="w-8 h-8 text-white drop-shadow-sm" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-black">
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">
                     {info.title}
                   </h3>
-                  <p className="text-sm text-gray-800 mb-1 font-medium">
+                  <p className="text-sm text-gray-700 mb-1 font-medium">
                     {info.value}
                   </p>
                   {info.secondary && (
-                    <p className="text-sm text-gray-800 mb-1 font-medium">
+                    <p className="text-sm text-gray-700 mb-1 font-medium">
                       {info.secondary}
                     </p>
                   )}
-                  <p className="text-xs text-gray-600">{info.description}</p>
+                  <p className="text-xs text-gray-500">{info.description}</p>
                 </MotionDiv>
               </ScrollReveal>
             ))}
@@ -143,7 +143,7 @@ export default function ContactPage() {
             {/* Left Side - Features */}
             <ScrollReveal>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                   Send Us a Message
                 </h2>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -158,11 +158,11 @@ export default function ContactPage() {
                       key={index}
                       className="flex items-center p-4 rounded-lg bg-white shadow-sm border border-gray-200"
                     >
-                      <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4">
-                        <feature.icon className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mr-4 shadow-md">
+                        <feature.icon className="w-6 h-6 text-white drop-shadow-sm" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-black">
+                        <h4 className="font-semibold text-gray-900">
                           {feature.title}
                         </h4>
                         <p className="text-sm text-gray-600">
@@ -179,7 +179,7 @@ export default function ContactPage() {
             <ScrollReveal delay={0.2}>
               <Card className="shadow-lg border border-gray-200">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-black">
+                  <CardTitle className="text-2xl font-bold text-gray-900">
                     Contact Form
                   </CardTitle>
                   <CardDescription className="text-gray-600">
@@ -192,7 +192,7 @@ export default function ContactPage() {
                       <div>
                         <Label
                           htmlFor="name"
-                          className="text-black font-medium"
+                          className="text-gray-800 font-medium"
                         >
                           Name *
                         </Label>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                       <div>
                         <Label
                           htmlFor="phone"
-                          className="text-black font-medium"
+                          className="text-gray-800 font-medium"
                         >
                           Phone Number *
                         </Label>
@@ -221,7 +221,10 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="email" className="text-black font-medium">
+                      <Label
+                        htmlFor="email"
+                        className="text-gray-800 font-medium"
+                      >
                         Email *
                       </Label>
                       <Input
@@ -236,13 +239,13 @@ export default function ContactPage() {
                     <div>
                       <Label
                         htmlFor="purpose"
-                        className="text-black font-medium"
+                        className="text-gray-800 font-medium"
                       >
                         Objective/Purpose *
                       </Label>
                       <select
                         id="purpose"
-                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md bg-white text-black focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
                         required
                       >
                         <option value="">Select your purpose</option>
@@ -270,7 +273,7 @@ export default function ContactPage() {
                     <div>
                       <Label
                         htmlFor="message"
-                        className="text-black font-medium"
+                        className="text-gray-800 font-medium"
                       >
                         Message *
                       </Label>
@@ -284,7 +287,7 @@ export default function ContactPage() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-secondary hover:bg-accent text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+                      className="w-full bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                     >
                       <Send className="w-4 h-4 mr-2" />
                       Send Message
@@ -302,7 +305,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                 Visit Our Office
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -316,14 +319,14 @@ export default function ContactPage() {
             <ScrollReveal>
               <div className="space-y-6">
                 <div className="p-6 rounded-xl bg-white shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-semibold mb-4 text-black">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">
                     Office Address
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-start">
-                      <MapPin className="w-5 h-5 text-secondary mt-0.5 mr-3 flex-shrink-0" />
+                      <MapPin className="w-5 h-5 text-secondary mt-0.5 mr-3 flex-shrink-0 drop-shadow-sm" />
                       <div>
-                        <p className="font-medium text-black">
+                        <p className="font-medium text-gray-900">
                           Flavi Dairy Food Solutions
                         </p>
                         <p className="text-sm text-gray-700">
@@ -342,27 +345,27 @@ export default function ContactPage() {
                 </div>
 
                 <div className="p-6 rounded-xl bg-white shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-semibold mb-4 text-black">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">
                     Contact Details
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center">
-                      <Phone className="w-5 h-5 text-secondary mr-3 flex-shrink-0" />
+                      <Phone className="w-5 h-5 text-secondary mr-3 flex-shrink-0 drop-shadow-sm" />
                       <div>
-                        <p className="font-medium text-black">Phone</p>
-                        <p className="text-sm text-gray-800 font-semibold">
+                        <p className="font-medium text-gray-900">Phone</p>
+                        <p className="text-sm text-gray-700 font-semibold">
                           +91 7202033384
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <Mail className="w-5 h-5 text-secondary mr-3 flex-shrink-0" />
+                      <Mail className="w-5 h-5 text-secondary mr-3 flex-shrink-0 drop-shadow-sm" />
                       <div>
-                        <p className="font-medium text-black">Email</p>
-                        <p className="text-sm text-gray-800 font-semibold">
+                        <p className="font-medium text-gray-900">Email</p>
+                        <p className="text-sm text-gray-700 font-semibold">
                           contact@flavidairysolution.com
                         </p>
-                        <p className="text-sm text-gray-800 font-semibold">
+                        <p className="text-sm text-gray-700 font-semibold">
                           contact@flavidairysolution.com
                         </p>
                       </div>
@@ -373,11 +376,11 @@ export default function ContactPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="bg-gradient-to-br from-secondary/10 to-accent/10 rounded-xl p-8 text-center border border-gray-200">
-                <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Building className="w-12 h-12 text-white" />
+              <div className="bg-gradient-to-br from-secondary/5 to-accent/5 rounded-xl p-8 text-center border border-gray-200 shadow-lg">
+                <div className="w-24 h-24 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Building className="w-12 h-12 text-white drop-shadow-sm" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-black">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">
                   Office Location
                 </h3>
                 <p className="text-gray-700 mb-6">
@@ -387,7 +390,7 @@ export default function ContactPage() {
                   discussions.
                 </p>
                 <div className="space-y-2 text-sm text-gray-700">
-                  <p className="font-semibold text-black">Business Hours:</p>
+                  <p className="font-semibold text-gray-900">Business Hours:</p>
                   <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                   <p>Saturday: 9:00 AM - 2:00 PM</p>
                   <p>Sunday: Closed</p>
@@ -403,7 +406,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                 Our Service Areas
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -464,7 +467,7 @@ export default function ContactPage() {
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                   <CardHeader>
-                    <CardTitle className="text-secondary text-lg">
+                    <CardTitle className="text-secondary text-lg font-semibold">
                       {area.region}
                     </CardTitle>
                   </CardHeader>
@@ -474,14 +477,14 @@ export default function ContactPage() {
                         {area.description}
                       </p>
                       <div>
-                        <p className="font-semibold text-black text-sm mb-2">
+                        <p className="font-semibold text-gray-900 text-sm mb-2">
                           Coverage:
                         </p>
                         <div className="flex flex-wrap gap-1">
                           {area.states.map((state, idx) => (
                             <span
                               key={idx}
-                              className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full"
+                              className="px-2 py-1 bg-gradient-to-r from-secondary/10 to-accent/10 text-secondary text-xs rounded-full border border-secondary/20 font-medium"
                             >
                               {state}
                             </span>
@@ -502,7 +505,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                 Frequently Asked Questions
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -547,7 +550,7 @@ export default function ContactPage() {
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold mb-3 text-black">
+                    <h3 className="text-lg font-semibold mb-3 text-gray-900">
                       {faq.question}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -575,7 +578,7 @@ export default function ContactPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-secondary hover:bg-gray-100 font-semibold px-8 py-3"
+                className="bg-white text-secondary hover:bg-gray-100 hover:text-accent font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 <a href="tel:+917202033384" className="flex items-center">
                   Call Now
@@ -585,7 +588,7 @@ export default function ContactPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-3"
+                className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 <a
                   href="mailto:contact@flavidairysolution.com"
