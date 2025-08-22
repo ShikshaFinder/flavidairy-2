@@ -27,6 +27,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
     description:
