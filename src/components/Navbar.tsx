@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Factory, Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,33 +51,40 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <MotionDiv
-            className="flex items-center gap-3"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            <img
-              src="/nat-flav/flavidairy.jpeg"
-              alt="Flavi Dairy Solutions"
-              className="h-12 w-auto object-contain"
-            />
-            <span className="text-xl font-bold text-green-500">
-              Flavi ® Dairy Solutions
-            </span>
-          </MotionDiv>
+          <Link href="/">
+            <MotionDiv
+              className="flex items-center gap-3 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="h-12 w-auto relative">
+                <Image
+                  src="/nat-flav/flavidairy.jpeg"
+                  alt="Flavi Dairy Solutions"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="text-xl font-bold text-green-500 ">
+                Flavi ® Dairy Solutions
+              </span>
+            </MotionDiv>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item, index) => (
-              <MotionA
-                key={index}
-                href={item.href}
-                className="text-gray-600 hover:text-black transition-colors duration-300 font-medium text-sm"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
-              >
-                {item.name}
-              </MotionA>
+              <Link key={index} href={item.href}>
+                <MotionDiv
+                  className="text-gray-600 hover:text-black transition-colors duration-300 font-medium text-sm cursor-pointer"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {item.name}
+                </MotionDiv>
+              </Link>
             ))}
           </div>
 
@@ -130,17 +138,17 @@ export function Navbar() {
             >
               <div className="py-4 space-y-4 px-4">
                 {navItems.map((item, index) => (
-                  <MotionA
-                    key={index}
-                    href={item.href}
-                    className="block text-gray-600 hover:text-black transition-colors duration-300 font-medium py-2"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </MotionA>
+                  <Link key={index} href={item.href}>
+                    <MotionDiv
+                      className="block text-gray-600 hover:text-black transition-colors duration-300 font-medium py-2 cursor-pointer"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </MotionDiv>
+                  </Link>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-gray-200">
                   <a

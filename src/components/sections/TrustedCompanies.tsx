@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import companies from "@/../public/file.json";
 
 type RawImage =
@@ -77,12 +78,17 @@ export default function TrustedCompanies() {
               title={logo.name ?? ""}
             >
               {logo.url ? (
-                <img
-                  src={logo.url}
-                  alt={logo.alt ?? logo.name ?? "company logo"}
-                  className="h-10 md:h-14 w-auto object-contain transition"
-                  loading="lazy"
-                />
+                <div className="h-10 md:h-14 w-auto relative">
+                  <Image
+                    src={logo.url}
+                    alt={logo.alt ?? logo.name ?? "company logo"}
+                    width={56}
+                    height={56}
+                    className="object-contain transition"
+                    loading="lazy"
+                    sizes="56px"
+                  />
+                </div>
               ) : (
                 <div className="h-10 md:h-14 w-10 md:w-14 rounded-full bg-accent flex items-center justify-center text-white font-semibold text-sm">
                   {getInitials(logo.name)}

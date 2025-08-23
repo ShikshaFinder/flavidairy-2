@@ -27,6 +27,7 @@ import {
   Leaf,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   // National clients images
@@ -67,7 +68,7 @@ export default function AboutPage() {
   const stats = [
     { icon: Clock, label: "Years of Experience", value: "20+" },
     { icon: Users, label: "Happy Clients", value: "2500+" },
-    { icon: Target, label: "Projects Completed", value: "1000+" },
+    { icon: Target, label: "Projects Completed", value: "1600+" },
     { icon: Package, label: "Employees", value: "20+" },
   ];
 
@@ -197,7 +198,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-4 ">
                   <stat.icon className="w-8 h-8 text-secondary" />
                 </div>
                 <h3 className="text-3xl font-bold text-black mb-2">
@@ -299,11 +300,14 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img
+              <div className="aspect-square rounded-lg overflow-hidden relative">
+                <Image
                   src="/milk.jpg"
                   alt="Dairy Processing"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
                 />
               </div>
             </MotionDiv>
@@ -338,7 +342,7 @@ export default function AboutPage() {
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="w-8 h-8 text-secondary" />
+                      <Target className="w-8 h-8 text-green-500" />
                     </div>
                     <h3 className="text-2xl font-bold text-black">
                       Our Mission
@@ -365,7 +369,7 @@ export default function AboutPage() {
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <TrendingUp className="w-8 h-8 text-secondary" />
+                      <TrendingUp className="w-8 h-8 text-green-500" />
                     </div>
                     <h3 className="text-2xl font-bold text-black">
                       Our Vision
@@ -409,7 +413,7 @@ export default function AboutPage() {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <value.icon className="w-6 h-6 text-secondary" />
+                        <value.icon className="w-6 h-6 text-green-500" />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-black mb-2">
@@ -453,7 +457,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Droplets className="w-6 h-6 text-secondary" />
+                    <Droplets className="w-6 h-6 text-green-500" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Dairy Processing
@@ -478,7 +482,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Package className="w-6 h-6 text-secondary" />
+                    <Package className="w-6 h-6 text-green-500" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Food Processing
@@ -503,7 +507,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Filter className="w-6 h-6 text-secondary" />
+                    <Filter className="w-6 h-6 text-green-500" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Beverage Manufacturing
@@ -528,7 +532,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Leaf className="w-6 h-6 text-secondary" />
+                    <Leaf className="w-6 h-6 text-green-500" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Agro Processing
@@ -553,7 +557,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Factory className="w-6 h-6 text-secondary" />
+                    <Factory className="w-6 h-6 text-green-500" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Process Engineering
@@ -578,7 +582,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Target className="w-6 h-6 text-secondary" />
+                    <Target className="w-6 h-6 text-green-500" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Consultancy Services
@@ -626,11 +630,14 @@ export default function AboutPage() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-gray-200">
-                      <img
+                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-gray-200 relative">
+                      <Image
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="96px"
+                        priority={index < 2}
                       />
                     </div>
                     <CardTitle className="text-xl font-bold text-black">
@@ -744,11 +751,13 @@ export default function AboutPage() {
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="relative group"
                 >
-                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden">
-                    <img
+                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden relative">
+                    <Image
                       src={`/nat-flav/${image}`}
                       alt={`National Client ${index + 1}`}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-300 p-2"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
                       loading="lazy"
                     />
                   </div>
@@ -782,83 +791,19 @@ export default function AboutPage() {
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="relative group"
                 >
-                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden">
-                    <img
+                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden relative">
+                    <Image
                       src={`/inter-flavidairy/${image}`}
                       alt={`International Client ${index + 1}`}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-300 p-2"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
                       loading="lazy"
                     />
                   </div>
                 </MotionDiv>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Info */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <MotionDiv
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                Get in Touch
-              </h2>
-              <p className="text-lg text-black/70 mb-8">
-                Ready to discuss your processing needs? Contact our team for
-                expert guidance and customized solutions.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-secondary" />
-                  <span className="text-black">+91 7202033384</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-secondary" />
-                  <span className="text-black">
-                    contact@flavidairysolution.com
-                  </span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-secondary mt-1" />
-                  <span className="text-black">
-                    403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H
-                    Navdeep Bldg., Navrangpura, Ahmedabad-380014
-                  </span>
-                </div>
-              </div>
-            </MotionDiv>
-            <MotionDiv
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <Card className="h-full border border-gray-200">
-                <CardHeader>
-                  <CardTitle className="text-black">Why Choose Us?</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {[
-                    "20+ years of industry experience",
-                    "Complete turnkey solutions",
-                    "Quality certified equipment",
-                    "24/7 technical support",
-                    "Customized solutions",
-                    "Competitive pricing",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-black/70">{item}</span>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-            </MotionDiv>
           </div>
         </div>
       </section>

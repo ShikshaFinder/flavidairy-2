@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion";
+import Image from "next/image";
 import {
   Settings,
   Wrench,
@@ -306,24 +307,22 @@ export default function MachineryPage() {
                         aria-label={`Open image of ${equipment.name}`}
                       >
                         {/* Blurred background image */}
-                        <img
+                        <Image
                           src={equipment.images[0]}
                           alt=""
-                          className="absolute inset-0 w-full h-full object-cover filter blur-md scale-110"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = "none";
-                          }}
+                          fill
+                          className="object-cover filter blur-md scale-110"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          priority={index < 6}
                         />
                         {/* Main image with proper fit */}
-                        <img
+                        <Image
                           src={equipment.images[0]}
                           alt={equipment.name}
-                          className="relative z-10 w-full h-full object-contain p-2"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = "none";
-                          }}
+                          fill
+                          className="relative z-10 object-contain p-2"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          priority={index < 6}
                         />
                         {/* Overlay to darken the blur for better contrast */}
                         <div className="absolute inset-0 bg-black/10 z-5"></div>
@@ -538,11 +537,16 @@ export default function MachineryPage() {
             >
               ✕
             </button>
-            <img
-              src={modalImage}
-              alt="Equipment preview"
-              className="w-full h-auto rounded-md object-contain bg-black"
-            />
+            <div className="relative w-full h-auto">
+              <Image
+                src={modalImage}
+                alt="Equipment preview"
+                width={800}
+                height={600}
+                className="w-full h-auto rounded-md object-contain bg-black"
+                sizes="(max-width: 1200px) 100vw, 80vw"
+              />
+            </div>
           </div>
         </div>
       )}

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Quote, ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -128,11 +129,13 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
-                  <img
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 relative">
+                  <Image
                     src={currentTestimonial.image}
                     alt={currentTestimonial.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="64px"
                   />
                 </div>
                 <div>

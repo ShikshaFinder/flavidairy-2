@@ -288,39 +288,6 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
         </div>
       </section>
 
-      {/* Build Career PDF Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <MotionDiv
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Build Your Career
-            </h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto mb-8">
-              Download our comprehensive career guide and opportunities brochure
-            </p>
-            <Button
-              size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-black border-0"
-              asChild
-            >
-              <a
-                href="/career-guide.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                Download Career Guide PDF
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </Button>
-          </MotionDiv>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section className="py-16 bg-white">
@@ -349,7 +316,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
               <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-6 h-6 text-secondary" />
+                    <Mail className="w-6 h-6 text-green-400" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Email Us
@@ -369,7 +336,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
               <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Phone className="w-6 h-6 text-secondary" />
+                    <Phone className="w-6 h-6 text-green-400" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Call Us
@@ -387,7 +354,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
               <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Building className="w-6 h-6 text-secondary" />
+                    <Building className="w-6 h-6 text-green-400" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Visit Us

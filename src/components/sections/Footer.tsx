@@ -4,6 +4,7 @@ import { MotionDiv } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { Factory, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -33,12 +34,16 @@ export function Footer() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <img
-                  src="/logo.png"
-                  alt="Flavi Dairy Solutions"
-                  className="h-16 w-auto object-contain"
-                />
-               
+                <div className="h-24 w-auto relative">
+                  <Image
+                    src="/logo.png"
+                    alt="Flavi Dairy Solutions"
+                    width={96}
+                    height={96}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </div>
               <p className="text-gray-600 mb-6 max-w-md">
                 Leading provider of dairy and food processing solutions with 20+
