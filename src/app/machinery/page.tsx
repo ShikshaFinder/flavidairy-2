@@ -52,11 +52,29 @@ export default function MachineryPage() {
   const descRefs = useRef<Array<HTMLParagraphElement | null>>([]);
   const [needsTruncate, setNeedsTruncate] = useState<boolean[]>([]);
 
+  // Ref for the equipment section to enable auto-scroll
+  const equipmentSectionRef = useRef<HTMLElement>(null);
+
   const isExpanded = (i: number) => expandedItems.includes(i);
   const toggleExpand = (i: number) =>
     setExpandedItems((prev) =>
       prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]
     );
+
+  // Function to handle category selection and auto-scroll
+  const handleCategorySelect = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+
+    // Scroll to equipment section after a short delay to allow for state update
+    setTimeout(() => {
+      if (equipmentSectionRef.current) {
+        equipmentSectionRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
+  };
 
   useEffect(() => {
     const fetchEquipmentData = async () => {
@@ -137,6 +155,12 @@ export default function MachineryPage() {
     selectedCategory === "all"
       ? equipmentData
       : equipmentData.filter((item) => item.category === selectedCategory);
+
+  // Calculate counts for each category
+  const getCategoryCount = (categoryId: string) => {
+    if (categoryId === "all") return equipmentData.length;
+    return equipmentData.filter((item) => item.category === categoryId).length;
+  };
 
   // Measure whether each description is truncated (overflowing its container)
   useEffect(() => {
@@ -224,34 +248,59 @@ export default function MachineryPage() {
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={
-                  selectedCategory === category.id ? "default" : "outline"
-                }
-                className={`h-auto p-4 flex flex-col items-center gap-2 ${
-                  selectedCategory === category.id
-                    ? "bg-secondary text-black border-0"
-                    : "border-gray-300 text-black hover:bg-gray-100"
-                }`}
-                onClick={() => setSelectedCategory(category.id)}
-              >
-                <category.icon className="w-6 h-6" />
-                <div className="text-center">
-                  <div className="font-semibold">{category.name}</div>
-                  <div className="text-xs opacity-70">
-                    {category.description}
+            {categories.map((category) => {
+              const count = getCategoryCount(category.id);
+              return (
+                <Button
+                  key={category.id}
+                  variant={
+                    selectedCategory === category.id ? "default" : "outline"
+                  }
+                  className={`h-auto p-4 flex flex-col items-center gap-2 transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? "bg-secondary text-black border-0 shadow-lg"
+                      : "border-gray-300 text-black hover:bg-gray-100 hover:border-secondary/50"
+                  }`}
+                  onClick={() => handleCategorySelect(category.id)}
+                >
+                  <category.icon className="w-6 h-6" />
+                  <div className="text-center">
+                    <div className="font-semibold">{category.name}</div>
+                    <div className="text-xs opacity-70 mb-1">
+                      {category.description}
+                    </div>
+                    <div
+                      className={`text-xs font-medium px-2 py-1 rounded-full ${
+                        selectedCategory === category.id
+                          ? "bg-white/20 text-black"
+                          : "bg-secondary/10 text-secondary"
+                      }`}
+                    >
+                      {count} {count === 1 ? "item" : "items"}
+                    </div>
                   </div>
-                </div>
-              </Button>
-            ))}
+                </Button>
+              );
+            })}
           </div>
+
+          {selectedCategory !== "all" && (
+            <div className="text-center mt-6">
+              <Button
+                variant="outline"
+                className="border-secondary text-secondary hover:bg-secondary hover:text-black transition-colors"
+                onClick={() => handleCategorySelect("all")}
+              >
+                <Filter className="w-4 h-4 mr-2" />
+                Show All Equipment ({equipmentData.length} items)
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Equipment Grid */}
-      <section className="py-16 bg-white">
+      <section ref={equipmentSectionRef} className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <MotionDiv
             className="text-center mb-12"
@@ -260,11 +309,17 @@ export default function MachineryPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Our Equipment Range
+              {selectedCategory === "all"
+                ? "Our Equipment Range"
+                : categories.find((cat) => cat.id === selectedCategory)?.name ||
+                  "Equipment"}
             </h2>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              High-quality processing equipment designed for efficiency,
-              reliability, and food safety
+              {selectedCategory === "all"
+                ? "High-quality processing equipment designed for efficiency, reliability, and food safety"
+                : `Showing ${filteredEquipment.length} ${
+                    filteredEquipment.length === 1 ? "item" : "items"
+                  } in this category`}
             </p>
           </MotionDiv>
 
