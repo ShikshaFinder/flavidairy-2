@@ -38,8 +38,8 @@ export function Footer() {
                   <Image
                     src="/logo.png"
                     alt="Flavi Dairy Solutions"
-                    width={96}
-                    height={96}
+                    width={300}
+                    height={300}
                     className="object-contain"
                     priority
                   />
