@@ -45,10 +45,6 @@ export default function MachineryPage() {
   const [equipmentData, setEquipmentData] = useState<EquipmentItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Modal state for image preview
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState<string | null>(null);
-
   // Track which equipment descriptions are expanded (by index)
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
 
@@ -61,21 +57,6 @@ export default function MachineryPage() {
     setExpandedItems((prev) =>
       prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]
     );
-
-  // lock body scroll and handle Escape key
-  useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-      const onKey = (e: KeyboardEvent) => {
-        if (e.key === "Escape") setModalOpen(false);
-      };
-      window.addEventListener("keydown", onKey);
-      return () => {
-        window.removeEventListener("keydown", onKey);
-        document.body.style.overflow = "";
-      };
-    }
-  }, [modalOpen]);
 
   useEffect(() => {
     const fetchEquipmentData = async () => {
@@ -298,14 +279,7 @@ export default function MachineryPage() {
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col">
                   <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center overflow-hidden">
                     {equipment.images && equipment.images.length > 0 ? (
-                      <button
-                        onClick={() => {
-                          setModalImage(equipment.images[0]);
-                          setModalOpen(true);
-                        }}
-                        className="w-full h-full p-0 m-0 block cursor-pointer relative overflow-hidden"
-                        aria-label={`Open image of ${equipment.name}`}
-                      >
+                      <div className="w-full h-full relative overflow-hidden">
                         {/* Blurred background image */}
                         <Image
                           src={equipment.images[0]}
@@ -326,7 +300,7 @@ export default function MachineryPage() {
                         />
                         {/* Overlay to darken the blur for better contrast */}
                         <div className="absolute inset-0 bg-black/10 z-5"></div>
-                      </button>
+                      </div>
                     ) : (
                       // No placeholder — keep the area blank/neutral when there's no valid image
                       <div className="w-full h-full bg-gray-100" />
@@ -517,39 +491,6 @@ export default function MachineryPage() {
           </MotionDiv>
         </div>
       </section>
-
-      {/* Image Modal */}
-      {modalOpen && modalImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6"
-          onClick={() => setModalOpen(false)}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className="max-w-5xl w-full max-h-[90vh] overflow-auto rounded-md"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-4 right-4 z-60 p-2 bg-white/90 rounded-full"
-              onClick={() => setModalOpen(false)}
-              aria-label="Close image"
-            >
-              ✕
-            </button>
-            <div className="relative w-full h-auto">
-              <Image
-                src={modalImage}
-                alt="Equipment preview"
-                width={800}
-                height={600}
-                className="w-full h-auto rounded-md object-contain bg-black"
-                sizes="(max-width: 1200px) 100vw, 80vw"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </main>
