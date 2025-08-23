@@ -58,10 +58,10 @@ export function Navbar() {
             <img
               src="/nat-flav/flavidairy.jpeg"
               alt="Flavi Dairy Solutions"
-              className="h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
-            <span className="text-xl font-bold text-black">
-              Flavi Dairy Solutions ®
+            <span className="text-xl font-bold text-green-500">
+              Flavi ® Dairy Solutions
             </span>
           </MotionDiv>
 
