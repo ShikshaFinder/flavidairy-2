@@ -36,11 +36,9 @@ export function Footer() {
                 <img
                   src="/logo.png"
                   alt="Flavi Dairy Solutions"
-                  className="h-12 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
-                <span className="text-xl font-bold text-black">
-                  Flavi Dairy Solution
-                </span>
+               
               </div>
               <p className="text-gray-600 mb-6 max-w-md">
                 Leading provider of dairy and food processing solutions with 20+
@@ -109,7 +107,7 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600 text-sm">
-              © 2025 Flavi Dairy Solution. All rights reserved.
+              © 2025 Flavi Dairy Solutions. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link
