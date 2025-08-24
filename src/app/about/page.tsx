@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion";
+import { ImageSlider } from "@/components/ui/image-slider-v2";
 import {
   Factory,
   Users,
@@ -742,28 +743,15 @@ export default function AboutPage() {
               </p>
             </MotionDiv>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-              {nationalImages.map((image, index) => (
-                <MotionDiv
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="relative group"
-                >
-                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden relative">
-                    <Image
-                      src={`/nat-flav/${image}`}
-                      alt={`National Client ${index + 1}`}
-                      fill
-                      className="object-contain group-hover:scale-105 transition-transform duration-300 p-2"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
-                      loading="lazy"
-                    />
-                  </div>
-                </MotionDiv>
-              ))}
-            </div>
+            <ImageSlider
+              images={nationalImages}
+              basePath="/nat-flav"
+              title="Our Trusted National Partners"
+              autoSlide={true}
+              slideInterval={1500}
+              slidesToShow={6}
+              className="mb-8"
+            />
           </div>
 
           {/* International Clients */}
@@ -782,28 +770,15 @@ export default function AboutPage() {
               </p>
             </MotionDiv>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-              {internationalImages.map((image, index) => (
-                <MotionDiv
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="relative group"
-                >
-                  <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-lg transition-all duration-300 overflow-hidden relative">
-                    <Image
-                      src={`/inter-flavidairy/${image}`}
-                      alt={`International Client ${index + 1}`}
-                      fill
-                      className="object-contain group-hover:scale-105 transition-transform duration-300 p-2"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
-                      loading="lazy"
-                    />
-                  </div>
-                </MotionDiv>
-              ))}
-            </div>
+            <ImageSlider
+              images={internationalImages}
+              basePath="/inter-flavidairy"
+              title="Our Global International Partners"
+              autoSlide={true}
+              slideInterval={1800}
+              slidesToShow={6}
+              className="mb-8"
+            />
           </div>
         </div>
       </section>
