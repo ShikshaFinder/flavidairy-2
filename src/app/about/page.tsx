@@ -31,39 +31,89 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function AboutPage() {
-  // National clients images
+  // National clients images - using actual files from national-flavidairy folder
   const nationalImages = [
-    "20ca7def-93c9-4931-84de-e6be5d1ca898.png",
-    "3fa36a00-9f31-4086-8672-28900b2fb685.jpg",
-    "5e6b9394-c9d7-422f-af12-b3424aa5e50f.jpg",
-    "60c477f8-f5e2-4d1c-a924-7b9a01ae9361.png",
-    "6be4ed19-923c-4545-9764-0cbdbfe8ca90.png",
-    "9f840026-b803-4101-b8fa-fe25660ddd77.jpg",
-    "a83db9d1-84b8-41cd-b1b0-9f33d91de814.png",
-    "a9ef804f-df8e-47d1-b9c5-56c04d3bb46e.jpg",
-    "b0e86a5a-082f-46b3-93a2-d402f9dfacc0.png",
-    "f716143b-d114-4348-bafb-649a06b8961e.jpg",
+    "0a999b54-26f9-48fb-8b7c-af7cb67423f4.png",
+    "1541e1f6-e340-4408-b9ef-e0e975475797.png",
+    "4e2ada44-64b4-4589-89cb-f2b5b79ffdb9.png",
+    "56d1cbfd-1b5e-40c6-9a27-906de6437c6f.jpg",
+    "6c54a3f2-3e80-454a-b459-83aa96ff70db.png",
+    "9b66e213-68a5-47b9-8bf9-db838425ccdf.png",
+    "9c150e17-4ebb-49fe-abea-06a691bfba99.jpg",
+    "a9433333-3c94-46be-9cc1-95691e597172.jpg",
+    "b117dc3b-d150-4a53-b8f1-79d556923956.png",
+    "b1b69d61-3469-48a4-8f1b-54ff16f0708e.png",
   ];
 
-  // International clients images
+  // International clients images - using actual files from international-flavidairy folder
   const internationalImages = [
-    "17590555-3b34-474c-9032-a14220f98950.png",
-    "2966d2b5-1d9d-44b9-94db-c40933bee6e0.jpg",
-    "34df4e8b-1515-415a-86c2-b48ee0520ff7.jpg",
-    "3cbec9bc-7260-4996-a5c4-2f57fd9fb8ea.png",
-    "520dc360-496a-4cb2-8ac7-43304cea6870.jpg",
-    "844d9719-a721-4ce1-bd3c-d69bda36ca02.jpg",
-    "8ac73012-adca-4486-9c51-05b22485f4f7.jpg",
-    "a2ad0734-5b66-4eaf-a0d7-d22d5dd0c17c.jpg",
-    "a3c9f92a-ece2-4dd0-944e-5e7d1703a100.jpg",
-    "b096011d-1f19-43d8-9052-7971e1681203.jpg",
-    "b1e51dbe-0109-4305-ac24-9afb8bf1d72c.png",
-    "b43caf8d-5d57-4dfe-82e6-35b51121e1f9.png",
-    "c30db426-1451-49d9-b873-e8b7c507baeb.jpg",
-    "cc37adc1-b3dd-4b2b-a48b-b41a51752e66.jpg",
-    "e1320008-1436-4363-af1c-a2eec0e5abb9.png",
-    "e55d908a-dc7e-491e-9966-84a27b82da76.jpg",
-    "e747fe54-605e-4624-aa12-9c636d2c8413.jpg",
+    "0cd95a16-2c59-4c10-bc71-5a578c660a28.png",
+    "19387bd7-14df-42b8-8204-0dc62618fa05.jpg",
+    "210eedf8-95eb-4845-ae25-a0435f609f4e.jpg",
+    "33b06611-e84e-4fd3-a102-a05f0b94baf2.png",
+    "39f1a181-1e4b-4057-84e5-8b93e6811886.png",
+    "631dcc51-0287-46c5-af14-221c79bb130b.png",
+    "63b06f29-c4b7-4950-ab25-9b4d6e2bacd3.png",
+    "72d4b5aa-2930-4ee1-b14b-685188a9ca62.png",
+    "8b773733-6b8c-482a-b68b-3b338d959a67.jpg",
+    "929286f0-6d82-4a8b-9079-dec35f1fdb6e.jpg",
+    "b0589db5-b784-4301-8108-24c8d5a824f2.jpg",
+    "b5fd1cbb-4cd2-4e86-9f78-4ec5191578eb.jpg",
+    "ba22d3f7-b0a4-457f-a468-fad10d549f64.png",
+    "bdca9ea8-0ab3-46b4-a564-175ca436c1b4.png",
+    "c93d083b-a2d6-4a19-8a7e-13805d1f1b71.png",
+    "e2e6e608-20a0-480f-b1b8-240e88487bb9.png",
+    "f7a2ee25-3b83-4b98-9c92-40aaa8ae755c.jpg",
+    "f850bc0b-a166-4f95-ba72-99aec71e0f3e.jpg",
+  ];
+
+  // Other valuable clients images - using actual files from other-flav folder
+  const otherValuableImages = [
+    "031b325f-8685-44dd-8b5b-85c41e68c628.png",
+    "06bfd427-d465-4e94-8626-9cc40fe7df17.jpg",
+    "07c472ea-25db-433c-ad3d-197325a2dbc5.png",
+    "0a50350c-2925-488c-9378-8347fd8b59ba.jpg",
+    "140aae47-2375-4d5e-b3ca-b10d01fea7aa.jpg",
+    "17eca424-74e3-4ea6-b9c6-ee637296de3d.png",
+    "1ba71d49-b737-4ce4-b43e-a0cba0e04881.png",
+    "22dbda29-95de-418c-8518-0cf5bb6714a6.png",
+    "247a115c-c472-4996-9428-52f0da70c180.png",
+    "2858c902-c5fc-4bab-89f3-6d7300684c8f.png",
+    "2e0193e3-173d-496e-8168-5a4452329c96.png",
+    "36837356-2585-4da3-a044-cb52e8b954ba.png",
+    "3a5ee449-8839-43c9-b040-f2e78316cab7.jpg",
+    "3b56cad3-7f1c-476b-a1e5-855656c1c8ad.jpg",
+    "3fa685bb-88c5-4bc8-85ad-0db360259c1d.jpg",
+    "444a0981-0c2e-40a3-9c76-3c6fc27d86d7.jpg",
+    "4700241a-15c0-4394-8554-161e26db3deb.jpg",
+    "485108ac-fa10-4166-9344-3d5b1616c724.jpg",
+    "48ebb3a9-e2fa-479f-b93a-c33a6da13396.png",
+    "4d142126-a778-4d17-bf6f-c151bb593f63.png",
+    "5e5e0b91-2fe8-40e4-a84f-69b18ce01f7c.jpg",
+    "6223399d-de23-4562-8088-4b193db1c5c4.png",
+    "6630293a-981e-49c3-b54a-f148fb07d5e2.png",
+    "7f43d4f6-4a32-4262-8f3c-c5c800f16f95.png",
+    "8351548c-8827-418a-b33a-3e225c5736be.jpg",
+    "87a6eb0e-e3a0-466f-b0bb-0a933780c994.jpg",
+    "9041f8d7-8c58-4a90-82ef-d8b3a32ce772.png",
+    "90d50707-53e0-4a8d-9e99-a405256f9975.jpg",
+    "94c26da2-b8dd-49e9-8103-ccc72c024c80.png",
+    "94df8878-2781-406b-abeb-2536cfd2e638.png",
+    "9856836f-7be4-4399-b4fc-9ffa660cdde4.png",
+    "a83ffda6-02af-4c05-b61e-ead43940fc04.jpg",
+    "aa3f8dbe-01bf-4a9a-9564-183648bb5b3b.png",
+    "bb1a82e0-40af-4358-8729-f3b1a3fe02f8.png",
+    "c23e8a52-9768-4ac1-840e-eac3e701d027.png",
+    "cc245964-08a3-4d04-8f04-a81a7cdfa0ab.jpg",
+    "d2a3df49-523a-48f7-8357-69c6a5c1d824.png",
+    "d3f83c04-4e36-405f-9bf4-256d3dd17288.jpg",
+    "db41fa62-4c9d-40c2-9261-4abae5864ae0.png",
+    "e42810ef-e1f0-4331-bbbb-2a9f96b43f1c.png",
+    "e486decc-361a-44c2-bce8-5d77e3fd20ee.jpg",
+    "e5abcf42-f3e7-47b2-a1e3-d11e2c81c506.png",
+    "f3bc2e16-a58e-4dd7-a401-465e0719e26a.jpg",
+    "fc076743-11cf-476a-9cde-0650fdfbe633.png",
+    "fc79e064-66e9-4ff4-a1d2-8a681916daa5.jpg",
   ];
 
   const stats = [
@@ -745,7 +795,7 @@ export default function AboutPage() {
 
             <ImageSlider
               images={nationalImages}
-              basePath="/nat-flav"
+              basePath="/national-flavidairy"
               title="Our Trusted National Partners"
               autoSlide={true}
               slideInterval={1500}
@@ -755,7 +805,7 @@ export default function AboutPage() {
           </div>
 
           {/* International Clients */}
-          <div>
+          <div className="mb-16">
             <MotionDiv
               className="text-center mb-8"
               initial={{ opacity: 0, y: 20 }}
@@ -772,10 +822,37 @@ export default function AboutPage() {
 
             <ImageSlider
               images={internationalImages}
-              basePath="/inter-flavidairy"
+              basePath="/international-flavidairy"
               title="Our Global International Partners"
               autoSlide={true}
               slideInterval={1800}
+              slidesToShow={6}
+              className="mb-8"
+            />
+          </div>
+
+          {/* Other Valuable Clients */}
+          <div>
+            <MotionDiv
+              className="text-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
+                Other Valuable Clients
+              </h3>
+              <p className="text-lg text-black/70 max-w-2xl mx-auto">
+                Building strong partnerships with diverse industry leaders and innovative companies
+              </p>
+            </MotionDiv>
+
+            <ImageSlider
+              images={otherValuableImages}
+              basePath="/other-flav"
+              title="Our Diverse Portfolio of Valued Partners"
+              autoSlide={true}
+              slideInterval={2000}
               slidesToShow={6}
               className="mb-8"
             />
