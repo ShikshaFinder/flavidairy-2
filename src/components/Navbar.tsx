@@ -59,15 +59,15 @@ export function Navbar() {
             >
               <div className="h-12 w-auto relative">
                 <Image
-                  src="/nat-flav/flavidairy.jpeg"
+                  src="/favicon.ico"
                   alt="Flavi Dairy Solutions"
-                  width={48}
+                  width={55}
                   height={48}
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="text-xl font-bold text-green-500 ">
+              <span className="text-xl font-bold text-black ">
                 Flavi ® Dairy Solutions
               </span>
             </MotionDiv>
