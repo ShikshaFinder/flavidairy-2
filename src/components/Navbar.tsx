@@ -61,7 +61,7 @@ export function Navbar() {
                 <Image
                   src="/favicon.ico"
                   alt="Flavi Dairy Solutions"
-                  width={55}
+                  width={48}
                   height={48}
                   className="object-contain"
                   priority
