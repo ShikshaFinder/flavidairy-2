@@ -253,7 +253,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Why Choose Flavi Dairy?
+              Why Choose Flavi Dairy Solutions?
             </h2>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
               We offer more than just a job - we provide a platform for growth,

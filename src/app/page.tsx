@@ -22,7 +22,7 @@ export default function Home() {
       <CTA />
 
       {/* Trusted logos placed at the bottom, before the footer */}
-      <TrustedCompanies />
+      {/* <TrustedCompanies /> */}
 
       <Footer />
     </main>

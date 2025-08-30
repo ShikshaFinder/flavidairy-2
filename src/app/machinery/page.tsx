@@ -102,7 +102,7 @@ export default function MachineryPage() {
       description: "Complete range of processing equipment",
     },
     {
-      id: "MILK PROCESSING EQUIPMENTS",
+      id: "MILK PROCESSING EQUIPMENT",
       name: "Milk Processing",
       icon: Droplets,
       description: "Milk processing and dairy equipment",
