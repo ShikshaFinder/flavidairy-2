@@ -211,7 +211,7 @@ export default function MachineryPage() {
             transition={{ duration: 0.8 }}
           >
             <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
-              Equipment & Machinery
+              Equipment 
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               Processing Equipment
