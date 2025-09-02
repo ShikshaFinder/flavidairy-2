@@ -69,6 +69,13 @@ export default function MagazinesPage() {
       description: "Future of dairy and food processing",
       publishDate: "2025",
     },
+    {
+      id: "flavi-49",
+      title: "Flavi Magazine - Issue 49",
+      filename: "flavi-49.pdf",
+      description: "Future of dairy and food processing",
+      publishDate: "2025",
+    }
   ];
 
   return (

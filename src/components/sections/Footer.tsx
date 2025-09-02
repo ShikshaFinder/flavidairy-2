@@ -34,7 +34,7 @@ export function Footer() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-24 w-auto relative">
+                <div className="h-24 w-auto relative max-w-full sm:max-w-[150px]">
                   <Image
                     src="/logo.png"
                     alt="Flavi Dairy Solutions"
