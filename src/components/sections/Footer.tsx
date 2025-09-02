@@ -33,8 +33,8 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-24 w-auto relative max-w-full sm:max-w-[150px]">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-20 w-auto relative max-w-full sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
                   <Image
                     src="/logo.png"
                     alt="Flavi Dairy Solutions"
@@ -82,17 +82,17 @@ export function Footer() {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-green-600" />
+                  <Phone className="w-6 h-6 text-green-600" />
                   <span className="text-gray-600">+91 7202033384</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-green-600" />
+                  <Mail className="w-6 h-6 text-green-600" />
                   <span className="text-gray-600">
                     contact@flavidairysolution.com
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-green-600 mt-1" />
+                  <MapPin className="w-6 h-6 text-green-600 mt-1" />
                   <span className="text-gray-600">
                     403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H
                     Navdeep Bldg., Navrangpura, Ahmedabad-380014
