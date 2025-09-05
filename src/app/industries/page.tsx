@@ -70,7 +70,7 @@ export default function IndustriesPage() {
         "Butter, Ghee, Cream",
         "Buttermilk",
         "Sweetened Condensed Milk",
-        "Dairy based sweets- Basundi, Ras Malia, Khoa",
+        "Dairy based sweets- Basundi, Ras Malai, Khoa",
         "Ice Cream",
         "Cheese (Cheddar, Mozzarella, Feta, Ricotta, Cream cheese, etc.)",
       ],
