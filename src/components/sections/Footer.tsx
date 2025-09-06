@@ -43,14 +43,13 @@ export function Footer() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-16 md:h-20 lg:h-24 w-auto relative max-w-full">
+              <div className="mb-6">
+                <div className="h-16 w-32 md:h-18 md:w-36 lg:h-20 lg:w-40 relative flex-shrink-0">
                   <Image
                     src="/logo.png"
                     alt="Flavi Dairy Solutions"
-                    width={240}
-                    height={96}
-                    className="object-contain"
+                    fill
+                    className="object-contain object-left"
                     priority
                   />
                 </div>
