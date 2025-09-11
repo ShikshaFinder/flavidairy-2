@@ -52,7 +52,6 @@ export default function CareerPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Format the message for WhatsApp
     const message = `
 🌟 Career Application - Flavi Dairy 🌟
 
