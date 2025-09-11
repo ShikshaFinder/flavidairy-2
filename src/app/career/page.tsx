@@ -81,77 +81,82 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
   const jobOpenings = [
     {
       id: 1,
-      title: "Process Engineer",
+      title: "Mechanical Engineer",
       department: "Engineering",
       location: "Ahmedabad, Gujarat",
       type: "Full-time",
-      experience: "3-5 years",
-      salary: "₹8-12 LPA",
+      experience: "2+ years",
+      salary: "Competitive",
       description:
-        "Design and optimize dairy and food processing systems with cutting-edge technology",
+        "Install, align and commission machinery at clients' site. Conduct pre-installation checks, test and validate equipment performance.",
       requirements: [
-        "B.Tech/M.Tech in Food Technology or Chemical Engineering",
-        "Experience in dairy/food processing equipment design",
-        "Knowledge of HACCP, FSSAI, and ISO standards",
-        "Proficiency in AutoCAD and process simulation software",
-        "Strong analytical and problem-solving skills",
+        "Diploma/degree in mechanical, electrical or dairy technology",
+        "2+ years' experience in machinery installation/commissioning",
+        "PNID and plant layout skills are must",
+        "Ability to read technical drawings/manuals",
+        "Willingness to travel extensively",
+        "Good communication and customer-handling skills",
+        "Exposure to PLCs, automation and control systems",
+      ],
+      responsibilities: [
+        "Install, align and commission machinery at clients' site",
+        "Conduct pre-installation checks",
+        "Test, calibrate and validate equipment performance",
+        "Troubleshoot and resolve technical issues",
+        "Train customer on operation, maintenance and safety",
+        "Prepare reports and maintain documentation",
+        "Provide after sales service",
       ],
       featured: true,
     },
     {
       id: 2,
-      title: "Automation Engineer",
-      department: "Automation",
+      title: "Business Development",
+      department: "Business Development",
       location: "Ahmedabad, Gujarat",
       type: "Full-time",
-      experience: "2-4 years",
-      salary: "₹6-10 LPA",
+      experience: "2+ years",
+      salary: "Competitive",
       description:
-        "Develop and implement automation solutions for modern processing plants",
+        "Identify and develop new business opportunities. Build and maintain strong relationships with clients.",
       requirements: [
-        "B.Tech in Electronics/Instrumentation Engineering",
-        "Experience with PLC, SCADA, and HMI systems",
-        "Knowledge of industrial communication protocols",
-        "Experience in dairy/food industry automation",
-        "Programming skills in ladder logic and structured text",
+        "Bachelor's degree in Business, Marketing, or related field",
+        "Minimum 2 years' experience in business development/sales",
+        "Strong communication, negotiation, and presentation skills",
+        "Ability to work independently",
+        "Willingness to travel if required",
+      ],
+      responsibilities: [
+        "Identify and develop new business opportunities",
+        "Build and maintain strong relationships with clients",
+        "Understand customer needs and propose suitable solutions",
+        "Prepare proposals, presentations, and sales reports",
+        "Coordinate with internal teams for smooth project execution",
       ],
       featured: false,
     },
     {
       id: 3,
-      title: "Project Manager",
-      department: "Project Management",
+      title: "AutoCAD Engineer",
+      department: "Engineering",
       location: "Ahmedabad, Gujarat",
       type: "Full-time",
-      experience: "5-8 years",
-      salary: "₹12-18 LPA",
+      experience: "Fresher/Entry-level",
+      salary: "Competitive",
       description:
-        "Lead turnkey projects from concept to commissioning with excellence",
+        "Create and modify technical drawings and layouts using AutoCAD and SolidWorks. Support engineering team with design and drafting requirements.",
       requirements: [
-        "B.Tech/M.Tech in Mechanical/Chemical Engineering",
-        "PMP certification preferred",
-        "Experience in dairy/food processing projects",
-        "Strong leadership and communication skills",
-        "Project management tools proficiency",
+        "Proficiency in AutoCAD software (2D/3D), SolidWorks and other design tools",
+        "Ability to read and understand technical drawings",
+        "Good communication and teamwork skills",
+        "Internship or academic project experience in CAD (Preferred)",
       ],
-      featured: true,
-    },
-    {
-      id: 4,
-      title: "Sales Engineer",
-      department: "Sales & Marketing",
-      location: "Multiple Locations",
-      type: "Full-time",
-      experience: "2-4 years",
-      salary: "₹5-8 LPA + Incentives",
-      description:
-        "Drive sales of processing equipment and build lasting client relationships",
-      requirements: [
-        "B.Tech in Mechanical/Food Technology",
-        "Experience in B2B sales in food processing industry",
-        "Strong technical knowledge and presentation skills",
-        "Willingness to travel extensively",
-        "Excellent communication and negotiation skills",
+      responsibilities: [
+        "Create and modify technical drawings and layouts using AutoCAD and SolidWorks",
+        "Support engineering team with design and drafting requirements",
+        "Interpret technical specifications and convert them into CAD drawings",
+        "Ensure accuracy and quality in all drafting work",
+        "Maintain proper documentation of drawings and revisions",
       ],
       featured: false,
     },
@@ -243,6 +248,143 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
         </div>
       </section>
 
+      {/* Job Listings Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <MotionDiv
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Current Openings
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Explore our current job opportunities and find the perfect role
+              for your career
+            </p>
+          </MotionDiv>
+
+          <div className="grid gap-8">
+            {jobOpenings.map((job, index) => (
+              <MotionDiv
+                key={job.id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <Card className="hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                  <CardHeader className="pb-4">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                      <div>
+                        <CardTitle className="text-2xl font-bold text-black mb-2 flex items-center gap-3">
+                          {job.title}
+                          {job.featured && (
+                            <Badge className="bg-secondary/20 text-secondary border-secondary/20">
+                              Featured
+                            </Badge>
+                          )}
+                        </CardTitle>
+                        <div className="flex flex-wrap gap-4 text-sm text-black/70">
+                          <span className="flex items-center gap-1">
+                            <Briefcase className="w-4 h-4" />
+                            {job.department}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Building className="w-4 h-4" />
+                            {job.location}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Users className="w-4 h-4" />
+                            {job.experience}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="mt-4 md:mt-0">
+                        <Badge
+                          variant="outline"
+                          className="text-secondary border-secondary/30"
+                        >
+                          {job.type}
+                        </Badge>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <CardDescription className="text-base text-black/70">
+                      {job.description}
+                    </CardDescription>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
+                          <CheckCircle className="w-5 h-5 text-green-600" />
+                          Requirements
+                        </h4>
+                        <ul className="space-y-2">
+                          {job.requirements.map((req, reqIndex) => (
+                            <li
+                              key={reqIndex}
+                              className="flex items-start gap-2 text-sm text-black/70"
+                            >
+                              <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                              {req}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
+                          <Briefcase className="w-5 h-5 text-blue-600" />
+                          Responsibilities
+                        </h4>
+                        <ul className="space-y-2">
+                          {job.responsibilities.map((resp, respIndex) => (
+                            <li
+                              key={respIndex}
+                              className="flex items-start gap-2 text-sm text-black/70"
+                            >
+                              <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                              {resp}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-gray-200">
+                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div className="text-sm text-black/70">
+                          <span className="font-medium">Salary: </span>
+                          {job.salary}
+                        </div>
+                        <Button
+                          className="bg-secondary hover:bg-secondary/90 text-black border-0"
+                          asChild
+                        >
+                          <a
+                            href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                              `Hi, I'm interested in the ${job.title} position at Flavi Dairy. I would like to apply and discuss this opportunity.`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Apply for this Position
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Join Us */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -287,7 +429,6 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
           </div>
         </div>
       </section>
-
 
       {/* Contact Section */}
       <section className="py-16 bg-white">
