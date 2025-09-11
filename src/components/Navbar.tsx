@@ -32,6 +32,7 @@ export function Navbar() {
     { name: "Consultancy Services", href: "/consultancy" },
     { name: "Equipment", href: "/machinery" },
     { name: "Flavi Updates", href: "/magazines" },
+    { name: "Brochures", href: "/brochures" },
     { name: "Career", href: "/career" },
   ];
 
