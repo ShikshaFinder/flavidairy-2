@@ -54,7 +54,7 @@ export function Footer() {
                   />
                 </div>
               </div>
-              <p className="text-gray-600 mb-6 max-w-xl leading-relaxed">
+              <p className="text-black mb-6 max-w-xl leading-relaxed">
                 Leading provider of dairy and food processing solutions with 20+
                 years of experience. We deliver innovative, reliable, and
                 efficient processing equipment and consultancy services.
@@ -83,7 +83,7 @@ export function Footer() {
                     href="https://www.facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-gray-500 hover:text-primary hover:border-primary transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="Facebook"
                   >
                     <Facebook className="h-4 w-4" />
@@ -92,7 +92,7 @@ export function Footer() {
                     href="https://www.instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-gray-500 hover:text-primary hover:border-primary transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="Instagram"
                   >
                     <Instagram className="h-4 w-4" />
@@ -101,7 +101,7 @@ export function Footer() {
                     href="https://www.linkedin.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-gray-500 hover:text-primary hover:border-primary transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-4 w-4" />
@@ -118,7 +118,7 @@ export function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h3 className="text-lg font-semibold text-black mb-6">Quick Links</h3>
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-3 text-black">
                 <li>
                   <Link href="#services" className="hover:text-primary transition-colors">
                     Services
@@ -150,7 +150,7 @@ export function Footer() {
               transition={{ duration: 0.6, delay: 0.15 }}
             >
               <h3 className="text-lg font-semibold text-black mb-6">Contact Info</h3>
-              <div className="space-y-4 text-gray-600">
+              <div className="space-y-4 text-black">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-primary" />
                   <span>+91 7202033384</span>
@@ -180,19 +180,19 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">
+            <p className="text-black text-sm">
               © {currentYear} Flavi Dairy Solutions. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-600 hover:text-primary transition-colors"
+                className="text-black hover:text-primary transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-600 hover:text-primary transition-colors"
+                className="text-black hover:text-primary transition-colors"
               >
                 Terms of Service
               </Link>

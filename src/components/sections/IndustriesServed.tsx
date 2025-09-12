@@ -75,7 +75,7 @@ export function IndustriesServed() {
                   <h3 className="text-xl font-semibold text-black mb-3">
                     {industry.name}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     {industry.description}
                   </p>
                 </CardContent>

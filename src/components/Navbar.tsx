@@ -79,7 +79,7 @@ export function Navbar() {
             {navItems.map((item, index) => (
               <Link key={index} href={item.href}>
                 <MotionDiv
-                  className="text-gray-600 hover:text-primary transition-colors duration-300 font-medium text-sm cursor-pointer"
+                  className="text-black hover:text-primary transition-colors duration-300 font-medium text-sm cursor-pointer"
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -141,7 +141,7 @@ export function Navbar() {
                 {navItems.map((item, index) => (
                   <Link key={index} href={item.href}>
                     <MotionDiv
-                      className="block text-gray-600 hover:text-primary transition-colors duration-300 font-medium py-2 cursor-pointer"
+                      className="block text-black hover:text-primary transition-colors duration-300 font-medium py-2 cursor-pointer"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}

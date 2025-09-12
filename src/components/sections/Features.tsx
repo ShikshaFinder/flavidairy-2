@@ -85,10 +85,10 @@ export function Features() {
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Why Choose Us
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
             Our Key Strengths
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Discover what sets us apart in the dairy and food processing
             industry with our trusted and reliable solutions
           </p>
@@ -112,12 +112,12 @@ export function Features() {
                   >
                     <feature.icon className="w-8 h-8" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-900 text-center">
+                  <CardTitle className="text-xl font-bold text-black text-center">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-black leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -132,7 +132,7 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-gray-600 mb-6">
+          <p className="text-black mb-6">
             Experience the difference with our comprehensive solutions and
             expert support.
           </p>

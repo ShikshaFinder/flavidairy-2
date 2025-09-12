@@ -6,12 +6,12 @@
   --color-neutral: #EBEBEB;    /* Light neutral background */
   --color-cyan: #0BA6DF;       /* Cyan highlight */
   
-  /* Text colors optimized for accessibility */
-  --text-default: #111827;     /* Dark gray for high contrast */
-  --text-secondary: #374151;   /* Medium gray for secondary text */
-  --text-muted: #6B7280;       /* Light gray for muted text */
+  /* Text colors optimized for accessibility - using only approved colors */
+  --text-default: #000000;     /* Black for high contrast */
+  --text-secondary: #000000;   /* Black for secondary text */
+  --text-muted: #000000;       /* Black for muted text */
   --text-on-primary: #FFFFFF;  /* White text on primary colors */
-  --text-on-neutral: #111827;  /* Dark text on neutral backgrounds */
+  --text-on-neutral: #000000;  /* Black text on neutral backgrounds */
   
   /* Background colors */
   --bg-default: #FFFFFF;       /* Primary white background */
@@ -19,10 +19,10 @@
   --bg-neutral-light: #F8F9FA; /* Very light neutral */
   --bg-surface: #FFFFFF;       /* Card and surface backgrounds */
   
-  /* Border and outline colors */
-  --border-default: #E5E7EB;   /* Default borders */
+  /* Border and outline colors - using only approved colors */
+  --border-default: #EBEBEB;   /* Default borders using neutral */
   --border-primary: #EF7722;   /* Primary colored borders */
-  --border-neutral: #D1D5DB;   /* Neutral borders */
+  --border-neutral: #EBEBEB;   /* Neutral borders */
   
   /* Shadow colors */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);

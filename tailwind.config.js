@@ -7,50 +7,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // EU-focused color palette
+        // ONLY the 4 required EU colors plus black and white
         primary: {
-          DEFAULT: "#EF7722",
-          hover: "#D66A1F",
-          foreground: "#FFFFFF",
+          DEFAULT: "#EF7722", // Orange primary
+          hover: "#D66A1F", // Darker orange for hover
+          foreground: "#FFFFFF", // White text on primary
         },
         secondary: {
-          DEFAULT: "#FAA533", // Use accent color as secondary
-          hover: "#E8941D",
-          foreground: "#FFFFFF",
+          DEFAULT: "#FAA533", // Golden secondary
+          hover: "#E8941D", // Darker golden for hover
+          foreground: "#FFFFFF", // White text on secondary
         },
         accent: {
-          DEFAULT: "#FAA533",
+          DEFAULT: "#FAA533", // Same as secondary
           hover: "#E8941D",
           foreground: "#FFFFFF",
         },
         neutral: {
-          DEFAULT: "#EBEBEB",
-          light: "#F8F9FA",
-          foreground: "#111827",
+          DEFAULT: "#EBEBEB", // Light neutral
+          foreground: "#000000", // Black text on neutral
         },
         cyan: {
-          DEFAULT: "#0BA6DF",
-          foreground: "#FFFFFF",
+          DEFAULT: "#0BA6DF", // Cyan highlight
+          foreground: "#FFFFFF", // White text on cyan
         },
-        // CSS custom property connections
-        background: "var(--bg-default)",
-        foreground: "var(--text-default)",
-        muted: {
-          DEFAULT: "var(--bg-neutral-light)",
-          foreground: "var(--text-muted)",
-        },
-        border: "var(--border-default)",
-        input: "var(--border-default)",
-        ring: "var(--focus-ring)",
-        // Additional semantic colors
-        success: "#10B981",
-        warning: "#F59E0B",
-        error: "#EF4444",
-        info: "#0BA6DF",
-        destructive: {
-          DEFAULT: "#EF4444",
-          foreground: "#FFFFFF",
-        },
+        // Essential colors only
+        black: "#000000",
+        white: "#FFFFFF",
+        transparent: "transparent",
+        // Map semantic colors to our 4 colors
+        success: "#0BA6DF", // Use cyan for success
+        warning: "#FAA533", // Use secondary for warning  
+        error: "#EF7722", // Use primary for error
+        info: "#0BA6DF", // Use cyan for info
       },
       boxShadow: {
         'primary': 'var(--shadow-primary)',

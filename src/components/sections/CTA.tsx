@@ -32,7 +32,7 @@ export function CTA() {
             Ready for Comprehensive
             <span className="text-primary"> End-to-End Solutions?</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
             Trust our dedicated team of engineers and technocrats to deliver
             customized processing solutions backed by 20+ years of reliability
             and expertise.

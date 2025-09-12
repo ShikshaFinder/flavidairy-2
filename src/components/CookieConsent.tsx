@@ -117,10 +117,10 @@ export function CookieConsent() {
               <div className="flex items-start gap-4">
                 <Cookie className="text-primary mt-1 flex-shrink-0" size={24} />
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-black mb-2">
                     {t('title')}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-sm text-black mb-4 leading-relaxed">
                     {t('description')}
                   </p>
                   <div className="flex flex-wrap gap-3">
@@ -136,7 +136,7 @@ export function CookieConsent() {
                     </MotionButton>
                     <MotionButton
                       onClick={acceptNecessaryOnly}
-                      className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                      className="px-6 py-2 border border-neutral text-black rounded-lg font-medium hover:bg-neutral transition-colors"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -162,12 +162,12 @@ export function CookieConsent() {
                 className="space-y-6"
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-black">
                     {t('manage')}
                   </h3>
                   <MotionButton
                     onClick={() => setShowPreferences(false)}
-                    className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                    className="p-2 text-black hover:text-primary transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -177,10 +177,10 @@ export function CookieConsent() {
 
                 <div className="space-y-4">
                   {/* Necessary Cookies */}
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-neutral rounded-lg">
                     <div className="flex-1">
-                      <h4 className="font-medium text-gray-900">{t('necessary')}</h4>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <h4 className="font-medium text-black">{t('necessary')}</h4>
+                      <p className="text-sm text-black mt-1">
                         Required for basic site functionality. Cannot be disabled.
                       </p>
                     </div>
@@ -189,16 +189,16 @@ export function CookieConsent() {
                         type="checkbox"
                         checked={true}
                         disabled={true}
-                        className="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary"
+                        className="w-4 h-4 text-primary bg-neutral border-neutral rounded focus:ring-primary"
                       />
                     </div>
                   </div>
 
                   {/* Analytics Cookies */}
-                  <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                  <div className="flex items-center justify-between p-4 border border-neutral rounded-lg">
                     <div className="flex-1">
-                      <h4 className="font-medium text-gray-900">{t('analytics')}</h4>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <h4 className="font-medium text-black">{t('analytics')}</h4>
+                      <p className="text-sm text-black mt-1">
                         Help us improve our website by collecting anonymous usage data.
                       </p>
                     </div>
@@ -207,16 +207,16 @@ export function CookieConsent() {
                         type="checkbox"
                         checked={preferences.analytics}
                         onChange={(e) => handlePreferenceChange('analytics', e.target.checked)}
-                        className="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary"
+                        className="w-4 h-4 text-primary bg-neutral border-neutral rounded focus:ring-primary"
                       />
                     </div>
                   </div>
 
                   {/* Marketing Cookies */}
-                  <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                  <div className="flex items-center justify-between p-4 border border-neutral rounded-lg">
                     <div className="flex-1">
-                      <h4 className="font-medium text-gray-900">{t('marketing')}</h4>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <h4 className="font-medium text-black">{t('marketing')}</h4>
+                      <p className="text-sm text-black mt-1">
                         Used to deliver personalized advertising and track campaign performance.
                       </p>
                     </div>
@@ -225,16 +225,16 @@ export function CookieConsent() {
                         type="checkbox"
                         checked={preferences.marketing}
                         onChange={(e) => handlePreferenceChange('marketing', e.target.checked)}
-                        className="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary"
+                        className="w-4 h-4 text-primary bg-neutral border-neutral rounded focus:ring-primary"
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-3 pt-4 border-t border-gray-200">
+                <div className="flex justify-end gap-3 pt-4 border-t border-neutral">
                   <MotionButton
                     onClick={() => setShowPreferences(false)}
-                    className="px-6 py-2 text-gray-600 hover:text-gray-800 transition-colors"
+                    className="px-6 py-2 text-black hover:text-primary transition-colors"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

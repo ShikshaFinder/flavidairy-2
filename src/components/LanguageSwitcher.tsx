@@ -99,8 +99,8 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
                   disabled={isPending}
                   className={`w-full flex items-center gap-3 px-4 py-2 text-left hover:bg-neutral-light transition-colors ${
                     loc === currentLocale 
-                      ? 'bg-primary/5 text-primary border-r-2 border-primary' 
-                      : 'text-gray-700'
+                    ? 'bg-primary/5 text-primary border-r-2 border-primary' 
+                      : 'text-black'
                   }`}
                   whileHover={{ x: 2 }}
                 >
