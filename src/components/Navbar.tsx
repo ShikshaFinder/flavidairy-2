@@ -10,8 +10,9 @@ import {
 } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { Factory, Menu, X, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import Image from "next/image";
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,6 +92,7 @@ export function Navbar() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
             <a
               href={`https://wa.me/917202033384?text=${encodeURIComponent(
                 `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
@@ -152,6 +154,7 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-neutral">
+                  <LanguageSwitcher className="mb-3" />
                   <a
                     href={`https://wa.me/917202033384?text=${encodeURIComponent(
                       `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
