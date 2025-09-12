@@ -17,7 +17,7 @@ export function Hero() {
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <MotionDiv
-          className="absolute top-20 left-10 w-16 h-16 bg-lime-200/40 rounded-full blur-xl"
+          className="absolute top-20 left-10 w-16 h-16 bg-accent/20 rounded-full blur-xl"
           animate={{
             x: [0, 20, 0],
             y: [0, -20, 0],
@@ -29,7 +29,7 @@ export function Hero() {
           }}
         />
         <MotionDiv
-          className="absolute top-40 right-20 w-20 h-20 bg-lime-300/40 rounded-full blur-xl"
+          className="absolute top-40 right-20 w-20 h-20 bg-primary/20 rounded-full blur-xl"
           animate={{
             x: [0, -30, 0],
             y: [0, 30, 0],
@@ -42,7 +42,7 @@ export function Hero() {
           }}
         />
         <MotionDiv
-          className="absolute bottom-20 left-1/4 w-12 h-12 bg-lime-200/40 rounded-full blur-xl"
+          className="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan/20 rounded-full blur-xl"
           animate={{
             x: [0, 30, 0],
             y: [0, -15, 0],
@@ -64,7 +64,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-6 py-3 bg-green-100 backdrop-blur-sm text-green-700 border border-green-200 rounded-full text-sm font-medium shadow-sm">
+            <span className="inline-block px-6 py-3 bg-primary/10 backdrop-blur-sm text-primary border border-primary/20 rounded-full text-sm font-medium shadow-sm">
               Transform Your Processing Operations With Trusted Expert Solutions
             </span>
           </MotionDiv> */}
@@ -76,7 +76,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Engineering Progress
-            <span className="text-black"> From Farm to Factory</span>
+            <span className="text-primary"> From Farm to Factory</span>
           </MotionH1>
 
           <MotionP
@@ -97,7 +97,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="bg-lime-600 hover:bg-lime-700 text-white px-8 py-4 text-lg font-medium group relative overflow-hidden border-0 shadow-lg hover:shadow-xl"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-medium group relative overflow-hidden border-0 shadow-lg hover:shadow-xl"
               asChild
             >
               <Link href="https://wa.me/917202033384?text=Hi, I'm interested in your services.">
@@ -116,19 +116,19 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-lime-600 rounded-full"></div>
+              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
               <span>20+ Years of Experience</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-lime-600 rounded-full"></div>
+              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
               <span>1600+ Projects Commissioned</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-lime-600 rounded-full"></div>
+              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
               <span>Turnkey & Customized Solutions</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-lime-600 rounded-full"></div>
+              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
               <span>Scale-up to Industrialization Expertise</span>
             </div>
           </MotionDiv>

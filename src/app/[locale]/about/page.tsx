@@ -508,7 +508,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Droplets className="w-6 h-6 text-green-500" />
+                    <Droplets className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Dairy Processing
@@ -533,7 +533,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Package className="w-6 h-6 text-green-500" />
+                    <Package className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Food Processing
@@ -558,7 +558,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Filter className="w-6 h-6 text-green-500" />
+                    <Filter className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Beverage Manufacturing
@@ -583,7 +583,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Leaf className="w-6 h-6 text-green-500" />
+                    <Leaf className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Agro Processing
@@ -608,7 +608,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Factory className="w-6 h-6 text-green-500" />
+                    <Factory className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Process Engineering
@@ -633,7 +633,7 @@ export default function AboutPage() {
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Target className="w-6 h-6 text-green-500" />
+                    <Target className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Consultancy Services

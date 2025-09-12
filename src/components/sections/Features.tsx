@@ -61,21 +61,20 @@ export function Features() {
   const getColorClasses = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-green-600 border-green-200 bg-green-50";
+        return "text-primary border-primary/20 bg-primary/10";
       case "secondary":
-        return "text-green-700 border-green-300 bg-green-100";
+        return "text-accent border-accent/20 bg-accent/10";
       case "accent":
-        // bg-green-150 was invalid; use bg-green-200 for sufficient contrast
-        return "text-green-800 border-green-400 bg-green-200";
+        return "text-cyan border-cyan/20 bg-cyan/10";
       case "tertiary":
-        return "text-green-600 border-green-200 bg-green-50";
+        return "text-primary border-primary/20 bg-primary/5";
       default:
-        return "text-green-600 border-green-200 bg-green-50";
+        return "text-primary border-primary/20 bg-primary/10";
     }
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-neutral-light">
       <div className="container mx-auto px-4">
         <MotionDiv
           className="text-center mb-12"
@@ -83,7 +82,7 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
+          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Why Choose Us
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">

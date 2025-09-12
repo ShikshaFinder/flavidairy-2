@@ -18,15 +18,15 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-white border-t border-gray-200 overflow-hidden">
+    <footer className="relative bg-white border-t border-neutral overflow-hidden">
       {/* Soft gradient background accents */}
       <div className="pointer-events-none absolute inset-0">
         <MotionDiv
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
-              radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 45%),
-              radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 45%)
+              radial-gradient(circle at 10% 20%, rgba(239, 119, 34, 0.06) 0%, transparent 45%),
+              radial-gradient(circle at 90% 80%, rgba(11, 166, 223, 0.05) 0%, transparent 45%)
             `,
           }}
         />
@@ -62,7 +62,7 @@ export function Footer() {
               <div className="flex flex-wrap items-center gap-3">
                 <Button
                   size="sm"
-                  className="bg-green-600 hover:bg-green-700 text-white border-0"
+                  className="bg-primary hover:bg-primary/90 text-white border-0"
                   asChild
                 >
                   <a
@@ -83,7 +83,7 @@ export function Footer() {
                     href="https://www.facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:text-black hover:border-black transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-gray-500 hover:text-primary hover:border-primary transition-colors"
                     aria-label="Facebook"
                   >
                     <Facebook className="h-4 w-4" />
@@ -92,7 +92,7 @@ export function Footer() {
                     href="https://www.instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:text-black hover:border-black transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-gray-500 hover:text-primary hover:border-primary transition-colors"
                     aria-label="Instagram"
                   >
                     <Instagram className="h-4 w-4" />
@@ -101,7 +101,7 @@ export function Footer() {
                     href="https://www.linkedin.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:text-black hover:border-black transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-gray-500 hover:text-primary hover:border-primary transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-4 w-4" />
@@ -120,22 +120,22 @@ export function Footer() {
               <h3 className="text-lg font-semibold text-black mb-6">Quick Links</h3>
               <ul className="space-y-3 text-gray-600">
                 <li>
-                  <Link href="#services" className="hover:text-black transition-colors">
+                  <Link href="#services" className="hover:text-primary transition-colors">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="#industries" className="hover:text-black transition-colors">
+                  <Link href="#industries" className="hover:text-primary transition-colors">
                     Industries We Serve
                   </Link>
                 </li>
                 <li>
-                  <Link href="#about" className="hover:text-black transition-colors">
+                  <Link href="#about" className="hover:text-primary transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="hover:text-black transition-colors">
+                  <Link href="#contact" className="hover:text-primary transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -152,15 +152,15 @@ export function Footer() {
               <h3 className="text-lg font-semibold text-black mb-6">Contact Info</h3>
               <div className="space-y-4 text-gray-600">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-green-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>+91 7202033384</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-green-600" />
+                  <Mail className="w-5 h-5 text-primary" />
                   <span>contact@flavidairysolution.com</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-green-600 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-primary mt-0.5" />
                   <span>
                     403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H Navdeep Bldg.,
                     Navrangpura, Ahmedabad-380014
@@ -173,7 +173,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <MotionDiv
-          className="border-t border-gray-200 py-6"
+          className="border-t border-neutral py-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -186,13 +186,13 @@ export function Footer() {
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-600 hover:text-black transition-colors"
+                className="text-gray-600 hover:text-primary transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-600 hover:text-black transition-colors"
+                className="text-gray-600 hover:text-primary transition-colors"
               >
                 Terms of Service
               </Link>

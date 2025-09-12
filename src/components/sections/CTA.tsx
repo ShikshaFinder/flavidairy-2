@@ -13,9 +13,9 @@ export function CTA() {
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
-              radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 40% 80%, rgba(3, 105, 161, 0.05) 0%, transparent 50%)
+              radial-gradient(circle at 20% 50%, rgba(239, 119, 34, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(250, 165, 51, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(11, 166, 223, 0.05) 0%, transparent 50%)
             `,
           }}
         />
@@ -30,7 +30,7 @@ export function CTA() {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
             Ready for Comprehensive
-            <span className="text-green-600"> End-to-End Solutions?</span>
+            <span className="text-primary"> End-to-End Solutions?</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Trust our dedicated team of engineers and technocrats to deliver
@@ -46,7 +46,7 @@ export function CTA() {
           >
             <MotionButton
               size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
               asChild
             >
               <Link href="https://wa.me/917202033384?text=Hi, I'm interested in your services. Please provide details about your services.">

@@ -90,31 +90,31 @@ export default function ConsultancyPage() {
   ];
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--bg-default)' }}>
       <Navbar />
       
       {/* Hero Section */}
-      <section style={{ paddingTop: '80px', paddingBottom: '48px', backgroundColor: '#f9fafb', textAlign: 'center' }}>
+      <section style={{ paddingTop: '80px', paddingBottom: '48px', backgroundColor: 'var(--bg-neutral-light)', textAlign: 'center' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
-          <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px', color: '#000000' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px', color: 'var(--text-default)' }}>
             Consultancy Services
           </h1>
-          <p style={{ fontSize: '20px', marginBottom: '32px', color: '#374151', maxWidth: '800px', margin: '0 auto 32px' }}>
+          <p style={{ fontSize: '20px', marginBottom: '32px', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto 32px' }}>
             Expert consultation, turnkey execution, and strategic guidance for
             dairy and food processing industries
           </p>
           
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button style={{ 
-              backgroundColor: '#10b981', 
-              color: 'white', 
+              backgroundColor: 'var(--color-primary)', 
+              color: 'var(--text-on-primary)', 
               padding: '12px 24px', 
               borderRadius: '8px', 
               border: 'none',
               fontSize: '16px',
               cursor: 'pointer'
             }}>
-              <Link href="https://wa.me/917202033384?text=Hi,%20I%20am%20interested%20in%20your%20consultancy%20services.%20Please%20provide%20more%20information." target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Link href="https://wa.me/917202033384?text=Hi,%20I%20am%20interested%20in%20your%20consultancy%20services.%20Please%20provide%20more%20information." target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-on-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 Get Consultation
                 <ArrowRight size={16} />
               </Link>
@@ -124,13 +124,13 @@ export default function ConsultancyPage() {
       </section>
 
       {/* Services Section */}
-      <section style={{ padding: '64px 0', backgroundColor: 'white' }}>
+      <section style={{ padding: '64px 0', backgroundColor: 'var(--bg-default)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '16px', color: '#000000' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '16px', color: 'var(--text-default)' }}>
               Our Consultancy Services
             </h2>
-            <p style={{ fontSize: '18px', color: '#374151', maxWidth: '800px', margin: '0 auto' }}>
+            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
               From concept to commissioning, we provide comprehensive
               consultancy services tailored to your specific needs
             </p>
@@ -139,30 +139,30 @@ export default function ConsultancyPage() {
           <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))' }}>
             {services.map((service, index) => (
               <div key={index} style={{ 
-                border: '1px solid #e5e7eb', 
+                border: '1px solid var(--border-default)', 
                 borderRadius: '12px', 
                 padding: '24px',
-                backgroundColor: 'white',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                backgroundColor: 'var(--bg-surface)',
+                boxShadow: 'var(--shadow-md)'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
                   <div style={{ 
                     width: '48px', 
                     height: '48px', 
-                    backgroundColor: '#e0f2fe', 
+                    backgroundColor: 'rgba(11, 166, 223, 0.1)', 
                     borderRadius: '8px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#0ea5e9'
+                    color: 'var(--color-cyan)'
                   }}>
                     <service.icon size={24} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#000000', marginBottom: '8px' }}>
+                    <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--text-default)', marginBottom: '8px' }}>
                       {service.title}
                     </h3>
-                    <p style={{ color: '#6b7280', fontSize: '14px' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
                       {service.description}
                     </p>
                   </div>
@@ -171,8 +171,8 @@ export default function ConsultancyPage() {
                 <div style={{ paddingLeft: '16px' }}>
                   {service.items.map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                      <CheckCircle size={16} style={{ color: '#10b981', marginTop: '2px', flexShrink: 0 }} />
-                      <span style={{ fontSize: '14px', color: '#374151' }}>
+                      <CheckCircle size={16} style={{ color: 'var(--success)', marginTop: '2px', flexShrink: 0 }} />
+                      <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
                         {item}
                       </span>
                     </div>

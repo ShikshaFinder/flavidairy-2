@@ -41,7 +41,7 @@ export function IndustriesServed() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-neutral-light to-white">
       <div className="container mx-auto px-4">
         <MotionDiv
           className="text-center mb-16"
@@ -67,9 +67,9 @@ export function IndustriesServed() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <Card className="h-full border-2 border-gray-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg bg-white">
+              <Card className="h-full border-2 border-neutral hover:border-primary/30 transition-all duration-300 hover:shadow-lg bg-white">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <industry.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">

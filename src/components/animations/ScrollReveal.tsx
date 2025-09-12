@@ -3,6 +3,7 @@
 import { MotionDiv } from "@/components/ui/motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { scrollRevealVariants, defaultTransition } from "@/lib/motionVariants";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -25,18 +26,7 @@ export function ScrollReveal({
     margin: "-100px",
   });
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === "up" ? 50 : direction === "down" ? -50 : 0,
-      x: direction === "left" ? 50 : direction === "right" ? -50 : 0,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-    },
-  };
+  const variants = scrollRevealVariants[direction] || scrollRevealVariants.up;
 
   return (
     <MotionDiv
@@ -45,9 +35,9 @@ export function ScrollReveal({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       transition={{
+        ...defaultTransition,
         duration,
         delay,
-        ease: "easeOut",
       }}
       className={className}
     >

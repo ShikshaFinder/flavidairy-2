@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "contact": "Kontakt",
+    "solutions": "Lösungen"
+  },
+  "hero": {
+    "title": "Flavi Dairy Food Solutions",
+    "subtitle": "Führender Anbieter von Molkerei- und Lebensmittelverarbeitungslösungen",
+    "description": "Mit über 20 Jahren Erfahrung in der Molkerei- und Lebensmittelverarbeitung liefern wir schlüsselfertige Projekte, Automatisierung und Beratungsdienstleistungen, um Ihrem Unternehmen zum Erfolg zu verhelfen.",
+    "cta": "Loslegen",
+    "learnMore": "Mehr erfahren"
+  },
+  "industries": {
+    "title": "Branchen, die wir bedienen",
+    "description": "Von kleineren Betrieben bis hin zu großen Industrieanlagen bieten wir maßgeschneiderte Lösungen.",
+    "dairy": {
+      "title": "Molkereiverarbeitung",
+      "description": "Komplette Molkereiverarbeitungslösungen von der Milchsammlung bis zur Verpackung"
+    },
+    "food": {
+      "title": "Lebensmittelverarbeitung",
+      "description": "Fortschrittliche Lebensmittelverarbeitungsgeräte und Automatisierungssysteme"
+    },
+    "beverage": {
+      "title": "Getränkeproduktion",
+      "description": "Umfassende Getränkeproduktionslinien und Qualitätskontrollsysteme"
+    }
+  },
+  "features": {
+    "title": "Warum uns wählen",
+    "description": "Wir liefern Exzellenz durch Innovation, Qualität und engagierten Service",
+    "experience": {
+      "title": "20+ Jahre Erfahrung",
+      "description": "Zwei Jahrzehnte Expertise in Molkerei- und Lebensmittelverarbeitungslösungen"
+    },
+    "automation": {
+      "title": "Fortschrittliche Automatisierung",
+      "description": "Modernste SCADA-Integration und Prozessautomatisierung"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Rund um die Uhr technischer Support und Wartungsdienstleistungen"
+    },
+    "turnkey": {
+      "title": "Schlüsselfertige Lösungen",
+      "description": "Vollständiges Projektmanagement von der Konzeption bis zur Inbetriebnahme"
+    }
+  },
+  "cta": {
+    "title": "Bereit, Ihre Abläufe zu transformieren?",
+    "description": "Kontaktieren Sie unsere Experten für eine auf Ihre Bedürfnisse zugeschnittene Beratung.",
+    "button": "Kontaktieren Sie uns heute",
+    "phone": "Rufen Sie uns an unter",
+    "email": "Schreiben Sie uns an"
+  },
+  "footer": {
+    "company": "Flavi Dairy Food Solutions",
+    "description": "Führender Anbieter von Molkerei- und Lebensmittelverarbeitungslösungen mit über 20 Jahren Erfahrung.",
+    "quickLinks": "Schnelllinks",
+    "services": "Dienstleistungen",
+    "contact": "Kontaktinformationen",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Etwas ist schiefgelaufen",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "open": "Öffnen",
+    "menu": "Menü"
+  },
+  "cookies": {
+    "title": "Cookie-Einverständnis",
+    "description": "Wir verwenden Cookies, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Inhalte bereitzustellen. Durch die weitere Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.",
+    "accept": "Alle akzeptieren",
+    "decline": "Ablehnen",
+    "manage": "Einstellungen verwalten",
+    "necessary": "Notwendige Cookies",
+    "analytics": "Analyse-Cookies",
+    "marketing": "Marketing-Cookies"
+  }
+}

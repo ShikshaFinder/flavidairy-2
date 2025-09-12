@@ -7,15 +7,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // tokens used in components — adjust to your brand palette if needed
+        // EU-focused color palette
         primary: {
-          DEFAULT: "#0f766e",
+          DEFAULT: "#EF7722",
+          hover: "#D66A1F",
         },
         accent: {
-          DEFAULT: "#10b981",
+          DEFAULT: "#FAA533",
+          hover: "#E8941D",
         },
-        background: "#f8fafc",
-        "foreground-muted": "#6b7280",
+        neutral: {
+          DEFAULT: "#EBEBEB",
+          light: "#F8F9FA",
+        },
+        cyan: {
+          DEFAULT: "#0BA6DF",
+        },
+        background: "var(--bg-default)",
+        "foreground-muted": "var(--text-muted)",
+        // Additional semantic colors
+        success: "#10B981",
+        warning: "#F59E0B",
+        error: "#EF4444",
+        info: "#0BA6DF",
+      },
+      boxShadow: {
+        'primary': 'var(--shadow-primary)',
+        'accent': 'var(--shadow-accent)',
+      },
+      borderRadius: {
+        'DEFAULT': 'var(--radius)',
+        'sm': 'var(--radius-sm)',
+        'lg': 'var(--radius-lg)',
       },
     },
   },

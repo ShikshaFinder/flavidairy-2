@@ -2,6 +2,7 @@
 
 import { MotionDiv } from "@/components/ui/motion";
 import { ReactNode } from "react";
+import { floating, hoverScale } from "@/lib/motionVariants";
 
 interface FloatingCardProps {
   children: ReactNode;
@@ -19,16 +20,9 @@ export function FloatingCard({
   return (
     <MotionDiv
       className={className}
-      animate={{
-        y: [0, -10, 0],
-      }}
-      transition={{
-        duration: 2,
-        delay: 0.5,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-      whileHover={{ scale: 1.05 }}
+      variants={floating}
+      animate="animate"
+      {...hoverScale}
     >
       {children}
     </MotionDiv>

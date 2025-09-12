@@ -1,0 +1,84 @@
+/* EU-focused Design Tokens */
+:root {
+  /* Primary EU Color Palette */
+  --color-primary: #EF7722;    /* Orange primary */
+  --color-accent: #FAA533;     /* Golden accent */
+  --color-neutral: #EBEBEB;    /* Light neutral background */
+  --color-cyan: #0BA6DF;       /* Cyan highlight */
+  
+  /* Text colors optimized for accessibility */
+  --text-default: #111827;     /* Dark gray for high contrast */
+  --text-secondary: #374151;   /* Medium gray for secondary text */
+  --text-muted: #6B7280;       /* Light gray for muted text */
+  --text-on-primary: #FFFFFF;  /* White text on primary colors */
+  --text-on-neutral: #111827;  /* Dark text on neutral backgrounds */
+  
+  /* Background colors */
+  --bg-default: #FFFFFF;       /* Primary white background */
+  --bg-neutral: #EBEBEB;       /* Neutral section backgrounds */
+  --bg-neutral-light: #F8F9FA; /* Very light neutral */
+  --bg-surface: #FFFFFF;       /* Card and surface backgrounds */
+  
+  /* Border and outline colors */
+  --border-default: #E5E7EB;   /* Default borders */
+  --border-primary: #EF7722;   /* Primary colored borders */
+  --border-neutral: #D1D5DB;   /* Neutral borders */
+  
+  /* Shadow colors */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-primary: 0 4px 14px 0 rgba(239, 119, 34, 0.3);
+  --shadow-accent: 0 4px 14px 0 rgba(250, 165, 51, 0.3);
+  
+  /* Interactive state colors */
+  --hover-primary: #D66A1F;    /* Darker primary for hover */
+  --hover-accent: #E8941D;     /* Darker accent for hover */
+  --focus-ring: #EF7722;       /* Focus ring color */
+  
+  /* Status colors */
+  --success: #10B981;          /* Success green */
+  --warning: #F59E0B;          /* Warning amber */
+  --error: #EF4444;            /* Error red */
+  --info: #0BA6DF;             /* Info cyan */
+  
+  /* Layout and spacing */
+  --radius: 0.5rem;            /* Default border radius */
+  --radius-sm: 0.25rem;        /* Small border radius */
+  --radius-lg: 0.75rem;        /* Large border radius */
+}
+
+/* Dark mode adjustments for EU theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-default: #1F2937;
+    --bg-neutral: #374151;
+    --bg-neutral-light: #2D3748;
+    --bg-surface: #374151;
+    --text-default: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --text-on-neutral: #F9FAFB;
+    --border-default: #4B5563;
+    --border-neutral: #6B7280;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-default: #000000;
+    --text-secondary: #1F2937;
+    --border-default: #374151;
+    --color-primary: #D66A1F; /* Slightly darker for better contrast */
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
