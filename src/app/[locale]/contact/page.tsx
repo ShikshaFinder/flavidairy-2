@@ -31,15 +31,21 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 7202033384",
+      value: "+91 99791 32679",
       description: "Call us for immediate assistance",
     },
     {
       icon: Mail,
       title: "Email",
-      value: "contact@flavidairysolution.com",
+      value: "md@euronovas.com",
       description: "Send us an email anytime",
-      secondary: "contact@flavidairysolution.com",
+      secondary: "Enquiry@euronovas.com",
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      value: "Enquiry@euronovas.com",
+      description: "Send us an email anytime",
     },
     {
       icon: MapPin,
@@ -324,7 +330,7 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5 text-orange-600 mt-0.5 mr-3 flex-shrink-0 drop-shadow-sm" />
                       <div>
                         <p className="font-medium text-black">
-                          Flavi Dairy Food Solutions
+                          Euronova Food Solutions
                         </p>
                         <p className="text-sm text-black">
                           403, 4th Floor, Samruddhi Complex
@@ -351,7 +357,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-medium text-black">Phone</p>
                         <p className="text-sm text-black font-semibold">
-                          +91 7202033384
+                          +91 99791 32679
                         </p>
                       </div>
                     </div>
@@ -360,10 +366,10 @@ export default function ContactPage() {
                       <div>
                         <p className="font-medium text-black">Email</p>
                         <p className="text-sm text-black font-semibold">
-                          contact@flavidairysolution.com
+                          md@euronovas.com
                         </p>
                         <p className="text-sm text-black font-semibold">
-                          contact@flavidairysolution.com
+                          md@euronovas.com
                         </p>
                       </div>
                     </div>
@@ -577,7 +583,7 @@ export default function ContactPage() {
                 size="lg"
                 className="bg-white text-secondary hover:bg-neutral/20 hover:text-accent font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                <a href="tel:+917202033384" className="flex items-center">
+                <a href="tel:+919979132679" className="flex items-center">
                   Call Now
                   <Phone className="ml-2 w-5 h-5" />
                 </a>
@@ -587,10 +593,7 @@ export default function ContactPage() {
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                <a
-                  href="mailto:contact@flavidairysolution.com"
-                  className="flex items-center"
-                >
+                <a href="mailto:md@euronovas.com" className="flex items-center">
                   Send Email
                   <Mail className="ml-2 w-5 h-5" />
                 </a>

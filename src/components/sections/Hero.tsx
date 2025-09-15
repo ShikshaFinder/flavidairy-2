@@ -16,7 +16,7 @@ import { trackWhatsAppClick } from "@/lib/analytics";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 lg:py-24">
       {/* Modern Geometric Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50">
         {/* Animated geometric shapes */}
@@ -91,24 +91,24 @@ export function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="text-left">
             <MotionDiv
-              className="mb-6"
+              className="mb-6 mt-8 sm:mt-12 lg:mt-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-orange-100 text-blue-800 border border-blue-200 rounded-full text-sm font-medium shadow-sm">
+              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-orange-100 text-blue-800 border border-blue-200 rounded-full text-sm font-medium shadow-sm ">
                 <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
                 Trusted by 1600+ Companies Worldwide
               </span>
             </MotionDiv>
 
             <MotionH1
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -127,7 +127,7 @@ export function Hero() {
             </MotionH1>
 
             <MotionP
-              className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg"
+              className="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -138,7 +138,7 @@ export function Hero() {
             </MotionP>
 
             <MotionDiv
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-6 mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -163,28 +163,30 @@ export function Hero() {
                 </Link>
               </Button>
 
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-8 py-4 text-lg font-semibold transition-all duration-300"
-              >
-                View Our Solutions
-              </Button>
+              <Link href="/brochures">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                >
+                  View Our Solutions
+                </Button>
+              </Link>
             </MotionDiv>
 
             {/* Stats Grid */}
             <MotionDiv
-              className="grid grid-cols-2 gap-6"
+              className="grid grid-cols-2 gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-blue-100">
-                <div className="text-3xl font-bold text-blue-600 mb-1">20+</div>
+              <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-blue-100">
+                <div className="text-3xl font-bold text-blue-600 mb-2">20+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
-              <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-orange-100">
-                <div className="text-3xl font-bold text-orange-600 mb-1">
+              <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-orange-100">
+                <div className="text-3xl font-bold text-orange-600 mb-2">
                   1600+
                 </div>
                 <div className="text-sm text-gray-600">Projects Completed</div>
@@ -204,7 +206,7 @@ export function Hero() {
               <div className="relative w-full h-96 rounded-3xl shadow-2xl overflow-hidden border border-white/50 backdrop-blur-sm">
                 <Image
                   src="/hero-image.png"
-                  alt="Flavi Dairy Solutions | Euronova Food Solutions - Engineering Excellence"
+                  alt="Euronova Food Solutions - Engineering Excellence"
                   fill
                   className="object-cover object-center"
                   priority

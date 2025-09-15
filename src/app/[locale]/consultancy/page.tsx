@@ -2,18 +2,22 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { 
-  Factory, 
-  Cog, 
-  Layout, 
-  BarChart3, 
+import { MotionDiv, MotionH1, MotionP } from "@/components/ui/motion-optimized";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Factory,
+  Cog,
+  Layout,
+  BarChart3,
   FlaskConical,
   Target,
   TrendingUp,
   Shield,
   Users,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -27,23 +31,29 @@ export default function ConsultancyPage() {
         "Greenfield Projects – Complete setup of new dairy/food processing units",
         "Brownfield Projects – Expansion or modernization of existing facilities",
         "Detailed Project Report (DPR)",
-        "Tender Preparation (Engineering Documentation)"
-      ]
+        "Tender Preparation (Engineering Documentation)",
+      ],
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      iconBg: "bg-blue-100",
     },
     {
-      title: "Engineering & Technical Consultancy", 
+      title: "Engineering & Technical Consultancy",
       icon: Cog,
       description: "Comprehensive technical design and planning services",
       items: [
         "Project Engineering & Technical Design",
-        "Customized Machinery Planning", 
+        "Customized Machinery Planning",
         "Process & Instrumentation Diagrams (P&ID)",
         "Bill of Quantity (BoQ)",
         "Equipment Layout Planning",
         "Retrofitting of existing plants",
         "Line expansions/ Products portfolio expansion",
-        "Automation & Mechanization Strategy (Dairy & Food Industry)"
-      ]
+        "Automation & Mechanization Strategy (Dairy & Food Industry)",
+      ],
+      color: "text-orange-600",
+      bgColor: "bg-orange-50",
+      iconBg: "bg-orange-100",
     },
     {
       title: "Facility and Operational Setup",
@@ -55,8 +65,11 @@ export default function ConsultancyPage() {
         "Installation & Commissioning Support",
         "Maintenance and Operational Guidance",
         "Lab Setup (Quality Control & R&D)",
-        "Technical Training & Internship Programs"
-      ]
+        "Technical Training & Internship Programs",
+      ],
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      iconBg: "bg-blue-100",
     },
     {
       title: "Business and Technical Advisory",
@@ -67,8 +80,11 @@ export default function ConsultancyPage() {
         "Cost & Resource Optimization",
         "Valuation and Due Diligence",
         "Benchmarking and Market Intelligence",
-        "Reverse Engineering"
-      ]
+        "Reverse Engineering",
+      ],
+      color: "text-orange-600",
+      bgColor: "bg-orange-50",
+      iconBg: "bg-orange-100",
     },
     {
       title: "Research & Development (R&D)",
@@ -84,107 +100,172 @@ export default function ConsultancyPage() {
         "Legal & Nutritional Food Claims",
         "Nutrition Labelling Support",
         "Portfolio Expansion (Value-Added Products)",
-        "R&D Consulting (On-site and Remote)"
-      ]
-    }
+        "R&D Consulting (On-site and Remote)",
+      ],
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      iconBg: "bg-blue-100",
+    },
   ];
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--bg-default)' }}>
+    <main className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section style={{ paddingTop: '80px', paddingBottom: '48px', backgroundColor: 'var(--bg-neutral-light)', textAlign: 'center' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
-          <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px', color: 'var(--text-default)' }}>
-            Consultancy Services
-          </h1>
-          <p style={{ fontSize: '20px', marginBottom: '32px', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto 32px' }}>
+      <section className="pt-24 pb-16 lg:pb-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200">
+              Consultancy Services
+            </Badge>
+          </MotionDiv>
+
+          <MotionH1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-6xl font-bold mb-8 text-black"
+          >
+            Expert Consultancy
+            <span className="text-orange-600"> Solutions</span>
+          </MotionH1>
+
+          <MotionP
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed"
+          >
             Expert consultation, turnkey execution, and strategic guidance for
             dairy and food processing industries
-          </p>
-          
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button style={{ 
-              backgroundColor: 'var(--color-primary)', 
-              color: 'var(--text-on-primary)', 
-              padding: '12px 24px', 
-              borderRadius: '8px', 
-              border: 'none',
-              fontSize: '16px',
-              cursor: 'pointer'
-            }}>
-              <Link href="https://wa.me/917202033384?text=Hi,%20I%20am%20interested%20in%20your%20consultancy%20services.%20Please%20provide%20more%20information." target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-on-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          </MotionP>
+
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center"
+          >
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold"
+              asChild
+            >
+              <Link
+                href="https://wa.me/919979132679?text=Hi,%20I%20am%20interested%20in%20your%20consultancy%20services.%20Please%20provide%20more%20information."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
                 Get Consultation
-                <ArrowRight size={16} />
+                <ArrowRight className="w-5 h-5" />
               </Link>
-            </button>
-          </div>
+            </Button>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Services Section */}
-      <section style={{ padding: '64px 0', backgroundColor: 'var(--bg-default)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '16px', color: 'var(--text-default)' }}>
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionDiv
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
               Our Consultancy Services
             </h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               From concept to commissioning, we provide comprehensive
               consultancy services tailored to your specific needs
             </p>
-          </div>
-          
-          <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))' }}>
+          </MotionDiv>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} style={{ 
-                border: '1px solid var(--border-default)', 
-                borderRadius: '12px', 
-                padding: '24px',
-                backgroundColor: 'var(--bg-surface)',
-                boxShadow: 'var(--shadow-md)'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                  <div style={{ 
-                    width: '48px', 
-                    height: '48px', 
-                    backgroundColor: 'rgba(11, 166, 223, 0.1)', 
-                    borderRadius: '8px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--color-cyan)'
-                  }}>
-                    <service.icon size={24} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--text-default)', marginBottom: '8px' }}>
+              <MotionDiv
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group"
+              >
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-blue-200">
+                  <CardHeader className="pb-4">
+                    <div
+                      className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <service.icon className={`w-6 h-6 ${service.color}`} />
+                    </div>
+                    <CardTitle className="text-xl font-semibold text-black mb-2">
                       {service.title}
-                    </h3>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
+                    </CardTitle>
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {service.description}
                     </p>
-                  </div>
-                </div>
-                
-                <div style={{ paddingLeft: '16px' }}>
-                  {service.items.map((item, idx) => (
-                    <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                      <CheckCircle size={16} style={{ color: 'var(--success)', marginTop: '2px', flexShrink: 0 }} />
-                      <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
-                        {item}
-                      </span>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-3">
+                      {service.items.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <CheckCircle className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-relaxed">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-orange-600">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Let our expert consultants help you optimize your operations and
+              achieve your business goals.
+            </p>
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
+              asChild
+            >
+              <Link
+                href="https://wa.me/919979132679?text=Hi,%20I%20am%20interested%20in%20your%20consultancy%20services.%20Please%20provide%20more%20information."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Start Your Consultation
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+          </MotionDiv>
+        </div>
+      </section>
+
       <Footer />
-    </div>
+    </main>
   );
 }

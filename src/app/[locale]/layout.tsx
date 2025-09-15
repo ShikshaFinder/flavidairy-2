@@ -29,11 +29,9 @@ export async function generateMetadata({
   return {
     title: t("hero.title"),
     description: t("hero.description"),
-    authors: [
-      { name: "Flavi Dairy Food Solutions | Euronova Food Solutions Team" },
-    ],
-    creator: "Flavi Dairy Food Solutions | Euronova Food Solutions",
-    publisher: "Flavi Dairy Food Solutions | Euronova Food Solutions",
+    authors: [{ name: "Euronova Food Solutions Team" }],
+    creator: "Euronova Food Solutions",
+    publisher: "Euronova Food Solutions",
     formatDetection: {
       email: false,
       address: false,

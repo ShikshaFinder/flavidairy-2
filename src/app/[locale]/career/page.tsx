@@ -53,17 +53,17 @@ export default function CareerPage() {
     e.preventDefault();
 
     const message = `
-🌟 Career Application - Flavi Dairy 🌟
+🌟 Career Application - Euronova Food Solutions 🌟
 
 👤 Name: ${formData.name}
 📞 Phone: ${formData.phone}
 📧 Email: ${formData.email}
 💼 Position of Interest: ${formData.position}
 
-Thank you for your interest in joining Flavi Dairy! We will review your application and get back to you soon.
+Thank you for your interest in joining Euronova Food Solutions! We will review your application and get back to you soon.
     `.trim();
 
-    const whatsappUrl = `https://wa.me/917202033384?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/919979132679?text=${encodeURIComponent(
       message
     )}`;
     window.open(whatsappUrl, "_blank");
@@ -218,7 +218,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               Build Your Career with
               <span className="text-secondary block mt-2">
-                Flavi Dairy Solutions
+                Euronova Food Solutions
               </span>
             </h1>
             <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
@@ -233,8 +233,8 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                 asChild
               >
                 <a
-                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                    `Hi, I'm interested in career opportunities at Flavi Dairy. I would like to send my resume and discuss available positions.`
+                  href={`https://wa.me/919979132679?text=${encodeURIComponent(
+                    `Hi, I'm interested in career opportunities at Euronova Food Solutions. I would like to send my resume and discuss available positions.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -364,8 +364,8 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                           asChild
                         >
                           <a
-                            href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                              `Hi, I'm interested in the ${job.title} position at Flavi Dairy. I would like to apply and discuss this opportunity.`
+                            href={`https://wa.me/919979132679?text=${encodeURIComponent(
+                              `Hi, I'm interested in the ${job.title} position at Euronova Food Solutions. I would like to apply and discuss this opportunity.`
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -394,7 +394,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-              Why Choose Flavi Dairy Solutions?
+              Why Choose Euronova Food Solutions?
             </h2>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
               We offer more than just a job - we provide a platform for growth,
@@ -461,9 +461,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Email Us
                   </h3>
-                  <p className="text-sm text-black/70">
-                    contact@flavidairysolution.com{" "}
-                  </p>
+                  <p className="text-sm text-black/70">md@euronovas.com </p>
                 </CardContent>
               </Card>
             </MotionDiv>
@@ -481,7 +479,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Call Us
                   </h3>
-                  <p className="text-sm text-black/70">+91 7202033384</p>
+                  <p className="text-sm text-black/70">+91 99791 32679</p>
                 </CardContent>
               </Card>
             </MotionDiv>

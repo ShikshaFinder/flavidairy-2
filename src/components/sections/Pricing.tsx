@@ -221,7 +221,7 @@ export function Pricing() {
                       }`}
                       asChild
                     >
-                      <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
+                      <Link href="https://wa.me/919979132679?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
                         <span className="relative z-10 flex items-center gap-2">
                           Get Started
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-white" />
@@ -252,7 +252,7 @@ export function Pricing() {
             Need a custom solution? Contact us for a personalized quote.
           </p>
           <Button variant="outline" asChild>
-            <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
+            <Link href="https://wa.me/919979132679?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
               Contact Sales Team
             </Link>
           </Button>

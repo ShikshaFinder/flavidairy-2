@@ -15,11 +15,17 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <IndustriesServed />
-      <Features />
+      <div className="py-16 lg:py-24">
+        <IndustriesServed />
+      </div>
+      <div className="py-16 lg:py-24">
+        <Features />
+      </div>
       {/* <Testimonials /> section removed as requested */}
       {/* <Pricing /> section removed as requested */}
-      <CTA />
+      <div className="py-16 lg:py-24">
+        <CTA />
+      </div>
 
       {/* Trusted logos placed at the bottom, before the footer */}
       {/* <TrustedCompanies /> */}

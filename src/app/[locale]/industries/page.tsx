@@ -450,7 +450,7 @@ export default function IndustriesPage() {
                 asChild
               >
                 <a
-                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                  href={`https://wa.me/919979132679?text=${encodeURIComponent(
                     `Hi, I'm interested in industry-specific solutions for my processing needs. Please provide me with expert guidance.`
                   )}`}
                   target="_blank"

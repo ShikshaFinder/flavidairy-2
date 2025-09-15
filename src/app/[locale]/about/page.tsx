@@ -165,7 +165,7 @@ export default function AboutPage() {
   const team = [
     {
       name: "Mr. Kirit Patel",
-      role: "CEO, Flavi Dairy Solutions",
+      role: "CEO, Euronova Food Solutions",
       education:
         "Bachelor of Technology in Dairy Technology from Anand Agricultural University, Anand. 2000-04.",
       experience: "20+ years",
@@ -176,7 +176,7 @@ export default function AboutPage() {
         "Amul: 2004-2008 in the Cheese & Paneer",
         "Jain Dairy: 2008-2009 as Plant Head for Milk, Paneer, Cheese, Fermented Milks, Sweets",
         "Siddharth Milk Foods: 2009-2010 in Cheese",
-        "Flavi Dairy Solutions: Since 2010 as Founder & CEO for Consultancy Services",
+        "Euronova Food Solutions: Since 2010 as Founder & CEO for Consultancy Services",
       ],
       achievements: [
         "Torch Bearer & Role Model for Young Consultants against Retired Staff as Consultants",
@@ -187,7 +187,7 @@ export default function AboutPage() {
     },
     {
       name: "Dr. Hasmukh Patel",
-      role: "Director, Flavi Dairy Solutions & President, US Dairy and Foods Consulting LLC",
+      role: "Director, Euronova Food Solutions & President, US Dairy and Foods Consulting LLC",
       education:
         "Ph.D (Dairy Technology) from Massey University, New Zealand; B.Tech. (Dairy Technology) from Anand Agricultural University, Anand (Gujarat)",
       experience: "20+ years",
@@ -214,8 +214,8 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-white via-secondary/5 to-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="pt-24 pb-16 lg:pb-20 bg-gradient-to-br from-white via-secondary/5 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -224,11 +224,11 @@ export default function AboutPage() {
             <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
               About Us
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 text-black">
               Leading Dairy & Food
               <span className="text-secondary"> Processing Solutions</span>
             </h1>
-            <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-black/70 mb-10 max-w-3xl mx-auto leading-relaxed">
               With over 20 years of experience, we are the trusted partner for
               dairy and food processing equipment, automation solutions, and
               consultancy services across Globe.
@@ -238,9 +238,9 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-neutral">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-16 lg:py-20 bg-neutral">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {stats.map((stat, index) => (
               <MotionDiv
                 key={index}
@@ -263,18 +263,18 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <MotionDiv
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                About Flavi Dairy Solutions
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-black">
+                About Euronova Food Solutions
               </h2>
-              <div className="space-y-4 text-black/70">
+              <div className="space-y-6 text-black/70 leading-relaxed">
                 <p>
                   With over 20 years of proven experience have helped us build a
                   strong reputation as a trusted partner in the field of
@@ -336,7 +336,7 @@ export default function AboutPage() {
                   className="bg-secondary hover:bg-secondary/90 text-black border-0"
                   asChild
                 >
-                  <Link href="https://wa.me/917202033384">
+                  <Link href="https://wa.me/919979132679">
                     <span className="flex items-center gap-2">
                       Get in Touch
                       <ArrowRight className="w-4 h-4" />
@@ -367,23 +367,23 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 bg-neutral">
-        <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-20 bg-neutral">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
               Mission & Vision
             </h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+            <p className="text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
               Our purpose and aspirations that drive everything we do
             </p>
           </MotionDiv>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-10 mb-20">
             <MotionDiv
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}

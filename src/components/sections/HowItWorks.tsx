@@ -135,7 +135,7 @@ export function HowItWorks() {
             Ready to start your project? Let&apos;s discuss how we can help you
             achieve your goals.
           </p>
-          <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
+          <Link href="https://wa.me/919979132679?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
             <button className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
               Get Started Today
             </button>

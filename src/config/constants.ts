@@ -2,8 +2,8 @@
 export const APP_CONFIG = {
   // Company Information
   COMPANY: {
-    NAME: "Flavi Dairy Food Solutions",
-    FULL_NAME: "Euronovas",
+    NAME: "Euronova Food Solutions",
+    FULL_NAME: "Euronova Food Solutions",
     TAGLINE: "Leading provider of dairy and food processing solutions",
     EXPERIENCE: "20+ Years of Experience",
     PROJECTS: "1600+ Projects Commissioned",
@@ -12,37 +12,36 @@ export const APP_CONFIG = {
   // Contact Information
   CONTACT: {
     WHATSAPP: {
-      NUMBER: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917202033384",
+      NUMBER: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919979132679",
       MESSAGE:
         "Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.",
     },
-    PHONE: "+91 72020 33384",
-    EMAIL:
-      process.env.NEXT_PUBLIC_COMPANY_EMAIL || "info@flavidairysolution.com",
+    PHONE: "+91 99791 32679",
+    EMAIL: process.env.NEXT_PUBLIC_COMPANY_EMAIL || "md@euronovas.com",
   },
 
   // Website URLs
   URLS: {
-    BASE: process.env.NEXT_PUBLIC_BASE_URL || "https://flavidairysolution.com",
+    BASE: process.env.NEXT_PUBLIC_BASE_URL || "https://euronovas.com",
     SOCIAL: {
       FACEBOOK:
         process.env.NEXT_PUBLIC_FACEBOOK_URL ||
-        "https://facebook.com/flavidairy",
+        "https://facebook.com/euronovas",
       TWITTER:
-        process.env.NEXT_PUBLIC_TWITTER_URL || "https://twitter.com/flavidairy",
+        process.env.NEXT_PUBLIC_TWITTER_URL || "https://twitter.com/euronovas",
       LINKEDIN:
         process.env.NEXT_PUBLIC_LINKEDIN_URL ||
-        "https://linkedin.com/company/flavidairy",
+        "https://linkedin.com/company/euronovas",
       INSTAGRAM:
         process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
-        "https://instagram.com/flavidairy",
+        "https://instagram.com/euronovas",
     },
   },
 
   // SEO Configuration
   SEO: {
     DEFAULT_TITLE:
-      "Flavi Dairy Food Solutions | Euronova Food Solutions - Dairy & Food Processing Equipment",
+      "Euronova Food Solutions - Dairy & Food Processing Equipment",
     DEFAULT_DESCRIPTION:
       "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
     KEYWORDS: [

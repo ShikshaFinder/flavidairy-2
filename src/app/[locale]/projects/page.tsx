@@ -112,12 +112,12 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white pt-20">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="pt-24 pb-16 lg:pb-20 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-20">
               <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl md:text-6xl font-bold mb-6 text-foreground"
+                className="text-4xl md:text-6xl font-bold mb-8 text-foreground"
               >
                 Showcasing Our
                 <span className="gradient-text"> Innovation</span>
@@ -143,7 +143,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto"
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
               >
                 Explore our portfolio of custom embedded solutions across
                 various industries, from industrial automation to healthcare and
@@ -215,7 +215,7 @@ export default function ProjectsPage() {
                       asChild
                     >
                       <a
-                        href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                        href={`https://wa.me/919979132679?text=${encodeURIComponent(
                           `Hi, I'm interested in discussing a similar project to the ones showcased on your website. Please provide more details about your project capabilities.`
                         )}`}
                         target="_blank"
@@ -256,7 +256,7 @@ export default function ProjectsPage() {
                     asChild
                   >
                     <a
-                      href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                      href={`https://wa.me/919979132679?text=${encodeURIComponent(
                         `Hi, I'm ready to start a new project and would like to discuss my requirements. Please help me get started with your project services.`
                       )}`}
                       target="_blank"

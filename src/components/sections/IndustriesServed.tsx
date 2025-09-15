@@ -42,23 +42,23 @@ export function IndustriesServed() {
 
   return (
     <section className="py-20 bg-gradient-to-br from-neutral-light to-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <MotionDiv
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
             Industries We Serve
           </h2>
-          <p className="text-lg text-black/70 max-w-2xl mx-auto">
+          <p className="text-lg text-black/70 max-w-2xl mx-auto leading-relaxed">
             From dairy to food processing, we provide comprehensive solutions
             across multiple industries
           </p>
         </MotionDiv>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {industries.map((industry, index) => (
             <MotionDiv
               key={industry.id}

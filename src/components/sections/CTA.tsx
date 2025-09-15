@@ -21,25 +21,25 @@ export function CTA() {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <MotionDiv
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-black">
             Ready for Comprehensive
             <span className="text-primary"> End-to-End Solutions?</span>
           </h2>
-          <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-black mb-10 max-w-3xl mx-auto leading-relaxed">
             Trust our dedicated team of engineers and technocrats to deliver
             customized processing solutions backed by 20+ years of reliability
             and expertise.
           </p>
 
           <MotionDiv
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -49,7 +49,7 @@ export function CTA() {
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
               asChild
             >
-              <Link href="https://wa.me/917202033384?text=Hi, I'm interested in your services. Please provide details about your services.">
+              <Link href="https://wa.me/919979132679?text=Hi, I'm interested in your services. Please provide details about your services.">
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Us
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 text-white" />

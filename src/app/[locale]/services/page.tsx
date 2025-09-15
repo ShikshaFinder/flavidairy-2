@@ -112,12 +112,13 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white pt-20">
+    <main className="min-h-screen bg-white">
+      <Navbar />
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="pt-24 pb-16 lg:pb-20 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-20">
               <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +134,7 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl md:text-6xl font-bold mb-6 text-foreground"
+                className="text-4xl md:text-6xl font-bold mb-8 text-foreground"
               >
                 Customized Embedded Solutions
                 <span className="gradient-text"> For Every Need</span>
@@ -143,7 +144,7 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto"
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
               >
                 From concept to production, we provide comprehensive embedded
                 systems development services tailored to your industry and
@@ -153,7 +154,7 @@ export default function ServicesPage() {
           </ScrollReveal>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Card className="group hover:shadow-xl transition-all duration-300 border border-border">
@@ -188,7 +189,7 @@ export default function ServicesPage() {
                       asChild
                     >
                       <a
-                        href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                        href={`https://wa.me/919979132679?text=${encodeURIComponent(
                           `Hi, I'm interested in learning more about your ${
                             services.find((s, i) => i === index)?.title ||
                             "services"
@@ -231,7 +232,7 @@ export default function ServicesPage() {
                     asChild
                   >
                     <a
-                      href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                      href={`https://wa.me/919979132679?text=${encodeURIComponent(
                         `Hi, I'm interested in your services and would like to get a detailed quote. Please provide pricing and service information.`
                       )}`}
                       target="_blank"
@@ -250,7 +251,7 @@ export default function ServicesPage() {
                   </Button>
                   <Button variant="outline" size="lg" asChild>
                     <a
-                      href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                      href={`https://wa.me/919979132679?text=${encodeURIComponent(
                         `Hi, I would like to schedule a call to discuss your services. Please let me know your availability.`
                       )}`}
                       target="_blank"

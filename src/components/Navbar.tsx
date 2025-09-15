@@ -9,7 +9,18 @@ import {
   MotionButton,
 } from "@/components/ui/motion-optimized";
 import { Button } from "@/components/ui/button";
-import { Factory, Menu, X, ArrowRight } from "lucide-react";
+import {
+  Factory,
+  Menu,
+  X,
+  ArrowRight,
+  ChevronDown,
+  Building2,
+  Wrench,
+  FileText,
+  Users,
+  Briefcase,
+} from "lucide-react";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -19,6 +30,8 @@ import { trackWhatsAppClick } from "@/lib/analytics";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,15 +41,65 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (activeDropdown) {
+        setActiveDropdown(null);
+      }
+    };
+
+    if (activeDropdown) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [activeDropdown]);
+
+  const handleMouseEnter = (itemName: string) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+    }
+    setActiveDropdown(itemName);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150); // Small delay to allow moving to submenu
+    setHoverTimeout(timeout);
+  };
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Industries", href: "/industries" },
-    { name: "Consultancy Services", href: "/consultancy" },
-    { name: "Equipment", href: "/machinery" },
-    { name: "Flavi Updates", href: "/magazines" },
-    { name: "Brochures", href: "/brochures" },
-    { name: "Career", href: "/career" },
+    {
+      name: "Services",
+      href: "#",
+      hasDropdown: true,
+      icon: Wrench,
+      submenu: [
+        { name: "Consultancy Services", href: "/consultancy", icon: Building2 },
+        { name: "Equipment & Machinery", href: "/machinery", icon: Factory },
+        { name: "Industries We Serve", href: "/industries", icon: Factory },
+      ],
+    },
+    {
+      name: "Resources",
+      href: "/magazines",
+      hasDropdown: true,
+      icon: FileText,
+      submenu: [
+        { name: "Flavi Updates", href: "/magazines", icon: FileText },
+        { name: "Company Brochures", href: "/brochures", icon: FileText },
+      ],
+    },
+    {
+      name: "Career",
+      href: "/career",
+      icon: Users,
+    },
   ];
 
   return (
@@ -52,8 +115,8 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/">
             <MotionDiv
@@ -64,7 +127,7 @@ export function Navbar() {
               <div className="h-12 w-auto relative">
                 <Image
                   src="/favicon.ico"
-                  alt="Flavi Dairy Solutions"
+                  alt="Euronova Food Solutions"
                   width={48}
                   height={48}
                   className="object-contain"
@@ -72,9 +135,9 @@ export function Navbar() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-blue-600">
-                  FLAVI<span className="text-orange-600"></span> DAIRY SOLUTIONS
-                  ®
+                <span className="text-lg font-bold text-blue-600">
+                  Euro<span className="text-orange-600"></span> Nova Food
+                  SOLUTIONS ®
                 </span>
                 <span className="text-sm text-gray-600 font-medium">
                   Euronova Food Solutions
@@ -84,22 +147,65 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item, index) => (
-              <Link key={index} href={item.href}>
-                <MotionDiv
-                  className="text-black hover:text-blue-600 transition-colors duration-300 font-medium text-sm cursor-pointer"
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {item.name}
-                </MotionDiv>
-              </Link>
+              <div key={index} className="relative">
+                {item.hasDropdown ? (
+                  <div
+                    className="flex items-center gap-1 text-black hover:text-blue-600 transition-colors duration-300 font-medium text-sm cursor-pointer py-2"
+                    onMouseEnter={() => handleMouseEnter(item.name)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {item.icon && <item.icon className="w-4 h-4" />}
+                    {item.name}
+                    <ChevronDown className="w-3 h-3" />
+                  </div>
+                ) : (
+                  <Link href={item.href}>
+                    <MotionDiv
+                      className="flex items-center gap-1 text-black hover:text-blue-600 transition-colors duration-300 font-medium text-sm cursor-pointer py-2"
+                      whileHover={{ y: -2 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item.icon && <item.icon className="w-4 h-4" />}
+                      {item.name}
+                    </MotionDiv>
+                  </Link>
+                )}
+
+                {/* Dropdown Menu */}
+                {item.hasDropdown && activeDropdown === item.name && (
+                  <MotionDiv
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-neutral/20 py-2 z-50"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    onMouseEnter={() => handleMouseEnter(item.name)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {item.submenu?.map((subItem, subIndex) => (
+                      <Link key={subIndex} href={subItem.href}>
+                        <MotionDiv
+                          className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                          whileHover={{ x: 4 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <subItem.icon className="w-4 h-4" />
+                          <span className="text-sm font-medium">
+                            {subItem.name}
+                          </span>
+                        </MotionDiv>
+                      </Link>
+                    ))}
+                  </MotionDiv>
+                )}
+              </div>
             ))}
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
             <a
               href={`https://wa.me/${
@@ -150,19 +256,76 @@ export function Navbar() {
               transition={{ duration: 0.3 }}
               className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md border-t border-neutral shadow-lg"
             >
-              <div className="py-4 space-y-4 px-4">
+              <div className="py-4 space-y-2 px-4">
                 {navItems.map((item, index) => (
-                  <Link key={index} href={item.href}>
-                    <MotionDiv
-                      className="block text-black hover:text-blue-600 transition-colors duration-300 font-medium py-2 cursor-pointer"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </MotionDiv>
-                  </Link>
+                  <div key={index}>
+                    {item.hasDropdown ? (
+                      <div>
+                        <div
+                          className="flex items-center justify-between text-black hover:text-blue-600 transition-colors duration-300 font-medium py-3 cursor-pointer border-b border-neutral/20"
+                          onClick={() =>
+                            setActiveDropdown(
+                              activeDropdown === item.name ? null : item.name
+                            )
+                          }
+                        >
+                          <div className="flex items-center gap-2">
+                            {item.icon && <item.icon className="w-4 h-4" />}
+                            {item.name}
+                          </div>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${
+                              activeDropdown === item.name ? "rotate-180" : ""
+                            }`}
+                          />
+                        </div>
+                        <AnimatePresence>
+                          {activeDropdown === item.name && (
+                            <MotionDiv
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pl-6 space-y-2 py-2">
+                                {item.submenu?.map((subItem, subIndex) => (
+                                  <Link key={subIndex} href={subItem.href}>
+                                    <MotionDiv
+                                      className="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium py-2 cursor-pointer"
+                                      initial={{ opacity: 0, x: -20 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: subIndex * 0.1 }}
+                                      onClick={() => {
+                                        setIsOpen(false);
+                                        setActiveDropdown(null);
+                                      }}
+                                    >
+                                      <subItem.icon className="w-4 h-4" />
+                                      {subItem.name}
+                                    </MotionDiv>
+                                  </Link>
+                                ))}
+                              </div>
+                            </MotionDiv>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link href={item.href}>
+                        <MotionDiv
+                          className="flex items-center gap-2 text-black hover:text-blue-600 transition-colors duration-300 font-medium py-3 cursor-pointer border-b border-neutral/20"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.icon && <item.icon className="w-4 h-4" />}
+                          {item.name}
+                        </MotionDiv>
+                      </Link>
+                    )}
+                  </div>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-neutral">
                   <LanguageSwitcher className="mb-3" />

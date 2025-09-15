@@ -32,9 +32,9 @@ export function Footer() {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="py-16">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="py-20">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* Brand and blurb */}
             <MotionDiv
               className="lg:col-span-2"
@@ -47,7 +47,7 @@ export function Footer() {
                 <div className="h-16 w-32 md:h-18 md:w-36 lg:h-20 lg:w-40 relative flex-shrink-0">
                   <Image
                     src="/logo.png"
-                    alt="Flavi Dairy Solutions | Euronova Food Solutions"
+                    alt="Euronova Food Solutions"
                     fill
                     className="object-contain object-left"
                     priority
@@ -56,7 +56,7 @@ export function Footer() {
               </div>
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-blue-600 mb-2">
-                  Flavi Dairy Food Solutions
+                  Euronova Food Solutions
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
                   A division of Euronova Food Solutions
@@ -74,7 +74,7 @@ export function Footer() {
                   asChild
                 >
                   <a
-                    href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    href={`https://wa.me/919979132679?text=${encodeURIComponent(
                       "Hi, I'm interested in your services. Please provide details about your services."
                     )}`}
                     target="_blank"
@@ -180,17 +180,25 @@ export function Footer() {
               <div className="space-y-4 text-black">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-blue-600" />
-                  <span>+91 7202033384</span>
+                  <span>+91 99791 32679</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-blue-600" />
+                  <span>+353 860307653</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-orange-600" />
-                  <span>contact@flavidairysolution.com</span>
+                  <span>md@euronovas.com</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-orange-600" />
+                  <span>enquiry@euronovas.com</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-blue-600 mt-0.5" />
                   <span>
-                    403, 4th Floor, &apos;Samruddhi&apos;, Opp. Old High Court,
-                    B/H Navdeep Bldg., Navrangpura, Ahmedabad-380014
+                    10 Elsmore walk, Elsmore, Naas, County Kildare, W91E37D ,
+                    Ireland
                   </span>
                 </div>
               </div>
@@ -208,8 +216,8 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-black text-sm">
-              © {currentYear} Flavi Dairy Food Solutions | Euronova Food
-              Solutions. All rights reserved.
+              © {currentYear} Euronova Food Solutions Solutions. All rights
+              reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link

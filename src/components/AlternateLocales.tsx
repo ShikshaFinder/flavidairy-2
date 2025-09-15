@@ -1,4 +1,4 @@
-import { locales } from '@/i18n';
+import { locales } from "@/i18n";
 
 interface AlternateLocalesProps {
   baseUrl?: string;
@@ -6,13 +6,13 @@ interface AlternateLocalesProps {
   locale?: string;
 }
 
-export function AlternateLocales({ 
-  baseUrl = 'https://flavidairysolution.com',
-  pathname = '/',
-  locale = 'en'
+export function AlternateLocales({
+  baseUrl = "https://euronovas.com",
+  pathname = "/",
+  locale = "en",
 }: AlternateLocalesProps) {
   // Get the path without the locale prefix
-  const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
+  const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
 
   return (
     <>

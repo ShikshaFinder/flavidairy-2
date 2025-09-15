@@ -202,9 +202,9 @@ export default function MachineryPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-white via-secondary/5 to-white">
+      <section className="pt-24 pb-16 lg:pb-20 bg-gradient-to-br from-white via-secondary/5 to-white">
         <Height />
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -213,22 +213,22 @@ export default function MachineryPage() {
             <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
               Equipment
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 text-black">
               Processing Equipment
               <span className="text-secondary"> Solutions</span>
             </h1>
-            <p className="text-xl text-black/70 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-black/70 mb-10 max-w-3xl mx-auto leading-relaxed">
               Complete range of dairy, food, and beverage processing equipment
               with advanced automation and control systems
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 size="lg"
                 className="bg-secondary hover:bg-secondary/90 text-black border-0"
                 asChild
               >
                 <a
-                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                  href={`https://wa.me/919979132679?text=${encodeURIComponent(
                     `Hi, I'm interested in your processing equipment solutions. Please provide me with a detailed quote and information about available machinery.`
                   )}`}
                   target="_blank"
@@ -245,9 +245,9 @@ export default function MachineryPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-neutral">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <section className="py-12 lg:py-16 bg-neutral">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {categories.map((category) => {
               const count = getCategoryCount(category.id);
               return (
@@ -422,7 +422,7 @@ export default function MachineryPage() {
                         asChild
                       >
                         <a
-                          href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                          href={`https://wa.me/919979132679?text=${encodeURIComponent(
                             `Hi, I am interested in "${equipment.name}". Please provide a quote and more information.`
                           )}`}
                           target="_blank"
@@ -531,7 +531,7 @@ export default function MachineryPage() {
                 asChild
               >
                 <a
-                  href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                  href={`https://wa.me/919979132679?text=${encodeURIComponent(
                     `Hi, I'm ready to upgrade my processing equipment. Please help me choose the right machinery for my production needs and provide a detailed quote.`
                   )}`}
                   target="_blank"

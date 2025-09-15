@@ -22,7 +22,7 @@ export default function BrochuresPage() {
   const brochures = [
     {
       id: "flavi-up",
-      title: "Flavi Dairy Solutions - Main Brochure",
+      title: "Euronova Food Solutions - Main Brochure",
       filename: "flavi-up.pdf",
       description:
         "Complete overview of our dairy processing solutions and services",
@@ -30,7 +30,7 @@ export default function BrochuresPage() {
     },
     {
       id: "flavi-up2",
-      title: "Flavi Dairy Solutions - Services Portfolio",
+      title: "Euronova Food Solutions - Services Portfolio",
       filename: "flavi-up2.pdf",
       description:
         "Detailed information about our consultancy and technical services",
@@ -38,7 +38,7 @@ export default function BrochuresPage() {
     },
     {
       id: "flvai-up3",
-      title: "Flavi Dairy Solutions - Equipment Catalog",
+      title: "Euronova Food Solutions - Equipment Catalog",
       filename: "flvai-up3.pdf",
       description:
         "Comprehensive catalog of dairy processing equipment and machinery",
@@ -46,7 +46,7 @@ export default function BrochuresPage() {
     },
     {
       id: "flavi-up4",
-      title: "Flavi Dairy Solutions - Industry Solutions",
+      title: "Euronova Food Solutions - Industry Solutions",
       filename: "flavi-up4.pdf",
       description:
         "Specialized solutions for different dairy industry segments",
@@ -54,7 +54,7 @@ export default function BrochuresPage() {
     },
     {
       id: "flavi-up5",
-      title: "Flavi Dairy Solutions - Innovation & Technology",
+      title: "Euronova Food Solutions - Innovation & Technology",
       filename: "flavi-up5.pdf",
       description:
         "Latest innovations and technological advancements in dairy processing",
@@ -225,7 +225,7 @@ export default function BrochuresPage() {
                         <iframe
                           src={`/${selectedPdf}#toolbar=1&navpanes=1&scrollbar=1&page=1&view=FitH`}
                           className="w-full h-full border-0 rounded-b-lg"
-                          title={`Flavi Dairy Solutions Brochure - ${selectedPdf}`}
+                          title={`Euronova Food Solutions Brochure - ${selectedPdf}`}
                           loading="lazy"
                           onError={(e) => {
                             console.log(

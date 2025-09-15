@@ -238,7 +238,7 @@ export default function MagazinesPage() {
                         <iframe
                           src={`/${selectedPdf}#toolbar=1&navpanes=1&scrollbar=1&page=1&view=FitH`}
                           className="w-full h-full border-0 rounded-b-lg"
-                          title={`Flavi Dairy Magazine - ${selectedPdf}`}
+                          title={`Euronova Food Solutions Magazine - ${selectedPdf}`}
                           loading="lazy"
                           onError={(e) => {
                             console.log(

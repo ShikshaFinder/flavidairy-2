@@ -22,7 +22,7 @@ export function Testimonials() {
       role: "CEO, Gujarat Dairy Co.",
       company: "Gujarat Dairy Co.",
       content:
-        "Flavi Dairy transformed our processing facility with their innovative automation solutions. The SCADA integration has improved our efficiency by 40% and reduced operational costs significantly. Their expertise in dairy processing and commitment to quality has made them our trusted partner for all processing needs.",
+        "Euronova Food Solutions transformed our processing facility with their innovative automation solutions. The SCADA integration has improved our efficiency by 40% and reduced operational costs significantly. Their expertise in dairy processing and commitment to quality has made them our trusted partner for all processing needs.",
       rating: 5,
       image: "https://via.placeholder.com/60x60",
       category: "Dairy Processing",
@@ -66,7 +66,7 @@ export function Testimonials() {
       role: "Production Head",
       company: "Modern Dairy Products",
       content:
-        "Flavi Dairy's consultancy services helped us optimize our entire production process. Their technical expertise and industry knowledge are unmatched in the market.",
+        "Euronova Food Solutions' consultancy services helped us optimize our entire production process. Their technical expertise and industry knowledge are unmatched in the market.",
       rating: 5,
       image: "https://via.placeholder.com/60x60",
       category: "Consultancy",
