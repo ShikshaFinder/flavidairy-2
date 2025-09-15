@@ -199,7 +199,7 @@ export default function AboutPage() {
         "Vice-President, R&D, Whitehall Specialties Inc., WI",
         "Technical Director, R&D, Dairy Foods, Land O'Lakes, USA",
         "Ass. Professor, South Dakota State University, USA",
-        "Scientist & Project Leader, Ingredient Innovations, Fonterra, New Zealand",
+        "Scientist and Project Leader, Ingredient Innovations, Fonterra, New Zealand",
         "Ex-GCMMF-AMUL, Anand",
       ],
       achievements: [
