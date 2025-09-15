@@ -9,7 +9,7 @@ import {
   FileText,
   Download,
   ExternalLink,
-  Briefcase,    
+  Briefcase,
   Grid,
   List,
 } from "lucide-react";
@@ -76,7 +76,7 @@ export default function BrochuresPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
               <Briefcase className="w-4 h-4 mr-2" />
               Company Resources
             </Badge>
@@ -94,8 +94,8 @@ export default function BrochuresPage() {
                 onClick={() => setViewMode("viewer")}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
                   viewMode === "viewer"
-                    ? "bg-primary text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-blue-600 text-white"
+                    : "bg-neutral text-black hover:bg-neutral/80"
                 }`}
               >
                 <List className="w-4 h-4" />
@@ -105,8 +105,8 @@ export default function BrochuresPage() {
                 onClick={() => setViewMode("grid")}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
                   viewMode === "grid"
-                    ? "bg-primary text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-blue-600 text-white"
+                    : "bg-neutral text-black hover:bg-neutral/80"
                 }`}
               >
                 <Grid className="w-4 h-4" />
@@ -139,7 +139,7 @@ export default function BrochuresPage() {
                         className={`cursor-pointer transition-all duration-300 hover:shadow-md ${
                           selectedPdf === brochure.filename
                             ? "border-primary bg-primary/5"
-                            : "border-gray-200 hover:border-primary/30"
+                            : "border-neutral hover:border-primary/30"
                         }`}
                         onClick={() => setSelectedPdf(brochure.filename)}
                       >
@@ -152,7 +152,7 @@ export default function BrochuresPage() {
                               <h3 className="font-semibold text-black text-sm leading-tight mb-1">
                                 {brochure.category}
                               </h3>
-                              <p className="text-xs text-gray-600 mb-2">
+                              <p className="text-xs text-black/70 mb-2">
                                 {brochure.description}
                               </p>
                               <div className="flex items-center gap-2">
@@ -188,8 +188,8 @@ export default function BrochuresPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <Card className="h-full border-gray-200">
-                    <CardHeader className="border-b border-gray-100">
+                  <Card className="h-full border-neutral">
+                    <CardHeader className="border-b border-neutral/50">
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-xl font-bold text-black flex items-center gap-2">
                           <FileText className="w-5 h-5 text-primary" />
@@ -201,7 +201,7 @@ export default function BrochuresPage() {
                             href={`/${selectedPdf}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-3 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                            className="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
                           >
                             <ExternalLink className="w-4 h-4" />
                             Open in New Tab
@@ -209,7 +209,7 @@ export default function BrochuresPage() {
                           <a
                             href={`/${selectedPdf}`}
                             download
-                            className="flex items-center gap-2 px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+                            className="flex items-center gap-2 px-3 py-2 bg-black text-white rounded-lg hover:bg-black/80 transition-colors text-sm"
                           >
                             <Download className="w-4 h-4" />
                             Download
@@ -236,15 +236,15 @@ export default function BrochuresPage() {
                         />
                         {/* Fallback message */}
                         <div
-                          className="absolute inset-0 flex items-center justify-center bg-gray-50 rounded-b-lg"
+                          className="absolute inset-0 flex items-center justify-center bg-neutral/30 rounded-b-lg"
                           style={{ zIndex: -1 }}
                         >
                           <div className="text-center p-8">
-                            <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                            <h3 className="text-lg font-semibold text-gray-600 mb-2">
+                            <FileText className="w-16 h-16 text-black/50 mx-auto mb-4" />
+                            <h3 className="text-lg font-semibold text-black mb-2">
                               PDF Viewer
                             </h3>
-                            <p className="text-gray-500 mb-4">
+                            <p className="text-black/70 mb-4">
                               If the PDF doesn't load, you can download it
                               directly or open in a new tab.
                             </p>
@@ -253,7 +253,7 @@ export default function BrochuresPage() {
                                 href={`/${selectedPdf}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                               >
                                 <ExternalLink className="w-4 h-4" />
                                 Open in New Tab
@@ -261,7 +261,7 @@ export default function BrochuresPage() {
                               <a
                                 href={`/${selectedPdf}`}
                                 download
-                                className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                                className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-black/80 transition-colors"
                               >
                                 <Download className="w-4 h-4" />
                                 Download PDF
@@ -285,7 +285,7 @@ export default function BrochuresPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-gray-200 hover:shadow-lg transition-all duration-300 group">
+                  <Card className="h-full border-neutral hover:shadow-lg transition-all duration-300 group">
                     <CardContent className="p-6">
                       <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                         <Briefcase className="w-8 h-8 text-primary" />
@@ -293,7 +293,7 @@ export default function BrochuresPage() {
                       <h3 className="font-bold text-black text-lg mb-2 text-center">
                         {brochure.category}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4 text-center">
+                      <p className="text-black/70 text-sm mb-4 text-center">
                         {brochure.description}
                       </p>
                       <div className="text-center mb-4">
@@ -306,7 +306,7 @@ export default function BrochuresPage() {
                           href={`/${brochure.filename}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                          className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
                         >
                           <ExternalLink className="w-4 h-4" />
                           Open PDF
@@ -314,7 +314,7 @@ export default function BrochuresPage() {
                         <a
                           href={`/${brochure.filename}`}
                           download
-                          className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+                          className="flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-black/80 transition-colors text-sm"
                         >
                           <Download className="w-4 h-4" />
                           Download
@@ -330,7 +330,7 @@ export default function BrochuresPage() {
       </section>
 
       {/* Categories Overview Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-neutral">
         <div className="container mx-auto px-4">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -341,7 +341,7 @@ export default function BrochuresPage() {
               <h2 className="text-3xl font-bold text-black mb-4">
                 Brochure Categories
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-black/70 max-w-2xl mx-auto">
                 Explore our comprehensive collection of brochures organized by
                 category to find the information most relevant to your needs.
               </p>
@@ -359,7 +359,7 @@ export default function BrochuresPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <Card className="h-full border-gray-200 hover:shadow-lg transition-all duration-300">
+                    <Card className="h-full border-neutral hover:shadow-lg transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                           <Briefcase className="w-6 h-6 text-primary" />
@@ -367,7 +367,7 @@ export default function BrochuresPage() {
                         <h3 className="font-bold text-black text-lg mb-2 text-center">
                           {category}
                         </h3>
-                        <p className="text-gray-600 text-sm mb-4 text-center">
+                        <p className="text-black/70 text-sm mb-4 text-center">
                           {categoryBrochures.length} brochure
                           {categoryBrochures.length !== 1 ? "s" : ""} available
                         </p>
@@ -378,15 +378,15 @@ export default function BrochuresPage() {
                               href={`/${brochure.filename}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block p-3 bg-white rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-sm transition-all duration-300 group"
+                              className="block p-3 bg-white rounded-lg border border-neutral hover:border-primary/30 hover:shadow-sm transition-all duration-300 group"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-medium text-gray-700 group-hover:text-primary">
+                                <span className="text-sm font-medium text-black group-hover:text-primary">
                                   {brochure.filename
                                     .replace(".pdf", "")
                                     .replace("flav", "Flav")}
                                 </span>
-                                <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-primary" />
+                                <ExternalLink className="w-3 h-3 text-black/50 group-hover:text-primary" />
                               </div>
                             </a>
                           ))}
@@ -412,7 +412,7 @@ export default function BrochuresPage() {
             <h2 className="text-3xl font-bold text-black mb-4">
               Download All Brochures
             </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-black/70 mb-8 max-w-2xl mx-auto">
               Get complete access to all our company brochures featuring our
               services, equipment, and innovative dairy processing solutions.
             </p>
@@ -427,7 +427,7 @@ export default function BrochuresPage() {
                   <a
                     href={`/${brochure.filename}`}
                     download
-                    className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
+                    className="block p-4 bg-white rounded-lg border border-neutral hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
                   >
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
                       <FileText className="w-6 h-6 text-primary" />
@@ -435,7 +435,7 @@ export default function BrochuresPage() {
                     <h3 className="font-semibold text-black text-sm mb-1">
                       {brochure.category}
                     </h3>
-                    <p className="text-xs text-gray-600 mb-3">PDF Document</p>
+                    <p className="text-xs text-black/70 mb-3">PDF Document</p>
                     <div className="flex items-center justify-center gap-1 text-primary text-sm">
                       <Download className="w-3 h-3" />
                       Download

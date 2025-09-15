@@ -61,15 +61,15 @@ export function Features() {
   const getColorClasses = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-primary border-primary/20 bg-primary/10";
+        return "text-blue-600 border-blue-200 bg-blue-50";
       case "secondary":
-        return "text-accent border-accent/20 bg-accent/10";
+        return "text-orange-600 border-orange-200 bg-orange-50";
       case "accent":
-        return "text-cyan border-cyan/20 bg-cyan/10";
+        return "text-blue-500 border-blue-200 bg-blue-50";
       case "tertiary":
-        return "text-primary border-primary/20 bg-primary/5";
+        return "text-orange-500 border-orange-200 bg-orange-50";
       default:
-        return "text-primary border-primary/20 bg-primary/10";
+        return "text-blue-600 border-blue-200 bg-blue-50";
     }
   };
 
@@ -82,7 +82,7 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+          <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
             Why Choose Us
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">

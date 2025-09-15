@@ -109,7 +109,7 @@ export function ImageSlider({
 
   return (
     <MotionDiv
-      className={`group relative bg-white rounded-xl p-6 shadow-lg border border-gray-100 ${className}`}
+      className={`group relative bg-white rounded-xl p-6 shadow-lg border border-neutral/50 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -118,13 +118,13 @@ export function ImageSlider({
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-bold text-black">{title}</h3>
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
             size="sm"
             onClick={togglePlayPause}
-            className="h-8 w-8 p-0 hover:bg-blue-50 hover:border-blue-300"
+            className="h-8 w-8 p-0 hover:bg-cyan/10 hover:border-cyan/30"
           >
             {isPlaying ? (
               <Pause className="h-4 w-4" />
@@ -154,7 +154,7 @@ export function ImageSlider({
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
-                <div className="aspect-square bg-white rounded-lg border border-gray-200 p-3 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
+                <div className="aspect-square bg-white rounded-lg border border-neutral p-3 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
                   <Image
                     src={`${basePath}/${image}`}
                     alt={`${title} ${index + 1}`}
@@ -181,7 +181,7 @@ export function ImageSlider({
           variant="outline"
           size="sm"
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-white/95 hover:bg-white shadow-lg border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-white/95 hover:bg-white shadow-lg border border-neutral opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
           disabled={currentIndex === 0}
         >
           <ChevronLeft className="h-5 w-5" />
@@ -191,7 +191,7 @@ export function ImageSlider({
           variant="outline"
           size="sm"
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-white/95 hover:bg-white shadow-lg border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-white/95 hover:bg-white shadow-lg border border-neutral opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
           disabled={
             currentIndex >= Math.max(0, images.length - responsiveSlidesToShow)
           }
@@ -211,8 +211,8 @@ export function ImageSlider({
               onClick={() => goToSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-blue-600 w-8"
-                  : "bg-gray-300 hover:bg-gray-400 w-2"
+                  ? "bg-cyan w-8"
+                  : "bg-neutral hover:bg-neutral/80 w-2"
               }`}
             />
           ))}
@@ -221,9 +221,9 @@ export function ImageSlider({
 
       {/* Progress Bar */}
       {isPlaying && (
-        <div className="mt-4 w-full bg-gray-200 rounded-full h-1 overflow-hidden">
+        <div className="mt-4 w-full bg-neutral rounded-full h-1 overflow-hidden">
           <MotionDiv
-            className="h-full bg-blue-600 rounded-full"
+            className="h-full bg-cyan rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{

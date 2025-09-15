@@ -45,15 +45,15 @@ export function HowItWorks() {
   const getColorClasses = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-primary border-primary bg-primary/5";
+        return "text-blue-600 border-blue-300 bg-blue-50";
       case "secondary":
-        return "text-secondary border-secondary bg-secondary/5";
+        return "text-orange-600 border-orange-300 bg-orange-50";
       case "accent":
-        return "text-accent border-accent bg-accent/5";
+        return "text-blue-500 border-blue-300 bg-blue-50";
       case "tertiary":
-        return "text-tertiary border-tertiary bg-tertiary/5";
+        return "text-orange-500 border-orange-300 bg-orange-50";
       default:
-        return "text-primary border-primary bg-primary/5";
+        return "text-blue-600 border-blue-300 bg-blue-50";
     }
   };
 
@@ -66,7 +66,7 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+          <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
             How It Works
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -118,7 +118,7 @@ export function HowItWorks() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
                 >
-                  <ArrowRight className="w-8 h-8 text-primary/30" />
+                  <ArrowRight className="w-8 h-8 text-blue-400" />
                 </MotionDiv>
               )}
             </MotionDiv>

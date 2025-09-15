@@ -124,7 +124,7 @@ export default function ProjectsPage() {
                 transition={{ duration: 0.8 }}
                 className="mb-4"
               >
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
+                <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium border border-blue-200">
                   Our Projects
                 </span>
               </MotionDiv>

@@ -217,7 +217,7 @@ export default function IndustriesPage() {
       <Navbar />
 
       {/* Industries Grid - Starting directly from Industries We Serve */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-white via-green-50/30 to-white">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-white via-primary/5 to-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <MotionDiv
             className="text-center mb-16"
@@ -225,12 +225,12 @@ export default function IndustriesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Badge className="mb-6 bg-green-100 text-green-800 border-green-200 px-4 py-2">
+            <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200 px-4 py-2">
               Industries We Serve
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-black leading-tight">
               Industries We
-              <span className="text-green-600"> Serve</span>
+              <span className="text-primary"> Serve</span>
             </h1>
             <p className="text-lg md:text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
               Comprehensive solutions for diverse processing industries with
@@ -239,14 +239,14 @@ export default function IndustriesPage() {
 
             {/* Decorative Elements */}
             <div className="mt-12 flex justify-center items-center space-x-6 md:space-x-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-200 to-green-100 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <Factory className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <Factory className="w-8 h-8 text-blue-600" />
               </div>
-              <div className="w-16 h-16 bg-gradient-to-br from-green-200 to-green-100 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <Package className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <Package className="w-8 h-8 text-orange-600" />
               </div>
-              <div className="w-16 h-16 bg-gradient-to-br from-green-200 to-green-100 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <Droplets className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <Droplets className="w-8 h-8 text-blue-600" />
               </div>
             </div>
           </MotionDiv>
@@ -259,11 +259,11 @@ export default function IndustriesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="hover:shadow-xl transition-all duration-300 border border-gray-200 bg-white/50 backdrop-blur-sm">
-                  <CardHeader className="border-b border-gray-100 bg-gradient-to-r from-gray-50/50 to-white/50">
+                <Card className="hover:shadow-xl transition-all duration-300 border border-neutral bg-white/50 backdrop-blur-sm">
+                  <CardHeader className="border-b border-neutral/50 bg-gradient-to-r from-neutral/30 to-white/50">
                     <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                      <div className="w-20 h-20 bg-gradient-to-br from-green-200 to-green-100 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-lg">
-                        <industry.icon className="w-10 h-10 text-green-600 relative z-10" />
+                      <div className="w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-lg">
+                        <industry.icon className="w-10 h-10 text-blue-600 relative z-10" />
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform skew-x-12 -translate-x-full hover:translate-x-full transition-transform duration-1000"></div>
                       </div>
                       <div className="flex-1 text-center md:text-left">
@@ -276,9 +276,9 @@ export default function IndustriesPage() {
                       </div>
                       {/* Decorative pattern */}
                       <div className="hidden lg:flex flex-col space-y-2">
-                        <div className="w-1 h-8 bg-gradient-to-b from-green-600 to-green-400 rounded-full"></div>
-                        <div className="w-1 h-6 bg-gradient-to-b from-green-500 to-green-300 rounded-full"></div>
-                        <div className="w-1 h-4 bg-gradient-to-b from-green-400 to-green-200 rounded-full"></div>
+                        <div className="w-1 h-8 bg-gradient-to-b from-primary to-primary/70 rounded-full"></div>
+                        <div className="w-1 h-6 bg-gradient-to-b from-primary/80 to-primary/50 rounded-full"></div>
+                        <div className="w-1 h-4 bg-gradient-to-b from-primary/60 to-primary/30 rounded-full"></div>
                       </div>
                     </div>
                   </CardHeader>
@@ -290,10 +290,10 @@ export default function IndustriesPage() {
                         {industry.sections.map((section, sectionIdx) => (
                           <div key={sectionIdx} className="space-y-4">
                             <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
-                              <div className="w-10 h-10 bg-gradient-to-br from-green-200 to-green-100 rounded-xl flex items-center justify-center shadow-sm">
-                                <div className="w-4 h-4 bg-green-600 rounded-full"></div>
+                              <div className="w-10 h-10 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl flex items-center justify-center shadow-sm">
+                                <div className="w-4 h-4 bg-primary rounded-full"></div>
                               </div>
-                              <span className="border-b-2 border-green-600 pb-1 leading-none">
+                              <span className="border-b-2 border-primary pb-1 leading-none">
                                 {section.title}
                               </span>
                             </h4>
@@ -303,8 +303,8 @@ export default function IndustriesPage() {
                                   key={itemIdx}
                                   className="flex items-start gap-3 group"
                                 >
-                                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                                  <span className="text-sm md:text-base text-gray-700 leading-relaxed">
+                                  <CheckCircle className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                                  <span className="text-sm md:text-base text-black leading-relaxed">
                                     {item}
                                   </span>
                                 </div>
@@ -319,10 +319,10 @@ export default function IndustriesPage() {
                     {industry.offerings && (
                       <div className="mb-10">
                         <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-br from-green-200 to-green-100 rounded-xl flex items-center justify-center shadow-sm">
-                            <div className="w-4 h-4 bg-green-600 rounded-full"></div>
+                          <div className="w-10 h-10 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl flex items-center justify-center shadow-sm">
+                            <div className="w-4 h-4 bg-primary rounded-full"></div>
                           </div>
-                          <span className="border-b-2 border-green-600 pb-1 leading-none">
+                          <span className="border-b-2 border-primary pb-1 leading-none">
                             Our Specialized Offerings
                           </span>
                         </h4>
@@ -332,8 +332,8 @@ export default function IndustriesPage() {
                               key={idx}
                               className="flex items-start gap-3 group"
                             >
-                              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                              <span className="text-sm md:text-base text-gray-700 leading-relaxed">
+                              <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                              <span className="text-sm md:text-base text-black leading-relaxed">
                                 {offering}
                               </span>
                             </div>
@@ -346,10 +346,10 @@ export default function IndustriesPage() {
                     {industry.products && (
                       <div className="mb-10">
                         <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-br from-green-200 to-green-100 rounded-xl flex items-center justify-center shadow-sm">
-                            <div className="w-4 h-4 bg-green-600 rounded-full"></div>
+                          <div className="w-10 h-10 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl flex items-center justify-center shadow-sm">
+                            <div className="w-4 h-4 bg-primary rounded-full"></div>
                           </div>
-                          <span className="border-b-2 border-green-600 pb-1 leading-none">
+                          <span className="border-b-2 border-primary pb-1 leading-none">
                             Products We Handle
                           </span>
                         </h4>
@@ -359,8 +359,8 @@ export default function IndustriesPage() {
                               key={idx}
                               className="flex items-start gap-3 group py-1"
                             >
-                              <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                              <span className="text-sm md:text-base text-gray-700 leading-relaxed">
+                              <CheckCircle className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                              <span className="text-sm md:text-base text-black leading-relaxed">
                                 {product}
                               </span>
                             </div>
@@ -373,10 +373,10 @@ export default function IndustriesPage() {
                     {industry.keyClients && (
                       <div className="mb-10">
                         <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-br from-green-200 to-green-100 rounded-xl flex items-center justify-center shadow-sm">
-                            <div className="w-4 h-4 bg-green-600 rounded-full"></div>
+                          <div className="w-10 h-10 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl flex items-center justify-center shadow-sm">
+                            <div className="w-4 h-4 bg-primary rounded-full"></div>
                           </div>
-                          <span className="border-b-2 border-green-600 pb-1 leading-none">
+                          <span className="border-b-2 border-primary pb-1 leading-none">
                             Key Clients
                           </span>
                         </h4>
@@ -384,7 +384,7 @@ export default function IndustriesPage() {
                           {industry.keyClients.map((client, idx) => (
                             <div
                               key={idx}
-                              className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200 hover:bg-green-100 transition-colors duration-200"
+                              className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium border border-blue-200 hover:bg-blue-200 transition-colors duration-200"
                             >
                               {client}
                             </div>
@@ -397,10 +397,10 @@ export default function IndustriesPage() {
                     {industry.benefits && (
                       <div className="mb-6">
                         <h4 className="text-xl font-semibold text-black mb-6 flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-br from-green-200 to-green-100 rounded-xl flex items-center justify-center shadow-sm">
-                            <div className="w-4 h-4 bg-green-600 rounded-full"></div>
+                          <div className="w-10 h-10 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl flex items-center justify-center shadow-sm">
+                            <div className="w-4 h-4 bg-primary rounded-full"></div>
                           </div>
-                          <span className="border-b-2 border-green-600 pb-1 leading-none">
+                          <span className="border-b-2 border-primary pb-1 leading-none">
                             Key Benefits
                           </span>
                         </h4>
@@ -410,8 +410,8 @@ export default function IndustriesPage() {
                               key={idx}
                               className="flex items-start gap-3 group"
                             >
-                              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                              <span className="text-sm md:text-base text-gray-700 leading-relaxed">
+                              <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                              <span className="text-sm md:text-base text-black leading-relaxed">
                                 {benefit}
                               </span>
                             </div>
@@ -428,7 +428,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      <section className="py-20 bg-gradient-to-br from-neutral via-white to-neutral">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -446,7 +446,7 @@ export default function IndustriesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button
                 size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-8 py-4"
+                className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-8 py-4"
                 asChild
               >
                 <a

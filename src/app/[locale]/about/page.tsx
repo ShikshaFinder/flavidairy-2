@@ -238,7 +238,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-neutral">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -249,8 +249,8 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-4 ">
-                  <stat.icon className="w-8 h-8 text-secondary" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 ">
+                  <stat.icon className="w-8 h-8 text-orange-600" />
                 </div>
                 <h3 className="text-3xl font-bold text-black mb-2">
                   {stat.value}
@@ -297,35 +297,35 @@ export default function AboutPage() {
                 <h3 className="text-xl font-semibold text-black mb-4">
                   Our Domain Expertise
                 </h3>
-                <div className="bg-gray-50 rounded-lg p-6">
+                <div className="bg-neutral rounded-lg p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                    <div className="font-semibold text-black border-b border-gray-300 pb-2 mb-2">
+                    <div className="font-semibold text-black border-b border-neutral pb-2 mb-2">
                       Domain
                     </div>
-                    <div className="font-semibold text-black border-b border-gray-300 pb-2 mb-2">
+                    <div className="font-semibold text-black border-b border-neutral pb-2 mb-2">
                       Core Focus
                     </div>
-                    <div className="font-semibold text-black border-b border-gray-300 pb-2 mb-2">
+                    <div className="font-semibold text-black border-b border-neutral pb-2 mb-2">
                       Key Value to Client
                     </div>
 
-                    <div className="text-gray-700 py-2">
+                    <div className="text-black py-2">
                       Consultation & Turnkey Execution
                     </div>
-                    <div className="text-gray-700 py-2">
+                    <div className="text-black py-2">
                       Strategy, design, project management, commissioning
                     </div>
-                    <div className="text-gray-700 py-2">
+                    <div className="text-black py-2">
                       End-to-end delivery with minimal client involvement
                     </div>
 
-                    <div className="text-gray-700 py-2">
+                    <div className="text-black py-2">
                       Machinery Supply & Automation
                     </div>
-                    <div className="text-gray-700 py-2">
+                    <div className="text-black py-2">
                       Equipment supply, operational automation, SCADA/PLC
                     </div>
-                    <div className="text-gray-700 py-2">
+                    <div className="text-black py-2">
                       High performance, compliance, efficiency, traceability
                     </div>
                   </div>
@@ -367,7 +367,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-neutral">
         <div className="container mx-auto px-4">
           <MotionDiv
             className="text-center mb-12"
@@ -389,17 +389,17 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 bg-white">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral bg-white">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="w-8 h-8 text-green-500" />
+                      <Target className="w-8 h-8 text-blue-600" />
                     </div>
                     <h3 className="text-2xl font-bold text-black">
                       Our Mission
                     </h3>
                   </div>
-                  <p className="text-gray-700 text-center leading-relaxed">
+                  <p className="text-black text-center leading-relaxed">
                     To deliver innovative and reliable engineering solutions for
                     the dairy and food processing industry. We empower clients
                     through expert consultation, automation, and turnkey
@@ -416,17 +416,17 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 bg-white">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral bg-white">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <TrendingUp className="w-8 h-8 text-green-500" />
+                      <TrendingUp className="w-8 h-8 text-orange-600" />
                     </div>
                     <h3 className="text-2xl font-bold text-black">
                       Our Vision
                     </h3>
                   </div>
-                  <p className="text-gray-700 text-center leading-relaxed">
+                  <p className="text-black text-center leading-relaxed">
                     We aim to set new benchmarks in quality, efficiency, and
                     sustainability. Our vision is to be the first choice
                     globally for future-ready dairy and food product
@@ -460,11 +460,11 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <value.icon className="w-6 h-6 text-green-500" />
+                        <value.icon className="w-6 h-6 text-blue-600" />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-black mb-2">
@@ -505,15 +505,15 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Droplets className="w-6 h-6 text-primary" />
+                    <Droplets className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Dairy Processing
                   </h3>
-                  <ul className="text-gray-700 space-y-2 text-sm">
+                  <ul className="text-black space-y-2 text-sm">
                     <li>• Milk Processing & Treatment</li>
                     <li>• Cheese & Paneer Manufacturing</li>
                     <li>• Yogurt & Fermented Products</li>
@@ -530,15 +530,15 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Package className="w-6 h-6 text-primary" />
+                    <Package className="w-6 h-6 text-orange-600" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Food Processing
                   </h3>
-                  <ul className="text-gray-700 space-y-2 text-sm">
+                  <ul className="text-black space-y-2 text-sm">
                     <li>• Fruit & Vegetable Processing</li>
                     <li>• Grain & Cereal Processing</li>
                     <li>• Snack Food Manufacturing</li>
@@ -555,15 +555,15 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Filter className="w-6 h-6 text-primary" />
+                    <Filter className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Beverage Manufacturing
                   </h3>
-                  <ul className="text-gray-700 space-y-2 text-sm">
+                  <ul className="text-black space-y-2 text-sm">
                     <li>• Fruit Juice Extraction</li>
                     <li>• Carbonated Beverages</li>
                     <li>• Energy & Sports Drinks</li>
@@ -580,15 +580,15 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Leaf className="w-6 h-6 text-primary" />
+                    <Leaf className="w-6 h-6 text-orange-600" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Agro Processing
                   </h3>
-                  <ul className="text-gray-700 space-y-2 text-sm">
+                  <ul className="text-black space-y-2 text-sm">
                     <li>• Oil Extraction & Refining</li>
                     <li>• Pulse & Grain Processing</li>
                     <li>• Spice Grinding & Packaging</li>
@@ -605,7 +605,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                     <Factory className="w-6 h-6 text-primary" />
@@ -613,7 +613,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Process Engineering
                   </h3>
-                  <ul className="text-gray-700 space-y-2 text-sm">
+                  <ul className="text-black space-y-2 text-sm">
                     <li>• Plant Design & Layout</li>
                     <li>• Process Optimization</li>
                     <li>• Automation & Control Systems</li>
@@ -630,7 +630,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                     <Target className="w-6 h-6 text-primary" />
@@ -638,7 +638,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold text-black mb-3">
                     Consultancy Services
                   </h3>
-                  <ul className="text-gray-700 space-y-2 text-sm">
+                  <ul className="text-black space-y-2 text-sm">
                     <li>• Turnkey Project Solutions</li>
                     <li>• Technical Documentation</li>
                     <li>• Feasibility Studies</li>
@@ -679,9 +679,9 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-gray-200 relative">
+                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-neutral relative">
                       <Image
                         src={member.image}
                         alt={member.name}
@@ -694,7 +694,7 @@ export default function AboutPage() {
                     <CardTitle className="text-xl font-bold text-black">
                       {member.name}
                     </CardTitle>
-                    <Badge className="bg-secondary/10 text-secondary border-secondary/20 text-sm text-black flex justify-center items-center">
+                    <Badge className="bg-orange-100 text-orange-800 border-orange-200 text-sm flex justify-center items-center">
                       {member.role}
                     </Badge>
                   </CardHeader>
@@ -703,7 +703,7 @@ export default function AboutPage() {
                       <h4 className="font-semibold text-black mb-2">
                         Education:
                       </h4>
-                      <p className="text-sm text-gray-700 leading-relaxed">
+                      <p className="text-sm text-black leading-relaxed">
                         {member.education}
                       </p>
                     </div>
@@ -727,7 +727,7 @@ export default function AboutPage() {
                       <h4 className="font-semibold text-black mb-2">
                         Work Experience:
                       </h4>
-                      <ul className="text-sm text-gray-700 space-y-1">
+                      <ul className="text-sm text-black space-y-1">
                         {member.workExperience.map((exp, expIndex) => (
                           <li key={expIndex} className="flex items-start gap-2">
                             <CheckCircle className="w-3 h-3 text-secondary mt-1 flex-shrink-0" />
@@ -741,7 +741,7 @@ export default function AboutPage() {
                       <h4 className="font-semibold text-black mb-2">
                         Achievements:
                       </h4>
-                      <ul className="text-sm text-gray-700 space-y-1">
+                      <ul className="text-sm text-black space-y-1">
                         {member.achievements.map((achievement, achIndex) => (
                           <li key={achIndex} className="flex items-start gap-2">
                             <Award className="w-3 h-3 text-secondary mt-1 flex-shrink-0" />
@@ -843,7 +843,8 @@ export default function AboutPage() {
                 Other Valuable Clients
               </h3>
               <p className="text-lg text-black/70 max-w-2xl mx-auto">
-                Building strong partnerships with diverse industry leaders and innovative companies
+                Building strong partnerships with diverse industry leaders and
+                innovative companies
               </p>
             </MotionDiv>
 

@@ -2,14 +2,16 @@
 
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { MotionDiv } from "@/components/ui/motion";
+import { MotionDiv } from "@/components/ui/motion-optimized";
 import { pageTransition } from "@/lib/motionVariants";
 
 interface PageTransitionWrapperProps {
   children: React.ReactNode;
 }
 
-export function PageTransitionWrapper({ children }: PageTransitionWrapperProps) {
+export function PageTransitionWrapper({
+  children,
+}: PageTransitionWrapperProps) {
   const pathname = usePathname();
 
   return (

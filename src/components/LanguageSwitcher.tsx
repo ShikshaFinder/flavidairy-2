@@ -1,32 +1,33 @@
 "use client";
 
-import { useState, useTransition } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
-import { ChevronDown, Globe } from 'lucide-react';
-import { MotionDiv, MotionButton } from '@/components/ui/motion';
-import { fadeIn, staggerContainer, staggerItem } from '@/lib/motionVariants';
-import { locales, type Locale } from '@/i18n';
+import { useState, useTransition } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
+import { ChevronDown, Globe } from "lucide-react";
+import { MotionDiv, MotionButton } from "@/components/ui/motion-optimized";
+import { fadeIn, staggerContainer, staggerItem } from "@/lib/motionVariants";
+import { locales, type Locale } from "@/i18n";
+import { trackLanguageSwitch } from "@/lib/analytics";
 
 const languageNames: Record<Locale, string> = {
-  en: 'English',
-  fr: 'Français', 
-  de: 'Deutsch',
-  es: 'Español'
+  en: "English",
+  fr: "Français",
+  de: "Deutsch",
+  es: "Español",
 };
 
 const languageFlags: Record<Locale, string> = {
-  en: '🇺🇸',
-  fr: '🇫🇷',
-  de: '🇩🇪', 
-  es: '🇪🇸'
+  en: "🇺🇸",
+  fr: "🇫🇷",
+  de: "🇩🇪",
+  es: "🇪🇸",
 };
 
 interface LanguageSwitcherProps {
   className?: string;
 }
 
-export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -38,6 +39,9 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
       setIsOpen(false);
       return;
     }
+
+    // Track language switch
+    trackLanguageSwitch(locale, newLocale);
 
     startTransition(() => {
       // Replace the locale in the pathname
@@ -63,20 +67,20 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
         <span className="text-sm font-medium">
           {languageFlags[currentLocale]} {languageNames[currentLocale]}
         </span>
-        <ChevronDown 
-          size={16} 
-          className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
+        <ChevronDown
+          size={16}
+          className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
         />
       </MotionButton>
 
       {isOpen && (
         <>
           {/* Backdrop */}
-          <div 
-            className="fixed inset-0 z-10" 
+          <div
+            className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          
+
           {/* Dropdown */}
           <MotionDiv
             variants={fadeIn}
@@ -98,9 +102,9 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
                   onClick={() => handleLocaleChange(loc)}
                   disabled={isPending}
                   className={`w-full flex items-center gap-3 px-4 py-2 text-left hover:bg-neutral-light transition-colors ${
-                    loc === currentLocale 
-                    ? 'bg-primary/5 text-primary border-r-2 border-primary' 
-                      : 'text-black'
+                    loc === currentLocale
+                      ? "bg-blue-50 text-blue-800 border-r-2 border-blue-600"
+                      : "text-black"
                   }`}
                   whileHover={{ x: 2 }}
                 >

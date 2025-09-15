@@ -7,12 +7,14 @@ import {
   MotionDiv,
   MotionA,
   MotionButton,
-} from "@/components/ui/motion";
+} from "@/components/ui/motion-optimized";
 import { Button } from "@/components/ui/button";
 import { Factory, Menu, X, ArrowRight } from "lucide-react";
-import {Link} from '@/i18n/routing';
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { APP_CONFIG } from "@/config/constants";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,8 +71,8 @@ export function Navbar() {
                   priority
                 />
               </div>
-              <span className="text-xl font-bold text-primary">
-                FLAVI<span className="text-accent"></span> DAIRY SOLUTIONS ®
+              <span className="text-xl font-bold text-blue-600">
+                FLAVI<span className="text-orange-600"></span> DAIRY SOLUTIONS ®
               </span>
             </MotionDiv>
           </Link>
@@ -80,7 +82,7 @@ export function Navbar() {
             {navItems.map((item, index) => (
               <Link key={index} href={item.href}>
                 <MotionDiv
-                  className="text-black hover:text-primary transition-colors duration-300 font-medium text-sm cursor-pointer"
+                  className="text-black hover:text-blue-600 transition-colors duration-300 font-medium text-sm cursor-pointer"
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -94,16 +96,19 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
             <a
-              href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
+              href={`https://wa.me/${
+                APP_CONFIG.CONTACT.WHATSAPP.NUMBER
+              }?text=${encodeURIComponent(
+                APP_CONFIG.CONTACT.WHATSAPP.MESSAGE
               )}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("navbar_desktop")}
             >
-              <Button className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-white border-0">
+              <Button className="group relative overflow-hidden bg-blue-600 hover:bg-blue-700 text-white border-0">
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Us on WhatsApp
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-white" />
                 </span>
                 <MotionDiv
                   className="absolute inset-0 bg-white/20"
@@ -122,9 +127,9 @@ export function Navbar() {
             whileTap={{ scale: 0.95 }}
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-black" />
+              <X className="w-6 h-6 text-blue-600" />
             ) : (
-              <Menu className="w-6 h-6 text-black" />
+              <Menu className="w-6 h-6 text-blue-600" />
             )}
           </MotionButton>
         </div>
@@ -143,7 +148,7 @@ export function Navbar() {
                 {navItems.map((item, index) => (
                   <Link key={index} href={item.href}>
                     <MotionDiv
-                      className="block text-black hover:text-primary transition-colors duration-300 font-medium py-2 cursor-pointer"
+                      className="block text-black hover:text-blue-600 transition-colors duration-300 font-medium py-2 cursor-pointer"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
@@ -156,16 +161,19 @@ export function Navbar() {
                 <div className="pt-4 space-y-3 border-t border-neutral">
                   <LanguageSwitcher className="mb-3" />
                   <a
-                    href={`https://wa.me/917202033384?text=${encodeURIComponent(
-                      `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
+                    href={`https://wa.me/${
+                      APP_CONFIG.CONTACT.WHATSAPP.NUMBER
+                    }?text=${encodeURIComponent(
+                      APP_CONFIG.CONTACT.WHATSAPP.MESSAGE
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("navbar_mobile")}
                   >
-                    <Button className="w-full group relative overflow-hidden bg-primary hover:bg-primary/90 text-white border-0">
+                    <Button className="w-full group relative overflow-hidden bg-blue-600 hover:bg-blue-700 text-white border-0">
                       <span className="relative z-10 flex items-center gap-2">
                         Contact Us on WhatsApp
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-white" />
                       </span>
                       <MotionDiv
                         className="absolute inset-0 bg-white/20"

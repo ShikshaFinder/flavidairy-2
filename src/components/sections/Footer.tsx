@@ -62,7 +62,7 @@ export function Footer() {
               <div className="flex flex-wrap items-center gap-3">
                 <Button
                   size="sm"
-                  className="bg-primary hover:bg-primary/90 text-white border-0"
+                  className="bg-blue-600 hover:bg-blue-700 text-white border-0"
                   asChild
                 >
                   <a
@@ -75,10 +75,13 @@ export function Footer() {
                     aria-label="Contact us on WhatsApp"
                   >
                     Contact Us on WhatsApp
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 text-white" />
                   </a>
                 </Button>
-                <div className="flex items-center gap-3 ml-1" aria-label="Social links">
+                <div
+                  className="flex items-center gap-3 ml-1"
+                  aria-label="Social links"
+                >
                   <Link
                     href="https://www.facebook.com/"
                     target="_blank"
@@ -86,7 +89,7 @@ export function Footer() {
                     className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="Facebook"
                   >
-                    <Facebook className="h-4 w-4" />
+                    <Facebook className="h-4 w-4 text-blue-600" />
                   </Link>
                   <Link
                     href="https://www.instagram.com/"
@@ -95,7 +98,7 @@ export function Footer() {
                     className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="Instagram"
                   >
-                    <Instagram className="h-4 w-4" />
+                    <Instagram className="h-4 w-4 text-orange-600" />
                   </Link>
                   <Link
                     href="https://www.linkedin.com/"
@@ -104,7 +107,7 @@ export function Footer() {
                     className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="h-4 w-4" />
+                    <Linkedin className="h-4 w-4 text-blue-600" />
                   </Link>
                 </div>
               </div>
@@ -117,25 +120,39 @@ export function Footer() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h3 className="text-lg font-semibold text-black mb-6">Quick Links</h3>
+              <h3 className="text-lg font-semibold text-black mb-6">
+                Quick Links
+              </h3>
               <ul className="space-y-3 text-black">
                 <li>
-                  <Link href="#services" className="hover:text-primary transition-colors">
+                  <Link
+                    href="#services"
+                    className="hover:text-primary transition-colors"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="#industries" className="hover:text-primary transition-colors">
+                  <Link
+                    href="#industries"
+                    className="hover:text-primary transition-colors"
+                  >
                     Industries We Serve
                   </Link>
                 </li>
                 <li>
-                  <Link href="#about" className="hover:text-primary transition-colors">
+                  <Link
+                    href="#about"
+                    className="hover:text-primary transition-colors"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="hover:text-primary transition-colors">
+                  <Link
+                    href="#contact"
+                    className="hover:text-primary transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -149,21 +166,23 @@ export function Footer() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <h3 className="text-lg font-semibold text-black mb-6">Contact Info</h3>
+              <h3 className="text-lg font-semibold text-black mb-6">
+                Contact Info
+              </h3>
               <div className="space-y-4 text-black">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-primary" />
+                  <Phone className="w-5 h-5 text-blue-600" />
                   <span>+91 7202033384</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-primary" />
+                  <Mail className="w-5 h-5 text-orange-600" />
                   <span>contact@flavidairysolution.com</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary mt-0.5" />
+                  <MapPin className="w-5 h-5 text-blue-600 mt-0.5" />
                   <span>
-                    403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H Navdeep Bldg.,
-                    Navrangpura, Ahmedabad-380014
+                    403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H
+                    Navdeep Bldg., Navrangpura, Ahmedabad-380014
                   </span>
                 </div>
               </div>

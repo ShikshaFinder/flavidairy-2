@@ -109,7 +109,7 @@ export function ImageSlider({
 
   return (
     <MotionDiv
-      className={`relative bg-white rounded-xl p-6 shadow-lg border border-gray-100 ${className}`}
+      className={`relative bg-white rounded-xl p-6 shadow-lg border border-neutral/50 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -118,7 +118,7 @@ export function ImageSlider({
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-bold text-black">{title}</h3>
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
@@ -156,7 +156,7 @@ export function ImageSlider({
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <div className="aspect-square bg-white rounded-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
+                <div className="aspect-square bg-white rounded-lg border border-neutral p-4 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
                   <Image
                     src={`${basePath}/${image}`}
                     alt={`${title} ${index + 1}`}
@@ -207,8 +207,8 @@ export function ImageSlider({
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "bg-blue-600 w-6"
-                : "bg-gray-300 hover:bg-gray-400"
+                ? "bg-cyan w-6"
+                : "bg-neutral hover:bg-neutral/80"
             }`}
           />
         ))}
@@ -216,9 +216,9 @@ export function ImageSlider({
 
       {/* Progress Bar */}
       {isPlaying && (
-        <div className="mt-3 w-full bg-gray-200 rounded-full h-1 overflow-hidden">
+        <div className="mt-3 w-full bg-neutral rounded-full h-1 overflow-hidden">
           <MotionDiv
-            className="h-full bg-blue-600 rounded-full"
+            className="h-full bg-cyan rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{

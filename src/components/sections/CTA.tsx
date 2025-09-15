@@ -46,13 +46,13 @@ export function CTA() {
           >
             <MotionButton
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold group relative overflow-hidden border-0"
               asChild
             >
               <Link href="https://wa.me/917202033384?text=Hi, I'm interested in your services. Please provide details about your services.">
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Us
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 text-white" />
                 </span>
                 <MotionDiv
                   className="absolute inset-0 bg-white/20"
@@ -62,11 +62,7 @@ export function CTA() {
                 />
               </Link>
             </MotionButton>
-
-          
           </MotionDiv>
-
-         
         </MotionDiv>
       </div>
     </section>

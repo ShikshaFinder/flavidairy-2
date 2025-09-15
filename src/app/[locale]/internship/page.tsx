@@ -153,7 +153,7 @@ export default function InternshipPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                   <CardHeader className="text-center pb-4">
                     <div className="mx-auto mb-4 w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
                       <area.icon className="w-8 h-8 text-secondary" />
@@ -169,7 +169,7 @@ export default function InternshipPage() {
                         <Badge
                           key={skillIndex}
                           variant="outline"
-                          className="text-xs border-gray-300 text-black"
+                          className="text-xs border-neutral text-black"
                         >
                           {skill}
                         </Badge>
@@ -184,7 +184,7 @@ export default function InternshipPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-neutral">
         <div className="container mx-auto px-4">
           <MotionDiv
             className="text-center mb-12"
@@ -208,7 +208,7 @@ export default function InternshipPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -252,7 +252,7 @@ export default function InternshipPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="h-full border border-gray-200">
+              <Card className="h-full border border-neutral">
                 <CardHeader>
                   <CardTitle className="text-black">
                     Contact Information
@@ -285,7 +285,7 @@ export default function InternshipPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="h-full border border-gray-200">
+              <Card className="h-full border border-neutral">
                 <CardHeader>
                   <CardTitle className="text-black">
                     Internship Details

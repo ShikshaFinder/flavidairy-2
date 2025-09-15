@@ -167,28 +167,28 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
       title: "Health & Wellness",
       description:
         "Comprehensive health insurance, medical check-ups, and wellness programs for you and your family",
-      color: "text-red-500",
+      color: "text-primary",
     },
     {
       icon: GraduationCap,
       title: "Learning & Development",
       description:
         "Continuous training, skill development opportunities, and industry certifications",
-      color: "text-blue-500",
+      color: "text-cyan",
     },
     {
       icon: TrendingUp,
       title: "Career Growth",
       description:
         "Clear career progression paths, mentorship programs, and leadership development",
-      color: "text-green-500",
+      color: "text-primary",
     },
     {
       icon: Shield,
       title: "Job Security",
       description:
         "Stable employment, performance bonuses, and long-term career stability",
-      color: "text-purple-500",
+      color: "text-secondary",
     },
   ];
 
@@ -273,14 +273,14 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <Card className="hover:shadow-xl transition-shadow duration-300 border border-neutral">
                   <CardHeader className="pb-4">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                       <div>
                         <CardTitle className="text-2xl font-bold text-black mb-2 flex items-center gap-3">
                           {job.title}
                           {job.featured && (
-                            <Badge className="bg-secondary/20 text-secondary border-secondary/20">
+                            <Badge className="bg-orange-100 text-orange-800 border-orange-200">
                               Featured
                             </Badge>
                           )}
@@ -318,7 +318,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-green-600" />
+                          <CheckCircle className="w-5 h-5 text-primary" />
                           Requirements
                         </h4>
                         <ul className="space-y-2">
@@ -336,7 +336,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
 
                       <div>
                         <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
-                          <Briefcase className="w-5 h-5 text-blue-600" />
+                          <Briefcase className="w-5 h-5 text-cyan" />
                           Responsibilities
                         </h4>
                         <ul className="space-y-2">
@@ -353,7 +353,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                       </div>
                     </div>
 
-                    <div className="pt-4 border-t border-gray-200">
+                    <div className="pt-4 border-t border-neutral">
                       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div className="text-sm text-black/70">
                           <span className="font-medium">Salary: </span>
@@ -385,7 +385,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
       </section>
 
       {/* Why Join Us */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-neutral">
         <div className="container mx-auto px-4">
           <MotionDiv
             className="text-center mb-12"
@@ -410,7 +410,7 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                   <CardContent className="p-6 text-center">
                     <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <benefit.icon className={`w-6 h-6 ${benefit.color}`} />
@@ -453,10 +453,10 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-6 h-6 text-green-400" />
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Email Us
@@ -473,10 +473,10 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Phone className="w-6 h-6 text-green-400" />
+                    <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Call Us
@@ -491,10 +491,10 @@ Thank you for your interest in joining Flavi Dairy! We will review your applicat
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+              <Card className="text-center hover:shadow-lg transition-shadow duration-300 border border-neutral">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Building className="w-6 h-6 text-green-400" />
+                    <Building className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-black">
                     Visit Us

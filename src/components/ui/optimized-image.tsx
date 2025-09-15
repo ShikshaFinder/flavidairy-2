@@ -36,7 +36,7 @@ export function OptimizedImage({
   if (hasError) {
     return (
       <div
-        className={`bg-gray-200 flex items-center justify-center text-gray-500 text-sm ${className}`}
+        className={`bg-neutral/50 flex items-center justify-center text-black/60 text-sm ${className}`}
         {...(props.style && { style: props.style })}
       >
         Image not available
@@ -45,7 +45,7 @@ export function OptimizedImage({
   }
 
   return (
-    <div className={`relative ${isLoading ? "animate-pulse bg-gray-200" : ""}`}>
+    <div className={`relative ${isLoading ? "animate-pulse bg-neutral/50" : ""}`}>
       <Image
         {...props}
         src={imageSrc}

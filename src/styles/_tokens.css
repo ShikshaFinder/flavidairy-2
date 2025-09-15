@@ -1,51 +1,77 @@
 /* EU-focused Design Tokens */
 :root {
-  /* Primary EU Color Palette */
-  --color-primary: #EF7722;    /* Orange primary */
-  --color-accent: #FAA533;     /* Golden accent */
-  --color-neutral: #EBEBEB;    /* Light neutral background */
-  --color-cyan: #0BA6DF;       /* Cyan highlight */
-  
+  /* Blue and Orange Color Palette */
+  --color-primary: #3B82F6;
+  /* Blue primary */
+  --color-accent: #F97316;
+  /* Orange accent */
+  --color-neutral: #F3F4F6;
+  /* Light neutral background */
+  --color-cyan: #06B6D4;
+  /* Cyan highlight */
+
   /* Text colors optimized for accessibility - using only approved colors */
-  --text-default: #000000;     /* Black for high contrast */
-  --text-secondary: #000000;   /* Black for secondary text */
-  --text-muted: #000000;       /* Black for muted text */
-  --text-on-primary: #FFFFFF;  /* White text on primary colors */
-  --text-on-neutral: #000000;  /* Black text on neutral backgrounds */
-  
+  --text-default: #000000;
+  /* Black for high contrast */
+  --text-secondary: #000000;
+  /* Black for secondary text */
+  --text-muted: #000000;
+  /* Black for muted text */
+  --text-on-primary: #FFFFFF;
+  /* White text on primary colors */
+  --text-on-neutral: #000000;
+  /* Black text on neutral backgrounds */
+
   /* Background colors */
-  --bg-default: #FFFFFF;       /* Primary white background */
-  --bg-neutral: #EBEBEB;       /* Neutral section backgrounds */
-  --bg-neutral-light: #F8F9FA; /* Very light neutral */
-  --bg-surface: #FFFFFF;       /* Card and surface backgrounds */
-  
+  --bg-default: #FFFFFF;
+  /* Primary white background */
+  --bg-neutral: #EBEBEB;
+  /* Neutral section backgrounds */
+  --bg-neutral-light: #F8F9FA;
+  /* Very light neutral */
+  --bg-surface: #FFFFFF;
+  /* Card and surface backgrounds */
+
   /* Border and outline colors - using only approved colors */
-  --border-default: #EBEBEB;   /* Default borders using neutral */
-  --border-primary: #EF7722;   /* Primary colored borders */
-  --border-neutral: #EBEBEB;   /* Neutral borders */
-  
+  --border-default: #EBEBEB;
+  /* Default borders using neutral */
+  --border-primary: #EF7722;
+  /* Primary colored borders */
+  --border-neutral: #EBEBEB;
+  /* Neutral borders */
+
   /* Shadow colors */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-primary: 0 4px 14px 0 rgba(239, 119, 34, 0.3);
-  --shadow-accent: 0 4px 14px 0 rgba(250, 165, 51, 0.3);
-  
+  --shadow-primary: 0 4px 14px 0 rgba(59, 130, 246, 0.3);
+  --shadow-accent: 0 4px 14px 0 rgba(249, 115, 22, 0.3);
+
   /* Interactive state colors */
-  --hover-primary: #D66A1F;    /* Darker primary for hover */
-  --hover-accent: #E8941D;     /* Darker accent for hover */
-  --focus-ring: #EF7722;       /* Focus ring color */
-  
+  --hover-primary: #2563EB;
+  /* Darker blue for hover */
+  --hover-accent: #EA580C;
+  /* Darker orange for hover */
+  --focus-ring: #3B82F6;
+  /* Focus ring color */
+
   /* Status colors */
-  --success: #10B981;          /* Success green */
-  --warning: #F59E0B;          /* Warning amber */
-  --error: #EF4444;            /* Error red */
-  --info: #0BA6DF;             /* Info cyan */
-  
+  --success: #10B981;
+  /* Success green */
+  --warning: #F59E0B;
+  /* Warning amber */
+  --error: #EF4444;
+  /* Error red */
+  --info: #0BA6DF;
+  /* Info cyan */
+
   /* Layout and spacing */
-  --radius: 0.5rem;            /* Default border radius */
-  --radius-sm: 0.25rem;        /* Small border radius */
-  --radius-lg: 0.75rem;        /* Large border radius */
+  --radius: 0.5rem;
+  /* Default border radius */
+  --radius-sm: 0.25rem;
+  /* Small border radius */
+  --radius-lg: 0.75rem;
+  /* Large border radius */
 }
 
 /* Dark mode adjustments for EU theme */
@@ -70,7 +96,8 @@
     --text-default: #000000;
     --text-secondary: #1F2937;
     --border-default: #374151;
-    --color-primary: #D66A1F; /* Slightly darker for better contrast */
+    --color-primary: #D66A1F;
+    /* Slightly darker for better contrast */
   }
 }
 

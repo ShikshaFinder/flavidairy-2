@@ -67,13 +67,13 @@ export function Pricing() {
   const getColorClasses = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-primary border-primary bg-primary/5";
+        return "text-blue-600 border-blue-300 bg-blue-50";
       case "secondary":
-        return "text-secondary border-secondary bg-secondary/5";
+        return "text-orange-600 border-orange-300 bg-orange-50";
       case "accent":
-        return "text-accent border-accent bg-accent/5";
+        return "text-blue-500 border-blue-300 bg-blue-50";
       default:
-        return "text-primary border-primary bg-primary/5";
+        return "text-blue-600 border-blue-300 bg-blue-50";
     }
   };
 
@@ -86,7 +86,7 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+          <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
             Pricing
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -201,7 +201,7 @@ export function Pricing() {
                           delay: featureIndex * 0.1,
                         }}
                       >
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-orange-500 flex-shrink-0" />
                         {feature}
                       </MotionLi>
                     ))}
@@ -224,7 +224,7 @@ export function Pricing() {
                       <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
                         <span className="relative z-10 flex items-center gap-2">
                           Get Started
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-white" />
                         </span>
                         <MotionDiv
                           className="absolute inset-0 bg-white/20"
@@ -252,7 +252,9 @@ export function Pricing() {
             Need a custom solution? Contact us for a personalized quote.
           </p>
           <Button variant="outline" asChild>
-            <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">Contact Sales Team</Link>
+            <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
+              Contact Sales Team
+            </Link>
           </Button>
         </MotionDiv>
       </div>

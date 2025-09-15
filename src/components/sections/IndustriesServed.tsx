@@ -69,7 +69,7 @@ export function IndustriesServed() {
             >
               <Card className="h-full border-2 border-neutral hover:border-primary/30 transition-all duration-300 hover:shadow-lg bg-white">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <industry.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-black mb-3">

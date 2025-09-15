@@ -190,7 +190,7 @@ export default function MachineryPage() {
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-secondary mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading equipment data...</p>
+            <p className="text-black/70">Loading equipment data...</p>
           </div>
         </div>
       </main>
@@ -211,7 +211,7 @@ export default function MachineryPage() {
             transition={{ duration: 0.8 }}
           >
             <Badge className="mb-4 bg-secondary/10 text-black border-secondary/20">
-              Equipment 
+              Equipment
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               Processing Equipment
@@ -245,7 +245,7 @@ export default function MachineryPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-8 bg-neutral">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
             {categories.map((category) => {
@@ -259,7 +259,7 @@ export default function MachineryPage() {
                   className={`h-auto p-4 flex flex-col items-center gap-2 transition-all duration-300 ${
                     selectedCategory === category.id
                       ? "bg-secondary text-black border-0 shadow-lg"
-                      : "border-gray-300 text-black hover:bg-gray-100 hover:border-secondary/50"
+                      : "border-neutral text-black hover:bg-neutral/50 hover:border-secondary/50"
                   }`}
                   onClick={() => handleCategorySelect(category.id)}
                 >
@@ -273,7 +273,7 @@ export default function MachineryPage() {
                       className={`text-xs font-medium px-2 py-1 rounded-full ${
                         selectedCategory === category.id
                           ? "bg-white/20 text-black"
-                          : "bg-secondary/10 text-secondary"
+                          : "bg-orange-100 text-orange-800"
                       }`}
                     >
                       {count} {count === 1 ? "item" : "items"}
@@ -331,8 +331,8 @@ export default function MachineryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col">
-                  <div className="aspect-video bg-gray-100 rounded-t-lg flex items-center justify-center overflow-hidden">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral flex flex-col">
+                  <div className="aspect-video bg-neutral/50 rounded-t-lg flex items-center justify-center overflow-hidden">
                     {equipment.images && equipment.images.length > 0 ? (
                       <div className="w-full h-full relative overflow-hidden">
                         {/* Blurred background image */}
@@ -358,7 +358,7 @@ export default function MachineryPage() {
                       </div>
                     ) : (
                       // No placeholder — keep the area blank/neutral when there's no valid image
-                      <div className="w-full h-full bg-gray-100" />
+                      <div className="w-full h-full bg-neutral/50" />
                     )}
                   </div>
                   <CardHeader className="pb-2 p-4">
@@ -402,7 +402,7 @@ export default function MachineryPage() {
                         <div className="pt-2 flex justify-start">
                           <button
                             onClick={() => toggleExpand(index)}
-                            className="text-xs text-blue-600 hover:text-blue-800 hover:underline font-semibold bg-blue-50 px-2 py-1 rounded-md border border-blue-200 transition-colors"
+                            className="text-xs text-cyan hover:text-cyan/80 hover:underline font-semibold bg-cyan/10 px-2 py-1 rounded-md border border-cyan/30 transition-colors"
                             aria-expanded={isExpanded(index)}
                             aria-controls={`equipment-desc-${index}`}
                           >
@@ -415,7 +415,7 @@ export default function MachineryPage() {
                     </div>
 
                     {/* Quote button section with clear separation */}
-                    <div className="pt-3 border-t border-gray-200 mt-auto">
+                    <div className="pt-3 border-t border-neutral mt-auto">
                       <Button
                         size="sm"
                         className="bg-secondary hover:bg-secondary/90 text-black border-0 w-full"
@@ -443,7 +443,7 @@ export default function MachineryPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-neutral">
         <div className="container mx-auto px-4">
           <MotionDiv
             className="text-center mb-12"
@@ -490,10 +490,10 @@ export default function MachineryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border border-neutral">
                   <CardContent className="p-6 text-center">
                     <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <service.icon className="w-6 h-6 text-secondary" />
+                      <service.icon className="w-6 h-6 text-orange-600" />
                     </div>
                     <h3 className="text-lg font-semibold text-black mb-2">
                       {service.title}
