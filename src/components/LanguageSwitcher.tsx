@@ -58,18 +58,20 @@ export function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
       <MotionButton
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-md border border-neutral bg-white hover:bg-neutral-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        className="flex items-center gap-2 px-3 py-2 rounded-md border border-neutral bg-white hover:bg-neutral-light transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 min-w-fit whitespace-nowrap"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         disabled={isPending}
       >
-        <Globe size={16} className="text-primary" />
-        <span className="text-sm font-medium">
+        <Globe size={16} className="text-blue-600" />
+        <span className="text-sm font-medium text-black">
           {languageFlags[currentLocale]} {languageNames[currentLocale]}
         </span>
         <ChevronDown
           size={16}
-          className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`text-blue-600 transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
         />
       </MotionButton>
 
@@ -113,7 +115,7 @@ export function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
                     {languageNames[loc]}
                   </span>
                   {loc === currentLocale && (
-                    <span className="ml-auto text-xs text-primary">✓</span>
+                    <span className="ml-auto text-xs text-blue-600">✓</span>
                   )}
                 </MotionButton>
               ))}
@@ -124,7 +126,7 @@ export function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
 
       {isPending && (
         <div className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-md">
-          <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
         </div>
       )}
     </div>

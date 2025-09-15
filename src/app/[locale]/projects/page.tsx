@@ -245,9 +245,9 @@ export default function ProjectsPage() {
                   Inspired by Our Work?
                 </h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl">
-                  Let's create something amazing together. Whether it's similar
-                  to these projects or something completely new, we're here to
-                  bring your ideas to life.
+                  Let&apos;s create something amazing together. Whether
+                  it&apos;s similar to these projects or something completely
+                  new, we&apos;re here to bring your ideas to life.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button

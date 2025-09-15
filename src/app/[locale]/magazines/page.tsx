@@ -258,7 +258,7 @@ export default function MagazinesPage() {
                               PDF Viewer
                             </h3>
                             <p className="text-black/70 mb-4">
-                              If the PDF doesn't load, you can download it
+                              If the PDF doesn&apos;t load, you can download it
                               directly or open in a new tab.
                             </p>
                             <div className="flex items-center justify-center gap-4">

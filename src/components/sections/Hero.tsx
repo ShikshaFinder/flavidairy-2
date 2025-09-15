@@ -204,7 +204,7 @@ export function Hero() {
               <div className="relative w-full h-96 rounded-3xl shadow-2xl overflow-hidden border border-white/50 backdrop-blur-sm">
                 <Image
                   src="/hero-image.png"
-                  alt="Flavi Dairy Solutions - Engineering Excellence"
+                  alt="Flavi Dairy Solutions | Euronova Food Solutions - Engineering Excellence"
                   fill
                   className="object-cover object-center"
                   priority

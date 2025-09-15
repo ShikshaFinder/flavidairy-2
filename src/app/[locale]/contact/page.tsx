@@ -148,8 +148,8 @@ export default function ContactPage() {
                 </h2>
                 <p className="text-lg text-black/70 mb-8 leading-relaxed">
                   Fill out the form below and our team will get back to you
-                  within 24 hours. We're here to help you with all your dairy
-                  and food processing requirements.
+                  within 24 hours. We&apos;re here to help you with all your
+                  dairy and food processing requirements.
                 </p>
 
                 <div className="space-y-6">

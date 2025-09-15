@@ -221,7 +221,7 @@ export default function ServicesPage() {
                   Ready to Start Your Project?
                 </h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl">
-                  Let's discuss your requirements and create a customized
+                  Let&apos;s discuss your requirements and create a customized
                   solution that fits your needs perfectly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

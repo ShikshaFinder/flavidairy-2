@@ -29,10 +29,11 @@ export async function generateMetadata({
   return {
     title: t("hero.title"),
     description: t("hero.description"),
-    keywords: APP_CONFIG.SEO.KEYWORDS,
-    authors: [{ name: "Flavi Dairy Food Solutions Team" }],
-    creator: "Flavi Dairy Food Solutions",
-    publisher: "Flavi Dairy Food Solutions",
+    authors: [
+      { name: "Flavi Dairy Food Solutions | Euronova Food Solutions Team" },
+    ],
+    creator: "Flavi Dairy Food Solutions | Euronova Food Solutions",
+    publisher: "Flavi Dairy Food Solutions | Euronova Food Solutions",
     formatDetection: {
       email: false,
       address: false,

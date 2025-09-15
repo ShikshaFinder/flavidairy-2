@@ -71,9 +71,15 @@ export function Navbar() {
                   priority
                 />
               </div>
-              <span className="text-xl font-bold text-blue-600">
-                FLAVI<span className="text-orange-600"></span> DAIRY SOLUTIONS ®
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-blue-600">
+                  FLAVI<span className="text-orange-600"></span> DAIRY SOLUTIONS
+                  ®
+                </span>
+                <span className="text-sm text-gray-600 font-medium">
+                  Euronova Food Solutions
+                </span>
+              </div>
             </MotionDiv>
           </Link>
 
@@ -93,7 +99,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
             <a
               href={`https://wa.me/${

@@ -163,7 +163,7 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                "{currentTestimonial.content}"
+                &ldquo;{currentTestimonial.content}&rdquo;
               </MotionBlockquote>
 
               <MotionDiv

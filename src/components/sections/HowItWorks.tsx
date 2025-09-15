@@ -132,7 +132,7 @@ export function HowItWorks() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className="text-foreground-secondary mb-6">
-            Ready to start your project? Let's discuss how we can help you
+            Ready to start your project? Let&apos;s discuss how we can help you
             achieve your goals.
           </p>
           <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">

@@ -272,8 +272,8 @@ export default function InternshipPage() {
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-secondary" />
                     <p className="text-sm text-black/70">
-                      403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H
-                      Navdeep Bldg., Navrangpura, Ahmedabad-380014
+                      403, 4th Floor, &apos;Samruddhi&apos;, Opp. Old High
+                      Court, B/H Navdeep Bldg., Navrangpura, Ahmedabad-380014
                     </p>
                   </div>
                 </CardContent>

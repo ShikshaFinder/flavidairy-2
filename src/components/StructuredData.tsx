@@ -15,6 +15,7 @@ export function StructuredData({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: APP_CONFIG.COMPANY.NAME,
+    alternateName: APP_CONFIG.COMPANY.FULL_NAME,
     description: APP_CONFIG.COMPANY.TAGLINE,
     url: APP_CONFIG.URLS.BASE,
     logo: `${APP_CONFIG.URLS.BASE}/logo.png`,
@@ -91,4 +92,3 @@ export function StructuredData({
     />
   );
 }
-

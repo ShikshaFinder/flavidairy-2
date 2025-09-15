@@ -3,6 +3,7 @@ export const APP_CONFIG = {
   // Company Information
   COMPANY: {
     NAME: "Flavi Dairy Food Solutions",
+    FULL_NAME: "Euronovas",
     TAGLINE: "Leading provider of dairy and food processing solutions",
     EXPERIENCE: "20+ Years of Experience",
     PROJECTS: "1600+ Projects Commissioned",
@@ -41,7 +42,7 @@ export const APP_CONFIG = {
   // SEO Configuration
   SEO: {
     DEFAULT_TITLE:
-      "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
+      "Flavi Dairy Food Solutions | Euronova Food Solutions - Dairy & Food Processing Equipment",
     DEFAULT_DESCRIPTION:
       "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
     KEYWORDS: [
@@ -95,7 +96,7 @@ export const ENV = {
 
 // Validation
 export function validateConfig() {
-  const requiredEnvVars = [
+  const requiredEnvVars: string[] = [
     // Add any required environment variables here
   ];
 

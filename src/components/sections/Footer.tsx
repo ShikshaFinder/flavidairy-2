@@ -47,18 +47,26 @@ export function Footer() {
                 <div className="h-16 w-32 md:h-18 md:w-36 lg:h-20 lg:w-40 relative flex-shrink-0">
                   <Image
                     src="/logo.png"
-                    alt="Flavi Dairy Solutions"
+                    alt="Flavi Dairy Solutions | Euronova Food Solutions"
                     fill
                     className="object-contain object-left"
                     priority
                   />
                 </div>
               </div>
-              <p className="text-black mb-6 max-w-xl leading-relaxed">
-                Leading provider of dairy and food processing solutions with 20+
-                years of experience. We deliver innovative, reliable, and
-                efficient processing equipment and consultancy services.
-              </p>
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-blue-600 mb-2">
+                  Flavi Dairy Food Solutions
+                </h4>
+                <p className="text-sm text-gray-600 mb-3">
+                  A division of Euronova Food Solutions
+                </p>
+                <p className="text-black max-w-xl leading-relaxed">
+                  Leading provider of dairy and food processing solutions with
+                  20+ years of experience. We deliver innovative, reliable, and
+                  efficient processing equipment and consultancy services.
+                </p>
+              </div>
               <div className="flex flex-wrap items-center gap-3">
                 <Button
                   size="sm"
@@ -181,8 +189,8 @@ export function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-blue-600 mt-0.5" />
                   <span>
-                    403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H
-                    Navdeep Bldg., Navrangpura, Ahmedabad-380014
+                    403, 4th Floor, &apos;Samruddhi&apos;, Opp. Old High Court,
+                    B/H Navdeep Bldg., Navrangpura, Ahmedabad-380014
                   </span>
                 </div>
               </div>
@@ -200,7 +208,8 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-black text-sm">
-              © {currentYear} Flavi Dairy Solutions. All rights reserved.
+              © {currentYear} Flavi Dairy Food Solutions | Euronova Food
+              Solutions. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link
