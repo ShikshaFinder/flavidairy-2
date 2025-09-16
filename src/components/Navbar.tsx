@@ -140,7 +140,7 @@ export function Navbar() {
                   SOLUTIONS ®
                 </span>
                 <span className="text-sm text-gray-600 font-medium">
-                  Euronova Food Solutions
+                  by Flavi Dairy Solutions
                 </span>
               </div>
             </MotionDiv>
