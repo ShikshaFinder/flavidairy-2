@@ -22,7 +22,7 @@ export function Testimonials() {
       role: "CEO, Gujarat Dairy Co.",
       company: "Gujarat Dairy Co.",
       content:
-        "Flavi Dairy transformed our processing facility with their innovative automation solutions. The SCADA integration has improved our efficiency by 40% and reduced operational costs significantly. Their expertise in dairy processing and commitment to quality has made them our trusted partner for all processing needs.",
+        "Euronova Food Solutions transformed our processing facility with their innovative automation solutions. The SCADA integration has improved our efficiency by 40% and reduced operational costs significantly. Their expertise in dairy processing and commitment to quality has made them our trusted partner for all processing needs.",
       rating: 5,
       image: "https://via.placeholder.com/60x60",
       category: "Dairy Processing",
@@ -66,7 +66,7 @@ export function Testimonials() {
       role: "Production Head",
       company: "Modern Dairy Products",
       content:
-        "Flavi Dairy's consultancy services helped us optimize our entire production process. Their technical expertise and industry knowledge are unmatched in the market.",
+        "Euronova Food Solutions' consultancy services helped us optimize our entire production process. Their technical expertise and industry knowledge are unmatched in the market.",
       rating: 5,
       image: "https://via.placeholder.com/60x60",
       category: "Consultancy",
@@ -120,7 +120,7 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <Quote className="w-16 h-16" />
+                <Quote className="w-16 h-16 text-blue-200" />
               </MotionDiv>
 
               <MotionDiv
@@ -163,7 +163,7 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                "{currentTestimonial.content}"
+                &ldquo;{currentTestimonial.content}&rdquo;
               </MotionBlockquote>
 
               <MotionDiv
@@ -175,7 +175,7 @@ export function Testimonials() {
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 fill-green-500 text-green-500"
+                    className="w-5 h-5 fill-orange-500 text-orange-500"
                   />
                 ))}
               </MotionDiv>
@@ -190,7 +190,7 @@ export function Testimonials() {
                   variant="outline"
                   size="sm"
                   onClick={prevTestimonial}
-                  className="rounded-full w-12 h-12 p-0 border-green-200 text-green-700 hover:bg-green-600 hover:text-white"
+                  className="rounded-full w-12 h-12 p-0 border-blue-200 text-blue-700 hover:bg-blue-600 hover:text-white"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -202,7 +202,7 @@ export function Testimonials() {
                     <MotionDiv
                       key={index}
                       className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                        index === currentIndex ? "bg-green-600" : "bg-green-200"
+                        index === currentIndex ? "bg-blue-600" : "bg-blue-200"
                       }`}
                       whileHover={{ scale: 1.2 }}
                       onClick={() => setCurrentIndex(index)}
@@ -214,7 +214,7 @@ export function Testimonials() {
                   variant="outline"
                   size="sm"
                   onClick={nextTestimonial}
-                  className="rounded-full w-12 h-12 p-0 border-green-200 text-green-700 hover:bg-green-600 hover:text-white"
+                  className="rounded-full w-12 h-12 p-0 border-blue-200 text-blue-700 hover:bg-blue-600 hover:text-white"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >

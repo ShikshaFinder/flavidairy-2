@@ -18,23 +18,23 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-white border-t border-gray-200 overflow-hidden">
+    <footer className="relative bg-white border-t border-neutral overflow-hidden">
       {/* Soft gradient background accents */}
       <div className="pointer-events-none absolute inset-0">
         <MotionDiv
           className="absolute top-0 left-0 w-full h-full"
           style={{
             background: `
-              radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 45%),
-              radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 45%)
+              radial-gradient(circle at 10% 20%, rgba(239, 119, 34, 0.06) 0%, transparent 45%),
+              radial-gradient(circle at 90% 80%, rgba(11, 166, 223, 0.05) 0%, transparent 45%)
             `,
           }}
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="py-16">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="py-20">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* Brand and blurb */}
             <MotionDiv
               className="lg:col-span-2"
@@ -47,26 +47,34 @@ export function Footer() {
                 <div className="h-16 w-32 md:h-18 md:w-36 lg:h-20 lg:w-40 relative flex-shrink-0">
                   <Image
                     src="/logo.png"
-                    alt="Flavi Dairy Solutions"
+                    alt="Euronova Food Solutions"
                     fill
                     className="object-contain object-left"
                     priority
                   />
                 </div>
               </div>
-              <p className="text-gray-600 mb-6 max-w-xl leading-relaxed">
-                Leading provider of dairy and food processing solutions with 20+
-                years of experience. We deliver innovative, reliable, and
-                efficient processing equipment and consultancy services.
-              </p>
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-blue-600 mb-2">
+                  Euronova Food Solutions
+                </h4>
+                <p className="text-sm text-gray-600 mb-3">
+                  A division of Euronova Food Solutions
+                </p>
+                <p className="text-black max-w-xl leading-relaxed">
+                  Leading provider of dairy and food processing solutions with
+                  20+ years of experience. We deliver innovative, reliable, and
+                  efficient processing equipment and consultancy services.
+                </p>
+              </div>
               <div className="flex flex-wrap items-center gap-3">
                 <Button
                   size="sm"
-                  className="bg-green-600 hover:bg-green-700 text-white border-0"
+                  className="bg-blue-600 hover:bg-blue-700 text-white border-0"
                   asChild
                 >
                   <a
-                    href={`https://wa.me/917202033384?text=${encodeURIComponent(
+                    href={`https://wa.me/919979132679?text=${encodeURIComponent(
                       "Hi, I'm interested in your services. Please provide details about your services."
                     )}`}
                     target="_blank"
@@ -75,36 +83,39 @@ export function Footer() {
                     aria-label="Contact us on WhatsApp"
                   >
                     Contact Us on WhatsApp
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 text-white" />
                   </a>
                 </Button>
-                <div className="flex items-center gap-3 ml-1" aria-label="Social links">
+                <div
+                  className="flex items-center gap-3 ml-1"
+                  aria-label="Social links"
+                >
                   <Link
                     href="https://www.facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:text-black hover:border-black transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="Facebook"
                   >
-                    <Facebook className="h-4 w-4" />
+                    <Facebook className="h-4 w-4 text-blue-600" />
                   </Link>
                   <Link
                     href="https://www.instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:text-black hover:border-black transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="Instagram"
                   >
-                    <Instagram className="h-4 w-4" />
+                    <Instagram className="h-4 w-4 text-orange-600" />
                   </Link>
                   <Link
                     href="https://www.linkedin.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:text-black hover:border-black transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral text-black hover:text-primary hover:border-primary transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="h-4 w-4" />
+                    <Linkedin className="h-4 w-4 text-blue-600" />
                   </Link>
                 </div>
               </div>
@@ -117,25 +128,39 @@ export function Footer() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h3 className="text-lg font-semibold text-black mb-6">Quick Links</h3>
-              <ul className="space-y-3 text-gray-600">
+              <h3 className="text-lg font-semibold text-black mb-6">
+                Quick Links
+              </h3>
+              <ul className="space-y-3 text-black">
                 <li>
-                  <Link href="#services" className="hover:text-black transition-colors">
+                  <Link
+                    href="#services"
+                    className="hover:text-primary transition-colors"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="#industries" className="hover:text-black transition-colors">
+                  <Link
+                    href="#industries"
+                    className="hover:text-primary transition-colors"
+                  >
                     Industries We Serve
                   </Link>
                 </li>
                 <li>
-                  <Link href="#about" className="hover:text-black transition-colors">
+                  <Link
+                    href="#about"
+                    className="hover:text-primary transition-colors"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="hover:text-black transition-colors">
+                  <Link
+                    href="#contact"
+                    className="hover:text-primary transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -149,21 +174,31 @@ export function Footer() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <h3 className="text-lg font-semibold text-black mb-6">Contact Info</h3>
-              <div className="space-y-4 text-gray-600">
+              <h3 className="text-lg font-semibold text-black mb-6">
+                Contact Info
+              </h3>
+              <div className="space-y-4 text-black">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-green-600" />
-                  <span>+91 7202033384</span>
+                  <Phone className="w-5 h-5 text-blue-600" />
+                  <span>+91 99791 32679</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-green-600" />
-                  <span>contact@flavidairysolution.com</span>
+                  <Phone className="w-5 h-5 text-blue-600" />
+                  <span>+353 860307653</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-orange-600" />
+                  <span>md@euronovas.com</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-orange-600" />
+                  <span>enquiry@euronovas.com</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-green-600 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-blue-600 mt-0.5" />
                   <span>
-                    403, 4th Floor, 'Samruddhi', Opp. Old High Court, B/H Navdeep Bldg.,
-                    Navrangpura, Ahmedabad-380014
+                    10 Elsmore walk, Elsmore, Naas, County Kildare, W91E37D ,
+                    Ireland
                   </span>
                 </div>
               </div>
@@ -173,26 +208,27 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <MotionDiv
-          className="border-t border-gray-200 py-6"
+          className="border-t border-neutral py-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">
-              © {currentYear} Flavi Dairy Solutions. All rights reserved.
+            <p className="text-black text-sm">
+              © {currentYear} Euronova Food Solutions Solutions. All rights
+              reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-600 hover:text-black transition-colors"
+                className="text-black hover:text-primary transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-600 hover:text-black transition-colors"
+                className="text-black hover:text-primary transition-colors"
               >
                 Terms of Service
               </Link>

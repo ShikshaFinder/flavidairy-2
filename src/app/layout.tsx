@@ -1,63 +1,61 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { CookieConsent } from "@/components/CookieConsent";
+import { PageTransitionWrapper } from "@/components/PageTransitionWrapper";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { StructuredData } from "@/components/StructuredData";
+import { APP_CONFIG } from "@/config/constants";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
-  description:
-    "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
-  keywords: [
-    "dairy processing",
-    "food processing",
-    "processing equipment",
-    "automation",
-    "consultancy",
-    "turnkey projects",
-    "SCADA integration",
-  ],
-  authors: [{ name: "Flavi Dairy Food Solutions Team" }],
-  creator: "Flavi Dairy Food Solutions",
-  publisher: "Flavi Dairy Food Solutions",
+  title: {
+    default: APP_CONFIG.SEO.DEFAULT_TITLE,
+    template: `%s | ${APP_CONFIG.COMPANY.NAME}`,
+  },
+  description: APP_CONFIG.SEO.DEFAULT_DESCRIPTION,
+  keywords: APP_CONFIG.SEO.KEYWORDS,
+  authors: [{ name: APP_CONFIG.COMPANY.NAME }],
+  creator: APP_CONFIG.COMPANY.NAME,
+  publisher: APP_CONFIG.COMPANY.NAME,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://flavidairysolution.com"),
+  metadataBase: new URL(APP_CONFIG.URLS.BASE),
   alternates: {
     canonical: "/",
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
-      { url: "/logo.png", sizes: "32x32", type: "image/png" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }],
+    languages: {
+      "en-US": "/en",
+      "fr-FR": "/fr",
+      "de-DE": "/de",
+      "es-ES": "/es",
+    },
   },
   openGraph: {
-    title: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
-    description:
-      "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
-    url: "https://flavidairysolution.com",
-    siteName: "Flavi Dairy Food Solutions",
+    type: APP_CONFIG.SEO.OPEN_GRAPH.TYPE,
+    locale: "en_US",
+    url: APP_CONFIG.URLS.BASE,
+    title: APP_CONFIG.SEO.DEFAULT_TITLE,
+    description: APP_CONFIG.SEO.DEFAULT_DESCRIPTION,
+    siteName: APP_CONFIG.COMPANY.NAME,
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
+        url: APP_CONFIG.SEO.OPEN_GRAPH.IMAGE,
+        width: APP_CONFIG.SEO.OPEN_GRAPH.IMAGE_WIDTH,
+        height: APP_CONFIG.SEO.OPEN_GRAPH.IMAGE_HEIGHT,
+        alt: APP_CONFIG.SEO.DEFAULT_TITLE,
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flavi Dairy Food Solutions - Dairy & Food Processing Equipment",
-    description:
-      "Leading provider of dairy and food processing solutions with 20+ years of experience. Turnkey projects, automation, and consultancy services.",
-    images: ["/og-image.jpg"],
+    title: APP_CONFIG.SEO.DEFAULT_TITLE,
+    description: APP_CONFIG.SEO.DEFAULT_DESCRIPTION,
+    images: [APP_CONFIG.SEO.OPEN_GRAPH.IMAGE],
+    creator: "@euronovas",
   },
   robots: {
     index: true,
@@ -70,9 +68,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -80,8 +79,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href="https://translate.google.com" />
+        <link rel="preconnect" href="https://translate.googleapis.com" />
+
+        {/* DNS prefetch for performance */}
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+        {/* Structured Data */}
+        <StructuredData />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        <ErrorBoundary>
+          <PageTransitionWrapper>
+            {children}
+            <CookieConsent />
+          </PageTransitionWrapper>
+        </ErrorBoundary>
+      </body>
     </html>
   );
 }

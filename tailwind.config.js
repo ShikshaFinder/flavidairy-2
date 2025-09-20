@@ -7,15 +7,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // tokens used in components — adjust to your brand palette if needed
+        // Orange & Blue theme colors matching CSS variables
         primary: {
-          DEFAULT: "#0f766e",
+          DEFAULT: "#2563eb", // Blue 600
+        },
+        secondary: {
+          DEFAULT: "#f59e0b", // Orange 500
         },
         accent: {
-          DEFAULT: "#10b981",
+          DEFAULT: "#1d4ed8", // Blue 700
         },
-        background: "#f8fafc",
+        tertiary: {
+          DEFAULT: "#f97316", // Orange 600
+        },
+        background: "#fefefe", // White background
         "foreground-muted": "#6b7280",
+        success: "#059669",
+        warning: "#f59e0b",
+        destructive: "#dc2626",
+        info: "#2563eb",
       },
     },
   },
