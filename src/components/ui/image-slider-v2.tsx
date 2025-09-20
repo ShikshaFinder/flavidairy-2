@@ -61,6 +61,7 @@ export function ImageSlider({
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => {
           const maxIndex = Math.max(0, images.length - responsiveSlidesToShow);
+          // Always move to next slide, reset to 0 when we reach the end
           return prevIndex >= maxIndex ? 0 : prevIndex + 1;
         });
       }, slideInterval);
@@ -86,12 +87,18 @@ export function ImageSlider({
 
   const nextSlide = () => {
     const maxIndex = Math.max(0, images.length - responsiveSlidesToShow);
-    setCurrentIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) => {
+      // Always move to next slide, reset to 0 when we reach the end
+      return prevIndex >= maxIndex ? 0 : prevIndex + 1;
+    });
   };
 
   const prevSlide = () => {
     const maxIndex = Math.max(0, images.length - responsiveSlidesToShow);
-    setCurrentIndex((prevIndex) => (prevIndex <= 0 ? maxIndex : prevIndex - 1));
+    setCurrentIndex((prevIndex) => {
+      // Always move to previous slide, go to end when we reach the beginning
+      return prevIndex <= 0 ? maxIndex : prevIndex - 1;
+    });
   };
 
   const goToSlide = (index: number) => {
@@ -182,7 +189,6 @@ export function ImageSlider({
           size="sm"
           onClick={prevSlide}
           className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-white/95 hover:bg-white shadow-lg border border-neutral opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
-          disabled={currentIndex === 0}
         >
           <ChevronLeft className="h-5 w-5" />
         </Button>
@@ -192,9 +198,6 @@ export function ImageSlider({
           size="sm"
           onClick={nextSlide}
           className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-white/95 hover:bg-white shadow-lg border border-neutral opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
-          disabled={
-            currentIndex >= Math.max(0, images.length - responsiveSlidesToShow)
-          }
         >
           <ChevronRight className="h-5 w-5" />
         </Button>

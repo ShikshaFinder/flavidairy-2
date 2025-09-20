@@ -145,7 +145,6 @@ export function Navbar() {
               </div>
             </MotionDiv>
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item, index) => (
