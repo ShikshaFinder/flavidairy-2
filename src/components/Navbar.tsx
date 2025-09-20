@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Factory, Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,9 +69,20 @@ export function Navbar() {
                   priority
                 />
               </div>
+<<<<<<< Updated upstream
               <span className="text-xl font-bold text-green-700">
                 FLAVI<span className="text-green-600"></span> DAIRY SOLUTIONS ®
               </span>
+=======
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-blue-600">
+                  Euro<span className="text-orange-600"></span>Novas Food
+                  SOLUTIONS 
+                </span>
+                <span className="text-sm text-gray-600 font-medium">
+                  by Flavi Dairy Solutions
+                </span>
+              </div>
             </MotionDiv>
           </Link>
 
@@ -91,6 +103,7 @@ export function Navbar() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
             <a
               href={`https://wa.me/917202033384?text=${encodeURIComponent(
                 `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
@@ -152,6 +165,7 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-gray-200">
+                  <LanguageSwitcher className="mb-3" />
                   <a
                     href={`https://wa.me/917202033384?text=${encodeURIComponent(
                       `Hi, I'm interested in your services and would like to get in touch. Please provide more information about your offerings.`
