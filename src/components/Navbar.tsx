@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import {
-  MotionNav,
   MotionDiv,
   MotionA,
   MotionButton,
@@ -38,18 +37,7 @@ export function Navbar() {
   ];
 
   return (
-    <MotionNav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg"
-            : "bg-white border-b border-gray-200 shadow-sm"
-        }
-      `}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -62,18 +50,13 @@ export function Navbar() {
               <div className="h-12 w-auto relative">
                 <Image
                   src="/favicon.ico"
-                  alt="Flavi Dairy Solutions"
+                  alt="Euronovas Food Solutions"
                   width={48}
                   height={48}
                   className="object-contain"
                   priority
                 />
               </div>
-<<<<<<< Updated upstream
-              <span className="text-xl font-bold text-green-700">
-                FLAVI<span className="text-green-600"></span> DAIRY SOLUTIONS ®
-              </span>
-=======
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-blue-600">
                   Euro<span className="text-orange-600"></span>Novas Food
@@ -133,9 +116,9 @@ export function Navbar() {
             whileTap={{ scale: 0.95 }}
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-black" />
+              <X className="w-6 h-6 text-blue-600" />
             ) : (
-              <Menu className="w-6 h-6 text-black" />
+              <Menu className="w-6 h-6 text-blue-600" />
             )}
           </MotionButton>
         </div>
@@ -192,6 +175,6 @@ export function Navbar() {
           )}
         </AnimatePresence>
       </div>
-    </MotionNav>
+    </nav>
   );
 }
