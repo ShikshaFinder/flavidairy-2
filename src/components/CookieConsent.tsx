@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
 import { MotionDiv, MotionButton } from "@/components/ui/motion-optimized";
 import { slideInUp, fadeIn, primaryButtonVariants } from "@/lib/motionVariants";
 import { initGA } from "@/lib/analytics";
@@ -14,7 +13,6 @@ type ConsentPreferences = {
 };
 
 export function CookieConsent() {
-  const t = useTranslations("cookies");
   const [showConsent, setShowConsent] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [preferences, setPreferences] = useState<ConsentPreferences>({
@@ -107,10 +105,12 @@ export function CookieConsent() {
                 <Cookie className="text-primary mt-1 flex-shrink-0" size={24} />
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-black mb-2">
-                    {t("title")}
+                    Cookie Consent
                   </h3>
                   <p className="text-sm text-black mb-4 leading-relaxed">
-                    {t("description")}
+                    We use cookies to enhance your browsing experience, serve
+                    personalized content, and analyze our traffic. By clicking
+                    "Accept All", you consent to our use of cookies.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <MotionButton
@@ -121,7 +121,7 @@ export function CookieConsent() {
                       onClick={acceptAll}
                       className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium"
                     >
-                      {t("accept")}
+                      Accept All
                     </MotionButton>
                     <MotionButton
                       onClick={acceptNecessaryOnly}
@@ -129,7 +129,7 @@ export function CookieConsent() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      {t("decline")}
+                      Decline
                     </MotionButton>
                     <MotionButton
                       onClick={() => setShowPreferences(true)}
@@ -138,7 +138,7 @@ export function CookieConsent() {
                       whileTap={{ scale: 0.98 }}
                     >
                       <Settings size={16} />
-                      {t("manage")}
+                      Manage
                     </MotionButton>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export function CookieConsent() {
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-black">
-                    {t("manage")}
+                    Manage Cookie Preferences
                   </h3>
                   <MotionButton
                     onClick={() => setShowPreferences(false)}
@@ -169,7 +169,7 @@ export function CookieConsent() {
                   <div className="flex items-center justify-between p-4 bg-neutral rounded-lg">
                     <div className="flex-1">
                       <h4 className="font-medium text-black">
-                        {t("necessary")}
+                        Necessary Cookies
                       </h4>
                       <p className="text-sm text-black mt-1">
                         Required for basic site functionality. Cannot be
@@ -190,7 +190,7 @@ export function CookieConsent() {
                   <div className="flex items-center justify-between p-4 border border-neutral rounded-lg">
                     <div className="flex-1">
                       <h4 className="font-medium text-black">
-                        {t("analytics")}
+                        Analytics Cookies
                       </h4>
                       <p className="text-sm text-black mt-1">
                         Help us improve our website by collecting anonymous
@@ -213,7 +213,7 @@ export function CookieConsent() {
                   <div className="flex items-center justify-between p-4 border border-neutral rounded-lg">
                     <div className="flex-1">
                       <h4 className="font-medium text-black">
-                        {t("marketing")}
+                        Marketing Cookies
                       </h4>
                       <p className="text-sm text-black mt-1">
                         Used to deliver personalized advertising and track
@@ -248,7 +248,7 @@ export function CookieConsent() {
                     whileHover="hover"
                     whileTap="tap"
                     onClick={savePreferences}
-                    className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium"
+                    className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium"
                   >
                     Save Preferences
                   </MotionButton>

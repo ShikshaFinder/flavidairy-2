@@ -56,12 +56,12 @@ export default function TrustedCompanies() {
   if (!logos.length) return null;
 
   return (
-    <section className="bg-neutral py-10">
+    <section className="bg-gray-50 py-10">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-center text-lg md:text-xl font-semibold text-black mb-3">
+        <h2 className="text-center text-lg md:text-xl font-semibold text-gray-900 mb-3">
           Trusted by Leading Companies
         </h2>
-        <p className="text-center text-sm text-black/70 mb-6">
+        <p className="text-center text-sm text-gray-600 mb-6">
           Partners and customers who rely on our products
         </p>
 
@@ -94,7 +94,7 @@ export default function TrustedCompanies() {
                   {getInitials(logo.name)}
                 </div>
               )}
-              <span className="mt-2 text-xs text-black text-center truncate w-full">
+              <span className="mt-2 text-xs text-gray-700 text-center truncate w-full">
                 {logo.name}
               </span>
             </div>

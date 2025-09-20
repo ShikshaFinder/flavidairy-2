@@ -7,7 +7,7 @@ import {
   MotionDiv,
   MotionA,
   MotionButton,
-} from "@/components/ui/motion-optimized";
+} from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import {
   Factory,
@@ -21,9 +21,9 @@ import {
   Users,
   Briefcase,
 } from "lucide-react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { GoogleTranslate } from "@/components/GoogleTranslate";
 import { APP_CONFIG } from "@/config/constants";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
@@ -136,7 +136,7 @@ export function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-blue-600">
-                  Euro<span className="text-orange-600"></span> Nova Food
+                  Euro<span className="text-orange-500"></span> Nova Food
                   SOLUTIONS ®
                 </span>
                 <span className="text-sm text-gray-600 font-medium">
@@ -205,7 +205,7 @@ export function Navbar() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <LanguageSwitcher />
+            <GoogleTranslate />
             <a
               href={`https://wa.me/${
                 APP_CONFIG.CONTACT.WHATSAPP.NUMBER
@@ -327,7 +327,7 @@ export function Navbar() {
                   </div>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-neutral">
-                  <LanguageSwitcher className="mb-3" />
+                  <GoogleTranslate className="mb-3" />
                   <a
                     href={`https://wa.me/${
                       APP_CONFIG.CONTACT.WHATSAPP.NUMBER

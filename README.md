@@ -95,12 +95,13 @@ flavi-dairy-food-solutions/
 
 ## Styling
 
-The project uses Tailwind CSS with a custom color scheme:
+The project uses Tailwind CSS with a custom orange & blue color scheme:
 
-- **Primary**: White (#ffffff)
-- **Secondary**: Yellow (#fbbf24)
-- **Accent**: Orange (#f59e0b)
-- **Background**: White with subtle grays
+- **Primary**: Blue (#2563eb)
+- **Secondary**: Orange (#f59e0b)
+- **Accent**: Dark Blue (#1d4ed8)
+- **Tertiary**: Orange 600 (#f97316)
+- **Background**: White (#fefefe)
 - **Text**: Black with opacity variations
 
 ## Deployment

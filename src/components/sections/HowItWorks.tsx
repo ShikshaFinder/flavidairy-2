@@ -45,15 +45,15 @@ export function HowItWorks() {
   const getColorClasses = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-blue-600 border-blue-300 bg-blue-50";
+        return "text-primary border-primary bg-primary/5";
       case "secondary":
-        return "text-orange-600 border-orange-300 bg-orange-50";
+        return "text-secondary border-secondary bg-secondary/5";
       case "accent":
-        return "text-blue-500 border-blue-300 bg-blue-50";
+        return "text-accent border-accent bg-accent/5";
       case "tertiary":
-        return "text-orange-500 border-orange-300 bg-orange-50";
+        return "text-tertiary border-tertiary bg-tertiary/5";
       default:
-        return "text-blue-600 border-blue-300 bg-blue-50";
+        return "text-primary border-primary bg-primary/5";
     }
   };
 
@@ -66,7 +66,7 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             How It Works
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -118,7 +118,7 @@ export function HowItWorks() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
                 >
-                  <ArrowRight className="w-8 h-8 text-blue-400" />
+                  <ArrowRight className="w-8 h-8 text-primary/30" />
                 </MotionDiv>
               )}
             </MotionDiv>
@@ -132,10 +132,10 @@ export function HowItWorks() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className="text-foreground-secondary mb-6">
-            Ready to start your project? Let&apos;s discuss how we can help you
+            Ready to start your project? Let's discuss how we can help you
             achieve your goals.
           </p>
-          <Link href="https://wa.me/919979132679?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
+          <Link href="https://wa.me/917202033384?text=Hi, I'm interested in a free initial consultation. Please provide details about your services and schedule a consultation.">
             <button className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
               Get Started Today
             </button>

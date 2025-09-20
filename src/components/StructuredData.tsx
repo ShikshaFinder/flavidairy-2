@@ -1,29 +1,18 @@
-"use client";
-
 import { APP_CONFIG } from "@/config/constants";
 
-interface StructuredDataProps {
-  type?: "organization" | "website" | "breadcrumb";
-  locale?: string;
-}
-
-export function StructuredData({
-  type = "organization",
-  locale = "en",
-}: StructuredDataProps) {
-  const getOrganizationData = () => ({
+export function StructuredData() {
+  const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: APP_CONFIG.COMPANY.NAME,
-    alternateName: APP_CONFIG.COMPANY.FULL_NAME,
-    description: APP_CONFIG.COMPANY.TAGLINE,
+    description: APP_CONFIG.SEO.DEFAULT_DESCRIPTION,
     url: APP_CONFIG.URLS.BASE,
-    logo: `${APP_CONFIG.URLS.BASE}/logo.png`,
+    logo: `${APP_CONFIG.URLS.BASE}/favicon.ico`,
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: `+${APP_CONFIG.CONTACT.WHATSAPP.NUMBER}`,
+      telephone: APP_CONFIG.CONTACT.PHONE,
       contactType: "customer service",
-      availableLanguage: ["en", "fr", "de", "es"],
+      availableLanguage: ["English", "French", "German", "Spanish"],
     },
     address: {
       "@type": "PostalAddress",
@@ -36,59 +25,21 @@ export function StructuredData({
       APP_CONFIG.URLS.SOCIAL.INSTAGRAM,
     ],
     foundingDate: "2004",
-    numberOfEmployees: "50-100",
-    industry: "Food Processing Equipment",
-  });
-
-  const getWebsiteData = () => ({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: APP_CONFIG.COMPANY.NAME,
-    url: APP_CONFIG.URLS.BASE,
-    description: APP_CONFIG.COMPANY.TAGLINE,
-    inLanguage: ["en", "fr", "de", "es"],
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${APP_CONFIG.URLS.BASE}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
+    numberOfEmployees: "20+",
+    industry: "Dairy and Food Processing Equipment",
+    keywords: APP_CONFIG.SEO.KEYWORDS.join(", "),
+    offers: {
+      "@type": "Offer",
+      description:
+        "Dairy and food processing equipment, consultancy services, and turnkey project solutions",
+      category: "Industrial Equipment",
     },
-  });
-
-  const getBreadcrumbData = () => ({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: APP_CONFIG.URLS.BASE,
-      },
-    ],
-  });
-
-  const getData = () => {
-    switch (type) {
-      case "organization":
-        return getOrganizationData();
-      case "website":
-        return getWebsiteData();
-      case "breadcrumb":
-        return getBreadcrumbData();
-      default:
-        return getOrganizationData();
-    }
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(getData(), null, 2),
-      }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
     />
   );
 }

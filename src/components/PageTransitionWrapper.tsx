@@ -1,12 +1,11 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { MotionDiv } from "@/components/ui/motion-optimized";
-import { pageTransition } from "@/lib/motionVariants";
+import { ReactNode } from "react";
 
 interface PageTransitionWrapperProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export function PageTransitionWrapper({
@@ -16,16 +15,18 @@ export function PageTransitionWrapper({
 
   return (
     <AnimatePresence mode="wait" initial={false}>
-      <MotionDiv
+      <motion.div
         key={pathname}
-        variants={pageTransition}
-        initial="initial"
-        animate="enter"
-        exit="exit"
-        className="min-h-screen"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
       >
         {children}
-      </MotionDiv>
+      </motion.div>
     </AnimatePresence>
   );
 }

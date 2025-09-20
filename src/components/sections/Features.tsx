@@ -61,40 +61,41 @@ export function Features() {
   const getColorClasses = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-blue-600 border-blue-200 bg-blue-50";
+        return "text-green-600 border-green-200 bg-green-50";
       case "secondary":
-        return "text-orange-600 border-orange-200 bg-orange-50";
+        return "text-green-700 border-green-300 bg-green-100";
       case "accent":
-        return "text-blue-500 border-blue-200 bg-blue-50";
+        // bg-green-150 was invalid; use bg-green-200 for sufficient contrast
+        return "text-green-800 border-green-400 bg-green-200";
       case "tertiary":
-        return "text-orange-500 border-orange-200 bg-orange-50";
+        return "text-green-600 border-green-200 bg-green-50";
       default:
-        return "text-blue-600 border-blue-200 bg-blue-50";
+        return "text-green-600 border-green-200 bg-green-50";
     }
   };
 
   return (
-    <section className="py-16 bg-neutral-light">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
         <MotionDiv
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+          <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
             Why Choose Us
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Our Key Strengths
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover what sets us apart in the dairy and food processing
             industry with our trusted and reliable solutions
           </p>
         </MotionDiv>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <MotionDiv
               key={index}
@@ -112,12 +113,12 @@ export function Features() {
                   >
                     <feature.icon className="w-8 h-8" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-black text-center">
+                  <CardTitle className="text-xl font-bold text-gray-900 text-center">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <p className="text-black leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -132,7 +133,7 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-black mb-6">
+          <p className="text-gray-600 mb-6">
             Experience the difference with our comprehensive solutions and
             expert support.
           </p>
