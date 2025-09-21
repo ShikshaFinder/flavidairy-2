@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import Height from "../height";
 import { APP_CONFIG } from "@/config/constants";
 import { trackWhatsAppClick } from "@/lib/analytics";
 

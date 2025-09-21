@@ -2,7 +2,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { MotionDiv, MotionH1, MotionP } from "@/components/ui/motion";
+import { MotionDiv, MotionH1, MotionP } from "@/components/ui/motion-optimized";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

@@ -1,6 +1,36 @@
-import {redirect} from 'next/navigation';
- 
-export default function RootPage() {
-  // Redirect to the default locale
-  redirect('/en');
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/sections/Hero";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Features } from "@/components/sections/Features";
+import { IndustriesServed } from "@/components/sections/IndustriesServed";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Pricing } from "@/components/sections/Pricing";
+import { CTA } from "@/components/sections/CTA";
+import { Footer } from "@/components/sections/Footer";
+import Link from "next/link";
+import TrustedCompanies from "@/components/sections/TrustedCompanies"; // added
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <Hero />
+      <div className="py-16 lg:py-24">
+        <IndustriesServed />
+      </div>
+      <div className="py-16 lg:py-24">
+        <Features />
+      </div>
+      {/* <Testimonials /> section removed as requested */}
+      {/* <Pricing /> section removed as requested */}
+      <div className="py-16 lg:py-24">
+        <CTA />
+      </div>
+
+      {/* Trusted logos placed at the bottom, before the footer */}
+      {/* <TrustedCompanies /> */}
+
+      <Footer />
+    </main>
+  );
 }

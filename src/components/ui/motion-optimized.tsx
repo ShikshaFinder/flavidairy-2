@@ -72,6 +72,12 @@ const MotionImg = dynamic(
   { ssr: false }
 ) as ComponentType<any>;
 
+const MotionBlockquote = dynamic(
+  () =>
+    import("framer-motion").then((mod) => ({ default: mod.motion.blockquote })),
+  { ssr: false }
+) as ComponentType<any>;
+
 // Export only the components that are actually used
 export {
   MotionDiv,
@@ -87,5 +93,5 @@ export {
   MotionA,
   MotionSpan,
   MotionImg,
+  MotionBlockquote,
 };
-

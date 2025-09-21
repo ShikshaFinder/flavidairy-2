@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionSpan } from "@/components/ui/motion";
+import { MotionSpan } from "@/components/ui/motion-optimized";
 
 interface GradientTextProps {
   children: React.ReactNode;
@@ -19,11 +19,7 @@ export function GradientText({
       animate={
         animate
           ? {
-              backgroundPosition: [
-                "0% 50%",
-                "100% 50%",
-                "0% 50%",
-              ],
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }
           : {}
       }

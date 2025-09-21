@@ -2,11 +2,10 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import Height from "@/components/height";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MotionDiv } from "@/components/ui/motion";
+import { MotionDiv } from "@/components/ui/motion-optimized";
 import Image from "next/image";
 import {
   Settings,
@@ -203,7 +202,7 @@ export default function MachineryPage() {
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 lg:pb-20 bg-gradient-to-br from-white via-secondary/5 to-white">
-        <Height />
+        <div className="mt-20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}

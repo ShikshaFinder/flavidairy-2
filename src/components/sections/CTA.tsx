@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionDiv, MotionButton } from "@/components/ui/motion";
+import { MotionDiv, MotionButton } from "@/components/ui/motion-optimized";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";

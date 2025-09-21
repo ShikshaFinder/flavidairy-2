@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionDiv } from "@/components/ui/motion";
+import { MotionDiv } from "@/components/ui/motion-optimized";
 import { Card, CardContent } from "@/components/ui/card";
 import { Droplets, Package, Filter, Leaf } from "lucide-react";
 

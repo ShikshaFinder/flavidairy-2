@@ -3,7 +3,6 @@
 import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import Height from "@/components/height";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { MotionDiv } from "@/components/ui/motion";
+import { MotionDiv } from "@/components/ui/motion-optimized";
 import {
   Users,
   Briefcase,
@@ -204,7 +203,7 @@ Thank you for your interest in joining Euronova Food Solutions! We will review y
 
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-white via-secondary/5 to-white">
-        <Height />
+        <div className="mt-20"></div>
         <div className="container mx-auto px-4">
           <MotionDiv
             className="text-center"

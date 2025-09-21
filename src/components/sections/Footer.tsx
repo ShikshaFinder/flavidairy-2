@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionDiv } from "@/components/ui/motion";
+import { MotionDiv } from "@/components/ui/motion-optimized";
 import { Button } from "@/components/ui/button";
 import {
   Mail,

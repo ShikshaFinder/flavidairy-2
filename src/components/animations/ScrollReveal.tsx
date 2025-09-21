@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionDiv } from "@/components/ui/motion";
+import { MotionDiv } from "@/components/ui/motion-optimized";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { scrollRevealVariants, defaultTransition } from "@/lib/motionVariants";

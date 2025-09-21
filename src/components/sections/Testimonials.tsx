@@ -5,7 +5,7 @@ import {
   MotionDiv,
   MotionBlockquote,
   MotionButton,
-} from "@/components/ui/motion";
+} from "@/components/ui/motion-optimized";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
