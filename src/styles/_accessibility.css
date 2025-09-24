@@ -34,17 +34,22 @@
     --bg-default: #FFFFFF;
     --bg-neutral: #F3F4F6;
     --border-default: #374151;
-    --color-primary: #D66A1F; /* Darker orange for better contrast */
-    --color-accent: #E8941D;   /* Darker golden accent */
+    --color-primary: #D66A1F;
+    /* Darker orange for better contrast */
+    --color-accent: #E8941D;
+    /* Darker golden accent */
   }
-  
+
   /* Stronger borders in high contrast mode */
-  .border, [class*="border-"] {
+  .border,
+  [class*="border-"] {
     border-width: 2px !important;
   }
-  
+
   /* Enhanced button contrast */
-  .btn, button, [role="button"] {
+  .btn,
+  button,
+  [role="button"] {
     border: 2px solid currentColor !important;
   }
 }
@@ -57,7 +62,7 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   /* Disable parallax and transform animations */
   [style*="transform"],
   .parallax,
@@ -88,11 +93,12 @@
 }
 
 .text-medium-contrast {
-  color: #1F2937;
+  color: #1E3A8A;
 }
 
 .text-accessible-primary {
-  color: #D66A1F; /* Darker version of primary for better contrast */
+  color: #1E3A8A;
+  /* Dark blue for better contrast */
 }
 
 .bg-accessible-primary {
@@ -101,58 +107,76 @@
 }
 
 /* Improved link styles for accessibility */
-a, .link {
+a,
+.link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   transition: text-decoration-color 0.2s ease;
 }
 
-a:hover, .link:hover {
+a:hover,
+.link:hover {
   text-decoration-thickness: 2px;
 }
 
-a:focus, .link:focus {
+a:focus,
+.link:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: 2px;
 }
 
 /* Interactive elements minimum size (44x44px WCAG requirement) */
-button, .btn, [role="button"], input[type="button"], input[type="submit"] {
+button,
+.btn,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
   min-height: 44px;
   min-width: 44px;
   padding: 8px 16px;
 }
 
 /* Form field improvements */
-input, textarea, select {
+input,
+textarea,
+select {
   border: 2px solid var(--border-default);
   border-radius: var(--radius-sm);
   padding: 8px 12px;
   min-height: 44px;
-  font-size: 16px; /* Prevents zoom on iOS */
+  font-size: 16px;
+  /* Prevents zoom on iOS */
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-color: var(--color-primary);
 }
 
 /* Error states */
-.error, .invalid, [aria-invalid="true"] {
+.error,
+.invalid,
+[aria-invalid="true"] {
   border-color: var(--error) !important;
   background-color: rgba(239, 68, 68, 0.05);
 }
 
-.error:focus, .invalid:focus, [aria-invalid="true"]:focus {
+.error:focus,
+.invalid:focus,
+[aria-invalid="true"]:focus {
   outline-color: var(--error);
   box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
 }
 
 /* Loading and disabled states */
-.loading, [disabled], [aria-disabled="true"] {
+.loading,
+[disabled],
+[aria-disabled="true"] {
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
@@ -164,7 +188,7 @@ input:focus, textarea:focus, select:focus {
     --text-high-contrast: #FFFFFF;
     --bg-high-contrast: #000000;
   }
-  
+
   .text-high-contrast {
     color: var(--text-high-contrast);
     background-color: var(--bg-high-contrast);
@@ -244,7 +268,8 @@ table {
   width: 100%;
 }
 
-th, td {
+th,
+td {
   border: 1px solid var(--border-default);
   padding: 8px 12px;
   text-align: left;

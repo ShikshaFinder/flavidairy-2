@@ -11,16 +11,16 @@
   /* Cyan highlight */
 
   /* Text colors optimized for accessibility - using only approved colors */
-  --text-default: #000000;
-  /* Black for high contrast */
-  --text-secondary: #000000;
-  /* Black for secondary text */
-  --text-muted: #000000;
-  /* Black for muted text */
+  --text-default: #1E3A8A;
+  /* Dark blue for high contrast primary text */
+  --text-secondary: #1E3A8A;
+  /* Dark blue for secondary text */
+  --text-muted: #374151;
+  /* Dark gray for muted text */
   --text-on-primary: #FFFFFF;
   /* White text on primary colors */
-  --text-on-neutral: #000000;
-  /* Black text on neutral backgrounds */
+  --text-on-neutral: #1E3A8A;
+  /* Dark blue text on neutral backgrounds */
 
   /* Background colors */
   --bg-default: #FFFFFF;

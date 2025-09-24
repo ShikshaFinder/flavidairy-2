@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable static file serving
+  trailingSlash: false,
+  // Ensure proper handling of static assets
+  assetPrefix: process.env.NODE_ENV === "production" ? "" : "",
   images: {
     formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 768, 1024, 1280, 1600],
@@ -15,6 +19,15 @@ const nextConfig = {
   typescript: {
     // Enable TypeScript checking during builds
     ignoreBuildErrors: false,
+  },
+  // Ensure PDF files are served correctly
+  async rewrites() {
+    return [
+      {
+        source: "/:path*.pdf",
+        destination: "/:path*.pdf",
+      },
+    ];
   },
   async headers() {
     return [
@@ -44,6 +57,39 @@ const nextConfig = {
           {
             key: "Strict-Transport-Security",
             value: "max-age=31536000; includeSubDomains; preload",
+          },
+        ],
+      },
+      // Specific headers for PDF files
+      {
+        source: "/(.*\\.pdf)",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/pdf",
+          },
+          {
+            key: "Content-Disposition",
+            value: "inline",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+        ],
+      },
+      // Headers for static assets
+      {
+        source:
+          "/(.*\\.ico|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.webp|.*\\.svg|.*\\.css|.*\\.js|.*\\.woff|.*\\.woff2|.*\\.ttf|.*\\.eot)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

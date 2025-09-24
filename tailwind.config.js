@@ -26,7 +26,7 @@ module.exports = {
         },
         neutral: {
           DEFAULT: "#F3F4F6", // Light neutral
-          foreground: "#1F2937", // Dark text on neutral
+          foreground: "#1E3A8A", // Dark blue text on neutral
         },
         cyan: {
           DEFAULT: "#06B6D4", // Cyan highlight

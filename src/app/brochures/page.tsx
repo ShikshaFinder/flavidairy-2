@@ -5,20 +5,9 @@ import { Footer } from "@/components/sections/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MotionDiv } from "@/components/ui/motion-optimized";
-import {
-  FileText,
-  Download,
-  ExternalLink,
-  Briefcase,
-  Grid,
-  List,
-} from "lucide-react";
-import { useState } from "react";
+import { FileText, Download, ExternalLink, Briefcase } from "lucide-react";
 
 export default function BrochuresPage() {
-  const [selectedPdf, setSelectedPdf] = useState("flavi-up.pdf");
-  const [viewMode, setViewMode] = useState<"grid" | "viewer">("viewer");
-
   const brochures = [
     {
       id: "flavi-up",
@@ -89,30 +78,6 @@ export default function BrochuresPage() {
               services, and innovative technologies through our detailed company
               brochures
             </p>
-            <div className="flex items-center justify-center gap-2">
-              <button
-                onClick={() => setViewMode("viewer")}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                  viewMode === "viewer"
-                    ? "bg-blue-600 text-white"
-                    : "bg-neutral text-black hover:bg-neutral/80"
-                }`}
-              >
-                <List className="w-4 h-4" />
-                Viewer Mode
-              </button>
-              <button
-                onClick={() => setViewMode("grid")}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                  viewMode === "grid"
-                    ? "bg-blue-600 text-white"
-                    : "bg-neutral text-black hover:bg-neutral/80"
-                }`}
-              >
-                <Grid className="w-4 h-4" />
-                Grid View
-              </button>
-            </div>
           </MotionDiv>
         </div>
       </section>
@@ -120,212 +85,54 @@ export default function BrochuresPage() {
       {/* Main Content */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {viewMode === "viewer" ? (
-            <div className="grid lg:grid-cols-4 gap-8">
-              {/* Brochures List Sidebar */}
-              <div className="lg:col-span-1">
-                <MotionDiv
-                  initial={{ opacity: 0, x: -40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <h2 className="text-2xl font-bold text-black mb-6">
-                    Available Brochures
-                  </h2>
-                  <div className="space-y-4">
-                    {brochures.map((brochure, index) => (
-                      <Card
-                        key={brochure.id}
-                        className={`cursor-pointer transition-all duration-300 hover:shadow-md ${
-                          selectedPdf === brochure.filename
-                            ? "border-primary bg-primary/5"
-                            : "border-neutral hover:border-primary/30"
-                        }`}
-                        onClick={() => setSelectedPdf(brochure.filename)}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {brochures.map((brochure, index) => (
+              <MotionDiv
+                key={brochure.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full border-neutral hover:shadow-lg transition-all duration-300 group">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                      <Briefcase className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-black text-lg mb-2 text-center">
+                      {brochure.category}
+                    </h3>
+                    <p className="text-black/70 text-sm mb-4 text-center">
+                      {brochure.description}
+                    </p>
+                    <div className="text-center mb-4">
+                      <Badge variant="outline" className="text-xs">
+                        Company Resource
+                      </Badge>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <a
+                        href={`/${brochure.filename}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
                       >
-                        <CardContent className="p-4">
-                          <div className="flex items-start gap-3">
-                            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                              <FileText className="w-5 h-5 text-primary" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="font-semibold text-black text-sm leading-tight mb-1">
-                                {brochure.category}
-                              </h3>
-                              <p className="text-xs text-black/70 mb-2">
-                                {brochure.description}
-                              </p>
-                              <div className="flex items-center gap-2">
-                                <Badge
-                                  variant="outline"
-                                  className="text-xs text-black"
-                                >
-                                  {brochure.category}
-                                </Badge>
-                                <a
-                                  href={`/${brochure.filename}`}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-primary hover:text-primary/80"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  <Download className="w-3 h-3" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </MotionDiv>
-              </div>
-
-              {/* PDF Viewer */}
-              <div className="lg:col-span-3">
-                <MotionDiv
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  <Card className="h-full border-neutral">
-                    <CardHeader className="border-b border-neutral/50">
-                      <div className="flex items-center justify-between">
-                        <CardTitle className="text-xl font-bold text-black flex items-center gap-2">
-                          <FileText className="w-5 h-5 text-primary" />
-                          {brochures.find((b) => b.filename === selectedPdf)
-                            ?.title || "Brochure Viewer"}
-                        </CardTitle>
-                        <div className="flex items-center gap-2">
-                          <a
-                            href={`/${selectedPdf}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            Open in New Tab
-                          </a>
-                          <a
-                            href={`/${selectedPdf}`}
-                            download
-                            className="flex items-center gap-2 px-3 py-2 bg-black text-white rounded-lg hover:bg-black/80 transition-colors text-sm"
-                          >
-                            <Download className="w-4 h-4" />
-                            Download
-                          </a>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="p-0">
-                      <div
-                        className="relative w-full"
-                        style={{ height: "800px" }}
+                        <ExternalLink className="w-4 h-4" />
+                        Open PDF
+                      </a>
+                      <a
+                        href={`/${brochure.filename}`}
+                        download
+                        className="flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-black/80 transition-colors text-sm"
                       >
-                        <iframe
-                          src={`/${selectedPdf}#toolbar=1&navpanes=1&scrollbar=1&page=1&view=FitH`}
-                          className="w-full h-full border-0 rounded-b-lg"
-                          title={`Euronova Food Solutions Brochure - ${selectedPdf}`}
-                          loading="lazy"
-                          onError={(e) => {
-                            console.log(
-                              "PDF iframe failed to load:",
-                              selectedPdf
-                            );
-                          }}
-                        />
-                        {/* Fallback message */}
-                        <div
-                          className="absolute inset-0 flex items-center justify-center bg-neutral/30 rounded-b-lg"
-                          style={{ zIndex: -1 }}
-                        >
-                          <div className="text-center p-8">
-                            <FileText className="w-16 h-16 text-black/50 mx-auto mb-4" />
-                            <h3 className="text-lg font-semibold text-black mb-2">
-                              PDF Viewer
-                            </h3>
-                            <p className="text-black/70 mb-4">
-                              If the PDF doesn&apos;t load, you can download it
-                              directly or open in a new tab.
-                            </p>
-                            <div className="flex items-center justify-center gap-4">
-                              <a
-                                href={`/${selectedPdf}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                              >
-                                <ExternalLink className="w-4 h-4" />
-                                Open in New Tab
-                              </a>
-                              <a
-                                href={`/${selectedPdf}`}
-                                download
-                                className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-black/80 transition-colors"
-                              >
-                                <Download className="w-4 h-4" />
-                                Download PDF
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </MotionDiv>
-              </div>
-            </div>
-          ) : (
-            /* Grid View */
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {brochures.map((brochure, index) => (
-                <MotionDiv
-                  key={brochure.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <Card className="h-full border-neutral hover:shadow-lg transition-all duration-300 group">
-                    <CardContent className="p-6">
-                      <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                        <Briefcase className="w-8 h-8 text-primary" />
-                      </div>
-                      <h3 className="font-bold text-black text-lg mb-2 text-center">
-                        {brochure.category}
-                      </h3>
-                      <p className="text-black/70 text-sm mb-4 text-center">
-                        {brochure.description}
-                      </p>
-                      <div className="text-center mb-4">
-                        <Badge variant="outline" className="text-xs">
-                          Company Resource
-                        </Badge>
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <a
-                          href={`/${brochure.filename}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          Open PDF
-                        </a>
-                        <a
-                          href={`/${brochure.filename}`}
-                          download
-                          className="flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-black/80 transition-colors text-sm"
-                        >
-                          <Download className="w-4 h-4" />
-                          Download
-                        </a>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </MotionDiv>
-              ))}
-            </div>
-          )}
+                        <Download className="w-4 h-4" />
+                        Download
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
+            ))}
+          </div>
         </div>
       </section>
 

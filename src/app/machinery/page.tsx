@@ -406,8 +406,8 @@ export default function MachineryPage() {
                             aria-controls={`equipment-desc-${index}`}
                           >
                             {isExpanded(index)
-                              ? "🔼 Show Less"
-                              : "🔽 Read More"}
+                              ? "🔼"
+                              : "🔽"}
                           </button>
                         </div>
                       )}

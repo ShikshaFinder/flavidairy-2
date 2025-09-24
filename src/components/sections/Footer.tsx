@@ -46,7 +46,7 @@ export function Footer() {
               <div className="mb-6">
                 <div className="h-16 w-32 md:h-18 md:w-36 lg:h-20 lg:w-40 relative flex-shrink-0">
                   <Image
-                    src="/logo.png"
+                    src="/favicon.ico"
                     alt="Euronova Food Solutions"
                     fill
                     className="object-contain object-left"

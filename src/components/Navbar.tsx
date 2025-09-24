@@ -91,7 +91,7 @@ export function Navbar() {
       hasDropdown: true,
       icon: FileText,
       submenu: [
-        { name: "Flavi Updates", href: "/magazines", icon: FileText },
+        { name: "Euronova Updates", href: "/magazines", icon: FileText },
         { name: "Company Brochures", href: "/brochures", icon: FileText },
       ],
     },
